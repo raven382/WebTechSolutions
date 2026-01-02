@@ -1,0 +1,906 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Proyecto Final - Centro de Soporte Técnico</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Proyecto Final — Centro de Soporte Técnico</h1>
+      <p class="subtitle">TechSolutions S.A.S. — Equipo: Raven Ovalle · Matías Ureta · Juan Cruz</p>
+    </div>
+  </header>
+
+  <main class="container main-grid">
+    <aside class="panel-filtros" aria-label="Filtros de tickets">
+      <h2>Filtros</h2>
+
+      <label for="filterEstado">Estado</label>
+      <select id="filterEstado" aria-controls="ticketsList">
+        <option value="">Todos</option>
+        <option value="Nuevo">Nuevo</option>
+        <option value="Apertura">Apertura</option>
+        <option value="Resuelto">Resuelto</option>
+        <option value="Escalada">Escalada</option>
+        <option value="Cierre">Cierre</option>
+      </select>
+
+      <label for="filterPrioridad">Prioridad</label>
+      <select id="filterPrioridad" aria-controls="ticketsList">
+        <option value="">Todas</option>
+        <option value="Baja">Baja</option>
+        <option value="Media">Media</option>
+        <option value="Alta">Alta</option>
+      </select>
+
+      <label for="filterTipo">Tipo</label>
+      <select id="filterTipo" aria-controls="ticketsList">
+        <option value="">Todos</option>
+        <option value="Hardware">Hardware</option>
+        <option value="Periféricos">Periféricos</option>
+        <option value="Redes">Redes</option>
+        <option value="Software">Software</option>
+        <option value="Otros">Otros</option>
+      </select>
+
+      <label for="searchInput">Buscar (exacta)</label>
+      <input id="searchInput" type="search" placeholder="TS-HW-0238 o Juan Pérez"
+        aria-label="Buscar ticket exacto por código o nombre">
+
+      <div class="legend">
+        <p><strong>Nota:</strong> Use filtros combinados para refinar la lista.</p>
+      </div>
+    </aside>
+
+    <section id="ticketsList" class="tickets" aria-live="polite">
+      <!-- Ticket 1 -->
+      <article class="ticket-card" data-ticket="TS-HW-0238" data-estado="Apertura" data-prioridad="Alta"
+        data-tipo="Hardware">
+        <header class="ticket-header">
+          <div>
+            <h3>TS-HW-0238 — El equipo no enciende</h3>
+            <p class="meta">Juan Pérez · Piso 2, Oficina 204 · 18 sep 2025 · 09:15</p>
+          </div>
+          <div class="ticket-actions">
+            <button class="btn small" data-open="detail-TS-HW-0238">Abrir detalle</button>
+          </div>
+        </header>
+
+        <div id="detail-TS-HW-0238" class="ticket-detail" hidden>
+          <section class="ticket-preview" aria-label="Previsualización del ticket">
+            <table class="preview-table" role="table" aria-describedby="nota-TS-HW-0238">
+              <thead>
+                <tr>
+                  <th colspan="4">Ticket: <span class="ticket-code">TS-HW-0238</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Fecha:</strong> <span class="ticket-fecha">18 de septiembre de 2025</span></td>
+                  <td><strong>Hora:</strong> <span class="ticket-hora">09:15 a.m.</span></td>
+                  <td><strong>Estado:</strong> <span class="ticket-estado">Apertura</span></td>
+                  <td><strong>Nivel de prioridad:</strong> <span class="ticket-prioridad">Alta</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Nombre del cliente:</strong> <span class="ticket-nombre">Juan Pérez</span></td>
+                  <td colspan="2"><strong>Teléfono del cliente:</strong> <span class="ticket-telefono">300 456
+                      7890</span></td>
+                  <td><strong>Correo electrónico:</strong> <span
+                      class="ticket-correo">juan.perez@techsolutions.com</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Tipo de emisión:</strong> <span class="ticket-tipo">Hardware</span></td>
+                  <td colspan="3">
+                    <strong>Fuente del ticket:</strong>
+                    <div class="ticket-fuente" data-ticket="TS-HW-0238" role="radiogroup"
+                      aria-label="Seleccionar canal de ingreso">
+                      <button class="view-btn" data-view="correo" data-ticket="TS-HW-0238" aria-pressed="true"
+                        role="radio">Correo</button>
+                      <button class="view-btn" data-view="chat" data-ticket="TS-HW-0238" aria-pressed="false"
+                        role="radio">Chat</button>
+                      <button class="view-btn" data-view="llamada" data-ticket="TS-HW-0238" aria-pressed="false"
+                        role="radio">Llamada</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="4" id="nota-TS-HW-0238"><strong>Notas:</strong>
+                    <div class="ticket-notas">
+                      <ul>
+                        <li>Usuario: Juan Pérez, Director de Desarrollo de Software.</li>
+                        <li>Usuario reporta que el PC no enciende en absoluto.</li>
+                        <li>No hay luces, ruidos ni señales de energía.</li>
+                        <li>Equipo de escritorio corporativo ubicado en Piso 2, Oficina 204.</li>
+                        <li>Bloqueo total del puesto de trabajo.</li>
+                        <li>Impacto alto por rol crítico y reunión importante.</li>
+                        <li>Usuario con conocimientos técnicos.</li>
+                      </ul>
+
+                      <p><strong>Medidas adoptadas:</strong></p>
+                      <ul>
+                        <li>Se realiza contención inicial por urgencia del caso.</li>
+                        <li>Se consulta al usuario:
+                          <ul>
+                            <li>¿El equipo funcionaba normalmente antes del incidente?</li>
+                            <li>¿Está conectado directamente a la corriente o a una regleta?</li>
+                            <li>¿Hubo algún corte de energía reciente?</li>
+                          </ul>
+                        </li>
+                      </ul>
+
+                      <p><strong>Se indica verificación básica:</strong></p>
+                      <ul>
+                        <li>Revisión del cable de poder.</li>
+                        <li>Comprobación del interruptor trasero de la fuente.</li>
+                        <li>Prueba en otra toma eléctrica cercana.</li>
+                      </ul>
+
+                      <p>Se observa que el equipo no presenta ningún indicio de encendido tras las verificaciones.</p>
+
+                      <p><strong>Resolución:</strong> Se determina probable falla de hardware (fuente de poder). Se
+                        decide escalar el caso a soporte técnico especializado para revisión física del equipo. Se
+                        informa al usuario del escalamiento y de los próximos pasos. Ticket queda documentado a la
+                        espera de resolución final.</p>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="4"><strong>Especialista de Soporte en TI:</strong> Raven Ovalle, Matías Ureta, Juan Cruz
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <nav class="tabs" role="tablist" aria-label="Secciones del ticket">
+            <button role="tab" aria-controls="ts1-resumen" class="tab active">Resumen</button>
+            <button role="tab" aria-controls="ts1-canal" class="tab">Canal</button>
+            <button role="tab" aria-controls="ts1-registro" class="tab">Registro</button>
+            <button role="tab" aria-controls="ts1-diagnostico" class="tab">Diagnóstico</button>
+            <button role="tab" aria-controls="ts1-acciones" class="tab">Acciones</button>
+            <button role="tab" aria-controls="ts1-escalamiento" class="tab">Escalamiento</button>
+            <button role="tab" aria-controls="ts1-evidencias" class="tab">Evidencias</button>
+            <button role="tab" aria-controls="ts1-tiempo" class="tab">Tiempo / Estado</button>
+          </nav>
+
+          <section id="ts1-resumen" class="tabpanel" role="tabpanel">
+            <h4>Resumen</h4>
+            <p>El usuario reporta que su computador de escritorio no enciende en absoluto. No hay luces, ventiladores ni
+              señales de POST. El puesto de trabajo está bloqueado y el usuario tiene una reunión importante.</p>
+          </section>
+
+          <section id="ts1-canal" class="tabpanel" role="tabpanel" hidden>
+            <h4>Canal de ingreso</h4>
+            <p>Use la selección en "Fuente del ticket" para alternar la vista entre Correo, Chat y Llamada.</p>
+            <div class="channel-view" id="view-TS-HW-0238">
+              <div class="channel correo">
+                <h5>Correo (simulado)</h5>
+                <p><strong>De:</strong> juan.perez@techsolutions.com</p>
+                <p><strong>Asunto:</strong> PC no enciende — Oficina 204</p>
+                <p>Estimado equipo de soporte,</p>
+                <p>Mi computador de escritorio no enciende. Al presionar el botón no hay luces ni ventiladores. Lo
+                  necesito para una reunión a las 09:30. Solicito apoyo urgente.</p>
+                <p>Saludos,</p>
+                <p>Juan Pérez</p>
+              </div>
+
+              <div class="channel chat" hidden>
+                <h5>Chat (simulado)</h5>
+                <div class="chat-msg"><strong>Juan:</strong> Mi PC no enciende, no hay nada de luz.</div>
+                <div class="chat-msg"><strong>Soporte:</strong> ¿Está conectado a la toma? ¿Hay regleta?</div>
+                <div class="chat-msg"><strong>Juan:</strong> Sí, lo probé en otra toma y nada.</div>
+              </div>
+
+              <div class="channel llamada" hidden>
+                <h5>Llamada (simulada)</h5>
+                <div class="call-line"><time>09:15</time> <strong>Soporte:</strong> Buen día Juan, ¿qué sucede con su
+                  equipo?</div>
+                <div class="call-line"><time>09:16</time> <strong>Juan:</strong> No enciende, no hay luces ni
+                  ventiladores.</div>
+                <div class="call-line"><time>09:17</time> <strong>Soporte:</strong> Verificaremos alimentación y le
+                  informo los pasos.</div>
+              </div>
+            </div>
+          </section>
+
+          <section id="ts1-registro" class="tabpanel" role="tabpanel" hidden>
+            <h4>Registro de atención</h4>
+            <ol>
+              <li>09:15 — Recepción del ticket. Se registra prioridad Alta.</li>
+              <li>09:17 — Verificación remota de conexión eléctrica y regleta con el usuario.</li>
+              <li>09:20 — Prueba en otra toma; sin respuesta. Se documenta posible falla de PSU.</li>
+              <li>09:25 — Escalamiento a soporte especializado para revisión física.</li>
+            </ol>
+          </section>
+
+          <section id="ts1-diagnostico" class="tabpanel" role="tabpanel" hidden>
+            <h4>Diagnóstico</h4>
+            <p>Tras las verificaciones básicas se descarta problema de toma eléctrica y regleta. El equipo no muestra
+              signos de POST; la causa más probable es falla de la fuente de poder (PSU) o un corto en la placa madre.
+            </p>
+          </section>
+
+          <section id="ts1-acciones" class="tabpanel" role="tabpanel" hidden>
+            <h4>Acciones realizadas</h4>
+            <ul>
+              <li>Verificación remota de conexión eléctrica y regleta.</li>
+              <li>Prueba en otra toma eléctrica.</li>
+              <li>Revisión visual de cables y conector de alimentación.</li>
+              <li>Documentación de hallazgos y escalamiento a soporte de hardware.</li>
+            </ul>
+          </section>
+
+          <section id="ts1-escalamiento" class="tabpanel" role="tabpanel" hidden>
+            <h4>Escalamiento</h4>
+            <p>Se escaló a Soporte de Hardware para revisión física y posible reemplazo de PSU. El ticket queda en
+              estado <strong>Escalada</strong> hasta la intervención física.</p>
+          </section>
+
+          <section id="ts1-evidencias" class="tabpanel" role="tabpanel" hidden>
+            <h4>Evidencias</h4>
+            <div class="gallery" aria-label="Galería de evidencias TS-HW-0238">
+              <button class="evidence-thumb" data-src="svg-photo-1" aria-label="Evidencia 1">
+                <svg width="320" height="180" viewBox="0 0 320 180" role="img" aria-hidden="true">
+                  <rect width="100%" height="100%" fill="#e6eefc"></rect>
+                  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#0b3d91"
+                    font-size="16">Foto: equipo (placeholder)</text>
+                </svg>
+              </button>
+
+              <button class="evidence-thumb" data-src="svg-screenshot-1" aria-label="Evidencia 2">
+                <svg width="320" height="180" viewBox="0 0 320 180" role="img" aria-hidden="true">
+                  <rect width="100%" height="100%" fill="#f7f7f7"></rect>
+                  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#333"
+                    font-size="14">Captura: sin señal (placeholder)</text>
+                </svg>
+              </button>
+
+              <button class="evidence-thumb" data-src="svg-log-1" aria-label="Evidencia 3">
+                <svg width="320" height="180" viewBox="0 0 320 180" role="img" aria-hidden="true">
+                  <rect width="100%" height="100%" fill="#fff7e6"></rect>
+                  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#ff7a00"
+                    font-size="14">Log: salida (placeholder)</text>
+                </svg>
+              </button>
+            </div>
+
+            <div class="log-sample">
+              <h5>Fragmentos de comandos (simulados)</h5>
+              <pre><code>PS C:\> ping 10.1.2.35
+Request timed out.
+
+PS C:\> ipconfig /all
+Ethernet adapter Ethernet:
+   Media State . . . . . . . . . . . : Media disconnected
+
+PS C:\> powercfg /lastwake
+No last wake source found.</code></pre>
+            </div>
+          </section>
+
+          <section id="ts1-tiempo" class="tabpanel" role="tabpanel" hidden>
+            <h4>Tiempo de atención y estado final</h4>
+            <p>Tiempo desde apertura hasta escalamiento: 10 minutos. Estado actual: <strong>Escalada</strong>.
+              Responsable: Soporte de Hardware.</p>
+          </section>
+
+        </div>
+      </article>
+
+      <!-- Ticket 2 -->
+      <article class="ticket-card" data-ticket="TS-PRN-0524" data-estado="Apertura" data-prioridad="Alta"
+        data-tipo="Periféricos">
+        <header class="ticket-header">
+          <div>
+            <h3>TS-PRN-0524 — No puede imprimir</h3>
+            <p class="meta">María Fernanda Gómez · Área de Contabilidad · 05 nov 2025 · 10:42</p>
+          </div>
+          <div class="ticket-actions">
+            <button class="btn small" data-open="detail-TS-PRN-0524">Abrir detalle</button>
+          </div>
+        </header>
+
+        <div id="detail-TS-PRN-0524" class="ticket-detail" hidden>
+          <section class="ticket-preview" aria-label="Previsualización del ticket">
+            <table class="preview-table" role="table" aria-describedby="nota-TS-PRN-0524">
+              <thead>
+                <tr>
+                  <th colspan="4">Ticket: <span class="ticket-code">TS-PRN-0524</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Fecha:</strong> <span class="ticket-fecha">05 de noviembre de 2025</span></td>
+                  <td><strong>Hora:</strong> <span class="ticket-hora">10:42 a.m.</span></td>
+                  <td><strong>Estado:</strong> <span class="ticket-estado">Apertura</span></td>
+                  <td><strong>Nivel de prioridad:</strong> <span class="ticket-prioridad">Alta</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Nombre del cliente:</strong> <span class="ticket-nombre">María Fernanda Gómez</span></td>
+                  <td colspan="2"><strong>Teléfono del cliente:</strong> <span class="ticket-telefono">320 615
+                      8934</span></td>
+                  <td><strong>Correo electrónico:</strong> <span
+                      class="ticket-correo">maria.gomez@techsolutions.com</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Tipo de emisión:</strong> <span class="ticket-tipo">Periféricos - Redes</span></td>
+                  <td colspan="3">
+                    <strong>Fuente del ticket:</strong>
+                    <div class="ticket-fuente" data-ticket="TS-PRN-0524" role="radiogroup"
+                      aria-label="Seleccionar canal de ingreso">
+                      <button class="view-btn" data-view="correo" data-ticket="TS-PRN-0524" aria-pressed="true"
+                        role="radio">Correo</button>
+                      <button class="view-btn" data-view="chat" data-ticket="TS-PRN-0524" aria-pressed="false"
+                        role="radio">Chat</button>
+                      <button class="view-btn" data-view="llamada" data-ticket="TS-PRN-0524" aria-pressed="false"
+                        role="radio">Llamada</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="4" id="nota-TS-PRN-0524"><strong>Notas:</strong>
+                    <div class="ticket-notas">
+                      La impresora de red HR-FLOOR2 (IP 10.1.2.35) no procesa trabajos de impresión. El área de
+                      Contabilidad requiere impresión para cierre financiero; impacto operativo alto. Se verificó
+                      conectividad y ping a 10.1.2.35 sin respuesta; posible impresora en otra subred o apagada. Se
+                      escaló a redes e impresoras.
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="4"><strong>Especialista de Soporte en TI:</strong> Raven Ovalle, Matías Ureta, Juan Cruz
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <nav class="tabs" role="tablist" aria-label="Secciones del ticket">
+            <button role="tab" aria-controls="ts2-resumen" class="tab active">Resumen</button>
+            <button role="tab" aria-controls="ts2-canal" class="tab">Canal</button>
+            <button role="tab" aria-controls="ts2-registro" class="tab">Registro</button>
+            <button role="tab" aria-controls="ts2-diagnostico" class="tab">Diagnóstico</button>
+            <button role="tab" aria-controls="ts2-acciones" class="tab">Acciones</button>
+            <button role="tab" aria-controls="ts2-escalamiento" class="tab">Escalamiento</button>
+            <button role="tab" aria-controls="ts2-evidencias" class="tab">Evidencias</button>
+            <button role="tab" aria-controls="ts2-tiempo" class="tab">Tiempo / Estado</button>
+          </nav>
+
+          <section id="ts2-resumen" class="tabpanel" role="tabpanel">
+            <h4>Resumen</h4>
+            <p>La impresora de red HR-FLOOR2 (IP 10.1.2.35) no procesa trabajos de impresión. El área de Contabilidad
+              requiere impresión para cierre financiero; impacto operativo alto.</p>
+          </section>
+
+          <section id="ts2-canal" class="tabpanel" role="tabpanel" hidden>
+            <h4>Canal de ingreso</h4>
+            <p>Use la selección en "Fuente del ticket" para alternar la vista entre Correo, Chat y Llamada.</p>
+            <div class="channel-view" id="view-TS-PRN-0524">
+              <div class="channel correo">
+                <h5>Correo (simulado)</h5>
+                <p><strong>De:</strong> maria.gomez@techsolutions.com</p>
+                <p><strong>Asunto:</strong> Impresora HR-FLOOR2 no responde</p>
+                <p>Estimado soporte, durante el cierre financiero la impresora de red no procesa trabajos. IP 10.1.2.35
+                  no responde a ping. Solicito revisión urgente.</p>
+              </div>
+
+              <div class="channel chat" hidden>
+                <h5>Chat (simulado)</h5>
+                <div class="chat-msg"><strong>María:</strong> La impresora HR-FLOOR2 no imprime.</div>
+                <div class="chat-msg"><strong>Soporte:</strong> ¿Aparece en la red? ¿Puede hacer ping a 10.1.2.35?</div>
+                <div class="chat-msg"><strong>María:</strong> Ping falla.</div>
+              </div>
+
+              <div class="channel llamada" hidden>
+                <h5>Llamada (simulada)</h5>
+                <div class="call-line"><time>10:42</time> <strong>Soporte:</strong> ¿La impresora muestra errores en el
+                  panel?</div>
+                <div class="call-line"><time>10:43</time> <strong>María:</strong> No hay mensajes, simplemente no
+                  responde.</div>
+              </div>
+            </div>
+          </section>
+
+          <section id="ts2-registro" class="tabpanel" role="tabpanel" hidden>
+            <h4>Registro de atención</h4>
+            <ol>
+              <li>10:42 — Recepción del ticket. Prioridad Alta.</li>
+              <li>10:45 — Prueba de conectividad desde estación de soporte: <code>ping 10.1.2.35</code> → sin respuesta.
+              </li>
+              <li>10:50 — Revisión de la configuración de red y verificación de VLAN; posible impresora en otra subred.
+              </li>
+              <li>10:55 — Se documenta y se agenda intervención física con redes/infraestructura.</li>
+            </ol>
+          </section>
+
+          <section id="ts2-diagnostico" class="tabpanel" role="tabpanel" hidden>
+            <h4>Diagnóstico</h4>
+            <p>La IP 10.1.2.35 no responde a ping. Posibles causas: impresora apagada, cambio de IP, impresora en otra
+              VLAN o problema de switch/puerto.</p>
+          </section>
+
+          <section id="ts2-acciones" class="tabpanel" role="tabpanel" hidden>
+            <h4>Acciones realizadas</h4>
+            <ul>
+              <li>Ping desde estación de soporte: sin respuesta.</li>
+              <li>Verificación de cola de impresión en estaciones de usuario.</li>
+              <li>Revisión de drivers y spooler en equipos afectados.</li>
+              <li>Notificación a redes para verificación de VLAN y puerto.</li>
+            </ul>
+          </section>
+
+          <section id="ts2-escalamiento" class="tabpanel" role="tabpanel" hidden>
+            <h4>Escalamiento</h4>
+            <p>Se escaló a equipo de Redes para verificación de conectividad y a Soporte de Impresoras para revisión
+              física. Estado: <strong>Escalada</strong>.</p>
+          </section>
+
+          <section id="ts2-evidencias" class="tabpanel" role="tabpanel" hidden>
+            <h4>Evidencias</h4>
+            <div class="gallery" aria-label="Galería de evidencias TS-PRN-0524">
+              <button class="evidence-thumb" data-src="svg-photo-2" aria-label="Evidencia 1">
+                <svg width="320" height="180">
+                  <rect width="100%" height="100%" fill="#eef7f3"></rect><text x="50%" y="50%"
+                    dominant-baseline="middle" text-anchor="middle" fill="#0b7a4a">Foto: impresora (placeholder)</text>
+                </svg>
+              </button>
+              <button class="evidence-thumb" data-src="svg-screenshot-2" aria-label="Evidencia 2">
+                <svg width="320" height="180">
+                  <rect width="100%" height="100%" fill="#fff"></rect><text x="50%" y="50%" dominant-baseline="middle"
+                    text-anchor="middle" fill="#333">Captura: cola de impresión (placeholder)</text>
+                </svg>
+              </button>
+              <button class="evidence-thumb" data-src="svg-log-2" aria-label="Evidencia 3">
+                <svg width="320" height="180">
+                  <rect width="100%" height="100%" fill="#f0f4ff"></rect><text x="50%" y="50%"
+                    dominant-baseline="middle" text-anchor="middle" fill="#0b3d91">Log: ping (placeholder)</text>
+                </svg>
+              </button>
+            </div>
+
+            <div class="log-sample">
+              <h5>Comandos y salidas (simulados)</h5>
+              <pre><code>PS C:\> ping 10.1.2.35
+Request timed out.
+
+PS C:\> arp -a
+No ARP entry for 10.1.2.35
+
+PS C:\> netstat -rn
+Gateway: 10.1.2.1</code></pre>
+            </div>
+          </section>
+
+          <section id="ts2-tiempo" class="tabpanel" role="tabpanel" hidden>
+            <h4>Tiempo de atención y estado final</h4>
+            <p>Tiempo desde apertura hasta escalamiento: 13 minutos. Estado actual: <strong>Escalada</strong>.</p>
+          </section>
+
+        </div>
+      </article>
+
+      <!-- Ticket 3 -->
+      <article class="ticket-card" data-ticket="TS-NET-0631" data-estado="Apertura" data-prioridad="Alta"
+        data-tipo="Redes">
+        <header class="ticket-header">
+          <div>
+            <h3>TS-NET-0631 — Red lenta o sin internet</h3>
+            <p class="meta">Andrés Morales · 12 nov 2025 · 08:57</p>
+          </div>
+          <div class="ticket-actions">
+            <button class="btn small" data-open="detail-TS-NET-0631">Abrir detalle</button>
+          </div>
+        </header>
+
+        <div id="detail-TS-NET-0631" class="ticket-detail" hidden>
+          <section class="ticket-preview" aria-label="Previsualización del ticket">
+            <table class="preview-table" role="table" aria-describedby="nota-TS-NET-0631">
+              <thead>
+                <tr>
+                  <th colspan="4">Ticket: <span class="ticket-code">TS-NET-0631</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Fecha:</strong> <span class="ticket-fecha">12 de noviembre de 2025</span></td>
+                  <td><strong>Hora:</strong> <span class="ticket-hora">08:57 a.m.</span></td>
+                  <td><strong>Estado:</strong> <span class="ticket-estado">Apertura</span></td>
+                  <td><strong>Nivel de prioridad:</strong> <span class="ticket-prioridad">Alta</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Nombre del cliente:</strong> <span class="ticket-nombre">Andrés Morales</span></td>
+                  <td colspan="2"><strong>Teléfono del cliente:</strong> <span class="ticket-telefono">311 904
+                      6721</span></td>
+                  <td><strong>Correo electrónico:</strong> <span
+                      class="ticket-correo">andres.morales@techsolutions.com</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Tipo de emisión:</strong> <span class="ticket-tipo">Redes</span></td>
+                  <td colspan="3">
+                    <strong>Fuente del ticket:</strong>
+                    <div class="ticket-fuente" data-ticket="TS-NET-0631" role="radiogroup"
+                      aria-label="Seleccionar canal de ingreso">
+                      <button class="view-btn" data-view="correo" data-ticket="TS-NET-0631" aria-pressed="true"
+                        role="radio">Correo</button>
+                      <button class="view-btn" data-view="chat" data-ticket="TS-NET-0631" aria-pressed="false"
+                        role="radio">Chat</button>
+                      <button class="view-btn" data-view="llamada" data-ticket="TS-NET-0631" aria-pressed="false"
+                        role="radio">Llamada</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="4" id="nota-TS-NET-0631"><strong>Notas:</strong>
+                    <div class="ticket-notas">
+                      Usuario reporta latencia elevada o pérdida de conectividad. Se recopila información de IP, gateway
+                      y DNS para diagnóstico. Se revisarán capas físicas y lógicas.
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="4"><strong>Especialista de Soporte en TI:</strong> Raven Ovalle, Matías Ureta, Juan Cruz
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <nav class="tabs" role="tablist" aria-label="Secciones del ticket">
+            <button role="tab" aria-controls="ts3-resumen" class="tab active">Resumen</button>
+            <button role="tab" aria-controls="ts3-canal" class="tab">Canal</button>
+            <button role="tab" aria-controls="ts3-registro" class="tab">Registro</button>
+            <button role="tab" aria-controls="ts3-diagnostico" class="tab">Diagnóstico</button>
+            <button role="tab" aria-controls="ts3-acciones" class="tab">Acciones</button>
+            <button role="tab" aria-controls="ts3-evidencias" class="tab">Evidencias</button>
+            <button role="tab" aria-controls="ts3-tiempo" class="tab">Tiempo / Estado</button>
+          </nav>
+
+          <section id="ts3-resumen" class="tabpanel" role="tabpanel">
+            <h4>Resumen</h4>
+            <p>Usuario reporta latencia elevada o pérdida de conectividad. Se recopila información de IP, gateway y DNS
+              para diagnóstico.</p>
+          </section>
+
+          <section id="ts3-canal" class="tabpanel" role="tabpanel" hidden>
+            <h4>Canal de ingreso</h4>
+            <p>Use la selección en "Fuente del ticket" para alternar la vista entre Correo, Chat y Llamada.</p>
+            <div class="channel-view" id="view-TS-NET-0631">
+              <div class="channel correo">
+                <h5>Correo (simulado)</h5>
+                <p>De: andres.morales@techsolutions.com</p>
+                <p>Asunto: Conexión lenta</p>
+                <p>Desde esta mañana la conexión está muy lenta y algunas aplicaciones no cargan.</p>
+              </div>
+              <div class="channel chat" hidden>
+                <div class="chat-msg"><strong>Andrés:</strong> Internet muy lento.</div>
+                <div class="chat-msg"><strong>Soporte:</strong> ¿Afecta a varios equipos?</div>
+              </div>
+              <div class="channel llamada" hidden>
+                <div class="call-line"><time>08:57</time> <strong>Soporte:</strong> ¿Desde cuándo presenta el problema?
+                </div>
+                <div class="call-line"><time>08:58</time> <strong>Andrés:</strong> Desde temprano, intermitente.</div>
+              </div>
+            </div>
+          </section>
+
+          <section id="ts3-registro" class="tabpanel" role="tabpanel" hidden>
+            <h4>Registro de atención</h4>
+            <ol>
+              <li>08:57 — Recepción del ticket.</li>
+              <li>09:00 — Recolección de IP y pruebas básicas: <code>ipconfig</code>, <code>ping</code>.</li>
+              <li>09:10 — Se detecta latencia a 8.8.8.8; se notifica a redes.</li>
+            </ol>
+          </section>
+
+          <section id="ts3-diagnostico" class="tabpanel" role="tabpanel" hidden>
+            <h4>Diagnóstico</h4>
+            <p>Se revisan capas OSI: pruebas de enlace físico, DHCP, DNS y latencia a destinos externos.</p>
+          </section>
+
+          <section id="ts3-evidencias" class="tabpanel" role="tabpanel" hidden>
+            <h4>Evidencias</h4>
+            <div class="gallery">
+              <button class="evidence-thumb" data-src="svg-photo-3" aria-label="Evidencia 1"><svg width="320"
+                  height="180">
+                  <rect width="100%" height="100%" fill="#eef2ff"></rect><text x="50%" y="50%"
+                    dominant-baseline="middle" text-anchor="middle" fill="#0b3d91">Foto: cableado (placeholder)</text>
+                </svg></button>
+              <button class="evidence-thumb" data-src="svg-screenshot-3" aria-label="Evidencia 2"><svg width="320"
+                  height="180">
+                  <rect width="100%" height="100%" fill="#fff"></rect><text x="50%" y="50%" dominant-baseline="middle"
+                    text-anchor="middle" fill="#333">Captura: traceroute (placeholder)</text>
+                </svg></button>
+              <button class="evidence-thumb" data-src="svg-log-3" aria-label="Evidencia 3"><svg width="320"
+                  height="180">
+                  <rect width="100%" height="100%" fill="#fff7f0"></rect><text x="50%" y="50%"
+                    dominant-baseline="middle" text-anchor="middle" fill="#ff7a00">Log: ping (placeholder)</text>
+                </svg></button>
+            </div>
+            <div class="log-sample">
+              <pre><code>PS C:\> ipconfig
+IPv4 Address. . . . . . . . . . . : 10.1.3.45
+PS C:\> ping 8.8.8.8
+Reply from 8.8.8.8: bytes=32 time=250ms TTL=117</code></pre>
+            </div>
+          </section>
+
+          <section id="ts3-tiempo" class="tabpanel" role="tabpanel" hidden>
+            <h4>Tiempo / Estado</h4>
+            <p>Estado: Apertura. Acciones: diagnóstico en curso.</p>
+          </section>
+
+        </div>
+      </article>
+
+      <!-- Ticket 4 -->
+      <article class="ticket-card" data-ticket="TS-SW-0789" data-estado="Apertura" data-prioridad="Alta"
+        data-tipo="Software">
+        <header class="ticket-header">
+          <div>
+            <h3>TS-SW-0789 — Pantallazo Azul (BSOD)</h3>
+            <p class="meta">Camila Ríos · 03 dic 2025 · 11:26</p>
+          </div>
+          <div class="ticket-actions">
+            <button class="btn small" data-open="detail-TS-SW-0789">Abrir detalle</button>
+          </div>
+        </header>
+
+        <div id="detail-TS-SW-0789" class="ticket-detail" hidden>
+          <section class="ticket-preview" aria-label="Previsualización del ticket">
+            <table class="preview-table" role="table" aria-describedby="nota-TS-SW-0789">
+              <thead>
+                <tr>
+                  <th colspan="4">Ticket: <span class="ticket-code">TS-SW-0789</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Fecha:</strong> <span class="ticket-fecha">03 de diciembre de 2025</span></td>
+                  <td><strong>Hora:</strong> <span class="ticket-hora">11:26 a.m.</span></td>
+                  <td><strong>Estado:</strong> <span class="ticket-estado">Apertura</span></td>
+                  <td><strong>Nivel de prioridad:</strong> <span class="ticket-prioridad">Alta</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Nombre del cliente:</strong> <span class="ticket-nombre">Camila Ríos</span></td>
+                  <td colspan="2"><strong>Teléfono del cliente:</strong> <span class="ticket-telefono">316 550
+                      9028</span></td>
+                  <td><strong>Correo electrónico:</strong> <span
+                      class="ticket-correo">camila.rios@techsolutions.com</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Tipo de emisión:</strong> <span class="ticket-tipo">Software</span></td>
+                  <td colspan="3">
+                    <strong>Fuente del ticket:</strong>
+                    <div class="ticket-fuente" data-ticket="TS-SW-0789" role="radiogroup"
+                      aria-label="Seleccionar canal de ingreso">
+                      <button class="view-btn" data-view="correo" data-ticket="TS-SW-0789" aria-pressed="true"
+                        role="radio">Correo</button>
+                      <button class="view-btn" data-view="chat" data-ticket="TS-SW-0789" aria-pressed="false"
+                        role="radio">Chat</button>
+                      <button class="view-btn" data-view="llamada" data-ticket="TS-SW-0789" aria-pressed="false"
+                        role="radio">Llamada</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="4" id="nota-TS-SW-0789"><strong>Notas:</strong>
+                    <div class="ticket-notas">
+                      Usuario reporta BSOD recurrente; reinicios inesperados. Posible driver o falla de memoria. Se
+                      programaron pruebas de disco y memoria.
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="4"><strong>Especialista de Soporte en TI:</strong> Raven Ovalle, Matías Ureta, Juan Cruz
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <nav class="tabs" role="tablist" aria-label="Secciones del ticket">
+            <button role="tab" aria-controls="ts4-resumen" class="tab active">Resumen</button>
+            <button role="tab" aria-controls="ts4-diagnostico" class="tab">Diagnóstico</button>
+            <button role="tab" aria-controls="ts4-acciones" class="tab">Acciones</button>
+            <button role="tab" aria-controls="ts4-evidencias" class="tab">Evidencias</button>
+            <button role="tab" aria-controls="ts4-tiempo" class="tab">Tiempo / Estado</button>
+          </nav>
+
+          <section id="ts4-resumen" class="tabpanel" role="tabpanel">
+            <h4>Resumen</h4>
+            <p>Usuario reporta BSOD recurrente. Se recopila historial de eventos y se ejecutan pruebas de memoria y
+              disco.</p>
+          </section>
+
+          <section id="ts4-diagnostico" class="tabpanel" role="tabpanel" hidden>
+            <h4>Diagnóstico</h4>
+            <p>Posibles causas: drivers incompatibles tras actualización, corrupción de archivos del sistema o falla de
+              memoria RAM. Se recomiendan pruebas: Windows Memory Diagnostic y chkdsk.</p>
+          </section>
+
+          <section id="ts4-evidencias" class="tabpanel" role="tabpanel" hidden>
+            <h4>Evidencias</h4>
+            <div class="gallery">
+              <button class="evidence-thumb" data-src="svg-photo-4" aria-label="Evidencia 1"><svg width="320"
+                  height="180">
+                  <rect width="100%" height="100%" fill="#fff"></rect><text x="50%" y="50%" dominant-baseline="middle"
+                    text-anchor="middle" fill="#333">Captura: BSOD (placeholder)</text>
+                </svg></button>
+              <button class="evidence-thumb" data-src="svg-screenshot-4" aria-label="Evidencia 2"><svg width="320"
+                  height="180">
+                  <rect width="100%" height="100%" fill="#f0f7ff"></rect><text x="50%" y="50%"
+                    dominant-baseline="middle" text-anchor="middle" fill="#0b3d91">Log: eventvwr (placeholder)</text>
+                </svg></button>
+              <button class="evidence-thumb" data-src="svg-log-4" aria-label="Evidencia 3"><svg width="320"
+                  height="180">
+                  <rect width="100%" height="100%" fill="#fff7f0"></rect><text x="50%" y="50%"
+                    dominant-baseline="middle" text-anchor="middle" fill="#ff7a00">Salida: memtest (placeholder)</text>
+                </svg></button>
+            </div>
+
+            <div class="log-sample">
+              <pre><code>C:\> chkdsk /f /r
+Se programó chkdsk para el próximo reinicio.
+
+C:\> mdsched.exe
+Windows Memory Diagnostic scheduled.</code></pre>
+            </div>
+          </section>
+
+          <section id="ts4-tiempo" class="tabpanel" role="tabpanel" hidden>
+            <h4>Tiempo / Estado</h4>
+            <p>Estado: Apertura. Acciones: pruebas programadas.</p>
+          </section>
+
+        </div>
+      </article>
+
+      <!-- Ticket 5 -->
+      <article class="ticket-card" data-ticket="TS-SW-0912" data-estado="Apertura" data-prioridad="Alta"
+        data-tipo="Software">
+        <header class="ticket-header">
+          <div>
+            <h3>TS-SW-0912 — Usuario molesto</h3>
+            <p class="meta">Ricardo Salazar · 10 dic 2025 · 16:08</p>
+          </div>
+          <div class="ticket-actions">
+            <button class="btn small" data-open="detail-TS-SW-0912">Abrir detalle</button>
+          </div>
+        </header>
+
+        <div id="detail-TS-SW-0912" class="ticket-detail" hidden>
+          <section class="ticket-preview" aria-label="Previsualización del ticket">
+            <table class="preview-table" role="table" aria-describedby="nota-TS-SW-0912">
+              <thead>
+                <tr>
+                  <th colspan="4">Ticket: <span class="ticket-code">TS-SW-0912</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Fecha:</strong> <span class="ticket-fecha">10 de diciembre de 2025</span></td>
+                  <td><strong>Hora:</strong> <span class="ticket-hora">04:08 p.m.</span></td>
+                  <td><strong>Estado:</strong> <span class="ticket-estado">Apertura</span></td>
+                  <td><strong>Nivel de prioridad:</strong> <span class="ticket-prioridad">Alta</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Nombre del cliente:</strong> <span class="ticket-nombre">Ricardo Salazar</span></td>
+                  <td colspan="2"><strong>Teléfono del cliente:</strong> <span class="ticket-telefono">312 778
+                      3406</span></td>
+                  <td><strong>Correo electrónico:</strong> <span
+                      class="ticket-correo">ricardo.salazar@techsolutions.com</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Tipo de emisión:</strong> <span class="ticket-tipo">Software</span></td>
+                  <td colspan="3">
+                    <strong>Fuente del ticket:</strong>
+                    <div class="ticket-fuente" data-ticket="TS-SW-0912" role="radiogroup"
+                      aria-label="Seleccionar canal de ingreso">
+                      <button class="view-btn" data-view="correo" data-ticket="TS-SW-0912" aria-pressed="true"
+                        role="radio">Correo</button>
+                      <button class="view-btn" data-view="chat" data-ticket="TS-SW-0912" aria-pressed="false"
+                        role="radio">Chat</button>
+                      <button class="view-btn" data-view="llamada" data-ticket="TS-SW-0912" aria-pressed="false"
+                        role="radio">Llamada</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="4" id="nota-TS-SW-0912"><strong>Notas:</strong>
+                    <div class="ticket-notas">
+                      Usuario expresa frustración por impacto en su trabajo. Se prioriza atención técnica y gestión de
+                      comunicación (empatía, escucha activa, parafraseo). Se documenta estado emocional y compromisos de
+                      seguimiento.
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="4"><strong>Especialista de Soporte en TI:</strong> Raven Ovalle, Matías Ureta, Juan Cruz
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <nav class="tabs" role="tablist" aria-label="Secciones del ticket">
+            <button role="tab" aria-controls="ts5-resumen" class="tab active">Resumen</button>
+            <button role="tab" aria-controls="ts5-comunicacion" class="tab">Comunicación</button>
+            <button role="tab" aria-controls="ts5-diagnostico" class="tab">Diagnóstico</button>
+            <button role="tab" aria-controls="ts5-acciones" class="tab">Acciones</button>
+            <button role="tab" aria-controls="ts5-evidencias" class="tab">Evidencias</button>
+            <button role="tab" aria-controls="ts5-tiempo" class="tab">Tiempo / Estado</button>
+          </nav>
+
+          <section id="ts5-resumen" class="tabpanel" role="tabpanel">
+            <h4>Resumen</h4>
+            <p>Usuario expresa frustración por impacto en su trabajo. Se prioriza atención técnica y gestión de
+              comunicación.</p>
+          </section>
+
+          <section id="ts5-comunicacion" class="tabpanel" role="tabpanel" hidden>
+            <h4>Gestión de la comunicación</h4>
+            <p>Se aplicó escucha activa, validación emocional y explicación clara del plan de acción. Se acordó
+              seguimiento por correo y chat.</p>
+          </section>
+
+          <section id="ts5-diagnostico" class="tabpanel" role="tabpanel" hidden>
+            <h4>Diagnóstico</h4>
+            <p>Se identificó que el problema de software afecta la integración con un servicio externo; se documentó y
+              se escaló a desarrollo si corresponde.</p>
+          </section>
+
+          <section id="ts5-evidencias" class="tabpanel" role="tabpanel" hidden>
+            <h4>Evidencias</h4>
+            <div class="gallery">
+              <button class="evidence-thumb" data-src="svg-photo-5" aria-label="Evidencia 1"><svg width="320"
+                  height="180">
+                  <rect width="100%" height="100%" fill="#fff"></rect><text x="50%" y="50%" dominant-baseline="middle"
+                    text-anchor="middle" fill="#333">Captura: error app (placeholder)</text>
+                </svg></button>
+              <button class="evidence-thumb" data-src="svg-screenshot-5" aria-label="Evidencia 2"><svg width="320"
+                  height="180">
+                  <rect width="100%" height="100%" fill="#f7f7f7"></rect><text x="50%" y="50%"
+                    dominant-baseline="middle" text-anchor="middle" fill="#333">Chat: transcripción (placeholder)</text>
+                </svg></button>
+              <button class="evidence-thumb" data-src="svg-log-5" aria-label="Evidencia 3"><svg width="320"
+                  height="180">
+                  <rect width="100%" height="100%" fill="#fff7e6"></rect><text x="50%" y="50%"
+                    dominant-baseline="middle" text-anchor="middle" fill="#ff7a00">Log: integración (placeholder)</text>
+                </svg></button>
+            </div>
+          </section>
+
+          <section id="ts5-tiempo" class="tabpanel" role="tabpanel" hidden>
+            <h4>Tiempo / Estado</h4>
+            <p>Estado: Apertura. Acciones: gestión comunicativa y diagnóstico técnico en paralelo.</p>
+          </section>
+
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <!-- Modal de evidencias / visor -->
+  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-content" role="document">
+      <button id="closeModal" class="modal-close" aria-label="Cerrar">×</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Proyecto Final — Centro de Soporte Técnico · TechSolutions S.A.S.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

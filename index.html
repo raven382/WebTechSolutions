@@ -345,10 +345,63 @@ No last wake source found.</code></pre>
                 <tr>
                   <td colspan="4" id="nota-TS-PRN-0524"><strong>Notas:</strong>
                     <div class="ticket-notas">
-                      La impresora de red HR-FLOOR2 (IP 10.1.2.35) no procesa trabajos de impresión. El área de
-                      Contabilidad requiere impresión para cierre financiero; impacto operativo alto. Se verificó
-                      conectividad y ping a 10.1.2.35 sin respuesta; posible impresora en otra subred o apagada. Se
-                      escaló a redes e impresoras.
+                      <ul>
+                        <li>Usuaria: María Fernanda Gómez, Área de Contabilidad.</li>
+                        <li>Se reporta imposibilidad de imprimir durante cierre financiero.</li>
+                        <li>Impresora afectada: HR-FLOOR2.</li>
+                        <li>Dirección IP configurada: 10.1.2.35.</li>
+                        <li>Los trabajos de impresión quedan retenidos o no responden.</li>
+                        <li>Incidente afecta proceso crítico del negocio.</li>
+                        <li>Se trata de una impresora de red.</li>
+                        <li>Posible problema de conectividad de red o configuración de IP.</li>
+                      </ul>
+
+                      <p><strong>Medidas adoptadas: (preguntas abiertas)</strong></p>
+                      <ul>
+                        <li>Se brinda contención inicial debido a la urgencia del cierre financiero.</li>
+                        <li>Se realizan preguntas abiertas a la usuaria:
+                          <ul>
+                            <li>¿Desde cuándo se presenta el problema de impresión?</li>
+                            <li>¿Todos los equipos del área presentan el mismo inconveniente?</li>
+                            <li>¿La impresora muestra algún mensaje de error en el panel?</li>
+                            <li>¿Se realizaron cambios recientes en la red o en la impresora?</li>
+                          </ul>
+                        </li>
+                        <li>Se solicita realizar pruebas básicas:
+                          <ul>
+                            <li>Verificar que la impresora esté encendida y conectada a la red.</li>
+                            <li>Revisar estado de papel y posibles atascos.</li>
+                          </ul>
+                        </li>
+                        <li>Se valida conectividad desde un equipo del área:
+                          <ul>
+                            <li>Prueba de comunicación a la IP 10.1.2.35 sin respuesta.</li>
+                          </ul>
+                        </li>
+                        <li>Se compara con otras impresoras de red del piso:
+                          <ul>
+                            <li>Otras impresoras responden correctamente.</li>
+                          </ul>
+                        </li>
+                        <li>Se evidencia que la impresora no responde en la red configurada, lo que indica que:
+                          <ul>
+                            <li>La impresora podría estar en otra red.</li>
+                            <li>La IP configurada no corresponde al dispositivo actual.</li>
+                            <li>El equipo fue movido o reconfigurado previamente.</li>
+                          </ul>
+                        </li>
+                      </ul>
+
+                      <p><strong>Resolución: (preguntas cerradas)</strong></p>
+                      <ul>
+                        <li>Se confirma que la impresora no responde a la IP configurada.</li>
+                        <li>Se identifica IP incorrecta del dispositivo.</li>
+                        <li>Se reconfigura la impresora con la IP correcta.</li>
+                        <li>Se prueba impresión desde equipo del área.</li>
+                        <li>Servicio de impresión restablecido.</li>
+                        <li>Ticket cerrado.</li>
+                      </ul>
+
                     </div>
                   </td>
                 </tr>

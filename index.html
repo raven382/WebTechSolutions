@@ -59,7 +59,7 @@
 
     <section id="ticketsList" class="tickets" aria-live="polite">
       <!-- Ticket 1 -->
-      <article class="ticket-card" data-ticket="TS-HW-0238" data-estado="Apertura" data-prioridad="Alta"
+      <article class="ticket-card" data-ticket="TS-HW-0238" data-estado="Cierre" data-prioridad="Alta"
         data-tipo="Hardware">
         <header class="ticket-header">
           <div>
@@ -83,7 +83,7 @@
                 <tr>
                   <td><strong>Fecha:</strong> <span class="ticket-fecha">18 de septiembre de 2025</span></td>
                   <td><strong>Hora:</strong> <span class="ticket-hora">09:15 a.m.</span></td>
-                  <td><strong>Estado:</strong> <span class="ticket-estado">Apertura</span></td>
+                  <td><strong>Estado:</strong> <span class="ticket-estado">Cerrado</span></td>
                   <td><strong>Nivel de prioridad:</strong> <span class="ticket-prioridad">Alta</span></td>
                 </tr>
                 <tr>
@@ -163,9 +163,8 @@
             <button role="tab" aria-controls="ts1-registro" class="tab">Registro</button>
             <button role="tab" aria-controls="ts1-diagnostico" class="tab">Diagnóstico</button>
             <button role="tab" aria-controls="ts1-acciones" class="tab">Acciones</button>
-            <button role="tab" aria-controls="ts1-escalamiento" class="tab">Escalamiento</button>
             <button role="tab" aria-controls="ts1-evidencias" class="tab">Evidencias</button>
-            <button role="tab" aria-controls="ts1-tiempo" class="tab">Tiempo / Estado</button>
+            <button role="tab" aria-controls="ts1-tiempo" class="tab">Tiempo</button>
           </nav>
 
           <section id="ts1-resumen" class="tabpanel" role="tabpanel">
@@ -235,11 +234,7 @@
             </ul>
           </section>
 
-          <section id="ts1-escalamiento" class="tabpanel" role="tabpanel" hidden>
-            <h4>Escalamiento</h4>
-            <p>Se escaló a Soporte de Hardware para revisión física y posible reemplazo de PSU. El ticket queda en
-              estado <strong>Escalada</strong> hasta la intervención física.</p>
-          </section>
+
 
           <section id="ts1-evidencias" class="tabpanel" role="tabpanel" hidden>
             <h4>Evidencias</h4>
@@ -270,7 +265,7 @@
             </div>
 
             <div class="log-sample">
-              <h5>Fragmentos de comandos (simulados)</h5>
+              <h5>Fragmentos de comandos</h5>
               <pre><code>PS C:\> ping 10.1.2.35
 Request timed out.
 
@@ -285,15 +280,14 @@ No last wake source found.</code></pre>
 
           <section id="ts1-tiempo" class="tabpanel" role="tabpanel" hidden>
             <h4>Tiempo de atención y estado final</h4>
-            <p>Tiempo desde apertura hasta escalamiento: 10 minutos. Estado actual: <strong>Escalada</strong>.
-              Responsable: Soporte de Hardware.</p>
+            <p>Tiempo desde apertura hasta cierre: 10 minutos.</p>
           </section>
 
         </div>
       </article>
 
-      <!-- Ticket 2 -->
-      <article class="ticket-card" data-ticket="TS-PRN-0524" data-estado="Apertura" data-prioridad="Alta"
+      <!-------------------- Ticket 2 -------------------------->
+      <article class="ticket-card" data-ticket="TS-PRN-0524" data-estado="Cierre" data-prioridad="Alta"
         data-tipo="Periféricos">
         <header class="ticket-header">
           <div>
@@ -317,7 +311,7 @@ No last wake source found.</code></pre>
                 <tr>
                   <td><strong>Fecha:</strong> <span class="ticket-fecha">05 de noviembre de 2025</span></td>
                   <td><strong>Hora:</strong> <span class="ticket-hora">10:42 a.m.</span></td>
-                  <td><strong>Estado:</strong> <span class="ticket-estado">Apertura</span></td>
+                  <td><strong>Estado:</strong> <span class="ticket-estado">Cerrado</span></td>
                   <td><strong>Nivel de prioridad:</strong> <span class="ticket-prioridad">Alta</span></td>
                 </tr>
                 <tr>
@@ -347,13 +341,14 @@ No last wake source found.</code></pre>
                     <div class="ticket-notas">
                       <ul>
                         <li>Usuaria: María Fernanda Gómez, Área de Contabilidad.</li>
-                        <li>Se reporta imposibilidad de imprimir durante cierre financiero.</li>
+                        <li>Se reporta <strong>imposibilidad de imprimir</strong> durante cierre financiero.</li>
                         <li>Impresora afectada: HR-FLOOR2.</li>
                         <li>Dirección IP configurada: 10.1.2.35.</li>
                         <li>Los trabajos de impresión quedan retenidos o no responden.</li>
                         <li>Incidente afecta proceso crítico del negocio.</li>
-                        <li>Se trata de una impresora de red.</li>
-                        <li>Posible problema de conectividad de red o configuración de IP.</li>
+                        <li>Se trata de una <strong>impresora de red</strong>.</li>
+                        <li>Posible problema de <strong> conectividad de red</strong> o <strong>configuración de
+                            IP</strong>.</li>
                       </ul>
 
                       <p><strong>Medidas adoptadas: (preguntas abiertas)</strong></p>
@@ -419,9 +414,8 @@ No last wake source found.</code></pre>
             <button role="tab" aria-controls="ts2-registro" class="tab">Registro</button>
             <button role="tab" aria-controls="ts2-diagnostico" class="tab">Diagnóstico</button>
             <button role="tab" aria-controls="ts2-acciones" class="tab">Acciones</button>
-            <button role="tab" aria-controls="ts2-escalamiento" class="tab">Escalamiento</button>
             <button role="tab" aria-controls="ts2-evidencias" class="tab">Evidencias</button>
-            <button role="tab" aria-controls="ts2-tiempo" class="tab">Tiempo / Estado</button>
+            <button role="tab" aria-controls="ts2-tiempo" class="tab">Tiempo</button>
           </nav>
 
           <section id="ts2-resumen" class="tabpanel" role="tabpanel">
@@ -435,7 +429,7 @@ No last wake source found.</code></pre>
             <p>Use la selección en "Fuente del ticket" para alternar la vista entre Correo, Chat y Llamada.</p>
             <div class="channel-view" id="view-TS-PRN-0524">
               <div class="channel correo">
-                <h5>Correo (simulado)</h5>
+                <h5>Correo</h5>
                 <p><strong>De:</strong> maria.gomez@techsolutions.com</p>
                 <p><strong>Asunto:</strong> Impresora HR-FLOOR2 no responde</p>
                 <p>Estimado soporte, durante el cierre financiero la impresora de red no procesa trabajos. IP 10.1.2.35
@@ -443,14 +437,14 @@ No last wake source found.</code></pre>
               </div>
 
               <div class="channel chat" hidden>
-                <h5>Chat (simulado)</h5>
+                <h5>Chat</h5>
                 <div class="chat-msg"><strong>María:</strong> La impresora HR-FLOOR2 no imprime.</div>
                 <div class="chat-msg"><strong>Soporte:</strong> ¿Aparece en la red? ¿Puede hacer ping a 10.1.2.35?</div>
                 <div class="chat-msg"><strong>María:</strong> Ping falla.</div>
               </div>
 
               <div class="channel llamada" hidden>
-                <h5>Llamada (simulada)</h5>
+                <h5>Llamada</h5>
                 <div class="call-line"><time>10:42</time> <strong>Soporte:</strong> ¿La impresora muestra errores en el
                   panel?</div>
                 <div class="call-line"><time>10:43</time> <strong>María:</strong> No hay mensajes, simplemente no
@@ -486,13 +480,6 @@ No last wake source found.</code></pre>
               <li>Notificación a redes para verificación de VLAN y puerto.</li>
             </ul>
           </section>
-
-          <section id="ts2-escalamiento" class="tabpanel" role="tabpanel" hidden>
-            <h4>Escalamiento</h4>
-            <p>Se escaló a equipo de Redes para verificación de conectividad y a Soporte de Impresoras para revisión
-              física. Estado: <strong>Escalada</strong>.</p>
-          </section>
-
           <section id="ts2-evidencias" class="tabpanel" role="tabpanel" hidden>
             <h4>Evidencias</h4>
             <div class="gallery" aria-label="Galería de evidencias TS-PRN-0524">
@@ -531,14 +518,14 @@ Gateway: 10.1.2.1</code></pre>
 
           <section id="ts2-tiempo" class="tabpanel" role="tabpanel" hidden>
             <h4>Tiempo de atención y estado final</h4>
-            <p>Tiempo desde apertura hasta escalamiento: 13 minutos. Estado actual: <strong>Escalada</strong>.</p>
+            <p>Tiempo desde apertura hasta cierre: 13 minutos.</p>
           </section>
 
         </div>
       </article>
 
       <!-- Ticket 3 -->
-      <article class="ticket-card" data-ticket="TS-NET-0631" data-estado="Apertura" data-prioridad="Alta"
+      <article class="ticket-card" data-ticket="TS-NET-0631" data-estado="Cierre" data-prioridad="Alta"
         data-tipo="Redes">
         <header class="ticket-header">
           <div>
@@ -562,7 +549,7 @@ Gateway: 10.1.2.1</code></pre>
                 <tr>
                   <td><strong>Fecha:</strong> <span class="ticket-fecha">12 de noviembre de 2025</span></td>
                   <td><strong>Hora:</strong> <span class="ticket-hora">08:57 a.m.</span></td>
-                  <td><strong>Estado:</strong> <span class="ticket-estado">Apertura</span></td>
+                  <td><strong>Estado:</strong> <span class="ticket-estado">Cerrado</span></td>
                   <td><strong>Nivel de prioridad:</strong> <span class="ticket-prioridad">Alta</span></td>
                 </tr>
                 <tr>
@@ -590,8 +577,59 @@ Gateway: 10.1.2.1</code></pre>
                 <tr>
                   <td colspan="4" id="nota-TS-NET-0631"><strong>Notas:</strong>
                     <div class="ticket-notas">
-                      Usuario reporta latencia elevada o pérdida de conectividad. Se recopila información de IP, gateway
-                      y DNS para diagnóstico. Se revisarán capas físicas y lógicas.
+                      <p><strong>Descripción del problema:</strong></p>
+                      <ul>
+                        <li>Usuario: Andrés Morales.</li>
+                        <li>Reporta conexión lenta o sin acceso a internet.</li>
+                        <li>Problema intermitente, sin patrón claro.</li>
+                        <li>Afecta acceso a sistemas corporativos y servicios en la nube.</li>
+                        <li>Impacto alto en productividad.</li>
+                        <li>Incidente de red.</li>
+                        <li>Usuario con conocimientos técnicos (“le sabe / podría ser admin”).</li>
+                      </ul>
+
+                      <p><strong>Medidas adoptadas: (preguntas abiertas)</strong></p>
+                      <ul>
+                        <li>Se realiza contención inicial por impacto en operación.</li>
+                        <li>Se formulan preguntas abiertas al usuario:
+                          <ul>
+                            <li>¿Desde cuándo presenta el problema de conectividad?</li>
+                            <li>¿La lentitud es constante o intermitente?</li>
+                            <li>¿El problema ocurre en un solo equipo o en varios?</li>
+                            <li>¿Está conectado por cable o por Wi-Fi?</li>
+                            <li>¿Se realizaron cambios recientes (movimiento de puesto, cable, equipo)?</li>
+                          </ul>
+                        </li>
+                        <li>Se solicitan verificaciones básicas:
+                          <ul>
+                            <li>Revisión del estado del cable de red / señal Wi-Fi.</li>
+                            <li>Confirmación de conexión física al punto de red.</li>
+                          </ul>
+                        </li>
+                        <li>Se realizan pruebas simples de conectividad:
+                          <ul>
+                            <li>Verificación de dirección IP asignada.</li>
+                            <li>Prueba de conexión a la puerta de enlace.</li>
+                            <li>Prueba de acceso a recursos internos y externos.</li>
+                          </ul>
+                        </li>
+                        <li>Se observa comportamiento irregular de la red:
+                          <ul>
+                            <li>Latencia elevada / respuesta inconsistente.</li>
+                          </ul>
+                        </li>
+                        <li>Se descarta inicialmente un problema exclusivo del equipo del usuario.</li>
+                      </ul>
+
+                      <p><strong>Resolución: (preguntas cerradas)</strong></p>
+                      <ul>
+                        <li>Se confirma lentitud general.</li>
+                        <li>Se identifica conflicto / saturación / mala conexión física.</li>
+                        <li>Se corrige conexión / se reinicia equipo de red / se normaliza enlace.</li>
+                        <li>Se valida navegación y acceso a sistemas.</li>
+                        <li>Servicio restablecido.</li>
+                        <li>Ticket cerrado.</li>
+                      </ul>
                     </div>
                   </td>
                 </tr>
@@ -610,7 +648,7 @@ Gateway: 10.1.2.1</code></pre>
             <button role="tab" aria-controls="ts3-diagnostico" class="tab">Diagnóstico</button>
             <button role="tab" aria-controls="ts3-acciones" class="tab">Acciones</button>
             <button role="tab" aria-controls="ts3-evidencias" class="tab">Evidencias</button>
-            <button role="tab" aria-controls="ts3-tiempo" class="tab">Tiempo / Estado</button>
+            <button role="tab" aria-controls="ts3-tiempo" class="tab">Tiempo</button>
           </nav>
 
           <section id="ts3-resumen" class="tabpanel" role="tabpanel">
@@ -691,7 +729,7 @@ Reply from 8.8.8.8: bytes=32 time=250ms TTL=117</code></pre>
       </article>
 
       <!-- Ticket 4 -->
-      <article class="ticket-card" data-ticket="TS-SW-0789" data-estado="Apertura" data-prioridad="Alta"
+      <article class="ticket-card" data-ticket="TS-SW-0789" data-estado="Cierre" data-prioridad="Alta"
         data-tipo="Software">
         <header class="ticket-header">
           <div>
@@ -715,7 +753,7 @@ Reply from 8.8.8.8: bytes=32 time=250ms TTL=117</code></pre>
                 <tr>
                   <td><strong>Fecha:</strong> <span class="ticket-fecha">03 de diciembre de 2025</span></td>
                   <td><strong>Hora:</strong> <span class="ticket-hora">11:26 a.m.</span></td>
-                  <td><strong>Estado:</strong> <span class="ticket-estado">Apertura</span></td>
+                  <td><strong>Estado:</strong> <span class="ticket-estado">Cerrado</span></td>
                   <td><strong>Nivel de prioridad:</strong> <span class="ticket-prioridad">Alta</span></td>
                 </tr>
                 <tr>
@@ -743,8 +781,59 @@ Reply from 8.8.8.8: bytes=32 time=250ms TTL=117</code></pre>
                 <tr>
                   <td colspan="4" id="nota-TS-SW-0789"><strong>Notas:</strong>
                     <div class="ticket-notas">
-                      Usuario reporta BSOD recurrente; reinicios inesperados. Posible driver o falla de memoria. Se
-                      programaron pruebas de disco y memoria.
+                      <p><strong>Descripción del problema:</strong></p>
+                      <ul>
+                        <li>Usuaria: Camila Ríos.</li>
+                        <li>Reporta pantallazos azules recurrentes (BSOD).</li>
+                        <li>El equipo se reinicia de forma inesperada.</li>
+                        <li>Interrumpe el trabajo y puede generar pérdida de información.</li>
+                        <li>Problema ocurre durante uso normal del equipo.</li>
+                        <li>Incidente de software, con posible relación a drivers o sistema.</li>
+                        <li>Se mencionan posibles cambios recientes (actualizaciones / instalaciones).</li>
+                        <li>Impacto alto por recurrencia del error.</li>
+                      </ul>
+
+                      <p><strong>Medidas adoptadas:</strong></p>
+                      <ul>
+                        <li>Se realiza contención inicial y se explica a la usuaria el proceso de revisión.</li>
+                        <li>Se formulan preguntas abiertas:
+                          <ul>
+                            <li>¿Con qué frecuencia aparece el pantallazo azul?</li>
+                            <li>¿Desde cuándo comenzó el problema?</li>
+                            <li>¿Se instaló algún programa, driver o actualización recientemente?</li>
+                            <li>¿El error ocurre al usar alguna aplicación en particular?</li>
+                            <li>¿Se ha conectado algún dispositivo nuevo al equipo?</li>
+                          </ul>
+                        </li>
+                        <li>Se solicita información visual del error:
+                          <ul>
+                            <li>Código o mensaje mostrado en el BSOD (si es visible).</li>
+                          </ul>
+                        </li>
+                        <li>Se procede a revisión básica del sistema:
+                          <ul>
+                            <li>Revisión de Administrador de dispositivos para detectar controladores con error.</li>
+                            <li>Verificación del estado general del sistema.</li>
+                          </ul>
+                        </li>
+                        <li>Se considera necesario aplicar herramientas de diagnóstico del sistema para descartar:
+                          <ul>
+                            <li>Errores de disco.</li>
+                            <li>Problemas de memoria.</li>
+                          </ul>
+                        </li>
+                        <li>Se deja constancia de que es necesario revisar la grabación / registro del error para mayor
+                          claridad del diagnóstico.</li>
+                      </ul>
+
+                      <p><strong>Resolución:</strong></p>
+                      <ul>
+                        <li>Se identifica driver defectuoso desde Administrador de dispositivos.</li>
+                        <li>Se desinstala / actualiza controlador problemático.</li>
+                        <li>Se ejecutan herramientas de diagnóstico.</li>
+                        <li>Equipo se estabiliza y deja de presentar BSOD.</li>
+                        <li>Ticket cerrado.</li>
+                      </ul>
                     </div>
                   </td>
                 </tr>
@@ -761,7 +850,7 @@ Reply from 8.8.8.8: bytes=32 time=250ms TTL=117</code></pre>
             <button role="tab" aria-controls="ts4-diagnostico" class="tab">Diagnóstico</button>
             <button role="tab" aria-controls="ts4-acciones" class="tab">Acciones</button>
             <button role="tab" aria-controls="ts4-evidencias" class="tab">Evidencias</button>
-            <button role="tab" aria-controls="ts4-tiempo" class="tab">Tiempo / Estado</button>
+            <button role="tab" aria-controls="ts4-tiempo" class="tab">Tiempo</button>
           </nav>
 
           <section id="ts4-resumen" class="tabpanel" role="tabpanel">
@@ -814,7 +903,7 @@ Windows Memory Diagnostic scheduled.</code></pre>
       </article>
 
       <!-- Ticket 5 -->
-      <article class="ticket-card" data-ticket="TS-SW-0912" data-estado="Apertura" data-prioridad="Alta"
+      <article class="ticket-card" data-ticket="TS-SW-0912" data-estado="Cierre" data-prioridad="Alta"
         data-tipo="Software">
         <header class="ticket-header">
           <div>
@@ -838,7 +927,7 @@ Windows Memory Diagnostic scheduled.</code></pre>
                 <tr>
                   <td><strong>Fecha:</strong> <span class="ticket-fecha">10 de diciembre de 2025</span></td>
                   <td><strong>Hora:</strong> <span class="ticket-hora">04:08 p.m.</span></td>
-                  <td><strong>Estado:</strong> <span class="ticket-estado">Apertura</span></td>
+                  <td><strong>Estado:</strong> <span class="ticket-estado">Cerrado</span></td>
                   <td><strong>Nivel de prioridad:</strong> <span class="ticket-prioridad">Alta</span></td>
                 </tr>
                 <tr>
@@ -866,9 +955,51 @@ Windows Memory Diagnostic scheduled.</code></pre>
                 <tr>
                   <td colspan="4" id="nota-TS-SW-0912"><strong>Notas:</strong>
                     <div class="ticket-notas">
-                      Usuario expresa frustración por impacto en su trabajo. Se prioriza atención técnica y gestión de
-                      comunicación (empatía, escucha activa, parafraseo). Se documenta estado emocional y compromisos de
-                      seguimiento.
+                      <p><strong>Descripción del problema:</strong></p>
+                      <ul>
+                        <li>Usuario: Ricardo Salazar.</li>
+                        <li>Reporta problema de software que afecta su trabajo.</li>
+                        <li>Usuario se comunica con alto nivel de molestia y frustración.</li>
+                        <li>Manifiesta sensación de falta de solución o demora en la atención.</li>
+                        <li>Impacto alto en sus labores y presión laboral.</li>
+                        <li>El foco inicial del caso es la gestión de la comunicación, además del aspecto técnico.</li>
+                        <li>Se identifica la necesidad de aplicar escucha activa y manejo de conflicto.</li>
+                      </ul>
+
+                      <p><strong>Medidas adoptadas:</strong></p>
+                      <ul>
+                        <li>Se realiza contención inicial, manteniendo un tono calmado y profesional.</li>
+                        <li>Se permite que el usuario exprese su molestia sin interrupciones.</li>
+                        <li>Se aplican preguntas abiertas para comprender el problema y el contexto:
+                          <ul>
+                            <li>¿Podrías indicarme qué problema específico estás presentando con el software?</li>
+                            <li>¿Desde cuándo ocurre esta situación?</li>
+                            <li>¿Cómo está afectando tu trabajo actualmente?</li>
+                            <li>¿Has recibido soporte previo por este mismo problema?</li>
+                          </ul>
+                        </li>
+                        <li>Se valida emocionalmente al usuario:
+                          <ul>
+                            <li>Se reconoce la molestia y el impacto en su trabajo.</li>
+                          </ul>
+                        </li>
+                        <li>Se parafrasea el problema para confirmar comprensión:
+                          <ul>
+                            <li>Se repite lo entendido sobre el fallo y su impacto.</li>
+                          </ul>
+                        </li>
+                        <li>Se explica de forma breve el plan de acción que se seguirá para atender el caso y los pasos
+                          iniciales de diagnóstico.</li>
+                      </ul>
+
+                      <p><strong>Resolución:</strong></p>
+                      <ul>
+                        <li>Se gestiona la comunicación.</li>
+                        <li>Se baja el nivel de conflicto.</li>
+                        <li>Se resuelve el problema reportado.</li>
+                        <li>Usuario queda informado y conforme.</li>
+                        <li>Ticket cerrado.</li>
+                      </ul>
                     </div>
                   </td>
                 </tr>
@@ -886,7 +1017,7 @@ Windows Memory Diagnostic scheduled.</code></pre>
             <button role="tab" aria-controls="ts5-diagnostico" class="tab">Diagnóstico</button>
             <button role="tab" aria-controls="ts5-acciones" class="tab">Acciones</button>
             <button role="tab" aria-controls="ts5-evidencias" class="tab">Evidencias</button>
-            <button role="tab" aria-controls="ts5-tiempo" class="tab">Tiempo / Estado</button>
+            <button role="tab" aria-controls="ts5-tiempo" class="tab">Tiempo</button>
           </nav>
 
           <section id="ts5-resumen" class="tabpanel" role="tabpanel">
@@ -929,8 +1060,8 @@ Windows Memory Diagnostic scheduled.</code></pre>
           </section>
 
           <section id="ts5-tiempo" class="tabpanel" role="tabpanel" hidden>
-            <h4>Tiempo / Estado</h4>
-            <p>Estado: Apertura. Acciones: gestión comunicativa y diagnóstico técnico en paralelo.</p>
+            <h4>Tiempo</h4>
+            <p>Si.</p>
           </section>
 
         </div>

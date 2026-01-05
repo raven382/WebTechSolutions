@@ -1,155 +1,479 @@
-// app.js - interactividad completa (abrir detalle, tabs, filtros exactos, selector de canal, galería)
-document.addEventListener('DOMContentLoaded', function () {
-
-  /* Abrir / cerrar detalle */
-  const openButtons = document.querySelectorAll('[data-open]');
-  openButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const id = btn.getAttribute('data-open');
-      const el = document.getElementById(id);
-      if (!el) return;
-      const hidden = el.hasAttribute('hidden');
-      if (hidden) {
-        el.removeAttribute('hidden');
-        btn.textContent = 'Cerrar detalle';
-      } else {
-        el.setAttribute('hidden', '');
-        btn.textContent = 'Abrir detalle';
-      }
-    });
-  });
-
-  /* Tabs internas por ticket */
-  document.querySelectorAll('.ticket-detail').forEach(detail => {
-    const tabs = detail.querySelectorAll('.tab');
-    const panels = detail.querySelectorAll('.tabpanel');
-    tabs.forEach((tab, i) => {
-      tab.addEventListener('click', () => {
-        tabs.forEach(t => t.classList.remove('active'));
-        panels.forEach(p => p.hidden = true);
-        tab.classList.add('active');
-        const id = tab.getAttribute('aria-controls');
-        const panel = detail.querySelector('#' + id);
-        if (panel) panel.hidden = false;
-      });
-    });
-  });
-
-  /* Selector de canal dentro de la celda "Fuente del ticket" */
-  document.querySelectorAll('.ticket-fuente').forEach(group => {
-    const ticket = group.getAttribute('data-ticket');
-    const buttons = Array.from(group.querySelectorAll('.view-btn'));
-
-    // Inicial: asegurar que solo uno tenga aria-pressed true
-    let anyPressed = buttons.some(b => b.getAttribute('aria-pressed') === 'true');
-    if (!anyPressed && buttons[0]) {
-      buttons[0].setAttribute('aria-pressed', 'true');
-      buttons[0].classList.add('active');
-    } else {
-      buttons.forEach(b => {
-        if (b.getAttribute('aria-pressed') === 'true') b.classList.add('active');
-      });
-    }
-
-    buttons.forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        // radio behavior: desactivar todos en el mismo grupo
-        buttons.forEach(b => {
-          b.setAttribute('aria-pressed', 'false');
-          b.classList.remove('active');
-        });
-        // activar el seleccionado
-        btn.setAttribute('aria-pressed', 'true');
-        btn.classList.add('active');
-
-        // Actualizar la vista de transcripción correspondiente
-        const view = btn.getAttribute('data-view');
-        const container = document.getElementById('view-' + ticket);
-        if (!container) return;
-        container.querySelectorAll('.channel').forEach(c => c.hidden = true);
-        const target = container.querySelector('.channel.' + view);
-        if (target) target.hidden = false;
-
-        // Opcional: abrir la pestaña "Canal" automáticamente si existe
-        const detail = document.getElementById('detail-' + ticket);
-        if (detail) {
-          const tabs = detail.querySelectorAll('.tab');
-          const panels = detail.querySelectorAll('.tabpanel');
-          tabs.forEach(t => t.classList.remove('active'));
-          panels.forEach(p => p.hidden = true);
-          const canalTab = Array.from(tabs).find(t => t.getAttribute('aria-controls') && t.getAttribute('aria-controls').toLowerCase().includes('canal'));
-          if (canalTab) {
-            canalTab.classList.add('active');
-            const id = canalTab.getAttribute('aria-controls');
-            const panel = detail.querySelector('#' + id);
-            if (panel) panel.hidden = false;
-          }
-        }
-      });
-
-      // keyboard support: activate with Enter/Space
-      btn.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          btn.click();
-        }
-      });
-    });
-  });
-
-  /* Filtros y búsqueda (exacta) */
+// app.js - renderizado dinamico y eventos delegados para tickets
+document.addEventListener('DOMContentLoaded', () => {
+  const ticketsList = document.getElementById('ticketsList');
   const filterEstado = document.getElementById('filterEstado');
   const filterPrioridad = document.getElementById('filterPrioridad');
   const filterTipo = document.getElementById('filterTipo');
   const searchInput = document.getElementById('searchInput');
-  const tickets = Array.from(document.querySelectorAll('.ticket-card'));
-
-  function applyFilters() {
-    const estado = filterEstado.value;
-    const prioridad = filterPrioridad.value;
-    const tipo = filterTipo.value;
-    const query = searchInput.value.trim();
-    tickets.forEach(t => {
-      let visible = true;
-      if (estado && t.dataset.estado !== estado) visible = false;
-      if (prioridad && t.dataset.prioridad !== prioridad) visible = false;
-      if (tipo && t.dataset.tipo !== tipo) visible = false;
-      if (query) {
-        const ticketCode = t.dataset.ticket || '';
-        const name = t.querySelector('.meta') ? t.querySelector('.meta').textContent : '';
-        if (!(query === ticketCode || name.includes(query))) visible = false;
-      }
-      t.style.display = visible ? '' : 'none';
-    });
-  }
-
-  [filterEstado, filterPrioridad, filterTipo].forEach(el => el.addEventListener('change', applyFilters));
-  searchInput.addEventListener('input', applyFilters);
-
-  /* Galería / modal de evidencias */
   const modal = document.getElementById('modal');
   const modalBody = document.getElementById('modalBody');
   const closeModal = document.getElementById('closeModal');
-  document.querySelectorAll('.evidence-thumb').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const src = btn.getAttribute('data-src');
+  let ticketCards = [];
+
+  const escapeHtml = (value) => {
+    if (value === null || value === undefined) return '';
+    return String(value)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/\"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  };
+
+  const renderSegments = (segments) => {
+    if (!segments || !segments.length) return '';
+    return segments.map((seg) => {
+      if (typeof seg === 'string') return escapeHtml(seg);
+      if (seg.br) return '<br>';
+      const text = escapeHtml(seg.text || '');
+      if (seg.strong) return `<strong>${text}</strong>`;
+      if (seg.code) return `<code>${text}</code>`;
+      if (seg.em) return `<em>${text}</em>`;
+      return text;
+    }).join('');
+  };
+
+  const renderListItem = (item) => {
+    if (typeof item === 'string') return `<li>${escapeHtml(item)}</li>`;
+    if (!item) return '<li></li>';
+    const content = item.segments ? renderSegments(item.segments) : escapeHtml(item.text || '');
+    const subitems = item.subitems ? renderList(item.subitems, false) : '';
+    return `<li>${content}${subitems}</li>`;
+  };
+
+  const renderList = (items, ordered) => {
+    if (!items || !items.length) return '';
+    const tag = ordered ? 'ol' : 'ul';
+    const body = items.map((item) => renderListItem(item)).join('');
+    return `<${tag}>${body}</${tag}>`;
+  };
+
+  const renderBlocks = (blocks) => {
+    if (!blocks || !blocks.length) return '';
+    return blocks.map((block) => {
+      if (block.type === 'title') {
+        return `<p><strong>${escapeHtml(block.text || '')}</strong></p>`;
+      }
+      if (block.type === 'paragraph') {
+        return `<p>${block.segments ? renderSegments(block.segments) : escapeHtml(block.text || '')}</p>`;
+      }
+      if (block.type === 'list') {
+        return renderList(block.items || [], false);
+      }
+      if (block.type === 'ordered') {
+        return renderList(block.items || [], true);
+      }
+      return '';
+    }).join('');
+  };
+
+  const renderEmailBody = (paragraphs) => {
+    if (!paragraphs || !paragraphs.length) return '';
+    return paragraphs.map((p) => {
+      if (typeof p === 'string') return `<p>${escapeHtml(p)}</p>`;
+      if (p && p.segments) return `<p>${renderSegments(p.segments)}</p>`;
+      return `<p>${escapeHtml(p && p.text ? p.text : '')}</p>`;
+    }).join('');
+  };
+
+  const renderEmail = (email) => {
+    return `
+      <div class="ticket-email">
+        <div class="email-header">
+          <p><strong>De:</strong> ${escapeHtml(email.de)}</p>
+          <p><strong>Para:</strong> ${escapeHtml(email.para)}</p>
+          <p><strong>Asunto:</strong> ${escapeHtml(email.asunto)}</p>
+        </div>
+        <div class="email-body">
+          ${renderEmailBody(email.cuerpo)}
+        </div>
+      </div>
+    `;
+  };
+
+  const renderFuente = (ticket) => {
+    const canales = ticket.canales;
+    if (!canales) return '';
+    const defaultView = canales.default || 'correo';
+    const buttons = (canales.botones || []).map((btn) => {
+      const pressed = btn.view === defaultView ? 'true' : 'false';
+      return `<button class="view-btn" data-action="switch-channel" data-view="${escapeHtml(btn.view)}" data-ticket="${escapeHtml(ticket.id)}" aria-pressed="${pressed}" role="radio">${escapeHtml(btn.label)}</button>`;
+    }).join('');
+    const content = `<strong>Fuente del ticket:</strong><div class="ticket-fuente" data-ticket="${escapeHtml(ticket.id)}" role="radiogroup" aria-label="Seleccionar canal de ingreso">${buttons}</div>`;
+    if (canales.fuentePlacement === 'before' || canales.fuentePlacement === 'inside') {
+      return `<tr><td colspan="${canales.fuenteColspan || 3}">${content}</td></tr>`;
+    }
+    return content;
+  };
+
+  const renderCorreo = (ticket) => {
+    const correo = ticket.canales.correo;
+    if (!correo) return '';
+    const hilos = correo.hilos || [];
+    const defaultView = ticket.canales.default || 'correo';
+    return `
+      <div class="channel correo"${defaultView === 'correo' ? '' : ' hidden'}>
+        ${correo.titulo ? `<h5>${escapeHtml(correo.titulo)}</h5>` : ''}
+        ${hilos.map((email, index) => `${renderEmail(email)}${index < hilos.length - 1 ? '<hr>' : ''}`).join('')}
+      </div>
+    `;
+  };
+
+  const renderChat = (ticket) => {
+    const chat = ticket.canales.chat;
+    if (!chat) return '';
+    const log = chat.log || [];
+    const defaultView = ticket.canales.default || 'correo';
+    return `
+      <div class="channel chat"${defaultView === 'chat' ? '' : ' hidden'}>
+        ${chat.titulo ? `<h5>${escapeHtml(chat.titulo)}</h5>` : ''}
+        ${log.map((entry) => `<div class="chat-msg"><strong>${escapeHtml(entry.who)}:</strong> ${escapeHtml(entry.text)}</div>`).join('')}
+      </div>
+    `;
+  };
+
+  const buildDatetime = (ticket, entry) => {
+    if (entry.datetime) return entry.datetime;
+    if (!ticket.fechaISO || !entry.t) return '';
+    const date = ticket.fechaISO.split('T')[0];
+    return `${date}T${entry.t}`;
+  };
+
+  const renderCallEntry = (ticket, entry) => {
+    const datetime = escapeHtml(buildDatetime(ticket, entry));
+    const timeLabel = escapeHtml(entry.t || '');
+    if (entry.em) {
+      return `<p class="call-line"><time datetime="${datetime}">${timeLabel}</time><em>${escapeHtml(entry.text || '')}</em></p>`;
+    }
+    const lines = entry.lineas || (entry.text ? [entry.text] : []);
+    const body = lines.map((line) => escapeHtml(line)).join('<br>');
+    return `<p class="call-line"><time datetime="${datetime}">${timeLabel}</time><strong>${escapeHtml(entry.who || '')}:</strong><br>${body}</p>`;
+  };
+
+  const renderLlamada = (ticket) => {
+    const llamada = ticket.canales.llamada;
+    if (!llamada) return '';
+    const log = llamada.log || [];
+    const defaultView = ticket.canales.default || 'correo';
+    return `
+      <div class="channel llamada"${defaultView === 'llamada' ? '' : ' hidden'}>
+        ${llamada.titulo ? `<h5>${escapeHtml(llamada.titulo)}</h5>` : ''}
+        <div class="call-log">
+          ${log.map((entry) => renderCallEntry(ticket, entry)).join('')}
+        </div>
+      </div>
+    `;
+  };
+
+  const renderChannels = (ticket) => {
+    const canales = ticket.canales;
+    if (!canales) return '';
+    const fuente = renderFuente(ticket);
+    const channelView = `
+      <div class="channel-view" id="view-${escapeHtml(ticket.id)}">
+        ${canales.fuentePlacement === 'inside' ? fuente : ''}
+        ${renderCorreo(ticket)}
+        ${renderChat(ticket)}
+        ${renderLlamada(ticket)}
+      </div>
+    `;
+    return `
+      <h4>Canal de ingreso</h4>
+      <p>${escapeHtml(canales.ayuda || '')}</p>
+      ${canales.fuentePlacement === 'before' ? fuente : ''}
+      ${channelView}
+    `;
+  };
+
+  const renderEvidencias = (ticket) => {
+    const evidencias = ticket.evidencias || [];
+    const galleryAttrs = ticket.evidenciasAriaLabel ? ` aria-label="${escapeHtml(ticket.evidenciasAriaLabel)}"` : '';
+    const items = evidencias.map((item, index) => {
+      const thumb = item.thumb || {};
+      const viewBox = thumb.viewBox ? ` viewBox="${escapeHtml(thumb.viewBox)}"` : '';
+      const role = thumb.role ? ` role="${escapeHtml(thumb.role)}"` : '';
+      const ariaHidden = thumb.ariaHidden ? ' aria-hidden="true"' : '';
+      const fontSize = thumb.fontSize ? ` font-size="${thumb.fontSize}"` : '';
+      return `
+        <button class="evidence-thumb" data-action="open-evidence" data-src="${escapeHtml(item.src)}" aria-label="${escapeHtml(item.titulo || `Evidencia ${index + 1}`)}">
+          <svg width="${thumb.width || 320}" height="${thumb.height || 180}"${viewBox}${role}${ariaHidden}>
+            <rect width="100%" height="100%" fill="${escapeHtml(thumb.fill || '#fff')}"></rect>
+            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="${escapeHtml(thumb.textColor || '#333')}"${fontSize}>${escapeHtml(thumb.text || '')}</text>
+          </svg>
+        </button>
+      `;
+    }).join('');
+    const logSample = ticket.logSample
+      ? `<div class="log-sample">${ticket.logSample.titulo ? `<h5>${escapeHtml(ticket.logSample.titulo)}</h5>` : ''}<pre><code>${escapeHtml(ticket.logSample.contenido || '')}</code></pre></div>`
+      : '';
+    return `<h4>Evidencias</h4><div class="gallery"${galleryAttrs}>${items}</div>${logSample}`;
+  };
+
+  const renderPanel = (ticket, tab) => {
+    const panelId = `panel-${ticket.id}-${tab.key}`;
+    const isResumen = tab.key === 'resumen';
+    let content = '';
+    let empty = false;
+
+    switch (tab.key) {
+      case 'resumen':
+        content = `<h4>Resumen</h4><p>${escapeHtml(ticket.resumen || '')}</p>`;
+        break;
+      case 'canal':
+        content = renderChannels(ticket);
+        break;
+      case 'registro':
+        if (ticket.registro && ticket.registro.length) {
+          content = `<h4>Registro de atención</h4>${renderList(ticket.registro, true)}`;
+        } else {
+          empty = true;
+        }
+        break;
+      case 'comunicacion':
+        if (ticket.comunicacion) {
+          content = `<h4>Gestión de la comunicación</h4><p>${escapeHtml(ticket.comunicacion)}</p>`;
+        } else {
+          empty = true;
+        }
+        break;
+      case 'diagnostico':
+        if (ticket.diagnostico) {
+          content = `<h4>Diagnóstico</h4><p>${escapeHtml(ticket.diagnostico)}</p>`;
+        } else {
+          empty = true;
+        }
+        break;
+      case 'acciones':
+        if (ticket.acciones && ticket.acciones.length) {
+          content = `<h4>Acciones realizadas</h4>${renderList(ticket.acciones, false)}`;
+        } else {
+          empty = true;
+        }
+        break;
+      case 'evidencias':
+        content = renderEvidencias(ticket);
+        break;
+      case 'tiempo':
+        if (ticket.tiempoTitulo || ticket.tiempoTexto) {
+          content = `<h4>${escapeHtml(ticket.tiempoTitulo || 'Tiempo')}</h4><p>${escapeHtml(ticket.tiempoTexto || '')}</p>`;
+        } else {
+          empty = true;
+        }
+        break;
+      default:
+        empty = true;
+        break;
+    }
+
+    const hiddenAttr = isResumen ? '' : ' hidden';
+    const emptyAttr = empty ? ' data-empty="true"' : '';
+    return `<section id="${escapeHtml(panelId)}" class="tabpanel" role="tabpanel"${hiddenAttr}${emptyAttr}>${content}</section>`;
+  };
+
+  const renderTicket = (ticket) => {
+    const tabList = ticket.tabs || [];
+    const tabs = tabList.map((tab) => {
+      const activeClass = tab.key === 'resumen' ? ' active' : '';
+      return `<button role="tab" aria-controls="panel-${escapeHtml(ticket.id)}-${escapeHtml(tab.key)}" class="tab${activeClass}" data-action="switch-tab" data-ticket="${escapeHtml(ticket.id)}" data-tab="${escapeHtml(tab.key)}">${escapeHtml(tab.label)}</button>`;
+    }).join('');
+    const panels = tabList.map((tab) => renderPanel(ticket, tab)).join('');
+    const dataTipo = ticket.tipoFiltro || ticket.tipo;
+    return `
+      <article class="ticket-card" id="ticket-${escapeHtml(ticket.id)}" data-ticket="${escapeHtml(ticket.id)}" data-estado="${escapeHtml(ticket.estado)}" data-prioridad="${escapeHtml(ticket.prioridad)}" data-tipo="${escapeHtml(dataTipo)}" data-title="${escapeHtml(ticket.titulo)}" data-cliente="${escapeHtml(ticket.cliente && ticket.cliente.nombre ? ticket.cliente.nombre : '')}">
+        <header class="ticket-header">
+          <div>
+            <h3>${escapeHtml(ticket.id)} — ${escapeHtml(ticket.titulo)}</h3>
+            <p class="meta">${escapeHtml(ticket.meta || '')}</p>
+          </div>
+          <div class="ticket-actions">
+            <button class="btn small" data-action="toggle-detail" data-ticket="${escapeHtml(ticket.id)}">Abrir detalle</button>
+          </div>
+        </header>
+
+        <div id="detail-${escapeHtml(ticket.id)}" class="ticket-detail" hidden>
+          <section class="ticket-preview" aria-label="Previsualización del ticket">
+            <table class="preview-table" role="table" aria-describedby="nota-${escapeHtml(ticket.id)}">
+              <thead>
+                <tr>
+                  <th colspan="4">Ticket: <span class="ticket-code">${escapeHtml(ticket.id)}</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Fecha:</strong> <span class="ticket-fecha">${escapeHtml(ticket.fechaDisplay || '')}</span></td>
+                  <td><strong>Hora:</strong> <span class="ticket-hora">${escapeHtml(ticket.horaDisplay || '')}</span></td>
+                  <td><strong>Estado:</strong> <span class="ticket-estado">${escapeHtml(ticket.estadoDisplay || '')}</span></td>
+                  <td><strong>Nivel de prioridad:</strong> <span class="ticket-prioridad">${escapeHtml(ticket.prioridad || '')}</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Nombre del cliente:</strong> <span class="ticket-nombre">${escapeHtml(ticket.cliente && ticket.cliente.nombre ? ticket.cliente.nombre : '')}</span></td>
+                  <td colspan="2"><strong>Teléfono del cliente:</strong> <span class="ticket-telefono">${escapeHtml(ticket.cliente && ticket.cliente.telefono ? ticket.cliente.telefono : '')}</span></td>
+                  <td><strong>Correo electrónico:</strong> <span class="ticket-correo">${escapeHtml(ticket.cliente && ticket.cliente.correo ? ticket.cliente.correo : '')}</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Tipo de emisión:</strong> <span class="ticket-tipo">${escapeHtml(ticket.tipo || '')}</span></td>
+                </tr>
+                <tr>
+                  <td colspan="4" id="nota-${escapeHtml(ticket.id)}"><strong>Notas:</strong>
+                    <div class="ticket-notas">
+                      ${renderBlocks(ticket.notasDetalle || [])}
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="4"><strong>Especialista de Soporte en TI:</strong> ${escapeHtml(ticket.especialistas || '')}</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <nav class="tabs" role="tablist" aria-label="Secciones del ticket">
+            ${tabs}
+          </nav>
+
+          ${panels}
+        </div>
+      </article>
+    `;
+  };
+
+  const renderTickets = (data) => {
+    ticketsList.innerHTML = data.map((ticket) => renderTicket(ticket)).join('');
+    ticketCards = Array.from(ticketsList.querySelectorAll('.ticket-card'));
+    applyFilters();
+  };
+
+  const applyFilters = () => {
+    const estado = filterEstado ? filterEstado.value : '';
+    const prioridad = filterPrioridad ? filterPrioridad.value : '';
+    const tipo = filterTipo ? filterTipo.value : '';
+    const query = searchInput ? searchInput.value.trim() : '';
+    ticketCards.forEach((card) => {
+      let visible = true;
+      if (estado && card.dataset.estado !== estado) visible = false;
+      if (prioridad && card.dataset.prioridad !== prioridad) visible = false;
+      if (tipo && card.dataset.tipo !== tipo) visible = false;
+      if (query) {
+        const ticketCode = card.dataset.ticket || '';
+        const title = card.dataset.title || '';
+        const cliente = card.dataset.cliente || '';
+        if (!(query === ticketCode || title.includes(query) || cliente.includes(query))) visible = false;
+      }
+      card.style.display = visible ? '' : 'none';
+    });
+  };
+
+  const activateTab = (detail, ticketId, tabKey, tabButton) => {
+    const tabs = detail.querySelectorAll('.tab');
+    const panels = detail.querySelectorAll('.tabpanel');
+    tabs.forEach((tab) => tab.classList.remove('active'));
+    panels.forEach((panel) => { panel.hidden = true; });
+    if (tabButton) tabButton.classList.add('active');
+    const panel = detail.querySelector(`#panel-${CSS.escape(ticketId)}-${CSS.escape(tabKey)}`);
+    if (panel && panel.dataset.empty !== 'true') {
+      panel.hidden = false;
+    }
+  };
+
+  ticketsList.addEventListener('click', (event) => {
+    const actionEl = event.target.closest('[data-action]');
+    if (!actionEl || !ticketsList.contains(actionEl)) return;
+    const action = actionEl.dataset.action;
+    const ticketId = actionEl.dataset.ticket;
+
+    if (action === 'toggle-detail') {
+      const detail = document.getElementById(`detail-${ticketId}`);
+      if (!detail) return;
+      const hidden = detail.hasAttribute('hidden');
+      if (hidden) {
+        detail.removeAttribute('hidden');
+        actionEl.textContent = 'Cerrar detalle';
+      } else {
+        detail.setAttribute('hidden', '');
+        actionEl.textContent = 'Abrir detalle';
+      }
+      return;
+    }
+
+    if (action === 'switch-tab') {
+      const detail = document.getElementById(`detail-${ticketId}`);
+      if (!detail) return;
+      activateTab(detail, ticketId, actionEl.dataset.tab, actionEl);
+      return;
+    }
+
+    if (action === 'switch-channel') {
+      const view = actionEl.dataset.view;
+      const buttons = ticketsList.querySelectorAll(`.ticket-fuente[data-ticket="${CSS.escape(ticketId)}"] .view-btn`);
+      buttons.forEach((btn) => {
+        btn.setAttribute('aria-pressed', 'false');
+        btn.classList.remove('active');
+      });
+      actionEl.setAttribute('aria-pressed', 'true');
+      actionEl.classList.add('active');
+
+      const container = document.getElementById(`view-${ticketId}`);
+      if (!container) return;
+      container.querySelectorAll('.channel').forEach((channel) => { channel.hidden = true; });
+      const target = container.querySelector(`.channel.${CSS.escape(view)}`);
+      if (target) target.hidden = false;
+
+      const detail = document.getElementById(`detail-${ticketId}`);
+      if (detail) {
+        const canalTab = detail.querySelector('.tab[data-tab="canal"]');
+        if (canalTab) {
+          activateTab(detail, ticketId, 'canal', canalTab);
+        }
+      }
+      return;
+    }
+
+    if (action === 'open-evidence') {
+      const src = actionEl.dataset.src || '';
       let content = '';
-      if (src.includes('photo')) content = '<svg width="800" height="450"><rect width="100%" height="100%" fill="#e6eefc"></rect><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#0b3d91" font-size="24">Foto (placeholder)</text></svg>';
-      else if (src.includes('screenshot')) content = '<svg width="800" height="450"><rect width="100%" height="100%" fill="#fff"></rect><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#333" font-size="20">Captura (placeholder)</text></svg>';
-      else content = '<svg width="800" height="450"><rect width="100%" height="100%" fill="#fff7e6"></rect><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#ff7a00" font-size="20">Log (placeholder)</text></svg>';
+      if (src.includes('photo')) {
+        content = '<svg width="800" height="450"><rect width="100%" height="100%" fill="#e6eefc"></rect><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#0b3d91" font-size="24">Foto (placeholder)</text></svg>';
+      } else if (src.includes('screenshot')) {
+        content = '<svg width="800" height="450"><rect width="100%" height="100%" fill="#fff"></rect><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#333" font-size="20">Captura (placeholder)</text></svg>';
+      } else {
+        content = '<svg width="800" height="450"><rect width="100%" height="100%" fill="#fff7e6"></rect><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#ff7a00" font-size="20">Log (placeholder)</text></svg>';
+      }
       modalBody.innerHTML = content;
       modal.setAttribute('aria-hidden', 'false');
-    });
-  });
-
-  closeModal.addEventListener('click', () => modal.setAttribute('aria-hidden', 'true'));
-  modal.addEventListener('click', (e) => { if (e.target === modal) modal.setAttribute('aria-hidden', 'true'); });
-
-  /* Cerrar modal con Escape */
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      if (modal.getAttribute('aria-hidden') === 'false') modal.setAttribute('aria-hidden', 'true');
     }
   });
 
+  ticketsList.addEventListener('keydown', (event) => {
+    const actionEl = event.target.closest('[data-action="switch-channel"]');
+    if (!actionEl) return;
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      actionEl.click();
+    }
+  });
+
+  if (filterEstado) filterEstado.addEventListener('change', applyFilters);
+  if (filterPrioridad) filterPrioridad.addEventListener('change', applyFilters);
+  if (filterTipo) filterTipo.addEventListener('change', applyFilters);
+  if (searchInput) searchInput.addEventListener('input', applyFilters);
+
+  closeModal.addEventListener('click', () => modal.setAttribute('aria-hidden', 'true'));
+  modal.addEventListener('click', (event) => {
+    if (event.target === modal) modal.setAttribute('aria-hidden', 'true');
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') {
+      modal.setAttribute('aria-hidden', 'true');
+    }
+  });
+
+  fetch('./data/tickets.json')
+    .then((response) => response.json())
+    .then((data) => {
+      if (!Array.isArray(data)) throw new Error('data.json debe contener un arreglo');
+      renderTickets(data);
+    })
+    .catch((error) => {
+      console.error('Error al cargar data.json:', error);
+    });
 });

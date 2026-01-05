@@ -1,7 +1,7 @@
 :root {
-  --bg: #f4f6f8;
+  --bg: #ebeff3;
   --card: #ffffff;
-  --accent: #0b3d91;
+  --accent: #6c82a7;
   --accent-2: #ff7a00;
   --muted: #6b7280;
   --font-sans: "Inter", "Roboto", system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial;
@@ -46,7 +46,7 @@ body {
 
 .subtitle {
   opacity: 0.9;
-  margin-top: 6px
+  margin-top: 8px
 }
 
 .site-header .header-content {

@@ -1,0 +1,1657 @@
+[
+  {
+    "id": "TS-HW-0238",
+    "titulo": "El equipo no enciende",
+    "estado": "Cierre",
+    "prioridad": "Alta",
+    "tipo": "Hardware",
+    "fechaISO": "2025-09-18T09:15:00",
+    "meta": "Juan Pérez · Piso 2, Oficina 204 · 18 sep 2025 · 09:15",
+    "fechaDisplay": "18 de septiembre de 2025",
+    "horaDisplay": "09:15 a.m.",
+    "estadoDisplay": "Cerrado",
+    "cliente": {
+      "nombre": "Juan Pérez",
+      "cargo": "Director de Desarrollo de Software",
+      "piso": "Piso 2",
+      "oficina": "Oficina 204",
+      "telefono": "300 456 7890",
+      "correo": "juan.perez@techsolutions.com"
+    },
+    "especialistas": "Raven Ovalle, Matías Ureta, Juan Cruz",
+    "notas": [
+      "Usuario: Juan Pérez, Director de Desarrollo de Software.",
+      "Usuario reporta que el PC no enciende en absoluto.",
+      "No hay luces, ruidos ni señales de energía.",
+      "Equipo de escritorio corporativo ubicado en Piso 2, Oficina 204.",
+      "Bloqueo total del puesto de trabajo.",
+      "Impacto alto por rol crítico y reunión importante.",
+      "Usuario con conocimientos técnicos."
+    ],
+    "medidas": [
+      "Se realiza contención inicial por urgencia del caso.",
+      "Se consulta al usuario: ¿El equipo funcionaba normalmente antes del incidente?",
+      "Se consulta al usuario: ¿Está conectado directamente a la corriente o a una regleta?",
+      "Se consulta al usuario: ¿Hubo algún corte de energía reciente?",
+      "Se indica verificación básica: Revisión del cable de poder.",
+      "Se indica verificación básica: Comprobación del interruptor trasero de la fuente.",
+      "Se indica verificación básica: Prueba en otra toma eléctrica cercana.",
+      "Se observa que el equipo no presenta ningún indicio de encendido tras las verificaciones."
+    ],
+    "resolucion": {
+      "pasos": [
+        "Se determina probable falla de hardware (fuente de poder).",
+        "Se decide escalar el caso a soporte técnico especializado para revisión física del equipo.",
+        "Se informa al usuario del escalamiento y de los próximos pasos.",
+        "Ticket queda documentado a la espera de resolución final."
+      ],
+      "confirmacion": [
+        "¿El sistema inició normalmente? ¿Puedes entrar a tu sesión?",
+        "¿Puedes acceder a tus herramientas de trabajo y al correo sin problema?",
+        "Usuario confirma que el equipo está operativo."
+      ]
+    },
+    "notasDetalle": [
+      {
+        "type": "list",
+        "items": [
+          "Usuario: Juan Pérez, Director de Desarrollo de Software.",
+          "Usuario reporta que el PC no enciende en absoluto.",
+          "No hay luces, ruidos ni señales de energía.",
+          "Equipo de escritorio corporativo ubicado en Piso 2, Oficina 204.",
+          "Bloqueo total del puesto de trabajo.",
+          "Impacto alto por rol crítico y reunión importante.",
+          "Usuario con conocimientos técnicos."
+        ]
+      },
+      {
+        "type": "paragraph",
+        "segments": [
+          { "strong": true, "text": "Medidas adoptadas:" }
+        ]
+      },
+      {
+        "type": "list",
+        "items": [
+          "Se realiza contención inicial por urgencia del caso.",
+          {
+            "segments": [
+              { "text": "Se consulta al usuario:" }
+            ],
+            "subitems": [
+              "¿El equipo funcionaba normalmente antes del incidente?",
+              "¿Está conectado directamente a la corriente o a una regleta?",
+              "¿Hubo algún corte de energía reciente?"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "segments": [
+          { "strong": true, "text": "Se indica verificación básica:" }
+        ]
+      },
+      {
+        "type": "list",
+        "items": [
+          "Revisión del cable de poder.",
+          "Comprobación del interruptor trasero de la fuente.",
+          "Prueba en otra toma eléctrica cercana."
+        ]
+      },
+      {
+        "type": "paragraph",
+        "text": "Se observa que el equipo no presenta ningún indicio de encendido tras las verificaciones."
+      },
+      {
+        "type": "paragraph",
+        "segments": [
+          { "strong": true, "text": "Resolución:" },
+          { "text": " Se determina probable falla de hardware (fuente de poder). Se decide escalar el caso a soporte técnico especializado para revisión física del equipo. Se informa al usuario del escalamiento y de los próximos pasos. Ticket queda documentado a la espera de resolución final." }
+        ]
+      }
+    ],
+    "resumen": "El usuario reporta que su computador de escritorio no enciende en absoluto. No hay luces, ventiladores ni señales de POST. El puesto de trabajo está bloqueado y el usuario tiene una reunión importante.",
+    "registro": [
+      "09:15 — Recepción del ticket. Se registra prioridad Alta.",
+      "09:17 — Verificación remota de conexión eléctrica y regleta con el usuario.",
+      "09:20 — Prueba en otra toma; sin respuesta. Se documenta posible falla de PSU.",
+      "09:25 — Escalamiento a soporte especializado para revisión física."
+    ],
+    "diagnostico": "Tras las verificaciones básicas se descarta problema de toma eléctrica y regleta. El equipo no muestra signos de POST; la causa más probable es falla de la fuente de poder (PSU) o un corto en la placa madre.",
+    "acciones": [
+      "Verificación remota de conexión eléctrica y regleta.",
+      "Prueba en otra toma eléctrica.",
+      "Revisión visual de cables y conector de alimentación.",
+      "Documentación de hallazgos y escalamiento a soporte de hardware."
+    ],
+    "tiempoTitulo": "Tiempo de atención y estado final",
+    "tiempoTexto": "Tiempo desde apertura hasta cierre: 10 minutos.",
+    "evidenciasAriaLabel": "Galería de evidencias TS-HW-0238",
+    "evidencias": [
+      {
+        "titulo": "Evidencia 1",
+        "tipo": "foto",
+        "src": "svg-photo-1",
+        "thumb": {
+          "width": 320,
+          "height": 180,
+          "viewBox": "0 0 320 180",
+          "role": "img",
+          "ariaHidden": true,
+          "fill": "#e6eefc",
+          "textColor": "#0b3d91",
+          "fontSize": 16,
+          "text": "Foto: equipo (placeholder)"
+        }
+      },
+      {
+        "titulo": "Evidencia 2",
+        "tipo": "captura",
+        "src": "svg-screenshot-1",
+        "thumb": {
+          "width": 320,
+          "height": 180,
+          "viewBox": "0 0 320 180",
+          "role": "img",
+          "ariaHidden": true,
+          "fill": "#f7f7f7",
+          "textColor": "#333",
+          "fontSize": 14,
+          "text": "Captura: sin señal (placeholder)"
+        }
+      },
+      {
+        "titulo": "Evidencia 3",
+        "tipo": "log",
+        "src": "svg-log-1",
+        "thumb": {
+          "width": 320,
+          "height": 180,
+          "viewBox": "0 0 320 180",
+          "role": "img",
+          "ariaHidden": true,
+          "fill": "#fff7e6",
+          "textColor": "#ff7a00",
+          "fontSize": 14,
+          "text": "Log: salida (placeholder)"
+        }
+      }
+    ],
+    "logSample": {
+      "titulo": "Fragmentos de comandos",
+      "contenido": "PS C:\\> ping 10.1.2.35\nRequest timed out.\n\nPS C:\\> ipconfig /all\nEthernet adapter Ethernet:\n   Media State . . . . . . . . . . . : Media disconnected\n\nPS C:\\> powercfg /lastwake\nNo last wake source found."
+    },
+    "canales": {
+      "ayuda": "Use la selección en \"Fuente del ticket\" para alternar la vista entre Correo, Chat y Llamada.",
+      "fuentePlacement": "before",
+      "fuenteColspan": 3,
+      "default": "correo",
+      "botones": [
+        { "view": "correo", "label": "Correo" },
+        { "view": "chat", "label": "Chat" },
+        { "view": "llamada", "label": "Llamada" }
+      ],
+      "correo": {
+        "titulo": "Correo (Respuesta)",
+        "hilos": [
+          {
+            "de": "juan.perez@techsolutions.com",
+            "para": "itsupport@techsolutions.com",
+            "asunto": "Equipo no enciende",
+            "cuerpo": [
+              "Estimado equipo de Soporte TI,",
+              "Junto con saludar, les escribo para reportar un problema con mi computador de escritorio. El equipo no enciende en absoluto; no presenta luces ni sonidos al intentar prenderlo.",
+              "Esta situación me impide acceder a mis herramientas de trabajo y tengo una reunión importante programada, por lo que agradecería su apoyo para revisar el problema a la brevedad.",
+              {
+                "segments": [
+                  { "text": "Saludos cordiales," },
+                  { "br": true },
+                  { "strong": true, "text": "Juan Pérez" },
+                  { "br": true },
+                  { "strong": true, "text": "Director de Desarrollo de Software" }
+                ]
+              }
+            ]
+          },
+          {
+            "de": "itsupport@techsolutions.com",
+            "para": "juan.perez@techsolutions.com",
+            "asunto": "Cierre de incidente TS-HW-0238 | Equipo no enciende",
+            "cuerpo": [
+              {
+                "segments": [
+                  { "text": "Estimado Sr. Juan Pérez," },
+                  { "br": true },
+                  { "text": "Director de Desarrollo de Software," }
+                ]
+              },
+              {
+                "segments": [
+                  { "text": "Junto con saludar, ofrecemos disculpas por los inconvenientes ocasionados por el incidente " },
+                  { "strong": true, "text": "TS-HW-0238" },
+                  { "text": ", relacionado con la imposibilidad de encender su equipo de escritorio corporativo, ubicado en Piso 2, Oficina 204. Agradecemos que se haya comunicado oportunamente con el área de Soporte TI, lo que permitió una atención prioritaria considerando el impacto operativo y su rol crítico." }
+                ]
+              },
+              "Tras el reporte, se realizó un diagnóstico inmediato bajo un enfoque de descarte, verificando la alimentación eléctrica, probando el equipo en una fuente alternativa y confirmando la ausencia de señales de encendido. Como resultado, se identificó una falla en la fuente de poder (PSU), la cual fue reemplazada, restableciendo el funcionamiento normal del equipo.",
+              "La operatividad fue validada directamente con usted, confirmando la continuidad de sus actividades. Como medida preventiva, se recomienda reportar oportunamente cualquier comportamiento anómalo del hardware.",
+              "Con lo anterior, el incidente queda resuelto y cerrado, sin requerir escalamiento adicional.",
+              "Quedamos atentos ante cualquier requerimiento adicional.",
+              {
+                "segments": [
+                  { "text": "Saludos cordiales," },
+                  { "br": true },
+                  { "strong": true, "text": "Equipo de Soporte TI" },
+                  { "br": true },
+                  { "strong": true, "text": "TechSolutions S.A.S." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "chat": {
+        "titulo": "Chat (simulado)",
+        "log": [
+          { "who": "Soporte TI", "text": "Buenos días, señor Juan Pérez. Gracias por contactarse con el Equipo de Soporte TI de TechSolutions S.A.S. Tenemos registrado el ticket TS-HW-0238, asociado a que su equipo de escritorio ubicado en Piso 2, Oficina 204 no presenta señales de encendido. Lamentamos los inconvenientes ocasionados." },
+          { "who": "Juan Pérez", "text": "Buenos días. Así es, el equipo no enciende en absoluto, no hay luces ni ruidos." },
+          { "who": "Soporte TI", "text": "Gracias por la confirmación. Para descartar una falla externa, ¿el equipo fue probado en otra toma eléctrica distinta a la habitual?" },
+          { "who": "Juan Pérez", "text": "Sí, ya fue probado en otra toma y el comportamiento es el mismo." },
+          { "who": "Soporte TI", "text": "Entendido. Con esta validación descartamos un problema de suministro eléctrico externo. Procederemos con la revisión física básica del equipo." },
+          { "who": "Soporte TI", "text": "Tras las verificaciones realizadas, se identificó una falla en la fuente de poder (PSU). Procederemos al reemplazo del componente para restablecer el servicio." },
+          { "who": "Juan Pérez", "text": "De acuerdo." },
+          { "who": "Soporte TI", "text": "El reemplazo fue realizado exitosamente. El equipo encendió correctamente. ¿Puede confirmar que el funcionamiento es normal?" },
+          { "who": "Juan Pérez", "text": "Sí, confirmo que el equipo está operativo." },
+          { "who": "Soporte TI", "text": "Perfecto, agradecemos su confirmación. Antes de cerrar el ticket, ¿hay algo más en lo que podamos ayudarle?" },
+          { "who": "Juan Pérez", "text": "No, por ahora todo está bien. Gracias." },
+          { "who": "Soporte TI", "text": "Excelente. Con esto, el ticket TS-HW-0238 queda resuelto y cerrado. Muchas gracias por contactarse con TechSolutions S.A.S. Que tenga un excelente día." },
+          { "who": "Juan Pérez", "text": "Gracias por el apoyo. Buen día." }
+        ]
+      },
+      "llamada": {
+        "titulo": "Llamada (simulada)",
+        "log": [
+          { "t": "09:15", "who": "Soporte", "lineas": ["Buenos días, Soporte TI de TechSolutions, habla Juan Cruz. ¿Con quién hablo?"] },
+          { "t": "09:15", "who": "Usuario", "lineas": ["Juan Pérez. Mira, tengo un problema grave: mi computador no enciende y tengo una reunión importante en minutos."] },
+          { "t": "09:16", "who": "Soporte", "lineas": ["Entiendo, Juan, gracias por avisar.", "Quedémonos tranquilos un segundo y lo revisamos paso a paso.", "Para ubicarte bien, ¿estás en el piso 2, oficina 204?"] },
+          { "t": "09:16", "who": "Usuario", "lineas": ["Sí, acá mismo."] },
+          { "t": "09:17", "who": "Soporte", "lineas": ["Perfecto. Cuéntame exactamente qué pasa cuando presionas el botón de encendido."] },
+          { "t": "09:17", "who": "Usuario", "lineas": ["Nada. No prende luces, no suena, no hace absolutamente nada."] },
+          { "t": "09:18", "who": "Soporte", "lineas": ["De acuerdo, eso es importante.", "¿Ayer el equipo funcionó con normalidad cuando lo apagaste?"] },
+          { "t": "09:18", "who": "Usuario", "lineas": ["Sí, cero problemas."] },
+          { "t": "09:19", "who": "Soporte", "lineas": ["Bien.", "¿Está conectado directo a la toma eléctrica o a una regleta?"] },
+          { "t": "09:19", "who": "Usuario", "lineas": ["A una regleta."] },
+          { "t": "09:20", "who": "Soporte", "lineas": ["Perfecto. ¿Podrías probar conectarlo directo a la toma, solo para descartar eso?"] },
+          { "t": "09:20", "who": "Usuario", "lineas": ["Ya lo probé recién… sigue igual."] },
+          { "t": "09:21", "who": "Soporte", "lineas": ["Gracias por confirmarlo.", "¿El interruptor trasero de la fuente está en posición de encendido?"] },
+          { "t": "09:21", "who": "Usuario", "lineas": ["Sí, está en ON."] },
+          { "t": "09:22", "who": "Soporte", "lineas": ["Bien, con eso ya descartamos lo más simple.", "Por lo que me describes, el equipo no está recibiendo energía."] },
+          { "t": "09:22", "who": "Usuario", "lineas": ["¿Eso significa que murió?"] },
+          { "t": "09:23", "who": "Soporte", "lineas": ["No necesariamente.", "Voy a revisar el equipo ahora mismo y aplicar la corrección necesaria para dejarlo operativo.", "Dame un momento y no te muevas de ahí."] },
+          { "t": "09:30", "em": true, "text": "(Intervención técnica fuera de llamada)" },
+          { "t": "09:32", "who": "Soporte", "lineas": ["Juan, ya realicé el reemplazo del componente que estaba fallando.", "¿Podrías presionar el botón de encendido ahora, por favor?"] },
+          { "t": "09:32", "who": "Usuario", "lineas": ["Un segundo…", "Sí, ahí encendió."] },
+          { "t": "09:33", "who": "Soporte", "lineas": ["Perfecto.", "¿El sistema inició normalmente? ¿Puedes entrar a tu sesión?"] },
+          { "t": "09:33", "who": "Usuario", "lineas": ["Sí, ya estoy dentro."] },
+          { "t": "09:34", "who": "Soporte", "lineas": ["Excelente.", "¿Puedes acceder a tus herramientas de trabajo y al correo sin problema?"] },
+          { "t": "09:34", "who": "Usuario", "lineas": ["Sí, todo funcionando."] },
+          { "t": "09:35", "who": "Soporte", "lineas": ["Perfecto entonces.", "Confirmamos que el equipo quedó operativo y cierro el ticket.", "Si notas cualquier cosa extraña durante el día, me avisas de inmediato."] },
+          { "t": "09:35", "who": "Usuario", "lineas": ["Gracias, de verdad. Me salvaste la reunión."] },
+          { "t": "09:36", "who": "Soporte", "lineas": ["Para eso estamos. Éxito en la reunión, Juan."] }
+        ]
+      }
+    },
+    "tabs": [
+      { "key": "resumen", "label": "Resumen" },
+      { "key": "canal", "label": "Canal" },
+      { "key": "registro", "label": "Registro" },
+      { "key": "diagnostico", "label": "Diagnóstico" },
+      { "key": "acciones", "label": "Acciones" },
+      { "key": "evidencias", "label": "Evidencias" },
+      { "key": "tiempo", "label": "Tiempo" }
+    ]
+  },
+  {
+    "id": "TS-PRN-0524",
+    "titulo": "No puede imprimir",
+    "estado": "Cierre",
+    "prioridad": "Alta",
+    "tipo": "Periféricos - Redes",
+    "tipoFiltro": "Periféricos",
+    "fechaISO": "2025-11-05T10:42:00",
+    "meta": "María Fernanda Gómez · Área de Contabilidad · 05 nov 2025 · 10:42",
+    "fechaDisplay": "05 de noviembre de 2025",
+    "horaDisplay": "10:42 a.m.",
+    "estadoDisplay": "Cerrado",
+    "cliente": {
+      "nombre": "María Fernanda Gómez",
+      "cargo": "Área de Contabilidad",
+      "piso": "",
+      "oficina": "",
+      "telefono": "320 615 8934",
+      "correo": "maria.gomez@techsolutions.com"
+    },
+    "especialistas": "Raven Ovalle, Matías Ureta, Juan Cruz",
+    "notas": [
+      "Usuaria: María Fernanda Gómez, Área de Contabilidad.",
+      "Se reporta imposibilidad de imprimir durante cierre financiero.",
+      "Impresora afectada: HR-FLOOR2.",
+      "Dirección IP configurada: 10.1.2.35.",
+      "Los trabajos de impresión quedan retenidos o no responden.",
+      "Incidente afecta proceso crítico del negocio.",
+      "Se trata de una impresora de red.",
+      "Posible problema de conectividad de red o configuración de IP."
+    ],
+    "medidas": [
+      "Se brinda contención inicial debido a la urgencia del cierre financiero.",
+      "Se realizan preguntas abiertas a la usuaria: ¿Desde cuándo se presenta el problema de impresión?",
+      "Se realizan preguntas abiertas a la usuaria: ¿Todos los equipos del área presentan el mismo inconveniente?",
+      "Se realizan preguntas abiertas a la usuaria: ¿La impresora muestra algún mensaje de error en el panel?",
+      "Se realizan preguntas abiertas a la usuaria: ¿Se realizaron cambios recientes en la red o en la impresora?",
+      "Se solicita realizar pruebas básicas: Verificar que la impresora esté encendida y conectada a la red.",
+      "Se solicita realizar pruebas básicas: Revisar estado de papel y posibles atascos.",
+      "Se valida conectividad desde un equipo del área: Prueba de comunicación a la IP 10.1.2.35 sin respuesta.",
+      "Se compara con otras impresoras de red del piso: Otras impresoras responden correctamente.",
+      "Se evidencia que la impresora no responde en la red configurada, lo que indica que la impresora podría estar en otra red.",
+      "Se evidencia que la impresora no responde en la red configurada, lo que indica que la IP configurada no corresponde al dispositivo actual.",
+      "Se evidencia que la impresora no responde en la red configurada, lo que indica que el equipo fue movido o reconfigurado previamente."
+    ],
+    "resolucion": {
+      "pasos": [
+        "Se confirma que la impresora no responde a la IP configurada.",
+        "Se identifica IP incorrecta del dispositivo.",
+        "Se reconfigura la impresora con la IP correcta.",
+        "Se prueba impresión desde equipo del área.",
+        "Servicio de impresión restablecido.",
+        "Ticket cerrado."
+      ],
+      "confirmacion": [
+        "¿Puede confirmar si el documento se imprimió correctamente?",
+        "¿El documento se imprime completo y sin errores?",
+        "Usuaria confirma que la impresión es correcta."
+      ]
+    },
+    "notasDetalle": [
+      {
+        "type": "list",
+        "items": [
+          "Usuaria: María Fernanda Gómez, Área de Contabilidad.",
+          {
+            "segments": [
+              { "text": "Se reporta " },
+              { "strong": true, "text": "imposibilidad de imprimir" },
+              { "text": " durante cierre financiero." }
+            ]
+          },
+          "Impresora afectada: HR-FLOOR2.",
+          "Dirección IP configurada: 10.1.2.35.",
+          "Los trabajos de impresión quedan retenidos o no responden.",
+          "Incidente afecta proceso crítico del negocio.",
+          {
+            "segments": [
+              { "text": "Se trata de una " },
+              { "strong": true, "text": "impresora de red" },
+              { "text": "." }
+            ]
+          },
+          {
+            "segments": [
+              { "text": "Posible problema de " },
+              { "strong": true, "text": "conectividad de red" },
+              { "text": " o " },
+              { "strong": true, "text": "configuración de IP" },
+              { "text": "." }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "segments": [
+          { "strong": true, "text": "Medidas adoptadas: (preguntas abiertas)" }
+        ]
+      },
+      {
+        "type": "list",
+        "items": [
+          "Se brinda contención inicial debido a la urgencia del cierre financiero.",
+          {
+            "segments": [
+              { "text": "Se realizan preguntas abiertas a la usuaria:" }
+            ],
+            "subitems": [
+              "¿Desde cuándo se presenta el problema de impresión?",
+              "¿Todos los equipos del área presentan el mismo inconveniente?",
+              "¿La impresora muestra algún mensaje de error en el panel?",
+              "¿Se realizaron cambios recientes en la red o en la impresora?"
+            ]
+          },
+          {
+            "segments": [
+              { "text": "Se solicita realizar pruebas básicas:" }
+            ],
+            "subitems": [
+              "Verificar que la impresora esté encendida y conectada a la red.",
+              "Revisar estado de papel y posibles atascos."
+            ]
+          },
+          {
+            "segments": [
+              { "text": "Se valida conectividad desde un equipo del área:" }
+            ],
+            "subitems": [
+              "Prueba de comunicación a la IP 10.1.2.35 sin respuesta."
+            ]
+          },
+          {
+            "segments": [
+              { "text": "Se compara con otras impresoras de red del piso:" }
+            ],
+            "subitems": [
+              "Otras impresoras responden correctamente."
+            ]
+          },
+          {
+            "segments": [
+              { "text": "Se evidencia que la impresora no responde en la red configurada, lo que indica que:" }
+            ],
+            "subitems": [
+              "La impresora podría estar en otra red.",
+              "La IP configurada no corresponde al dispositivo actual.",
+              "El equipo fue movido o reconfigurado previamente."
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "segments": [
+          { "strong": true, "text": "Resolución: (preguntas cerradas)" }
+        ]
+      },
+      {
+        "type": "list",
+        "items": [
+          "Se confirma que la impresora no responde a la IP configurada.",
+          "Se identifica IP incorrecta del dispositivo.",
+          "Se reconfigura la impresora con la IP correcta.",
+          "Se prueba impresión desde equipo del área.",
+          "Servicio de impresión restablecido.",
+          "Ticket cerrado."
+        ]
+      }
+    ],
+    "resumen": "La impresora de red HR-FLOOR2 (IP 10.1.2.35) no procesa trabajos de impresión. El área de Contabilidad requiere impresión para cierre financiero; impacto operativo alto.",
+    "registro": [
+      "10:42 — Recepción del ticket. Prioridad Alta.",
+      {
+        "segments": [
+          { "text": "10:45 — Prueba de conectividad desde estación de soporte: " },
+          { "code": true, "text": "ping 10.1.2.35" },
+          { "text": " → sin respuesta." }
+        ]
+      },
+      "10:50 — Revisión de la configuración de red y verificación de VLAN; posible impresora en otra subred.",
+      "10:55 — Se documenta y se agenda intervención física con redes/infraestructura."
+    ],
+    "diagnostico": "La IP 10.1.2.35 no responde a ping. Posibles causas: impresora apagada, cambio de IP, impresora en otra VLAN o problema de switch/puerto.",
+    "acciones": [
+      "Ping desde estación de soporte: sin respuesta.",
+      "Verificación de cola de impresión en estaciones de usuario.",
+      "Revisión de drivers y spooler en equipos afectados.",
+      "Notificación a redes para verificación de VLAN y puerto."
+    ],
+    "tiempoTitulo": "Tiempo de atención y estado final",
+    "tiempoTexto": "Tiempo desde apertura hasta cierre: 13 minutos.",
+    "evidenciasAriaLabel": "Galería de evidencias TS-PRN-0524",
+    "evidencias": [
+      {
+        "titulo": "Evidencia 1",
+        "tipo": "foto",
+        "src": "svg-photo-2",
+        "thumb": {
+          "width": 320,
+          "height": 180,
+          "fill": "#eef7f3",
+          "textColor": "#0b7a4a",
+          "text": "Foto: impresora (placeholder)"
+        }
+      },
+      {
+        "titulo": "Evidencia 2",
+        "tipo": "captura",
+        "src": "svg-screenshot-2",
+        "thumb": {
+          "width": 320,
+          "height": 180,
+          "fill": "#fff",
+          "textColor": "#333",
+          "text": "Captura: cola de impresión (placeholder)"
+        }
+      },
+      {
+        "titulo": "Evidencia 3",
+        "tipo": "log",
+        "src": "svg-log-2",
+        "thumb": {
+          "width": 320,
+          "height": 180,
+          "fill": "#f0f4ff",
+          "textColor": "#0b3d91",
+          "text": "Log: ping (placeholder)"
+        }
+      }
+    ],
+    "logSample": {
+      "titulo": "Comandos y salidas (simulados)",
+      "contenido": "PS C:\\> ping 10.1.2.35\nRequest timed out.\n\nPS C:\\> arp -a\nNo ARP entry for 10.1.2.35\n\nPS C:\\> netstat -rn\nGateway: 10.1.2.1"
+    },
+    "canales": {
+      "ayuda": "Use la selección en \"Fuente del ticket\" para alternar la vista entre Correo, Chat y Llamada.",
+      "fuentePlacement": "inside",
+      "fuenteColspan": 3,
+      "default": "correo",
+      "botones": [
+        { "view": "correo", "label": "Correo" },
+        { "view": "chat", "label": "Chat" },
+        { "view": "llamada", "label": "Llamada" }
+      ],
+      "correo": {
+        "titulo": "Correo (respuesta)",
+        "hilos": [
+          {
+            "de": "maria.gomez@techsolutions.com",
+            "para": "itsupport@techsolutions.com",
+            "asunto": "No es posible imprimir en impresora HR-FLOOR2",
+            "cuerpo": [
+              "Estimado equipo de Soporte TI,",
+              {
+                "segments": [
+                  { "text": "Junto con saludar, les escribo para reportar un problema con la impresora de red " },
+                  { "strong": true, "text": "HR-FLOOR2" },
+                  { "text": " del Área de Contabilidad. Desde esta mañana, los documentos enviados a imprimir no se procesan correctamente y quedan retenidos." }
+                ]
+              },
+              "Actualmente nos encontramos en proceso de cierre financiero, por lo que esta situación está afectando de manera directa nuestras labores. Agradecería su apoyo para revisar el problema a la brevedad.",
+              {
+                "segments": [
+                  { "text": "Saludos cordiales," },
+                  { "br": true },
+                  { "strong": true, "text": "María Fernanda Gómez" },
+                  { "br": true },
+                  { "strong": true, "text": "Área de Contabilidad" }
+                ]
+              }
+            ]
+          },
+          {
+            "de": "itsupport@techsolutions.com",
+            "para": "maria.gomez@techsolutions.com",
+            "asunto": "Cierre de incidente TS-PRN-0524 | No se puede imprimir",
+            "cuerpo": [
+              "Estimada María Fernanda,",
+              {
+                "segments": [
+                  { "text": "Junto con saludar, le informamos que el ticket " },
+                  { "strong": true, "text": "TS-PRN-0524" },
+                  { "text": ", asociado a la imposibilidad de imprimir en la impresora de red " },
+                  { "strong": true, "text": "HR-FLOOR2" },
+                  { "text": " del Área de Contabilidad, ha sido resuelto satisfactoriamente." }
+                ]
+              },
+              {
+                "segments": [
+                  { "text": "Durante la revisión del incidente, se realizaron validaciones del estado físico del equipo, de la cola de impresión y de la conectividad de red. A partir de las pruebas efectuadas, se detectó que la dirección IP configurada (" },
+                  { "strong": true, "text": "10.1.2.35" },
+                  { "text": ") no correspondía al dispositivo, lo que generaba un error de conectividad e impedía el procesamiento de los trabajos de impresión. Esto indicaba que la impresora había sido reubicada o se encontraba configurada en otra red." }
+                ]
+              },
+              "Una vez identificada la IP correcta de la impresora, se procedió a su reconfiguración en los equipos del área y se realizaron pruebas de impresión exitosas, confirmando el restablecimiento del servicio y la normalización de las actividades del cierre financiero.",
+              "Agradecemos su colaboración durante la atención del caso. En caso de presentar cualquier nuevo inconveniente o requerir apoyo adicional, no dude en contactarnos por los canales habituales de soporte.",
+              {
+                "segments": [
+                  { "text": "Saludos cordiales," },
+                  { "br": true },
+                  { "strong": true, "text": "Equipo de Soporte TI" },
+                  { "br": true },
+                  { "strong": true, "text": "TechSolutions S.A.S." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "chat": {
+        "titulo": "Chat (simulado)",
+        "log": [
+          { "who": "Soporte TI", "text": "Buenos días, señora María Fernanda Gómez. Gracias por contactarse con el Equipo de Soporte TI de TechSolutions S.A.S. Tenemos registrado el ticket TS-PRN-0524, relacionado con inconvenientes de impresión en el Área de Contabilidad. Lamentamos los inconvenientes, especialmente considerando el cierre financiero." },
+          { "who": "María Fernanda Gómez", "text": "Buenos días. Sí, no es posible imprimir y los trabajos quedan retenidos." },
+          { "who": "Soporte TI", "text": "Gracias por la información. Procederemos a validar la conectividad con la impresora de red HR-FLOOR2." },
+          { "who": "Soporte TI", "text": "Las pruebas indican que la impresora no responde a la IP configurada (10.1.2.35), lo que sugiere un problema de conectividad o configuración." },
+          { "who": "María Fernanda Gómez", "text": "Entiendo." },
+          { "who": "Soporte TI", "text": "Procederemos a identificar la IP correcta del dispositivo y reconfigurar la impresora." },
+          { "who": "Soporte TI", "text": "La impresora fue reconfigurada y la prueba de impresión fue exitosa. ¿Puede confirmar si el documento se imprimió correctamente?" },
+          { "who": "María Fernanda Gómez", "text": "Sí, ahora imprime correctamente." },
+          { "who": "Soporte TI", "text": "Perfecto. Antes de cerrar el ticket, ¿hay algo más en lo que podamos ayudarle?" },
+          { "who": "María Fernanda Gómez", "text": "No, eso sería todo. Gracias." },
+          { "who": "Soporte TI", "text": "Excelente. Con esto, el ticket TS-PRN-0524 queda resuelto y cerrado. Gracias por contactarse con TechSolutions S.A.S. Que tenga un buen día." },
+          { "who": "María Fernanda Gómez", "text": "Gracias por la ayuda. Buen día." }
+        ]
+      },
+      "llamada": {
+        "titulo": "Llamada (simulación)",
+        "log": [
+          { "t": "10:42", "who": "Soporte", "lineas": ["Soporte TI de TechSolutions, buenos días. Habla Juan Cruz. ¿Con quién tengo el gusto?"] },
+          { "t": "10:42", "who": "Usuaria", "lineas": ["Hola, Juan. Soy María Fernanda Gómez, de Contabilidad. Tenemos un problema grave: no podemos imprimir y estamos en pleno cierre."] },
+          { "t": "10:43", "who": "Soporte", "lineas": ["Entiendo perfectamente, María Fernanda. El cierre no puede detenerse.", "Vamos a revisarlo de inmediato.", "Para confirmar, ¿el problema es con la impresora HR-FLOOR2?"] },
+          { "t": "10:43", "who": "Usuaria", "lineas": ["Sí, esa misma. Mandamos a imprimir y los documentos quedan pegados."] },
+          { "t": "10:44", "who": "Soporte", "lineas": ["De acuerdo.", "¿Desde cuándo se presenta el problema? ¿Fue hoy o viene de antes?"] },
+          { "t": "10:44", "who": "Usuaria", "lineas": ["Desde esta mañana. Ayer funcionaba bien."] },
+          { "t": "10:45", "who": "Soporte", "lineas": ["Bien.", "¿Les ocurre a todos en el área o solo a algunos equipos?"] },
+          { "t": "10:45", "who": "Usuaria", "lineas": ["A todos. Nadie puede imprimir."] },
+          { "t": "10:46", "who": "Soporte", "lineas": ["Gracias, eso ayuda bastante.", "¿La impresora muestra algún mensaje de error, falta de papel o atascos?"] },
+          { "t": "10:46", "who": "Usuaria", "lineas": ["No, está encendida normal. No marca errores."] },
+          { "t": "10:47", "who": "Soporte", "lineas": ["Perfecto. Entonces descartamos lo más simple.", "Estoy validando la conexión de la impresora ahora mismo."] },
+          { "t": "10:48", "em": true, "text": "(Breve pausa mientras se revisa la conexión)" },
+          { "t": "10:49", "who": "Soporte", "lineas": ["María Fernanda, la impresora no está respondiendo en la red con la IP que tenemos configurada.", "¿Recuerdas si fue movida de lugar o desconectada recientemente?"] },
+          { "t": "10:49", "who": "Usuaria", "lineas": ["Sí… ayer movieron los muebles y la impresora la corrieron un poco."] },
+          { "t": "10:50", "who": "Soporte", "lineas": ["Eso calza con lo que estoy viendo.", "Probablemente quedó conectada a otro punto de red.", "Voy a corregir la configuración para que puedan imprimir nuevamente."] },
+          { "t": "10:55", "em": true, "text": "(Intervención técnica fuera de llamada)" },
+          { "t": "10:57", "who": "Soporte", "lineas": ["Listo, ya actualicé la configuración.", "¿Podrías intentar imprimir un documento de prueba ahora, por favor?"] },
+          { "t": "10:57", "who": "Usuaria", "lineas": ["Dame un segundo…", "Sí, ya salió la hoja."] },
+          { "t": "10:58", "who": "Soporte", "lineas": ["Excelente.", "¿El documento se imprime completo y sin errores?"] },
+          { "t": "10:58", "who": "Usuaria", "lineas": ["Sí, está saliendo todo normal ahora."] },
+          { "t": "10:59", "who": "Soporte", "lineas": ["Perfecto entonces.", "Confirmamos que el servicio de impresión quedó restablecido y cierro el ticket.", "Si vuelve a pasar durante el día, nos llamas de inmediato."] },
+          { "t": "10:59", "who": "Usuaria", "lineas": ["Muchas gracias, de verdad. Estábamos complicados."] },
+          { "t": "11:00", "who": "Soporte", "lineas": ["Lo entiendo. Éxito con el cierre, María Fernanda."] }
+        ]
+      }
+    },
+    "tabs": [
+      { "key": "resumen", "label": "Resumen" },
+      { "key": "canal", "label": "Canal" },
+      { "key": "registro", "label": "Registro" },
+      { "key": "diagnostico", "label": "Diagnóstico" },
+      { "key": "acciones", "label": "Acciones" },
+      { "key": "evidencias", "label": "Evidencias" },
+      { "key": "tiempo", "label": "Tiempo" }
+    ]
+  },
+  {
+    "id": "TS-NET-0631",
+    "titulo": "Red lenta o sin internet",
+    "estado": "Cierre",
+    "prioridad": "Alta",
+    "tipo": "Redes",
+    "fechaISO": "2025-11-12T08:57:00",
+    "meta": "Andrés Morales · 12 nov 2025 · 08:57",
+    "fechaDisplay": "12 de noviembre de 2025",
+    "horaDisplay": "08:57 a.m.",
+    "estadoDisplay": "Cerrado",
+    "cliente": {
+      "nombre": "Andrés Morales",
+      "cargo": "",
+      "piso": "",
+      "oficina": "",
+      "telefono": "311 904 6721",
+      "correo": "andres.morales@techsolutions.com"
+    },
+    "especialistas": "Raven Ovalle, Matías Ureta, Juan Cruz",
+    "notas": [
+      "Usuario: Andrés Morales.",
+      "Reporta conexión lenta o sin acceso a internet.",
+      "Problema intermitente, sin patrón claro.",
+      "Afecta acceso a sistemas corporativos y servicios en la nube.",
+      "Impacto alto en productividad.",
+      "Incidente de red.",
+      "Usuario con conocimientos técnicos (“le sabe / podría ser admin”)."
+    ],
+    "medidas": [
+      "Se realiza contención inicial por impacto en operación.",
+      "Se formulan preguntas abiertas al usuario: ¿Desde cuándo presenta el problema de conectividad?",
+      "Se formulan preguntas abiertas al usuario: ¿La lentitud es constante o intermitente?",
+      "Se formulan preguntas abiertas al usuario: ¿El problema ocurre en un solo equipo o en varios?",
+      "Se formulan preguntas abiertas al usuario: ¿Está conectado por cable o por Wi-Fi?",
+      "Se formulan preguntas abiertas al usuario: ¿Se realizaron cambios recientes (movimiento de puesto, cable, equipo)?",
+      "Se solicitan verificaciones básicas: Revisión del estado del cable de red / señal Wi-Fi.",
+      "Se solicitan verificaciones básicas: Confirmación de conexión física al punto de red.",
+      "Se realizan pruebas simples de conectividad: Verificación de dirección IP asignada.",
+      "Se realizan pruebas simples de conectividad: Prueba de conexión a la puerta de enlace.",
+      "Se realizan pruebas simples de conectividad: Prueba de acceso a recursos internos y externos.",
+      "Se observa comportamiento irregular de la red: Latencia elevada / respuesta inconsistente.",
+      "Se descarta inicialmente un problema exclusivo del equipo del usuario."
+    ],
+    "resolucion": {
+      "pasos": [
+        "Se confirma lentitud general.",
+        "Se identifica conflicto / saturación / mala conexión física.",
+        "Se corrige conexión / se reinicia equipo de red / se normaliza enlace.",
+        "Se valida navegación y acceso a sistemas.",
+        "Servicio restablecido.",
+        "Ticket cerrado."
+      ],
+      "confirmacion": [
+        "¿Puede confirmar si el acceso a sistemas y navegación es normal?",
+        "Usuario confirma que ahora funciona correctamente."
+      ]
+    },
+    "notasDetalle": [
+      {
+        "type": "paragraph",
+        "segments": [
+          { "strong": true, "text": "Descripción del problema:" }
+        ]
+      },
+      {
+        "type": "list",
+        "items": [
+          "Usuario: Andrés Morales.",
+          "Reporta conexión lenta o sin acceso a internet.",
+          "Problema intermitente, sin patrón claro.",
+          "Afecta acceso a sistemas corporativos y servicios en la nube.",
+          "Impacto alto en productividad.",
+          "Incidente de red.",
+          "Usuario con conocimientos técnicos (“le sabe / podría ser admin”)."
+        ]
+      },
+      {
+        "type": "paragraph",
+        "segments": [
+          { "strong": true, "text": "Medidas adoptadas: (preguntas abiertas)" }
+        ]
+      },
+      {
+        "type": "list",
+        "items": [
+          "Se realiza contención inicial por impacto en operación.",
+          {
+            "segments": [
+              { "text": "Se formulan preguntas abiertas al usuario:" }
+            ],
+            "subitems": [
+              "¿Desde cuándo presenta el problema de conectividad?",
+              "¿La lentitud es constante o intermitente?",
+              "¿El problema ocurre en un solo equipo o en varios?",
+              "¿Está conectado por cable o por Wi-Fi?",
+              "¿Se realizaron cambios recientes (movimiento de puesto, cable, equipo)?"
+            ]
+          },
+          {
+            "segments": [
+              { "text": "Se solicitan verificaciones básicas:" }
+            ],
+            "subitems": [
+              "Revisión del estado del cable de red / señal Wi-Fi.",
+              "Confirmación de conexión física al punto de red."
+            ]
+          },
+          {
+            "segments": [
+              { "text": "Se realizan pruebas simples de conectividad:" }
+            ],
+            "subitems": [
+              "Verificación de dirección IP asignada.",
+              "Prueba de conexión a la puerta de enlace.",
+              "Prueba de acceso a recursos internos y externos."
+            ]
+          },
+          {
+            "segments": [
+              { "text": "Se observa comportamiento irregular de la red:" }
+            ],
+            "subitems": [
+              "Latencia elevada / respuesta inconsistente."
+            ]
+          },
+          "Se descarta inicialmente un problema exclusivo del equipo del usuario."
+        ]
+      },
+      {
+        "type": "paragraph",
+        "segments": [
+          { "strong": true, "text": "Resolución: (preguntas cerradas)" }
+        ]
+      },
+      {
+        "type": "list",
+        "items": [
+          "Se confirma lentitud general.",
+          "Se identifica conflicto / saturación / mala conexión física.",
+          "Se corrige conexión / se reinicia equipo de red / se normaliza enlace.",
+          "Se valida navegación y acceso a sistemas.",
+          "Servicio restablecido.",
+          "Ticket cerrado."
+        ]
+      }
+    ],
+    "resumen": "Usuario reporta latencia elevada o pérdida de conectividad. Se recopila información de IP, gateway y DNS para diagnóstico.",
+    "registro": [
+      "08:57 — Recepción del ticket.",
+      {
+        "segments": [
+          { "text": "09:00 — Recolección de IP y pruebas básicas: " },
+          { "code": true, "text": "ipconfig" },
+          { "text": ", " },
+          { "code": true, "text": "ping" },
+          { "text": "." }
+        ]
+      },
+      "09:10 — Se detecta latencia a 8.8.8.8; se notifica a redes."
+    ],
+    "diagnostico": "Se revisan capas OSI: pruebas de enlace físico, DHCP, DNS y latencia a destinos externos.",
+    "acciones": [],
+    "tiempoTitulo": "Tiempo / Estado",
+    "tiempoTexto": "Estado: Apertura. Acciones: diagnóstico en curso.",
+    "evidencias": [
+      {
+        "titulo": "Evidencia 1",
+        "tipo": "foto",
+        "src": "svg-photo-3",
+        "thumb": {
+          "width": 320,
+          "height": 180,
+          "fill": "#eef2ff",
+          "textColor": "#0b3d91",
+          "text": "Foto: cableado (placeholder)"
+        }
+      },
+      {
+        "titulo": "Evidencia 2",
+        "tipo": "captura",
+        "src": "svg-screenshot-3",
+        "thumb": {
+          "width": 320,
+          "height": 180,
+          "fill": "#fff",
+          "textColor": "#333",
+          "text": "Captura: traceroute (placeholder)"
+        }
+      },
+      {
+        "titulo": "Evidencia 3",
+        "tipo": "log",
+        "src": "svg-log-3",
+        "thumb": {
+          "width": 320,
+          "height": 180,
+          "fill": "#fff7f0",
+          "textColor": "#ff7a00",
+          "text": "Log: ping (placeholder)"
+        }
+      }
+    ],
+    "logSample": {
+      "contenido": "PS C:\\> ipconfig\nIPv4 Address. . . . . . . . . . . : 10.1.3.45\nPS C:\\> ping 8.8.8.8\nReply from 8.8.8.8: bytes=32 time=250ms TTL=117"
+    },
+    "canales": {
+      "ayuda": "Use la selección en \"Fuente del ticket\" para alternar la vista entre Correo, Chat y Llamada.",
+      "fuentePlacement": "inside",
+      "fuenteColspan": 3,
+      "default": "correo",
+      "botones": [
+        { "view": "correo", "label": "Correo" },
+        { "view": "chat", "label": "Chat" },
+        { "view": "llamada", "label": "Llamada" }
+      ],
+      "correo": {
+        "titulo": "Correo (respuesta)",
+        "hilos": [
+          {
+            "de": "andres.morales@techsolutions.com",
+            "para": "itsupport@techsolutions.com",
+            "asunto": "Problemas de conectividad de red",
+            "cuerpo": [
+              "Estimado equipo de Soporte TI,",
+              "Junto con saludar, quisiera reportar un problema con la conexión de red en mi puesto de trabajo. Desde esta mañana la conexión se encuentra muy lenta y, en algunos momentos, no tengo acceso a internet ni a los sistemas corporativos.",
+              "Esta situación está afectando el desarrollo normal de mis actividades laborales, por lo que agradecería su apoyo para revisar el problema.",
+              {
+                "segments": [
+                  { "text": "Saludos cordiales," },
+                  { "br": true },
+                  { "strong": true, "text": "Andrés Morales Analista de sistemas." }
+                ]
+              }
+            ]
+          },
+          {
+            "de": "itsupport@techsolutions.com",
+            "para": "andres.morales@techsolutions.com",
+            "asunto": "Cierre de incidente TS-NET-0631 | Conectividad de red",
+            "cuerpo": [
+              "Estimado Sr. Andrés Morales,",
+              {
+                "segments": [
+                  { "text": "Junto con saludar, ofrecemos disculpas por los inconvenientes ocasionados por el incidente " },
+                  { "strong": true, "text": "TS-NET-0631" },
+                  { "text": ", relacionado con la lentitud e intermitencia en la conexión de red y el acceso a internet." }
+                ]
+              },
+              "Luego de las validaciones realizadas, se identificó un problema de conectividad general asociado a una saturación y/o conexión física deficiente en el enlace de red. Se corrigió la conexión afectada y se reinició el equipo de red correspondiente, logrando normalizar el servicio. Posteriormente, se validó el acceso a internet y a los sistemas corporativos, confirmando su correcto funcionamiento.",
+              "Con lo anterior, el incidente queda resuelto y cerrado.",
+              "Quedamos atentos ante cualquier requerimiento adicional.",
+              {
+                "segments": [
+                  { "text": "Saludos cordiales," },
+                  { "br": true },
+                  { "text": "Equipo de Soporte TI" },
+                  { "br": true },
+                  { "text": "TechSolutions S.A.S." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "chat": {
+        "titulo": "Chat (simulado)",
+        "log": [
+          { "who": "Soporte TI", "text": "Buenos días, señor Andrés Morales. Gracias por contactarse con el Equipo de Soporte TI de TechSolutions S.A.S. Tenemos registrado el ticket TS-NET-0631, asociado a problemas de conectividad de red. Lamentamos los inconvenientes ocasionados." },
+          { "who": "Andrés Morales", "text": "Buenos días. La conexión sigue lenta e intermitente." },
+          { "who": "Soporte TI", "text": "Gracias por la confirmación. Para avanzar con el diagnóstico, ¿el problema afecta solo a su equipo o a otros dispositivos del área?" },
+          { "who": "Andrés Morales", "text": "Afecta a varios equipos." },
+          { "who": "Soporte TI", "text": "Entendido. Procederemos a realizar pruebas de conectividad para evaluar la estabilidad de la red." },
+          { "who": "Soporte TI", "text": "Las pruebas muestran latencia elevada y respuesta irregular. Procederemos a normalizar la conexión." },
+          { "who": "Andrés Morales", "text": "De acuerdo." },
+          { "who": "Soporte TI", "text": "La conexión fue restablecida y las pruebas posteriores son satisfactorias. ¿Puede confirmar si el acceso a sistemas y navegación es normal?" },
+          { "who": "Andrés Morales", "text": "Sí, ahora funciona correctamente." },
+          { "who": "Soporte TI", "text": "Perfecto. Antes de cerrar el ticket, ¿hay algo más en lo que podamos ayudarle?" },
+          { "who": "Andrés Morales", "text": "No, todo está bien ahora. Gracias." },
+          { "who": "Soporte TI", "text": "Excelente. Con esto, el ticket TS-NET-0631 queda resuelto y cerrado. Muchas gracias por contactarse con TechSolutions S.A.S. Que tenga un excelente día." },
+          { "who": "Andrés Morales", "text": "Muchas gracias. Buen día." }
+        ]
+      },
+      "llamada": {
+        "log": [
+          { "t": "08:57", "who": "Soporte", "lineas": ["Soporte TI de TechSolutions, buenos días. Habla Juan Cruz. ¿Con quién tengo el gusto?"] },
+          { "t": "08:57", "who": "Usuario", "lineas": ["Hola, Juan. Soy Andrés Morales. Tengo problemas con la red, está muy lenta y a ratos se cae."] },
+          { "t": "08:58", "who": "Soporte", "lineas": ["Gracias por avisar, Andrés.", "Cuéntame un poco más para entender bien: ¿la lentitud es constante o va y viene?"] },
+          { "t": "08:58", "who": "Usuario", "lineas": ["Va y viene. A veces carga, a veces no, y se cae de repente."] },
+          { "t": "08:59", "who": "Soporte", "lineas": ["De acuerdo.", "¿Esto te pasa solo a ti o has notado si a otros también les ocurre?"] },
+          { "t": "08:59", "who": "Usuario", "lineas": ["He escuchado a un par más, pero a mí me está pegando fuerte ahora."] },
+          { "t": "09:00", "who": "Soporte", "lineas": ["Perfecto, eso ya nos da una pista.", "¿Estás conectado por cable o por Wi-Fi en este momento?"] },
+          { "t": "09:00", "who": "Usuario", "lineas": ["Por cable."] },
+          { "t": "09:01", "who": "Soporte", "lineas": ["Bien.", "¿Tu puesto se movió recientemente o cambiaste de punto de red o cable?"] },
+          { "t": "09:01", "who": "Usuario", "lineas": ["Sí, de hecho ayer moví el escritorio un poco."] },
+          { "t": "09:02", "who": "Soporte", "lineas": ["Ok, eso es relevante.", "Estoy revisando la conexión desde acá y veo respuestas irregulares en la red."] },
+          { "t": "09:03", "em": true, "text": "(Pausa breve mientras se revisa la conexión)" },
+          { "t": "09:04", "who": "Soporte", "lineas": ["Lo que estoy viendo es un conflicto en la conexión, probablemente por el punto de red.", "Voy a corregir eso y normalizar el enlace. Dame un momento."] },
+          { "t": "09:08", "em": true, "text": "(Intervención técnica fuera de llamada)" },
+          { "t": "09:10", "who": "Soporte", "lineas": ["Listo, ya ajusté la conexión y reinicié el equipo de red asociado a tu punto.", "¿Podrías probar ahora, por favor?"] },
+          { "t": "09:10", "who": "Usuario", "lineas": ["Sí… ahora está cargando mucho más rápido."] },
+          { "t": "09:11", "who": "Soporte", "lineas": ["Perfecto.", "¿Puedes acceder a los sistemas corporativos y a la nube sin problemas?"] },
+          { "t": "09:11", "who": "Usuario", "lineas": ["Sí, ahora todo responde normal."] },
+          { "t": "09:12", "who": "Soporte", "lineas": ["Excelente.", "Entonces confirmamos que la conectividad quedó restablecida y cierro el ticket.", "Si vuelve a ponerse inestable, me avisas de inmediato."] },
+          { "t": "09:12", "who": "Usuario", "lineas": ["Perfecto, gracias."] },
+          { "t": "09:13", "who": "Soporte", "lineas": ["De nada, Andrés. Que tengas buen día."] }
+        ]
+      }
+    },
+    "tabs": [
+      { "key": "resumen", "label": "Resumen" },
+      { "key": "canal", "label": "Canal" },
+      { "key": "registro", "label": "Registro" },
+      { "key": "diagnostico", "label": "Diagnóstico" },
+      { "key": "acciones", "label": "Acciones" },
+      { "key": "evidencias", "label": "Evidencias" },
+      { "key": "tiempo", "label": "Tiempo" }
+    ]
+  },
+  {
+    "id": "TS-SW-0789",
+    "titulo": "Pantallazo Azul (BSOD)",
+    "estado": "Cierre",
+    "prioridad": "Alta",
+    "tipo": "Software",
+    "fechaISO": "2025-12-03T11:26:00",
+    "meta": "Camila Ríos · 03 dic 2025 · 11:26",
+    "fechaDisplay": "03 de diciembre de 2025",
+    "horaDisplay": "11:26 a.m.",
+    "estadoDisplay": "Cerrado",
+    "cliente": {
+      "nombre": "Camila Ríos",
+      "cargo": "",
+      "piso": "",
+      "oficina": "",
+      "telefono": "316 550 9028",
+      "correo": "camila.rios@techsolutions.com"
+    },
+    "especialistas": "Raven Ovalle, Matías Ureta, Juan Cruz",
+    "notas": [
+      "Usuaria: Camila Ríos.",
+      "Reporta pantallazos azules recurrentes (BSOD).",
+      "El equipo se reinicia de forma inesperada.",
+      "Interrumpe el trabajo y puede generar pérdida de información.",
+      "Problema ocurre durante uso normal del equipo.",
+      "Incidente de software, con posible relación a drivers o sistema.",
+      "Se mencionan posibles cambios recientes (actualizaciones / instalaciones).",
+      "Impacto alto por recurrencia del error."
+    ],
+    "medidas": [
+      "Se realiza contención inicial y se explica a la usuaria el proceso de revisión.",
+      "Se formulan preguntas abiertas: ¿Con qué frecuencia aparece el pantallazo azul?",
+      "Se formulan preguntas abiertas: ¿Desde cuándo comenzó el problema?",
+      "Se formulan preguntas abiertas: ¿Se instaló algún programa, driver o actualización recientemente?",
+      "Se formulan preguntas abiertas: ¿El error ocurre al usar alguna aplicación en particular?",
+      "Se formulan preguntas abiertas: ¿Se ha conectado algún dispositivo nuevo al equipo?",
+      "Se solicita información visual del error: Código o mensaje mostrado en el BSOD (si es visible).",
+      "Se procede a revisión básica del sistema: Revisión de Administrador de dispositivos para detectar controladores con error.",
+      "Se procede a revisión básica del sistema: Verificación del estado general del sistema.",
+      "Se considera necesario aplicar herramientas de diagnóstico del sistema para descartar: Errores de disco.",
+      "Se considera necesario aplicar herramientas de diagnóstico del sistema para descartar: Problemas de memoria.",
+      "Se deja constancia de que es necesario revisar la grabación / registro del error para mayor claridad del diagnóstico."
+    ],
+    "resolucion": {
+      "pasos": [
+        "Se identifica driver defectuoso desde Administrador de dispositivos.",
+        "Se desinstala / actualiza controlador problemático.",
+        "Se ejecutan herramientas de diagnóstico.",
+        "Equipo se estabiliza y deja de presentar BSOD.",
+        "Ticket cerrado."
+      ],
+      "confirmacion": [
+        "¿Desde que hicimos el ajuste volvió a aparecer el pantallazo azul?",
+        "¿Puedes usar el computador con normalidad ahora, sin reinicios inesperados?",
+        "Usuaria confirma que el equipo está estable."
+      ]
+    },
+    "notasDetalle": [
+      {
+        "type": "paragraph",
+        "segments": [
+          { "strong": true, "text": "Descripción del problema:" }
+        ]
+      },
+      {
+        "type": "list",
+        "items": [
+          "Usuaria: Camila Ríos.",
+          "Reporta pantallazos azules recurrentes (BSOD).",
+          "El equipo se reinicia de forma inesperada.",
+          "Interrumpe el trabajo y puede generar pérdida de información.",
+          "Problema ocurre durante uso normal del equipo.",
+          "Incidente de software, con posible relación a drivers o sistema.",
+          "Se mencionan posibles cambios recientes (actualizaciones / instalaciones).",
+          "Impacto alto por recurrencia del error."
+        ]
+      },
+      {
+        "type": "paragraph",
+        "segments": [
+          { "strong": true, "text": "Medidas adoptadas:" }
+        ]
+      },
+      {
+        "type": "list",
+        "items": [
+          "Se realiza contención inicial y se explica a la usuaria el proceso de revisión.",
+          {
+            "segments": [
+              { "text": "Se formulan preguntas abiertas:" }
+            ],
+            "subitems": [
+              "¿Con qué frecuencia aparece el pantallazo azul?",
+              "¿Desde cuándo comenzó el problema?",
+              "¿Se instaló algún programa, driver o actualización recientemente?",
+              "¿El error ocurre al usar alguna aplicación en particular?",
+              "¿Se ha conectado algún dispositivo nuevo al equipo?"
+            ]
+          },
+          {
+            "segments": [
+              { "text": "Se solicita información visual del error:" }
+            ],
+            "subitems": [
+              "Código o mensaje mostrado en el BSOD (si es visible)."
+            ]
+          },
+          {
+            "segments": [
+              { "text": "Se procede a revisión básica del sistema:" }
+            ],
+            "subitems": [
+              "Revisión de Administrador de dispositivos para detectar controladores con error.",
+              "Verificación del estado general del sistema."
+            ]
+          },
+          {
+            "segments": [
+              { "text": "Se considera necesario aplicar herramientas de diagnóstico del sistema para descartar:" }
+            ],
+            "subitems": [
+              "Errores de disco.",
+              "Problemas de memoria."
+            ]
+          },
+          "Se deja constancia de que es necesario revisar la grabación / registro del error para mayor claridad del diagnóstico."
+        ]
+      },
+      {
+        "type": "paragraph",
+        "segments": [
+          { "strong": true, "text": "Resolución:" }
+        ]
+      },
+      {
+        "type": "list",
+        "items": [
+          "Se identifica driver defectuoso desde Administrador de dispositivos.",
+          "Se desinstala / actualiza controlador problemático.",
+          "Se ejecutan herramientas de diagnóstico.",
+          "Equipo se estabiliza y deja de presentar BSOD.",
+          "Ticket cerrado."
+        ]
+      }
+    ],
+    "resumen": "Usuario reporta BSOD recurrente. Se recopila historial de eventos y se ejecutan pruebas de memoria y disco.",
+    "registro": [
+      "08:57 — Recepción del ticket.",
+      {
+        "segments": [
+          { "text": "09:00 — Recolección de IP y pruebas básicas: " },
+          { "code": true, "text": "ipconfig" },
+          { "text": ", " },
+          { "code": true, "text": "ping" },
+          { "text": "." }
+        ]
+      },
+      "09:10 — Se detecta latencia a 8.8.8.8; se notifica a redes."
+    ],
+    "diagnostico": "Posibles causas: drivers incompatibles tras actualización, corrupción de archivos del sistema o falla de memoria RAM. Se recomiendan pruebas: Windows Memory Diagnostic y chkdsk.",
+    "acciones": [],
+    "tiempoTitulo": "Tiempo / Estado",
+    "tiempoTexto": "Estado: Apertura. Acciones: pruebas programadas.",
+    "evidencias": [
+      {
+        "titulo": "Evidencia 1",
+        "tipo": "captura",
+        "src": "svg-photo-4",
+        "thumb": {
+          "width": 320,
+          "height": 180,
+          "fill": "#fff",
+          "textColor": "#333",
+          "text": "Captura: BSOD (placeholder)"
+        }
+      },
+      {
+        "titulo": "Evidencia 2",
+        "tipo": "log",
+        "src": "svg-screenshot-4",
+        "thumb": {
+          "width": 320,
+          "height": 180,
+          "fill": "#f0f7ff",
+          "textColor": "#0b3d91",
+          "text": "Log: eventvwr (placeholder)"
+        }
+      },
+      {
+        "titulo": "Evidencia 3",
+        "tipo": "log",
+        "src": "svg-log-4",
+        "thumb": {
+          "width": 320,
+          "height": 180,
+          "fill": "#fff7f0",
+          "textColor": "#ff7a00",
+          "text": "Salida: memtest (placeholder)"
+        }
+      }
+    ],
+    "logSample": {
+      "contenido": "C:\\> chkdsk /f /r\nSe programó chkdsk para el próximo reinicio.\n\nC:\\> mdsched.exe\nWindows Memory Diagnostic scheduled."
+    },
+    "canales": {
+      "ayuda": "Use la selección en \"Fuente del ticket\" para alternar la vista entre Correo, Chat y Llamada.",
+      "fuentePlacement": "inside",
+      "fuenteColspan": 3,
+      "default": "correo",
+      "botones": [
+        { "view": "correo", "label": "Correo" },
+        { "view": "chat", "label": "Chat" },
+        { "view": "llamada", "label": "Llamada" }
+      ],
+      "correo": {
+        "titulo": "Correo (simulado)",
+        "hilos": [
+          {
+            "de": "camila.rios@techsolutions.com",
+            "para": "itsupport@techsolutions.com",
+            "asunto": "Pantallazos azules en mi equipo",
+            "cuerpo": [
+              "Estimado equipo de Soporte TI,",
+              "Junto con saludar, quisiera reportar un problema con mi computador de trabajo. El equipo ha comenzado a presentar pantallazos azules de forma recurrente y se reinicia sin previo aviso.",
+              "Esta situación está interrumpiendo mi trabajo, por lo que agradecería su apoyo para revisar el problema.",
+              {
+                "segments": [
+                  { "text": "Saludos cordiales," },
+                  { "br": true },
+                  { "text": "Camila Ríos" }
+                ]
+              }
+            ]
+          },
+          {
+            "de": "itsupport@techsolutions.com",
+            "para": "camila.rios@techsolutions.com",
+            "asunto": "Cierre de incidente TS-SW-0789 | Pantallazo Azul (BSOD)",
+            "cuerpo": [
+              "Estimada Sra. Camila Ríos,",
+              {
+                "segments": [
+                  { "text": "Junto con saludar, ofrecemos disculpas por los inconvenientes ocasionados por el incidente " },
+                  { "strong": true, "text": "TS-SW-0789" },
+                  { "text": ", relacionado con la aparición recurrente de pantallazos azules (BSOD) y reinicios inesperados en su equipo." }
+                ]
+              },
+              "Luego de las revisiones realizadas, se identificó un controlador defectuoso desde el Administrador de dispositivos. Se procedió a su actualización y/o reinstalación, además de ejecutar herramientas de diagnóstico del sistema para descartar errores de disco y memoria. Tras estas acciones, el equipo se estabilizó y dejó de presentar el error.",
+              "Con lo anterior, el incidente queda resuelto y cerrado.",
+              "Quedamos atentos ante cualquier requerimiento adicional.",
+              {
+                "segments": [
+                  { "text": "Saludos cordiales," },
+                  { "br": true },
+                  { "text": "Equipo de Soporte TI" },
+                  { "br": true },
+                  { "text": "TechSolutions S.A.S." }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "chat": {
+        "titulo": "Chat (simulado)",
+        "log": [
+          { "who": "Soporte TI", "text": "Buenos días, señora Camila Ríos. Gracias por contactarse con el Equipo de Soporte TI de TechSolutions S.A.S. Tenemos registrado el ticket TS-SW-0789, asociado a pantallazos azules (BSOD) y reinicios inesperados en su equipo. Lamentamos los inconvenientes ocasionados." },
+          { "who": "Camila Ríos", "text": "Buenos días. Sí, el equipo presenta pantallazos azules y se reinicia de forma inesperada." },
+          { "who": "Soporte TI", "text": "Gracias por la confirmación. Para avanzar con el diagnóstico, necesitamos recopilar algunos antecedentes. ¿Con qué frecuencia ocurre el pantallazo azul y desde cuándo comenzó el problema?" },
+          { "who": "Camila Ríos", "text": "Ocurre varias veces al día y comenzó hace unos días, sin previo aviso." },
+          { "who": "Soporte TI", "text": "Entendido. ¿Ha realizado recientemente alguna instalación de programas, actualizaciones del sistema o ha conectado algún dispositivo nuevo al equipo?" },
+          { "who": "Camila Ríos", "text": "Sí, se realizaron algunas actualizaciones recientemente." },
+          { "who": "Soporte TI", "text": "Gracias por la información. Procederemos a revisar el Administrador de dispositivos y a ejecutar herramientas de diagnóstico del sistema para descartar errores de disco o memoria." },
+          { "who": "Soporte TI", "text": "Tras la revisión, se identificó un controlador defectuoso. Se procedió a su actualización y reinstalación, además de ejecutar herramientas de diagnóstico del sistema. El equipo se mantiene estable. ¿Puede confirmar si el problema dejó de presentarse?" },
+          { "who": "Camila Ríos", "text": "Sí, por el momento no ha vuelto a ocurrir." },
+          { "who": "Soporte TI", "text": "Perfecto. Antes de cerrar el ticket, ¿hay algo más en lo que podamos ayudarle?" },
+          { "who": "Camila Ríos", "text": "No, eso sería todo. Gracias." },
+          { "who": "Soporte TI", "text": "Excelente. Con esto, el ticket TS-SW-0789 queda resuelto y cerrado. Muchas gracias por contactarse con TechSolutions S.A.S. Que tenga un excelente día." },
+          { "who": "Camila Ríos", "text": "Gracias. Buen día." }
+        ]
+      },
+      "llamada": {
+        "log": [
+          { "t": "11:26", "who": "Soporte", "lineas": ["Soporte TI de TechSolutions, buenos días. Habla Juan Cruz. ¿Con quién hablo?"] },
+          { "t": "11:26", "who": "Usuaria", "lineas": ["Hola, Juan. Soy Camila Ríos. Mi computador está dando pantallazos azules y se reinicia solo."] },
+          { "t": "11:27", "who": "Soporte", "lineas": ["Gracias por avisar, Camila.", "Entiendo que eso preocupa, sobre todo cuando pasa de forma repetida. Vamos a revisarlo con calma para encontrar la causa."] },
+          { "t": "11:28", "who": "Soporte", "lineas": ["Para entender bien el escenario, ¿con qué frecuencia te aparece el pantallazo azul?"] },
+          { "t": "11:28", "who": "Usuaria", "lineas": ["Ya van varios hoy. Aparece de repente y se reinicia."] },
+          { "t": "11:29", "who": "Soporte", "lineas": ["Entiendo.", "¿Recuerdas desde cuándo empezó a ocurrir esto? ¿Fue hoy o viene de antes?"] },
+          { "t": "11:29", "who": "Usuaria", "lineas": ["Desde ayer en la tarde, más o menos."] },
+          { "t": "11:30", "who": "Soporte", "lineas": ["Bien.", "¿Has instalado algún programa, actualización o driver recientemente?"] },
+          { "t": "11:30", "who": "Usuaria", "lineas": ["Sí, ayer se actualizó el sistema, creo."] },
+          { "t": "11:31", "who": "Soporte", "lineas": ["Eso es un buen dato.", "¿El error aparece cuando usas alguna aplicación en particular o es aleatorio?"] },
+          { "t": "11:31", "who": "Usuaria", "lineas": ["No, es aleatorio. A veces solo con el correo abierto."] },
+          { "t": "11:32", "who": "Soporte", "lineas": ["Perfecto, gracias por el detalle.", "Voy a revisar el sistema y los controladores del equipo para identificar qué está provocando el problema."] },
+          { "t": "11:38", "em": true, "text": "(Intervención técnica fuera de llamada)" },
+          { "t": "11:41", "who": "Soporte", "lineas": ["Camila, ya encontré un controlador que estaba generando conflicto con el sistema.", "Lo acabo de corregir y ejecuté diagnósticos para descartar problemas de disco y memoria."] },
+          { "t": "11:41", "who": "Usuaria", "lineas": ["¿Eso debería solucionarlo?"] },
+          { "t": "11:42", "who": "Soporte", "lineas": ["Sí, con lo que vimos, el origen estaba ahí.", "Antes de cerrar, quiero confirmar contigo que el equipo esté estable."] },
+          { "t": "11:43", "who": "Soporte", "lineas": ["¿Desde que hicimos el ajuste volvió a aparecer el pantallazo azul?"] },
+          { "t": "11:43", "who": "Usuaria", "lineas": ["No, ya no."] },
+          { "t": "11:44", "who": "Soporte", "lineas": ["Perfecto.", "¿Puedes usar el computador con normalidad ahora, sin reinicios inesperados?"] },
+          { "t": "11:44", "who": "Usuaria", "lineas": ["Sí, está funcionando bien."] },
+          { "t": "11:45", "who": "Soporte", "lineas": ["Excelente.", "Entonces confirmamos que el equipo quedó estable y cierro el ticket.", "Si el error vuelve a aparecer, avísanos de inmediato y lo revisamos nuevamente."] },
+          { "t": "11:45", "who": "Usuaria", "lineas": ["Gracias, me quedo mucho más tranquila."] },
+          { "t": "11:46", "who": "Soporte", "lineas": ["Para eso estamos, Camila. Que tengas buen día."] }
+        ]
+      }
+    },
+    "tabs": [
+      { "key": "resumen", "label": "Resumen" },
+      { "key": "canal", "label": "Canal" },
+      { "key": "registro", "label": "Registro" },
+      { "key": "diagnostico", "label": "Diagnóstico" },
+      { "key": "acciones", "label": "Acciones" },
+      { "key": "evidencias", "label": "Evidencias" },
+      { "key": "tiempo", "label": "Tiempo" }
+    ]
+  },
+  {
+    "id": "TS-SW-0912",
+    "titulo": "Usuario molesto",
+    "estado": "Cierre",
+    "prioridad": "Alta",
+    "tipo": "Software",
+    "fechaISO": "2025-12-10T16:08:00",
+    "meta": "Ricardo Salazar · 10 dic 2025 · 16:08",
+    "fechaDisplay": "10 de diciembre de 2025",
+    "horaDisplay": "04:08 p.m.",
+    "estadoDisplay": "Cerrado",
+    "cliente": {
+      "nombre": "Ricardo Salazar",
+      "cargo": "",
+      "piso": "",
+      "oficina": "",
+      "telefono": "312 778 3406",
+      "correo": "ricardo.salazar@techsolutions.com"
+    },
+    "especialistas": "Raven Ovalle, Matías Ureta, Juan Cruz",
+    "notas": [
+      "Usuario: Ricardo Salazar.",
+      "Reporta problema de software que afecta su trabajo.",
+      "Usuario se comunica con alto nivel de molestia y frustración.",
+      "Manifiesta sensación de falta de solución o demora en la atención.",
+      "Impacto alto en sus labores y presión laboral.",
+      "El foco inicial del caso es la gestión de la comunicación, además del aspecto técnico.",
+      "Se identifica la necesidad de aplicar escucha activa y manejo de conflicto."
+    ],
+    "medidas": [
+      "Se realiza contención inicial, manteniendo un tono calmado y profesional.",
+      "Se permite que el usuario exprese su molestia sin interrupciones.",
+      "Se aplican preguntas abiertas para comprender el problema y el contexto: ¿Podrías indicarme qué problema específico estás presentando con el software?",
+      "Se aplican preguntas abiertas para comprender el problema y el contexto: ¿Desde cuándo ocurre esta situación?",
+      "Se aplican preguntas abiertas para comprender el problema y el contexto: ¿Cómo está afectando tu trabajo actualmente?",
+      "Se aplican preguntas abiertas para comprender el problema y el contexto: ¿Has recibido soporte previo por este mismo problema?",
+      "Se valida emocionalmente al usuario: Se reconoce la molestia y el impacto en su trabajo.",
+      "Se parafrasea el problema para confirmar comprensión: Se repite lo entendido sobre el fallo y su impacto.",
+      "Se explica de forma breve el plan de acción que se seguirá para atender el caso y los pasos iniciales de diagnóstico."
+    ],
+    "resolucion": {
+      "pasos": [
+        "Se gestiona la comunicación.",
+        "Se baja el nivel de conflicto.",
+        "Se resuelve el problema reportado.",
+        "Usuario queda informado y conforme.",
+        "Ticket cerrado."
+      ],
+      "confirmacion": [
+        "¿El software está funcionando correctamente ahora?",
+        "¿Puedes continuar con tu trabajo sin los bloqueos que estabas teniendo?",
+        "¿Te sientes conforme con la solución y con la atención que recibiste?"
+      ]
+    },
+    "notasDetalle": [
+      {
+        "type": "paragraph",
+        "segments": [
+          { "strong": true, "text": "Descripción del problema:" }
+        ]
+      },
+      {
+        "type": "list",
+        "items": [
+          "Usuario: Ricardo Salazar.",
+          "Reporta problema de software que afecta su trabajo.",
+          "Usuario se comunica con alto nivel de molestia y frustración.",
+          "Manifiesta sensación de falta de solución o demora en la atención.",
+          "Impacto alto en sus labores y presión laboral.",
+          "El foco inicial del caso es la gestión de la comunicación, además del aspecto técnico.",
+          "Se identifica la necesidad de aplicar escucha activa y manejo de conflicto."
+        ]
+      },
+      {
+        "type": "paragraph",
+        "segments": [
+          { "strong": true, "text": "Medidas adoptadas:" }
+        ]
+      },
+      {
+        "type": "list",
+        "items": [
+          "Se realiza contención inicial, manteniendo un tono calmado y profesional.",
+          "Se permite que el usuario exprese su molestia sin interrupciones.",
+          {
+            "segments": [
+              { "text": "Se aplican preguntas abiertas para comprender el problema y el contexto:" }
+            ],
+            "subitems": [
+              "¿Podrías indicarme qué problema específico estás presentando con el software?",
+              "¿Desde cuándo ocurre esta situación?",
+              "¿Cómo está afectando tu trabajo actualmente?",
+              "¿Has recibido soporte previo por este mismo problema?"
+            ]
+          },
+          {
+            "segments": [
+              { "text": "Se valida emocionalmente al usuario:" }
+            ],
+            "subitems": [
+              "Se reconoce la molestia y el impacto en su trabajo."
+            ]
+          },
+          {
+            "segments": [
+              { "text": "Se parafrasea el problema para confirmar comprensión:" }
+            ],
+            "subitems": [
+              "Se repite lo entendido sobre el fallo y su impacto."
+            ]
+          },
+          "Se explica de forma breve el plan de acción que se seguirá para atender el caso y los pasos iniciales de diagnóstico."
+        ]
+      },
+      {
+        "type": "paragraph",
+        "segments": [
+          { "strong": true, "text": "Resolución:" }
+        ]
+      },
+      {
+        "type": "list",
+        "items": [
+          "Se gestiona la comunicación.",
+          "Se baja el nivel de conflicto.",
+          "Se resuelve el problema reportado.",
+          "Usuario queda informado y conforme.",
+          "Ticket cerrado."
+        ]
+      }
+    ],
+    "resumen": "Usuario expresa frustración por impacto en su trabajo. Se prioriza atención técnica y gestión de comunicación.",
+    "registro": [],
+    "comunicacion": "Se aplicó escucha activa, validación emocional y explicación clara del plan de acción. Se acordó seguimiento por correo y chat.",
+    "diagnostico": "Se identificó que el problema de software afecta la integración con un servicio externo; se documentó y se escaló a desarrollo si corresponde.",
+    "acciones": [],
+    "tiempoTitulo": "Tiempo",
+    "tiempoTexto": "Si.",
+    "evidencias": [
+      {
+        "titulo": "Evidencia 1",
+        "tipo": "captura",
+        "src": "svg-photo-5",
+        "thumb": {
+          "width": 320,
+          "height": 180,
+          "fill": "#fff",
+          "textColor": "#333",
+          "text": "Captura: error app (placeholder)"
+        }
+      },
+      {
+        "titulo": "Evidencia 2",
+        "tipo": "captura",
+        "src": "svg-screenshot-5",
+        "thumb": {
+          "width": 320,
+          "height": 180,
+          "fill": "#f7f7f7",
+          "textColor": "#333",
+          "text": "Chat: transcripción (placeholder)"
+        }
+      },
+      {
+        "titulo": "Evidencia 3",
+        "tipo": "log",
+        "src": "svg-log-5",
+        "thumb": {
+          "width": 320,
+          "height": 180,
+          "fill": "#fff7e6",
+          "textColor": "#ff7a00",
+          "text": "Log: integración (placeholder)"
+        }
+      }
+    ],
+    "canales": {
+      "ayuda": "Use la selección en \"Fuente del ticket\" para alternar la vista entre Correo, Chat y Llamada.",
+      "fuentePlacement": "inside",
+      "fuenteColspan": 3,
+      "default": "correo",
+      "botones": [
+        { "view": "correo", "label": "Correo" },
+        { "view": "chat", "label": "Chat" },
+        { "view": "llamada", "label": "Llamada" }
+      ],
+      "correo": {
+        "titulo": "Correo (simulado)",
+        "hilos": [
+          {
+            "de": "ricardo.salazar@techsolutions.com",
+            "para": "itsupport@techsolutions.com",
+            "asunto": "Problema de software sin solución",
+            "cuerpo": [
+              "Estimado equipo de Soporte TI,",
+              "Les escribo bastante molesto debido a un problema de software que está afectando mi trabajo. Esta situación me ha generado retrasos y siento que no he recibido una solución oportuna.",
+              "Necesito apoyo a la brevedad, ya que el problema está impactando directamente en mis labores.",
+              {
+                "segments": [
+                  { "text": "Saludos," },
+                  { "br": true },
+                  { "text": "Ricardo Salazar" }
+                ]
+              }
+            ]
+          },
+          {
+            "de": "itsupport@techsolutions.com",
+            "para": "ricardo.salazar@techsolutions.com",
+            "asunto": "Re: Problema de software sin solución",
+            "cuerpo": [
+              "Estimado Sr. Ricardo Salazar,",
+              "Gracias por contactarnos. Lamentamos los inconvenientes que esta situación le ha generado. Para poder ayudarle de la mejor manera, necesitamos aclarar algunos puntos.",
+              {
+                "segments": [
+                  { "text": "¿Podría indicarnos qué problema específico presenta el software?" },
+                  { "br": true },
+                  { "text": "¿Desde cuándo ocurre esta situación?" },
+                  { "br": true },
+                  { "text": "¿Cómo está afectando su trabajo actualmente?" }
+                ]
+              },
+              "Con esta información podremos revisar el caso con mayor precisión.",
+              {
+                "segments": [
+                  { "text": "Saludos cordiales," },
+                  { "br": true },
+                  { "text": "Equipo de Soporte TI" }
+                ]
+              }
+            ]
+          },
+          {
+            "de": "ricardo.salazar@techsolutions.com",
+            "para": "itsupport@techsolutions.com",
+            "asunto": "Re: Problema de software sin solución",
+            "cuerpo": [
+              "Buenas tardes,",
+              "El problema ocurre al utilizar el software durante mis tareas diarias. Comenzó hace unos días y me impide avanzar con normalidad, ya que el sistema no responde como debería.",
+              "Quedo atento a sus comentarios.",
+              "Ricardo Salazar"
+            ]
+          },
+          {
+            "de": "itsupport@techsolutions.com",
+            "para": "ricardo.salazar@techsolutions.com",
+            "asunto": "Cierre de incidente TS-SW-0912 | Incidente de software",
+            "cuerpo": [
+              "Estimado Sr. Ricardo Salazar,",
+              "Luego de revisar la información entregada, se aplicó la solución correspondiente al problema de software reportado.",
+              "Posteriormente, se validó con usted que el sistema quedó funcionando correctamente y que pudo continuar con sus labores sin inconvenientes.",
+              "Con lo anterior, el incidente queda resuelto y cerrado. En caso de requerir apoyo adicional, puede contactarnos nuevamente.",
+              {
+                "segments": [
+                  { "text": "Saludos cordiales," },
+                  { "br": true },
+                  { "text": "Equipo de Soporte TI" },
+                  { "br": true },
+                  { "text": "TechSolutions S.A.S." }
+                ]
+              }
+            ]
+          },
+          {
+            "de": "ricardo.salazar@techsolutions.com",
+            "para": "itsupport@techsolutions.com",
+            "asunto": "Agradecimiento por apoyo recibido",
+            "cuerpo": [
+              "Estimado equipo de Soporte TI,",
+              "Quiero agradecer la ayuda brindada y la atención recibida durante la resolución del incidente. El problema quedó solucionado y pude retomar mi trabajo con normalidad.",
+              "Gracias por el apoyo.",
+              {
+                "segments": [
+                  { "text": "Saludos," },
+                  { "br": true },
+                  { "text": "Ricardo Salazar" }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "chat": {
+        "titulo": "Chat (simulado)",
+        "log": [
+          { "who": "Soporte TI", "text": "Buenos días, señor Ricardo Salazar. Gracias por contactarse con el Equipo de Soporte TI de TechSolutions S.A.S. Tenemos registrado el ticket TS-SW-0912, relacionado con un problema de software que está afectando su trabajo. Lamentamos los inconvenientes ocasionados." },
+          { "who": "Ricardo Salazar", "text": "Buenos días. Este problema me ha generado retrasos y bastante molestia." },
+          { "who": "Soporte TI", "text": "Comprendemos su molestia y el impacto que esta situación está generando en su trabajo. Agradecemos que nos haya informado. Permítanos ayudarle a resolverlo." },
+          { "who": "Soporte TI", "text": "Para entender correctamente la situación, ¿podría indicarnos qué problema específico está presentando y desde cuándo ocurre?" },
+          { "who": "Ricardo Salazar", "text": "El software falla constantemente y esto ocurre desde hace varios días." },
+          { "who": "Soporte TI", "text": "Entendido. Entonces, el problema de software está afectando directamente su trabajo y le ha generado retrasos. Procederemos a realizar las validaciones técnicas necesarias y a explicarle el plan de acción." },
+          { "who": "Soporte TI", "text": "Las validaciones fueron realizadas y se aplicó la solución correspondiente. ¿Puede confirmar si el sistema ahora funciona correctamente?" },
+          { "who": "Ricardo Salazar", "text": "Sí, ahora el sistema funciona correctamente." },
+          { "who": "Soporte TI", "text": "Perfecto. Antes de cerrar el ticket, ¿hay algo más en lo que podamos ayudarle?" },
+          { "who": "Ricardo Salazar", "text": "No, por ahora está todo bien." },
+          { "who": "Soporte TI", "text": "Excelente. Con esto, el ticket TS-SW-0912 queda resuelto y cerrado. Muchas gracias por contactarse con TechSolutions S.A.S. Que tenga un excelente día." },
+          { "who": "Ricardo Salazar", "text": "Gracias. Buen día." }
+        ]
+      },
+      "llamada": {
+        "log": [
+          { "t": "16:08", "who": "Soporte", "lineas": ["Soporte TI de TechSolutions, buenas tardes. Habla Juan Cruz. ¿Con quién tengo el gusto?"] },
+          { "t": "16:08", "who": "Usuario", "lineas": ["Ricardo Salazar.", "Mira, estoy bastante molesto porque este problema me tiene atrasado y nadie me ha dado una solución clara."] },
+          { "t": "16:09", "who": "Soporte", "lineas": ["Entiendo, Ricardo.", "Gracias por decírmelo directamente. Antes de seguir, quiero escucharte bien para entender qué está pasando."] },
+          { "t": "16:10", "who": "Usuario", "lineas": ["Este software lleva días fallando, pierdo tiempo, me presionan por los plazos y siento que nadie se hace cargo."] },
+          { "t": "16:11", "who": "Soporte", "lineas": ["Comprendo la molestia, y es totalmente válida si esto está afectando tu trabajo.", "Déjame confirmar algo para asegurarme de que te entendí bien: el problema es con el software y te está generando retrasos constantes, ¿correcto?"] },
+          { "t": "16:11", "who": "Usuario", "lineas": ["Sí, exactamente."] },
+          { "t": "16:12", "who": "Soporte", "lineas": ["Gracias.", "Cuéntame por favor, ¿qué problema específico estás teniendo con el software en este momento?"] },
+          { "t": "16:12", "who": "Usuario", "lineas": ["Se queda pegado, a veces no guarda, tengo que cerrarlo y volver a abrir."] },
+          { "t": "16:13", "who": "Soporte", "lineas": ["Entiendo.", "¿Desde cuándo te ocurre esto y con qué frecuencia?"] },
+          { "t": "16:13", "who": "Usuario", "lineas": ["Desde hace varios días, prácticamente todos los días."] },
+          { "t": "16:14", "who": "Soporte", "lineas": ["Bien, gracias por la paciencia.", "Antes de avanzar, quiero que sepas que voy a hacerme cargo de este caso y explicarte claramente qué vamos a hacer para solucionarlo."] },
+          { "t": "16:15", "em": true, "text": "(Se explica brevemente el plan de acción, sin tecnicismos)" },
+          { "t": "16:20", "who": "Soporte", "lineas": ["Ya realicé el ajuste necesario para corregir el problema que me comentabas.", "Antes de cerrar, necesito confirmar contigo que el problema esté realmente solucionado."] },
+          { "t": "16:21", "who": "Soporte", "lineas": ["Ricardo, ¿el software está funcionando correctamente ahora?"] },
+          { "t": "16:21", "who": "Usuario", "lineas": ["Sí, ahora responde bien."] },
+          { "t": "16:22", "who": "Soporte", "lineas": ["Perfecto.", "¿Puedes continuar con tu trabajo sin los bloqueos que estabas teniendo?"] },
+          { "t": "16:22", "who": "Usuario", "lineas": ["Sí, por ahora está todo bien."] },
+          { "t": "16:23", "who": "Soporte", "lineas": ["Me alegra escucharlo.", "¿Te sientes conforme con la solución y con la atención que recibiste?"] },
+          { "t": "16:23", "who": "Usuario", "lineas": ["Sí, gracias. La verdad estaba muy molesto, pero ahora está resuelto."] },
+          { "t": "16:24", "who": "Soporte", "lineas": ["Lo entiendo, y agradezco que lo hayas dicho.", "Entonces dejamos el ticket cerrado. Si el problema vuelve a aparecer, me contactas directamente y lo revisamos de inmediato."] },
+          { "t": "16:24", "who": "Usuario", "lineas": ["De acuerdo, gracias."] },
+          { "t": "16:25", "who": "Soporte", "lineas": ["Gracias a ti por avisar, Ricardo. Que tengas buena tarde."] }
+        ]
+      }
+    },
+    "tabs": [
+      { "key": "resumen", "label": "Resumen" },
+      { "key": "canal", "label": "Canal" },
+      { "key": "registro", "label": "Registro" },
+      { "key": "comunicacion", "label": "Comunicación" },
+      { "key": "diagnostico", "label": "Diagnóstico" },
+      { "key": "acciones", "label": "Acciones" },
+      { "key": "evidencias", "label": "Evidencias" },
+      { "key": "tiempo", "label": "Tiempo" }
+    ]
+  }
+]

@@ -167,10 +167,12 @@
             <tr>
               <td colspan="3">
                 <strong>Fuente del ticket:</strong>
-                <div class="ticket-fuente" data-ticket="TS-HW-0238" role="radiogroup" aria-label="Seleccionar canal de ingreso">
+                <div class="ticket-fuente" data-ticket="TS-HW-0238" role="radiogroup"
+                  aria-label="Seleccionar canal de ingreso">
                   <button class="view-btn" data-view="correo" data-ticket="TS-HW-0238" aria-pressed="true"
                     role="radio">Correo</button>
-                  <button class="view-btn" data-view="chat" data-ticket="TS-HW-0238" aria-pressed="false" role="radio">Chat</button>
+                  <button class="view-btn" data-view="chat" data-ticket="TS-HW-0238" aria-pressed="false"
+                    role="radio">Chat</button>
                   <button class="view-btn" data-view="llamada" data-ticket="TS-HW-0238" aria-pressed="false"
                     role="radio">Llamada</button>
                 </div>
@@ -179,110 +181,354 @@
             <div class="channel-view" id="view-TS-HW-0238">
               <div class="channel correo">
                 <h5>Correo (Respuesta)</h5>
-                <p><strong>De:</strong> itsupport@techsolutions.com</p>
-                <p><strong>Asunto:</strong> Cierre de incidente TS-HW-0238 | Equipo no enciende</p>
-                <p>Estimado Sr. Juan Pérez,</p>
-                <p>Director de Desarrollo de Software,</p>
-                <p>Junto con saludar, ofrecemos disculpas por los inconvenientes ocasionados por el incidente TS-HW-0238, relacionado con la imposibilidad de encender su equipo de escritorio corporativo, ubicado en Piso 2, Oficina 204. Agradecemos que se haya comunicado oportunamente con el área de Soporte TI, lo que permitió una atención prioritaria considerando el impacto operativo y su rol crítico.</p>
-                <p>Tras el reporte, se realizó un diagnóstico inmediato bajo un enfoque de descarte, verificando la alimentación eléctrica, probando el equipo en una fuente alternativa y confirmando la ausencia de señales de encendido. Como resultado, se identificó una falla en la fuente de poder (PSU), la cual fue reemplazada, restableciendo el funcionamiento normal del equipo.</p>
-                <p>La operatividad fue validada directamente con usted, confirmando la continuidad de sus actividades. Como medida preventiva, se recomienda reportar oportunamente cualquier comportamiento anómalo del hardware.</p>
-                <p>Con lo anterior, el incidente queda resuelto y cerrado, sin requerir escalamiento adicional.</p>
-                <p>Quedamos atentos ante cualquier requerimiento adicional.</p>
-                <p>Saludos cordiales,</p>
-                <p>Equipo de Soporte TI</p>
-                <p><strong>TechSolutions S.A.S.</strong></p>
-                <p><strong>Equipo:</strong> Raven Ovalle · Matías Ureta · Juan Cruz</p>
+                <!-- CORREO 1: Apertura de ticket (CASO 1) -->
+                <div class="ticket-email">
+                  <div class="email-header">
+                    <p><strong>De:</strong> juan.perez@techsolutions.com</p>
+                    <p><strong>Para:</strong> itsupport@techsolutions.com</p>
+                    <p><strong>Asunto:</strong> Equipo no enciende</p>
+                  </div>
+
+                  <div class="email-body">
+                    <p>Estimado equipo de Soporte TI,</p>
+
+                    <p>
+                      Junto con saludar, les escribo para reportar un problema con mi computador de escritorio.
+                      El equipo no enciende en absoluto; no presenta luces ni sonidos al intentar prenderlo.
+                    </p>
+
+                    <p>
+                      Esta situación me impide acceder a mis herramientas de trabajo y tengo una reunión importante
+                      programada, por lo que agradecería su apoyo para revisar el problema a la brevedad.
+                    </p>
+
+                    <p>
+                      Saludos cordiales,<br>
+                      <strong>Juan Pérez<br>
+                        Director de Desarrollo de Software</strong>
+                    </p>
+                  </div>
+                </div>
+
+                <hr>
+
+                <!-- CORREO 2: Respuesta y cierre del ticket (CASO 1) -->
+                <div class="ticket-email">
+                  <div class="email-header">
+                    <p><strong>De:</strong> itsupport@techsolutions.com</p>
+                    <p><strong>Para:</strong> juan.perez@techsolutions.com</p>
+                    <p><strong>Asunto:</strong> Cierre de incidente TS-HW-0238 | Equipo no enciende</p>
+                  </div>
+
+                  <div class="email-body">
+                    <p>
+                      Estimado Sr. Juan Pérez,<br>
+                      Director de Desarrollo de Software,
+                    </p>
+
+                    <p>
+                      Junto con saludar, ofrecemos disculpas por los inconvenientes ocasionados por el incidente
+                      <strong>TS-HW-0238</strong>, relacionado con la imposibilidad de encender su equipo de escritorio
+                      corporativo, ubicado en Piso 2, Oficina 204. Agradecemos que se haya comunicado oportunamente con
+                      el área de Soporte TI, lo que permitió una atención prioritaria considerando el impacto operativo
+                      y su rol crítico.
+                    </p>
+
+                    <p>
+                      Tras el reporte, se realizó un diagnóstico inmediato bajo un enfoque de descarte, verificando la
+                      alimentación eléctrica, probando el equipo en una fuente alternativa y confirmando la ausencia
+                      de señales de encendido. Como resultado, se identificó una falla en la fuente de poder (PSU),
+                      la cual fue reemplazada, restableciendo el funcionamiento normal del equipo.
+                    </p>
+
+                    <p>
+                      La operatividad fue validada directamente con usted, confirmando la continuidad de sus
+                      actividades. Como medida preventiva, se recomienda reportar oportunamente cualquier
+                      comportamiento anómalo del hardware.
+                    </p>
+
+                    <p>
+                      Con lo anterior, el incidente queda resuelto y cerrado, sin requerir escalamiento adicional.
+                    </p>
+
+                    <p>
+                      Quedamos atentos ante cualquier requerimiento adicional.
+                    </p>
+
+                    <p>
+                      Saludos cordiales,<br>
+                      <strong>Equipo de Soporte TI<br>
+                        TechSolutions S.A.S.</strong>
+                    </p>
+                  </div>
+                </div>
               </div>
-              
+
               <div class="channel chat" hidden>
                 <h5>Chat (simulado)</h5>
-              
+
                 <div class="chat-msg">
                   <strong>Soporte TI:</strong>
-                  Buenos días, señor Juan Pérez. Gracias por contactarse con el Equipo de Soporte TI de TechSolutions S.A.S.
-                  Tenemos registrado el ticket TS-HW-0238, asociado a que su equipo de escritorio ubicado en Piso 2, Oficina 204
+                  Buenos días, señor Juan Pérez. Gracias por contactarse con el Equipo de Soporte TI de TechSolutions
+                  S.A.S.
+                  Tenemos registrado el ticket TS-HW-0238, asociado a que su equipo de escritorio ubicado en Piso 2,
+                  Oficina 204
                   no presenta señales de encendido. Lamentamos los inconvenientes ocasionados.
                 </div>
-              
+
                 <div class="chat-msg">
                   <strong>Juan Pérez:</strong>
                   Buenos días. Así es, el equipo no enciende en absoluto, no hay luces ni ruidos.
                 </div>
-              
+
                 <div class="chat-msg">
                   <strong>Soporte TI:</strong>
                   Gracias por la confirmación. Para descartar una falla externa,
                   ¿el equipo fue probado en otra toma eléctrica distinta a la habitual?
                 </div>
-              
+
                 <div class="chat-msg">
                   <strong>Juan Pérez:</strong>
                   Sí, ya fue probado en otra toma y el comportamiento es el mismo.
                 </div>
-              
+
                 <div class="chat-msg">
                   <strong>Soporte TI:</strong>
                   Entendido. Con esta validación descartamos un problema de suministro eléctrico externo.
                   Procederemos con la revisión física básica del equipo.
                 </div>
-              
+
                 <div class="chat-msg">
                   <strong>Soporte TI:</strong>
                   Tras las verificaciones realizadas, se identificó una falla en la fuente de poder (PSU).
                   Procederemos al reemplazo del componente para restablecer el servicio.
                 </div>
-              
+
                 <div class="chat-msg">
                   <strong>Juan Pérez:</strong>
                   De acuerdo.
                 </div>
-              
+
                 <div class="chat-msg">
                   <strong>Soporte TI:</strong>
                   El reemplazo fue realizado exitosamente. El equipo encendió correctamente.
                   ¿Puede confirmar que el funcionamiento es normal?
                 </div>
-              
+
                 <div class="chat-msg">
                   <strong>Juan Pérez:</strong>
                   Sí, confirmo que el equipo está operativo.
                 </div>
-              
+
                 <div class="chat-msg">
                   <strong>Soporte TI:</strong>
                   Perfecto, agradecemos su confirmación.
                   Antes de cerrar el ticket, ¿hay algo más en lo que podamos ayudarle?
                 </div>
-              
+
                 <div class="chat-msg">
                   <strong>Juan Pérez:</strong>
                   No, por ahora todo está bien. Gracias.
                 </div>
-              
+
                 <div class="chat-msg">
                   <strong>Soporte TI:</strong>
                   Excelente. Con esto, el ticket TS-HW-0238 queda resuelto y cerrado.
                   Muchas gracias por contactarse con TechSolutions S.A.S.
                   Que tenga un excelente día.
                 </div>
-              
+
                 <div class="chat-msg">
                   <strong>Juan Pérez:</strong>
                   Gracias por el apoyo. Buen día.
                 </div>
               </div>
-              
-              
+
+
               <div class="channel llamada" hidden>
                 <h5>Llamada (simulada)</h5>
-                <div class="call-line"><time>09:15</time> <strong>Soporte:</strong> Buen día Juan, ¿qué sucede con su
-                  equipo?</div>
-                <div class="call-line"><time>09:16</time> <strong>Juan:</strong> No enciende, no hay luces ni
-                  ventiladores.</div>
-                <div class="call-line"><time>09:17</time> <strong>Soporte:</strong> Verificaremos alimentación y le
-                  informo los pasos.</div>
+                <!-- LLAMADA TELEFÓNICA: CASO 1 -->
+                <div class="call-log">
+
+                  <p>
+                    <time datetime="2025-09-18T09:15">09:15</time>
+                    <strong>Soporte:</strong><br>
+                    Buenos días, Soporte TI de TechSolutions, habla Juan Cruz. ¿Con quién hablo?
+                  </p>
+
+                  <p>
+                    <time datetime="2025-09-18T09:15">09:15</time>
+                    <strong>Usuario:</strong><br>
+                    Juan Pérez. Mira, tengo un problema grave: mi computador no enciende y tengo una reunión importante
+                    en minutos.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-09-18T09:16">09:16</time>
+                    <strong>Soporte:</strong><br>
+                    Entiendo, Juan, gracias por avisar.<br>
+                    Quedémonos tranquilos un segundo y lo revisamos paso a paso.<br>
+                    Para ubicarte bien, ¿estás en el piso 2, oficina 204?
+                  </p>
+
+                  <p>
+                    <time datetime="2025-09-18T09:16">09:16</time>
+                    <strong>Usuario:</strong><br>
+                    Sí, acá mismo.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-09-18T09:17">09:17</time>
+                    <strong>Soporte:</strong><br>
+                    Perfecto. Cuéntame exactamente qué pasa cuando presionas el botón de encendido.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-09-18T09:17">09:17</time>
+                    <strong>Usuario:</strong><br>
+                    Nada. No prende luces, no suena, no hace absolutamente nada.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-09-18T09:18">09:18</time>
+                    <strong>Soporte:</strong><br>
+                    De acuerdo, eso es importante.<br>
+                    ¿Ayer el equipo funcionó con normalidad cuando lo apagaste?
+                  </p>
+
+                  <p>
+                    <time datetime="2025-09-18T09:18">09:18</time>
+                    <strong>Usuario:</strong><br>
+                    Sí, cero problemas.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-09-18T09:19">09:19</time>
+                    <strong>Soporte:</strong><br>
+                    Bien.<br>
+                    ¿Está conectado directo a la toma eléctrica o a una regleta?
+                  </p>
+
+                  <p>
+                    <time datetime="2025-09-18T09:19">09:19</time>
+                    <strong>Usuario:</strong><br>
+                    A una regleta.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-09-18T09:20">09:20</time>
+                    <strong>Soporte:</strong><br>
+                    Perfecto. ¿Podrías probar conectarlo directo a la toma, solo para descartar eso?
+                  </p>
+
+                  <p>
+                    <time datetime="2025-09-18T09:20">09:20</time>
+                    <strong>Usuario:</strong><br>
+                    Ya lo probé recién… sigue igual.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-09-18T09:21">09:21</time>
+                    <strong>Soporte:</strong><br>
+                    Gracias por confirmarlo.<br>
+                    ¿El interruptor trasero de la fuente está en posición de encendido?
+                  </p>
+
+                  <p>
+                    <time datetime="2025-09-18T09:21">09:21</time>
+                    <strong>Usuario:</strong><br>
+                    Sí, está en ON.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-09-18T09:22">09:22</time>
+                    <strong>Soporte:</strong><br>
+                    Bien, con eso ya descartamos lo más simple.<br>
+                    Por lo que me describes, el equipo no está recibiendo energía.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-09-18T09:22">09:22</time>
+                    <strong>Usuario:</strong><br>
+                    ¿Eso significa que murió?
+                  </p>
+
+                  <p>
+                    <time datetime="2025-09-18T09:23">09:23</time>
+                    <strong>Soporte:</strong><br>
+                    No necesariamente.<br>
+                    Voy a revisar el equipo ahora mismo y aplicar la corrección necesaria para dejarlo operativo.<br>
+                    Dame un momento y no te muevas de ahí.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-09-18T09:30">09:30</time>
+                    <em>(Intervención técnica fuera de llamada)</em>
+                  </p>
+
+                  <p>
+                    <time datetime="2025-09-18T09:32">09:32</time>
+                    <strong>Soporte:</strong><br>
+                    Juan, ya realicé el reemplazo del componente que estaba fallando.<br>
+                    ¿Podrías presionar el botón de encendido ahora, por favor?
+                  </p>
+
+                  <p>
+                    <time datetime="2025-09-18T09:32">09:32</time>
+                    <strong>Usuario:</strong><br>
+                    Un segundo…<br>
+                    Sí, ahí encendió.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-09-18T09:33">09:33</time>
+                    <strong>Soporte:</strong><br>
+                    Perfecto.<br>
+                    ¿El sistema inició normalmente? ¿Puedes entrar a tu sesión?
+                  </p>
+
+                  <p>
+                    <time datetime="2025-09-18T09:33">09:33</time>
+                    <strong>Usuario:</strong><br>
+                    Sí, ya estoy dentro.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-09-18T09:34">09:34</time>
+                    <strong>Soporte:</strong><br>
+                    Excelente.<br>
+                    ¿Puedes acceder a tus herramientas de trabajo y al correo sin problema?
+                  </p>
+
+                  <p>
+                    <time datetime="2025-09-18T09:34">09:34</time>
+                    <strong>Usuario:</strong><br>
+                    Sí, todo funcionando.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-09-18T09:35">09:35</time>
+                    <strong>Soporte:</strong><br>
+                    Perfecto entonces.<br>
+                    Confirmamos que el equipo quedó operativo y cierro el ticket.<br>
+                    Si notas cualquier cosa extraña durante el día, me avisas de inmediato.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-09-18T09:35">09:35</time>
+                    <strong>Usuario:</strong><br>
+                    Gracias, de verdad. Me salvaste la reunión.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-09-18T09:36">09:36</time>
+                    <strong>Soporte:</strong><br>
+                    Para eso estamos. Éxito en la reunión, Juan.
+                  </p>
+
+                </div>
+
               </div>
-            </div>
           </section>
 
           <section id="ts1-registro" class="tabpanel" role="tabpanel" hidden>
@@ -496,7 +742,8 @@ No last wake source found.</code></pre>
             <div class="channel-view" id="view-TS-PRN-0524">
               <td colspan="3">
                 <strong>Fuente del ticket:</strong>
-                <div class="ticket-fuente" data-ticket="TS-PRN-0524" role="radiogroup" aria-label="Seleccionar canal de ingreso">
+                <div class="ticket-fuente" data-ticket="TS-PRN-0524" role="radiogroup"
+                  aria-label="Seleccionar canal de ingreso">
                   <button class="view-btn" data-view="correo" data-ticket="TS-PRN-0524" aria-pressed="true"
                     role="radio">Correo</button>
                   <button class="view-btn" data-view="chat" data-ticket="TS-PRN-0524" aria-pressed="false"
@@ -506,90 +753,304 @@ No last wake source found.</code></pre>
                 </div>
               </td>
               <div class="channel correo">
-                <h5>Correo</h5>
-                <p><strong>De:</strong> maria.gomez@techsolutions.com</p>
-                <p><strong>Asunto:</strong> Impresora HR-FLOOR2 no responde</p>
-                <p>Estimado soporte, durante el cierre financiero la impresora de red no procesa trabajos. IP 10.1.2.35
-                  no responde a ping. Solicito revisión urgente.</p>
+                <h5>Correo (respuesta)</h5>
+                <!-- CORREO 1: Apertura de ticket (CASO 2) -->
+                <div class="ticket-email">
+                  <div class="email-header">
+                    <p><strong>De:</strong> maria.gomez@techsolutions.com</p>
+                    <p><strong>Para:</strong> itsupport@techsolutions.com</p>
+                    <p><strong>Asunto:</strong> No es posible imprimir en impresora HR-FLOOR2</p>
+                  </div>
+
+                  <div class="email-body">
+                    <p>Estimado equipo de Soporte TI,</p>
+
+                    <p>
+                      Junto con saludar, les escribo para reportar un problema con la impresora de red
+                      <strong>HR-FLOOR2</strong> del Área de Contabilidad. Desde esta mañana, los documentos enviados
+                      a imprimir no se procesan correctamente y quedan retenidos.
+                    </p>
+
+                    <p>
+                      Actualmente nos encontramos en proceso de cierre financiero, por lo que esta situación está
+                      afectando de manera directa nuestras labores. Agradecería su apoyo para revisar el problema a
+                      la brevedad.
+                    </p>
+
+                    <p>
+                      Saludos cordiales,<br>
+                      <strong>María Fernanda Gómez<br>
+                        Área de Contabilidad</strong>
+                    </p>
+                  </div>
+                </div>
+
+                <hr>
+
+                <!-- CORREO 2: Respuesta y cierre del ticket (CASO 2) -->
+                <div class="ticket-email">
+                  <div class="email-header">
+                    <p><strong>De:</strong> itsupport@techsolutions.com</p>
+                    <p><strong>Para:</strong> maria.gomez@techsolutions.com</p>
+                    <p><strong>Asunto:</strong> Cierre de incidente TS-PRN-0524 | No se puede imprimir</p>
+                  </div>
+
+                  <div class="email-body">
+                    <p>Estimada María Fernanda,</p>
+
+                    <p>
+                      Junto con saludar, le informamos que el ticket <strong>TS-PRN-0524</strong>, asociado a la
+                      imposibilidad de imprimir en la impresora de red <strong>HR-FLOOR2</strong> del Área de
+                      Contabilidad, ha sido resuelto satisfactoriamente.
+                    </p>
+
+                    <p>
+                      Durante la revisión del incidente, se realizaron validaciones del estado físico del equipo, de
+                      la cola de impresión y de la conectividad de red. A partir de las pruebas efectuadas, se detectó
+                      que la dirección IP configurada (<strong>10.1.2.35</strong>) no correspondía al dispositivo, lo
+                      que generaba un error de conectividad e impedía el procesamiento de los trabajos de impresión.
+                      Esto indicaba que la impresora había sido reubicada o se encontraba configurada en otra red.
+                    </p>
+
+                    <p>
+                      Una vez identificada la IP correcta de la impresora, se procedió a su reconfiguración en los
+                      equipos del área y se realizaron pruebas de impresión exitosas, confirmando el restablecimiento
+                      del servicio y la normalización de las actividades del cierre financiero.
+                    </p>
+
+                    <p>
+                      Agradecemos su colaboración durante la atención del caso. En caso de presentar cualquier nuevo
+                      inconveniente o requerir apoyo adicional, no dude en contactarnos por los canales habituales de
+                      soporte.
+                    </p>
+
+                    <p>
+                      Saludos cordiales,<br>
+                      <strong>Equipo de Soporte TI<br>
+                        TechSolutions S.A.S.</strong>
+                    </p>
+                  </div>
+                </div>
+
               </div>
-              
+
               <div class="channel chat" hidden>
                 <h5>Chat (simulado)</h5>
-              
                 <div class="chat-msg">
                   <strong>Soporte TI:</strong>
-                  Buenos días, señora María Fernanda Gómez. Gracias por contactarse con el Equipo de Soporte TI de TechSolutions
+                  Buenos días, señora María Fernanda Gómez. Gracias por contactarse con el Equipo de Soporte TI de
+                  TechSolutions
                   S.A.S.
-                  Tenemos registrado el ticket TS-PRN-0524, relacionado con inconvenientes de impresión en el Área de Contabilidad.
+                  Tenemos registrado el ticket TS-PRN-0524, relacionado con inconvenientes de impresión en el Área de
+                  Contabilidad.
                   Lamentamos los inconvenientes, especialmente considerando el cierre financiero.
                 </div>
-              
                 <div class="chat-msg">
                   <strong>María Fernanda Gómez:</strong>
                   Buenos días. Sí, no es posible imprimir y los trabajos quedan retenidos.
                 </div>
-              
                 <div class="chat-msg">
                   <strong>Soporte TI:</strong>
                   Gracias por la información. Procederemos a validar la conectividad con la impresora de red HR-FLOOR2.
                 </div>
-              
                 <div class="chat-msg">
                   <strong>Soporte TI:</strong>
                   Las pruebas indican que la impresora no responde a la IP configurada (10.1.2.35),
                   lo que sugiere un problema de conectividad o configuración.
                 </div>
-              
                 <div class="chat-msg">
                   <strong>María Fernanda Gómez:</strong>
                   Entiendo.
                 </div>
-              
                 <div class="chat-msg">
                   <strong>Soporte TI:</strong>
                   Procederemos a identificar la IP correcta del dispositivo y reconfigurar la impresora.
                 </div>
-              
                 <div class="chat-msg">
                   <strong>Soporte TI:</strong>
                   La impresora fue reconfigurada y la prueba de impresión fue exitosa.
                   ¿Puede confirmar si el documento se imprimió correctamente?
                 </div>
-              
                 <div class="chat-msg">
                   <strong>María Fernanda Gómez:</strong>
                   Sí, ahora imprime correctamente.
                 </div>
-              
                 <div class="chat-msg">
                   <strong>Soporte TI:</strong>
                   Perfecto. Antes de cerrar el ticket, ¿hay algo más en lo que podamos ayudarle?
                 </div>
-              
                 <div class="chat-msg">
                   <strong>María Fernanda Gómez:</strong>
                   No, eso sería todo. Gracias.
                 </div>
-              
                 <div class="chat-msg">
                   <strong>Soporte TI:</strong>
                   Excelente. Con esto, el ticket TS-PRN-0524 queda resuelto y cerrado.
                   Gracias por contactarse con TechSolutions S.A.S. Que tenga un buen día.
                 </div>
-              
                 <div class="chat-msg">
                   <strong>María Fernanda Gómez:</strong>
                   Gracias por la ayuda. Buen día.
                 </div>
               </div>
-              
-              
               <div class="channel llamada" hidden>
-                <h5>Llamada</h5>
-                <div class="call-line"><time>10:42</time> <strong>Soporte:</strong> ¿La impresora muestra errores en el
-                  panel?</div>
-                <div class="call-line"><time>10:43</time> <strong>María:</strong> No hay mensajes, simplemente no
-                  responde.</div>
+                <h5>Llamada (simulación)</h5>
+                <!-- LLAMADA TELEFÓNICA: CASO 2 -->
+                <div class="call-log">
+
+                  <p>
+                    <time datetime="2025-11-05T10:42">10:42</time>
+                    <strong>Soporte:</strong><br>
+                    Soporte TI de TechSolutions, buenos días. Habla Juan Cruz. ¿Con quién tengo el gusto?
+                  </p>
+
+                  <p>
+                    <time datetime="2025-11-05T10:42">10:42</time>
+                    <strong>Usuaria:</strong><br>
+                    Hola, Juan. Soy María Fernanda Gómez, de Contabilidad. Tenemos un problema grave: no podemos
+                    imprimir y estamos en pleno cierre.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-11-05T10:43">10:43</time>
+                    <strong>Soporte:</strong><br>
+                    Entiendo perfectamente, María Fernanda. El cierre no puede detenerse.<br>
+                    Vamos a revisarlo de inmediato.<br>
+                    Para confirmar, ¿el problema es con la impresora HR-FLOOR2?
+                  </p>
+
+                  <p>
+                    <time datetime="2025-11-05T10:43">10:43</time>
+                    <strong>Usuaria:</strong><br>
+                    Sí, esa misma. Mandamos a imprimir y los documentos quedan pegados.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-11-05T10:44">10:44</time>
+                    <strong>Soporte:</strong><br>
+                    De acuerdo.<br>
+                    ¿Desde cuándo se presenta el problema? ¿Fue hoy o viene de antes?
+                  </p>
+
+                  <p>
+                    <time datetime="2025-11-05T10:44">10:44</time>
+                    <strong>Usuaria:</strong><br>
+                    Desde esta mañana. Ayer funcionaba bien.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-11-05T10:45">10:45</time>
+                    <strong>Soporte:</strong><br>
+                    Bien.<br>
+                    ¿Les ocurre a todos en el área o solo a algunos equipos?
+                  </p>
+
+                  <p>
+                    <time datetime="2025-11-05T10:45">10:45</time>
+                    <strong>Usuaria:</strong><br>
+                    A todos. Nadie puede imprimir.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-11-05T10:46">10:46</time>
+                    <strong>Soporte:</strong><br>
+                    Gracias, eso ayuda bastante.<br>
+                    ¿La impresora muestra algún mensaje de error, falta de papel o atascos?
+                  </p>
+
+                  <p>
+                    <time datetime="2025-11-05T10:46">10:46</time>
+                    <strong>Usuaria:</strong><br>
+                    No, está encendida normal. No marca errores.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-11-05T10:47">10:47</time>
+                    <strong>Soporte:</strong><br>
+                    Perfecto. Entonces descartamos lo más simple.<br>
+                    Estoy validando la conexión de la impresora ahora mismo.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-11-05T10:48">10:48</time>
+                    <em>(Breve pausa mientras se revisa la conexión)</em>
+                  </p>
+
+                  <p>
+                    <time datetime="2025-11-05T10:49">10:49</time>
+                    <strong>Soporte:</strong><br>
+                    María Fernanda, la impresora no está respondiendo en la red con la IP que tenemos configurada.<br>
+                    ¿Recuerdas si fue movida de lugar o desconectada recientemente?
+                  </p>
+
+                  <p>
+                    <time datetime="2025-11-05T10:49">10:49</time>
+                    <strong>Usuaria:</strong><br>
+                    Sí… ayer movieron los muebles y la impresora la corrieron un poco.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-11-05T10:50">10:50</time>
+                    <strong>Soporte:</strong><br>
+                    Eso calza con lo que estoy viendo.<br>
+                    Probablemente quedó conectada a otro punto de red.<br>
+                    Voy a corregir la configuración para que puedan imprimir nuevamente.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-11-05T10:55">10:55</time>
+                    <em>(Intervención técnica fuera de llamada)</em>
+                  </p>
+
+                  <p>
+                    <time datetime="2025-11-05T10:57">10:57</time>
+                    <strong>Soporte:</strong><br>
+                    Listo, ya actualicé la configuración.<br>
+                    ¿Podrías intentar imprimir un documento de prueba ahora, por favor?
+                  </p>
+
+                  <p>
+                    <time datetime="2025-11-05T10:57">10:57</time>
+                    <strong>Usuaria:</strong><br>
+                    Dame un segundo…<br>
+                    Sí, ya salió la hoja.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-11-05T10:58">10:58</time>
+                    <strong>Soporte:</strong><br>
+                    Excelente.<br>
+                    ¿El documento se imprime completo y sin errores?
+                  </p>
+
+                  <p>
+                    <time datetime="2025-11-05T10:58">10:58</time>
+                    <strong>Usuaria:</strong><br>
+                    Sí, está saliendo todo normal ahora.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-11-05T10:59">10:59</time>
+                    <strong>Soporte:</strong><br>
+                    Perfecto entonces.<br>
+                    Confirmamos que el servicio de impresión quedó restablecido y cierro el ticket.<br>
+                    Si vuelve a pasar durante el día, nos llamas de inmediato.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-11-05T10:59">10:59</time>
+                    <strong>Usuaria:</strong><br>
+                    Muchas gracias, de verdad. Estábamos complicados.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-11-05T11:00">11:00</time>
+                    <strong>Soporte:</strong><br>
+                    Lo entiendo. Éxito con el cierre, María Fernanda.
+                  </p>
+
+                </div>
+
               </div>
             </div>
           </section>
@@ -792,7 +1253,8 @@ Gateway: 10.1.2.1</code></pre>
             <div class="channel-view" id="view-TS-NET-0631">
               <td colspan="3">
                 <strong>Fuente del ticket:</strong>
-                <div class="ticket-fuente" data-ticket="TS-NET-0631" role="radiogroup" aria-label="Seleccionar canal de ingreso">
+                <div class="ticket-fuente" data-ticket="TS-NET-0631" role="radiogroup"
+                  aria-label="Seleccionar canal de ingreso">
                   <button class="view-btn" data-view="correo" data-ticket="TS-NET-0631" aria-pressed="true"
                     role="radio">Correo</button>
                   <button class="view-btn" data-view="chat" data-ticket="TS-NET-0631" aria-pressed="false"
@@ -802,92 +1264,298 @@ Gateway: 10.1.2.1</code></pre>
                 </div>
               </td>
               <div class="channel correo">
-                <h5>Correo (simulado)</h5>
-                <p>De: andres.morales@techsolutions.com</p>
-                <p>Asunto: Conexión lenta</p>
-                <p>Desde esta mañana la conexión está muy lenta y algunas aplicaciones no cargan.</p>
-                </div>
+                <h5>Correo (respuesta)</h5>
+                <!-- CORREO 1: Apertura de ticket -->
+                <div class="ticket-email">
+                  <div class="email-header">
+                    <p><strong>De:</strong> andres.morales@techsolutions.com</p>
+                    <p><strong>Para:</strong> itsupport@techsolutions.com</p>
+                    <p><strong>Asunto:</strong> Problemas de conectividad de red</p>
+                  </div>
 
-                <div class="channel chat" hidden>
-                  <h5>Chat (simulado)</h5>
-                
-                  <div class="chat-msg">
-                    <strong>Soporte TI:</strong>
-                    Buenos días, señor Andrés Morales. Gracias por contactarse con el Equipo de Soporte TI de TechSolutions S.A.S.
-                    Tenemos registrado el ticket TS-NET-0631, asociado a problemas de conectividad de red.
-                    Lamentamos los inconvenientes ocasionados.
-                  </div>
-                
-                  <div class="chat-msg">
-                    <strong>Andrés Morales:</strong>
-                    Buenos días. La conexión sigue lenta e intermitente.
-                  </div>
-                
-                  <div class="chat-msg">
-                    <strong>Soporte TI:</strong>
-                    Gracias por la confirmación. Para avanzar con el diagnóstico,
-                    ¿el problema afecta solo a su equipo o a otros dispositivos del área?
-                  </div>
-                
-                  <div class="chat-msg">
-                    <strong>Andrés Morales:</strong>
-                    Afecta a varios equipos.
-                  </div>
-                
-                  <div class="chat-msg">
-                    <strong>Soporte TI:</strong>
-                    Entendido. Procederemos a realizar pruebas de conectividad para evaluar la estabilidad de la red.
-                  </div>
-                
-                  <div class="chat-msg">
-                    <strong>Soporte TI:</strong>
-                    Las pruebas muestran latencia elevada y respuesta irregular.
-                    Procederemos a normalizar la conexión.
-                  </div>
-                
-                  <div class="chat-msg">
-                    <strong>Andrés Morales:</strong>
-                    De acuerdo.
-                  </div>
-                
-                  <div class="chat-msg">
-                    <strong>Soporte TI:</strong>
-                    La conexión fue restablecida y las pruebas posteriores son satisfactorias.
-                    ¿Puede confirmar si el acceso a sistemas y navegación es normal?
-                  </div>
-                
-                  <div class="chat-msg">
-                    <strong>Andrés Morales:</strong>
-                    Sí, ahora funciona correctamente.
-                  </div>
-                
-                  <div class="chat-msg">
-                    <strong>Soporte TI:</strong>
-                    Perfecto. Antes de cerrar el ticket, ¿hay algo más en lo que podamos ayudarle?
-                  </div>
-                
-                  <div class="chat-msg">
-                    <strong>Andrés Morales:</strong>
-                    No, todo está bien ahora. Gracias.
-                  </div>
-                
-                  <div class="chat-msg">
-                    <strong>Soporte TI:</strong>
-                    Excelente. Con esto, el ticket TS-NET-0631 queda resuelto y cerrado.
-                    Muchas gracias por contactarse con TechSolutions S.A.S.
-                    Que tenga un excelente día.
-                  </div>
-                
-                  <div class="chat-msg">
-                    <strong>Andrés Morales:</strong>
-                    Muchas gracias. Buen día.
+                  <div class="email-body">
+                    <p>Estimado equipo de Soporte TI,</p>
+
+                    <p>
+                      Junto con saludar, quisiera reportar un problema con la conexión de red en mi puesto de trabajo.
+                      Desde esta mañana la conexión se encuentra muy lenta y, en algunos momentos, no tengo acceso
+                      a internet ni a los sistemas corporativos.
+                    </p>
+
+                    <p>
+                      Esta situación está afectando el desarrollo normal de mis actividades laborales, por lo que
+                      agradecería su apoyo para revisar el problema.
+                    </p>
+
+                    <p>
+                      Saludos cordiales,<br>
+                      <strong>Andrés Morales
+                        Analista de sistemas.</strong>
+                    </p>
                   </div>
                 </div>
 
-                <div class="channel llamada" hidden>
-                <div class="call-line"><time>08:57</time> <strong>Soporte:</strong> ¿Desde cuándo presenta el problema?
+                <hr>
+
+                <!-- CORREO 2: Respuesta y cierre del ticket -->
+                <div class="ticket-email">
+                  <div class="email-header">
+                    <p><strong>De:</strong> itsupport@techsolutions.com</p>
+                    <p><strong>Para:</strong> andres.morales@techsolutions.com</p>
+                    <p><strong>Asunto:</strong> Cierre de incidente TS-NET-0631 | Conectividad de red</p>
+                  </div>
+
+                  <div class="email-body">
+                    <p>Estimado Sr. Andrés Morales,</p>
+
+                    <p>
+                      Junto con saludar, ofrecemos disculpas por los inconvenientes ocasionados por el incidente
+                      <strong>TS-NET-0631</strong>, relacionado con la lentitud e intermitencia en la conexión de red
+                      y el acceso a internet.
+                    </p>
+
+                    <p>
+                      Luego de las validaciones realizadas, se identificó un problema de conectividad general asociado
+                      a una saturación y/o conexión física deficiente en el enlace de red. Se corrigió la conexión
+                      afectada y se reinició el equipo de red correspondiente, logrando normalizar el servicio.
+                      Posteriormente, se validó el acceso a internet y a los sistemas corporativos, confirmando su
+                      correcto funcionamiento.
+                    </p>
+
+                    <p>
+                      Con lo anterior, el incidente queda resuelto y cerrado.
+                    </p>
+
+                    <p>
+                      Quedamos atentos ante cualquier requerimiento adicional.
+                    </p>
+
+                    <p>
+                      Saludos cordiales,<br>
+                      Equipo de Soporte TI<br>
+                      TechSolutions S.A.S.
+                    </p>
+                  </div>
                 </div>
-                <div class="call-line"><time>08:58</time> <strong>Andrés:</strong> Desde temprano, intermitente.</div>
+              </div>
+
+              <div class="channel chat" hidden>
+                <h5>Chat (simulado)</h5>
+
+                <div class="chat-msg">
+                  <strong>Soporte TI:</strong>
+                  Buenos días, señor Andrés Morales. Gracias por contactarse con el Equipo de Soporte TI de
+                  TechSolutions S.A.S.
+                  Tenemos registrado el ticket TS-NET-0631, asociado a problemas de conectividad de red.
+                  Lamentamos los inconvenientes ocasionados.
+                </div>
+
+                <div class="chat-msg">
+                  <strong>Andrés Morales:</strong>
+                  Buenos días. La conexión sigue lenta e intermitente.
+                </div>
+
+                <div class="chat-msg">
+                  <strong>Soporte TI:</strong>
+                  Gracias por la confirmación. Para avanzar con el diagnóstico,
+                  ¿el problema afecta solo a su equipo o a otros dispositivos del área?
+                </div>
+
+                <div class="chat-msg">
+                  <strong>Andrés Morales:</strong>
+                  Afecta a varios equipos.
+                </div>
+
+                <div class="chat-msg">
+                  <strong>Soporte TI:</strong>
+                  Entendido. Procederemos a realizar pruebas de conectividad para evaluar la estabilidad de la red.
+                </div>
+
+                <div class="chat-msg">
+                  <strong>Soporte TI:</strong>
+                  Las pruebas muestran latencia elevada y respuesta irregular.
+                  Procederemos a normalizar la conexión.
+                </div>
+
+                <div class="chat-msg">
+                  <strong>Andrés Morales:</strong>
+                  De acuerdo.
+                </div>
+
+                <div class="chat-msg">
+                  <strong>Soporte TI:</strong>
+                  La conexión fue restablecida y las pruebas posteriores son satisfactorias.
+                  ¿Puede confirmar si el acceso a sistemas y navegación es normal?
+                </div>
+
+                <div class="chat-msg">
+                  <strong>Andrés Morales:</strong>
+                  Sí, ahora funciona correctamente.
+                </div>
+
+                <div class="chat-msg">
+                  <strong>Soporte TI:</strong>
+                  Perfecto. Antes de cerrar el ticket, ¿hay algo más en lo que podamos ayudarle?
+                </div>
+
+                <div class="chat-msg">
+                  <strong>Andrés Morales:</strong>
+                  No, todo está bien ahora. Gracias.
+                </div>
+
+                <div class="chat-msg">
+                  <strong>Soporte TI:</strong>
+                  Excelente. Con esto, el ticket TS-NET-0631 queda resuelto y cerrado.
+                  Muchas gracias por contactarse con TechSolutions S.A.S.
+                  Que tenga un excelente día.
+                </div>
+
+                <div class="chat-msg">
+                  <strong>Andrés Morales:</strong>
+                  Muchas gracias. Buen día.
+                </div>
+              </div>
+
+              <div class="channel llamada" hidden>
+                <!-- LLAMADA TELEFÓNICA: CASO 3 -->
+                <div class="call-log">
+
+                  <p>
+                    <time datetime="2025-11-12T08:57">08:57</time>
+                    <strong>Soporte:</strong><br>
+                    Soporte TI de TechSolutions, buenos días. Habla Juan Cruz. ¿Con quién tengo el gusto?
+                  </p>
+
+                  <p>
+                    <time datetime="2025-11-12T08:57">08:57</time>
+                    <strong>Usuario:</strong><br>
+                    Hola, Juan. Soy Andrés Morales. Tengo problemas con la red, está muy lenta y a ratos se cae.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-11-12T08:58">08:58</time>
+                    <strong>Soporte:</strong><br>
+                    Gracias por avisar, Andrés.<br>
+                    Cuéntame un poco más para entender bien: ¿la lentitud es constante o va y viene?
+                  </p>
+
+                  <p>
+                    <time datetime="2025-11-12T08:58">08:58</time>
+                    <strong>Usuario:</strong><br>
+                    Va y viene. A veces carga, a veces no, y se cae de repente.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-11-12T08:59">08:59</time>
+                    <strong>Soporte:</strong><br>
+                    De acuerdo.<br>
+                    ¿Esto te pasa solo a ti o has notado si a otros también les ocurre?
+                  </p>
+
+                  <p>
+                    <time datetime="2025-11-12T08:59">08:59</time>
+                    <strong>Usuario:</strong><br>
+                    He escuchado a un par más, pero a mí me está pegando fuerte ahora.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-11-12T09:00">09:00</time>
+                    <strong>Soporte:</strong><br>
+                    Perfecto, eso ya nos da una pista.<br>
+                    ¿Estás conectado por cable o por Wi-Fi en este momento?
+                  </p>
+
+                  <p>
+                    <time datetime="2025-11-12T09:00">09:00</time>
+                    <strong>Usuario:</strong><br>
+                    Por cable.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-11-12T09:01">09:01</time>
+                    <strong>Soporte:</strong><br>
+                    Bien.<br>
+                    ¿Tu puesto se movió recientemente o cambiaste de punto de red o cable?
+                  </p>
+
+                  <p>
+                    <time datetime="2025-11-12T09:01">09:01</time>
+                    <strong>Usuario:</strong><br>
+                    Sí, de hecho ayer moví el escritorio un poco.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-11-12T09:02">09:02</time>
+                    <strong>Soporte:</strong><br>
+                    Ok, eso es relevante.<br>
+                    Estoy revisando la conexión desde acá y veo respuestas irregulares en la red.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-11-12T09:03">09:03</time>
+                    <em>(Pausa breve mientras se revisa la conexión)</em>
+                  </p>
+
+                  <p>
+                    <time datetime="2025-11-12T09:04">09:04</time>
+                    <strong>Soporte:</strong><br>
+                    Lo que estoy viendo es un conflicto en la conexión, probablemente por el punto de red.<br>
+                    Voy a corregir eso y normalizar el enlace. Dame un momento.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-11-12T09:08">09:08</time>
+                    <em>(Intervención técnica fuera de llamada)</em>
+                  </p>
+
+                  <p>
+                    <time datetime="2025-11-12T09:10">09:10</time>
+                    <strong>Soporte:</strong><br>
+                    Listo, ya ajusté la conexión y reinicié el equipo de red asociado a tu punto.<br>
+                    ¿Podrías probar ahora, por favor?
+                  </p>
+
+                  <p>
+                    <time datetime="2025-11-12T09:10">09:10</time>
+                    <strong>Usuario:</strong><br>
+                    Sí… ahora está cargando mucho más rápido.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-11-12T09:11">09:11</time>
+                    <strong>Soporte:</strong><br>
+                    Perfecto.<br>
+                    ¿Puedes acceder a los sistemas corporativos y a la nube sin problemas?
+                  </p>
+
+                  <p>
+                    <time datetime="2025-11-12T09:11">09:11</time>
+                    <strong>Usuario:</strong><br>
+                    Sí, ahora todo responde normal.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-11-12T09:12">09:12</time>
+                    <strong>Soporte:</strong><br>
+                    Excelente.<br>
+                    Entonces confirmamos que la conectividad quedó restablecida y cierro el ticket.<br>
+                    Si vuelve a ponerse inestable, me avisas de inmediato.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-11-12T09:12">09:12</time>
+                    <strong>Usuario:</strong><br>
+                    Perfecto, gracias.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-11-12T09:13">09:13</time>
+                    <strong>Soporte:</strong><br>
+                    De nada, Andrés. Que tengas buen día.
+                  </p>
+
+                </div>
+
               </div>
             </div>
           </section>
@@ -1068,7 +1736,8 @@ Reply from 8.8.8.8: bytes=32 time=250ms TTL=117</code></pre>
             <div class="channel-view" id="view-TS-SW-0789">
               <td colspan="3">
                 <strong>Fuente del ticket:</strong>
-                <div class="ticket-fuente" data-ticket="TS-SW-0789" role="radiogroup" aria-label="Seleccionar canal de ingreso">
+                <div class="ticket-fuente" data-ticket="TS-SW-0789" role="radiogroup"
+                  aria-label="Seleccionar canal de ingreso">
                   <button class="view-btn" data-view="correo" data-ticket="TS-SW-0789" aria-pressed="true"
                     role="radio">Correo</button>
                   <button class="view-btn" data-view="chat" data-ticket="TS-SW-0789" aria-pressed="false"
@@ -1079,92 +1748,315 @@ Reply from 8.8.8.8: bytes=32 time=250ms TTL=117</code></pre>
               </td>
               <div class="channel correo">
                 <h5>Correo (simulado)</h5>
-                <p>De: andres.morales@techsolutions.com</p>
-                <p>Asunto: Conexión lenta</p>
-                <p>Desde esta mañana la conexión está muy lenta y algunas aplicaciones no cargan.</p>
+                <!-- CORREO 1: Apertura de ticket (CASO 4) -->
+                <div class="ticket-email">
+                  <div class="email-header">
+                    <p><strong>De:</strong> camila.rios@techsolutions.com</p>
+                    <p><strong>Para:</strong> itsupport@techsolutions.com</p>
+                    <p><strong>Asunto:</strong> Pantallazos azules en mi equipo</p>
+                  </div>
+
+                  <div class="email-body">
+                    <p>Estimado equipo de Soporte TI,</p>
+
+                    <p>
+                      Junto con saludar, quisiera reportar un problema con mi computador de trabajo.
+                      El equipo ha comenzado a presentar pantallazos azules de forma recurrente y se reinicia
+                      sin previo aviso.
+                    </p>
+
+                    <p>
+                      Esta situación está interrumpiendo mi trabajo, por lo que agradecería su apoyo para revisar
+                      el problema.
+                    </p>
+
+                    <p>
+                      Saludos cordiales,<br>
+                      Camila Ríos
+                    </p>
+                  </div>
+                </div>
+
+                <hr>
+
+                <!-- CORREO 2: Respuesta y cierre del ticket (CASO 4) -->
+                <div class="ticket-email">
+                  <div class="email-header">
+                    <p><strong>De:</strong> itsupport@techsolutions.com</p>
+                    <p><strong>Para:</strong> camila.rios@techsolutions.com</p>
+                    <p><strong>Asunto:</strong> Cierre de incidente TS-SW-0789 | Pantallazo Azul (BSOD)</p>
+                  </div>
+
+                  <div class="email-body">
+                    <p>Estimada Sra. Camila Ríos,</p>
+
+                    <p>
+                      Junto con saludar, ofrecemos disculpas por los inconvenientes ocasionados por el incidente
+                      <strong>TS-SW-0789</strong>, relacionado con la aparición recurrente de pantallazos azules
+                      (BSOD) y reinicios inesperados en su equipo.
+                    </p>
+
+                    <p>
+                      Luego de las revisiones realizadas, se identificó un controlador defectuoso desde el
+                      Administrador de dispositivos. Se procedió a su actualización y/o reinstalación, además
+                      de ejecutar herramientas de diagnóstico del sistema para descartar errores de disco y
+                      memoria. Tras estas acciones, el equipo se estabilizó y dejó de presentar el error.
+                    </p>
+
+                    <p>
+                      Con lo anterior, el incidente queda resuelto y cerrado.
+                    </p>
+
+                    <p>
+                      Quedamos atentos ante cualquier requerimiento adicional.
+                    </p>
+
+                    <p>
+                      Saludos cordiales,<br>
+                      Equipo de Soporte TI<br>
+                      TechSolutions S.A.S.
+                    </p>
+                  </div>
+                </div>
+
               </div>
 
               <div class="channel chat" hidden>
                 <h5>Chat (simulado)</h5>
-              
+
                 <div class="chat-msg">
                   <strong>Soporte TI:</strong>
-                  Buenos días, señora Camila Ríos. Gracias por contactarse con el Equipo de Soporte TI de TechSolutions S.A.S.
-                  Tenemos registrado el ticket TS-SW-0789, asociado a pantallazos azules (BSOD) y reinicios inesperados en su equipo.
+                  Buenos días, señora Camila Ríos. Gracias por contactarse con el Equipo de Soporte TI de TechSolutions
+                  S.A.S.
+                  Tenemos registrado el ticket TS-SW-0789, asociado a pantallazos azules (BSOD) y reinicios inesperados
+                  en su equipo.
                   Lamentamos los inconvenientes ocasionados.
                 </div>
-              
+
                 <div class="chat-msg">
                   <strong>Camila Ríos:</strong>
                   Buenos días. Sí, el equipo presenta pantallazos azules y se reinicia de forma inesperada.
                 </div>
-              
+
                 <div class="chat-msg">
                   <strong>Soporte TI:</strong>
-                  Gracias por la confirmación. Para avanzar con el diagnóstico, necesitamos recopilar algunos antecedentes.
+                  Gracias por la confirmación. Para avanzar con el diagnóstico, necesitamos recopilar algunos
+                  antecedentes.
                   ¿Con qué frecuencia ocurre el pantallazo azul y desde cuándo comenzó el problema?
                 </div>
-              
+
                 <div class="chat-msg">
                   <strong>Camila Ríos:</strong>
                   Ocurre varias veces al día y comenzó hace unos días, sin previo aviso.
                 </div>
-              
+
                 <div class="chat-msg">
                   <strong>Soporte TI:</strong>
                   Entendido. ¿Ha realizado recientemente alguna instalación de programas, actualizaciones del sistema
                   o ha conectado algún dispositivo nuevo al equipo?
                 </div>
-              
+
                 <div class="chat-msg">
                   <strong>Camila Ríos:</strong>
                   Sí, se realizaron algunas actualizaciones recientemente.
                 </div>
-              
+
                 <div class="chat-msg">
                   <strong>Soporte TI:</strong>
                   Gracias por la información. Procederemos a revisar el Administrador de dispositivos
                   y a ejecutar herramientas de diagnóstico del sistema para descartar errores de disco o memoria.
                 </div>
-              
+
                 <div class="chat-msg">
                   <strong>Soporte TI:</strong>
-                  Tras la revisión, se identificó un controlador defectuoso. Se procedió a su actualización y reinstalación,
+                  Tras la revisión, se identificó un controlador defectuoso. Se procedió a su actualización y
+                  reinstalación,
                   además de ejecutar herramientas de diagnóstico del sistema.
                   El equipo se mantiene estable.
                   ¿Puede confirmar si el problema dejó de presentarse?
                 </div>
-              
+
                 <div class="chat-msg">
                   <strong>Camila Ríos:</strong>
                   Sí, por el momento no ha vuelto a ocurrir.
                 </div>
-              
+
                 <div class="chat-msg">
                   <strong>Soporte TI:</strong>
                   Perfecto. Antes de cerrar el ticket, ¿hay algo más en lo que podamos ayudarle?
                 </div>
-              
+
                 <div class="chat-msg">
                   <strong>Camila Ríos:</strong>
                   No, eso sería todo. Gracias.
                 </div>
-              
+
                 <div class="chat-msg">
                   <strong>Soporte TI:</strong>
                   Excelente. Con esto, el ticket TS-SW-0789 queda resuelto y cerrado.
                   Muchas gracias por contactarse con TechSolutions S.A.S.
                   Que tenga un excelente día.
                 </div>
-              
+
                 <div class="chat-msg">
                   <strong>Camila Ríos:</strong>
                   Gracias. Buen día.
                 </div>
               </div>
+              <!-- LLAMADA TELEFÓNICA: CASO 4 -->
+              <div class="channel llamada" hidden>
+                <div class="call-log">
 
-              
-              </section>
+                  <p>
+                    <time datetime="2025-12-03T11:26">11:26</time>
+                    <strong>Soporte:</strong><br>
+                    Soporte TI de TechSolutions, buenos días. Habla Juan Cruz. ¿Con quién hablo?
+                  </p>
+
+                  <p>
+                    <time datetime="2025-12-03T11:26">11:26</time>
+                    <strong>Usuaria:</strong><br>
+                    Hola, Juan. Soy Camila Ríos. Mi computador está dando pantallazos azules y se reinicia solo.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-12-03T11:27">11:27</time>
+                    <strong>Soporte:</strong><br>
+                    Gracias por avisar, Camila.<br>
+                    Entiendo que eso preocupa, sobre todo cuando pasa de forma repetida. Vamos a revisarlo con calma
+                    para encontrar la causa.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-12-03T11:28">11:28</time>
+                    <strong>Soporte:</strong><br>
+                    Para entender bien el escenario, ¿con qué frecuencia te aparece el pantallazo azul?
+                  </p>
+
+                  <p>
+                    <time datetime="2025-12-03T11:28">11:28</time>
+                    <strong>Usuaria:</strong><br>
+                    Ya van varios hoy. Aparece de repente y se reinicia.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-12-03T11:29">11:29</time>
+                    <strong>Soporte:</strong><br>
+                    Entiendo.<br>
+                    ¿Recuerdas desde cuándo empezó a ocurrir esto? ¿Fue hoy o viene de antes?
+                  </p>
+
+                  <p>
+                    <time datetime="2025-12-03T11:29">11:29</time>
+                    <strong>Usuaria:</strong><br>
+                    Desde ayer en la tarde, más o menos.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-12-03T11:30">11:30</time>
+                    <strong>Soporte:</strong><br>
+                    Bien.<br>
+                    ¿Has instalado algún programa, actualización o driver recientemente?
+                  </p>
+
+                  <p>
+                    <time datetime="2025-12-03T11:30">11:30</time>
+                    <strong>Usuaria:</strong><br>
+                    Sí, ayer se actualizó el sistema, creo.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-12-03T11:31">11:31</time>
+                    <strong>Soporte:</strong><br>
+                    Eso es un buen dato.<br>
+                    ¿El error aparece cuando usas alguna aplicación en particular o es aleatorio?
+                  </p>
+
+                  <p>
+                    <time datetime="2025-12-03T11:31">11:31</time>
+                    <strong>Usuaria:</strong><br>
+                    No, es aleatorio. A veces solo con el correo abierto.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-12-03T11:32">11:32</time>
+                    <strong>Soporte:</strong><br>
+                    Perfecto, gracias por el detalle.<br>
+                    Voy a revisar el sistema y los controladores del equipo para identificar qué está provocando el
+                    problema.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-12-03T11:38">11:38</time>
+                    <em>(Intervención técnica fuera de llamada)</em>
+                  </p>
+
+                  <p>
+                    <time datetime="2025-12-03T11:41">11:41</time>
+                    <strong>Soporte:</strong><br>
+                    Camila, ya encontré un controlador que estaba generando conflicto con el sistema.<br>
+                    Lo acabo de corregir y ejecuté diagnósticos para descartar problemas de disco y memoria.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-12-03T11:41">11:41</time>
+                    <strong>Usuaria:</strong><br>
+                    ¿Eso debería solucionarlo?
+                  </p>
+
+                  <p>
+                    <time datetime="2025-12-03T11:42">11:42</time>
+                    <strong>Soporte:</strong><br>
+                    Sí, con lo que vimos, el origen estaba ahí.<br>
+                    Antes de cerrar, quiero confirmar contigo que el equipo esté estable.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-12-03T11:43">11:43</time>
+                    <strong>Soporte:</strong><br>
+                    ¿Desde que hicimos el ajuste volvió a aparecer el pantallazo azul?
+                  </p>
+
+                  <p>
+                    <time datetime="2025-12-03T11:43">11:43</time>
+                    <strong>Usuaria:</strong><br>
+                    No, ya no.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-12-03T11:44">11:44</time>
+                    <strong>Soporte:</strong><br>
+                    Perfecto.<br>
+                    ¿Puedes usar el computador con normalidad ahora, sin reinicios inesperados?
+                  </p>
+
+                  <p>
+                    <time datetime="2025-12-03T11:44">11:44</time>
+                    <strong>Usuaria:</strong><br>
+                    Sí, está funcionando bien.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-12-03T11:45">11:45</time>
+                    <strong>Soporte:</strong><br>
+                    Excelente.<br>
+                    Entonces confirmamos que el equipo quedó estable y cierro el ticket.<br>
+                    Si el error vuelve a aparecer, avísanos de inmediato y lo revisamos nuevamente.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-12-03T11:45">11:45</time>
+                    <strong>Usuaria:</strong><br>
+                    Gracias, me quedo mucho más tranquila.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-12-03T11:46">11:46</time>
+                    <strong>Soporte:</strong><br>
+                    Para eso estamos, Camila. Que tengas buen día.
+                  </p>
+                </div>
+          </section>
 
           <section id="ts4-registro" class="tabpanel" role="tabpanel" hidden>
             <h4>Registro de atención</h4>
@@ -1255,18 +2147,6 @@ Windows Memory Diagnostic scheduled.</code></pre>
                 </tr>
                 <tr>
                   <td><strong>Tipo de emisión:</strong> <span class="ticket-tipo">Software</span></td>
-                  <td colspan="3">
-                    <strong>Fuente del ticket:</strong>
-                    <div class="ticket-fuente" data-ticket="TS-SW-0912" role="radiogroup"
-                      aria-label="Seleccionar canal de ingreso">
-                      <button class="view-btn" data-view="correo" data-ticket="TS-SW-0912" aria-pressed="true"
-                        role="radio">Correo</button>
-                      <button class="view-btn" data-view="chat" data-ticket="TS-SW-0912" aria-pressed="false"
-                        role="radio">Chat</button>
-                      <button class="view-btn" data-view="llamada" data-ticket="TS-SW-0912" aria-pressed="false"
-                        role="radio">Llamada</button>
-                    </div>
-                  </td>
                 </tr>
                 <tr>
                   <td colspan="4" id="nota-TS-SW-0912"><strong>Notas:</strong>
@@ -1356,88 +2236,392 @@ Windows Memory Diagnostic scheduled.</code></pre>
               </td>
               <div class="channel correo">
                 <h5>Correo (simulado)</h5>
-                <p>De: usuario@empresa.com</p>
-                <p>Asunto: Problema de software</p>
-                <p>Estoy muy molesto porque este problema no se ha resuelto y afecta mi trabajo.</p>
-                </div>
-                
-                <div class="channel chat" hidden>
-                  <h5>Chat (simulado)</h5>
-                
-                  <div class="chat-msg">
-                    <strong>Soporte TI:</strong>
-                    Buenos días, señor Ricardo Salazar. Gracias por contactarse con el Equipo de Soporte TI de TechSolutions S.A.S.
-                    Tenemos registrado el ticket TS-SW-0912, relacionado con un problema de software que está afectando su trabajo.
-                    Lamentamos los inconvenientes ocasionados.
+                <!-- CORREO 1: Apertura / Reclamo del usuario -->
+                <div class="ticket-email">
+                  <div class="email-header">
+                    <p><strong>De:</strong> ricardo.salazar@techsolutions.com</p>
+                    <p><strong>Para:</strong> itsupport@techsolutions.com</p>
+                    <p><strong>Asunto:</strong> Problema de software sin solución</p>
                   </div>
-                
-                  <div class="chat-msg">
-                    <strong>Ricardo Salazar:</strong>
-                    Buenos días. Este problema me ha generado retrasos y bastante molestia.
-                  </div>
-                
-                  <div class="chat-msg">
-                    <strong>Soporte TI:</strong>
-                    Comprendemos su molestia y el impacto que esta situación está generando en su trabajo.
-                    Agradecemos que nos haya informado. Permítanos ayudarle a resolverlo.
-                  </div>
-                
-                  <div class="chat-msg">
-                    <strong>Soporte TI:</strong>
-                    Para entender correctamente la situación, ¿podría indicarnos qué problema específico está presentando
-                    y desde cuándo ocurre?
-                  </div>
-                
-                  <div class="chat-msg">
-                    <strong>Ricardo Salazar:</strong>
-                    El software falla constantemente y esto ocurre desde hace varios días.
-                  </div>
-                
-                  <div class="chat-msg">
-                    <strong>Soporte TI:</strong>
-                    Entendido. Entonces, el problema de software está afectando directamente su trabajo
-                    y le ha generado retrasos. Procederemos a realizar las validaciones técnicas necesarias
-                    y a explicarle el plan de acción.
-                  </div>
-                
-                  <div class="chat-msg">
-                    <strong>Soporte TI:</strong>
-                    Las validaciones fueron realizadas y se aplicó la solución correspondiente.
-                    ¿Puede confirmar si el sistema ahora funciona correctamente?
-                  </div>
-                
-                  <div class="chat-msg">
-                    <strong>Ricardo Salazar:</strong>
-                    Sí, ahora el sistema funciona correctamente.
-                  </div>
-                
-                  <div class="chat-msg">
-                    <strong>Soporte TI:</strong>
-                    Perfecto. Antes de cerrar el ticket, ¿hay algo más en lo que podamos ayudarle?
-                  </div>
-                
-                  <div class="chat-msg">
-                    <strong>Ricardo Salazar:</strong>
-                    No, por ahora está todo bien.
-                  </div>
-                
-                  <div class="chat-msg">
-                    <strong>Soporte TI:</strong>
-                    Excelente. Con esto, el ticket TS-SW-0912 queda resuelto y cerrado.
-                    Muchas gracias por contactarse con TechSolutions S.A.S.
-                    Que tenga un excelente día.
-                  </div>
-                
-                  <div class="chat-msg">
-                    <strong>Ricardo Salazar:</strong>
-                    Gracias. Buen día.
+
+                  <div class="email-body">
+                    <p>Estimado equipo de Soporte TI,</p>
+
+                    <p>
+                      Les escribo bastante molesto debido a un problema de software que está afectando mi trabajo.
+                      Esta situación me ha generado retrasos y siento que no he recibido una solución oportuna.
+                    </p>
+
+                    <p>
+                      Necesito apoyo a la brevedad, ya que el problema está impactando directamente en mis labores.
+                    </p>
+
+                    <p>
+                      Saludos,<br>
+                      Ricardo Salazar
+                    </p>
                   </div>
                 </div>
-                
-                
-                <div class="channel llamada" hidden>
-                  <div class="call-line"><time>16:08</time> <strong>Usuario:</strong> ¡Estoy harto de este problema!</div>
-                  <div class="call-line"><time>16:09</time> <strong>Soporte:</strong> Lamento la situación, ¿puede describir el problema?</div>
+
+                <hr>
+
+                <!-- CORREO 2: Respuesta de Soporte / Medidas -->
+                <div class="ticket-email">
+                  <div class="email-header">
+                    <p><strong>De:</strong> itsupport@techsolutions.com</p>
+                    <p><strong>Para:</strong> ricardo.salazar@techsolutions.com</p>
+                    <p><strong>Asunto:</strong> Re: Problema de software sin solución</p>
+                  </div>
+
+                  <div class="email-body">
+                    <p>Estimado Sr. Ricardo Salazar,</p>
+
+                    <p>
+                      Gracias por contactarnos. Lamentamos los inconvenientes que esta situación le ha generado.
+                      Para poder ayudarle de la mejor manera, necesitamos aclarar algunos puntos.
+                    </p>
+
+                    <p>
+                      ¿Podría indicarnos qué problema específico presenta el software?<br>
+                      ¿Desde cuándo ocurre esta situación?<br>
+                      ¿Cómo está afectando su trabajo actualmente?
+                    </p>
+
+                    <p>
+                      Con esta información podremos revisar el caso con mayor precisión.
+                    </p>
+
+                    <p>
+                      Saludos cordiales,<br>
+                      Equipo de Soporte TI
+                    </p>
+                  </div>
+                </div>
+
+                <hr>
+
+                <!-- CORREO 3: Respuesta del usuario -->
+                <div class="ticket-email">
+                  <div class="email-header">
+                    <p><strong>De:</strong> ricardo.salazar@techsolutions.com</p>
+                    <p><strong>Para:</strong> itsupport@techsolutions.com</p>
+                    <p><strong>Asunto:</strong> Re: Problema de software sin solución</p>
+                  </div>
+
+                  <div class="email-body">
+                    <p>Buenas tardes,</p>
+
+                    <p>
+                      El problema ocurre al utilizar el software durante mis tareas diarias.
+                      Comenzó hace unos días y me impide avanzar con normalidad, ya que el sistema
+                      no responde como debería.
+                    </p>
+
+                    <p>
+                      Quedo atento a sus comentarios.
+                    </p>
+
+                    <p>
+                      Ricardo Salazar
+                    </p>
+                  </div>
+                </div>
+
+                <hr>
+
+                <!-- CORREO 4: Resolución y cierre -->
+                <div class="ticket-email">
+                  <div class="email-header">
+                    <p><strong>De:</strong> itsupport@techsolutions.com</p>
+                    <p><strong>Para:</strong> ricardo.salazar@techsolutions.com</p>
+                    <p><strong>Asunto:</strong> Cierre de incidente TS-SW-0912 | Incidente de software</p>
+                  </div>
+
+                  <div class="email-body">
+                    <p>Estimado Sr. Ricardo Salazar,</p>
+
+                    <p>
+                      Luego de revisar la información entregada, se aplicó la solución correspondiente
+                      al problema de software reportado.
+                    </p>
+
+                    <p>
+                      Posteriormente, se validó con usted que el sistema quedó funcionando correctamente
+                      y que pudo continuar con sus labores sin inconvenientes.
+                    </p>
+
+                    <p>
+                      Con lo anterior, el incidente queda resuelto y cerrado. En caso de requerir apoyo
+                      adicional, puede contactarnos nuevamente.
+                    </p>
+
+                    <p>
+                      Saludos cordiales,<br>
+                      Equipo de Soporte TI<br>
+                      TechSolutions S.A.S.
+                    </p>
+                  </div>
+                </div>
+
+                <hr>
+
+                <!-- CORREO 5: Felicitación del usuario -->
+                <div class="ticket-email">
+                  <div class="email-header">
+                    <p><strong>De:</strong> ricardo.salazar@techsolutions.com</p>
+                    <p><strong>Para:</strong> itsupport@techsolutions.com</p>
+                    <p><strong>Asunto:</strong> Agradecimiento por apoyo recibido</p>
+                  </div>
+
+                  <div class="email-body">
+                    <p>Estimado equipo de Soporte TI,</p>
+
+                    <p>
+                      Quiero agradecer la ayuda brindada y la atención recibida durante la resolución
+                      del incidente. El problema quedó solucionado y pude retomar mi trabajo con normalidad.
+                    </p>
+
+                    <p>
+                      Gracias por el apoyo.
+                    </p>
+
+                    <p>
+                      Saludos,<br>
+                      Ricardo Salazar
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="channel chat" hidden>
+                <h5>Chat (simulado)</h5>
+
+                <div class="chat-msg">
+                  <strong>Soporte TI:</strong>
+                  Buenos días, señor Ricardo Salazar. Gracias por contactarse con el Equipo de Soporte TI de
+                  TechSolutions S.A.S.
+                  Tenemos registrado el ticket TS-SW-0912, relacionado con un problema de software que está afectando su
+                  trabajo.
+                  Lamentamos los inconvenientes ocasionados.
+                </div>
+
+                <div class="chat-msg">
+                  <strong>Ricardo Salazar:</strong>
+                  Buenos días. Este problema me ha generado retrasos y bastante molestia.
+                </div>
+
+                <div class="chat-msg">
+                  <strong>Soporte TI:</strong>
+                  Comprendemos su molestia y el impacto que esta situación está generando en su trabajo.
+                  Agradecemos que nos haya informado. Permítanos ayudarle a resolverlo.
+                </div>
+
+                <div class="chat-msg">
+                  <strong>Soporte TI:</strong>
+                  Para entender correctamente la situación, ¿podría indicarnos qué problema específico está presentando
+                  y desde cuándo ocurre?
+                </div>
+
+                <div class="chat-msg">
+                  <strong>Ricardo Salazar:</strong>
+                  El software falla constantemente y esto ocurre desde hace varios días.
+                </div>
+
+                <div class="chat-msg">
+                  <strong>Soporte TI:</strong>
+                  Entendido. Entonces, el problema de software está afectando directamente su trabajo
+                  y le ha generado retrasos. Procederemos a realizar las validaciones técnicas necesarias
+                  y a explicarle el plan de acción.
+                </div>
+
+                <div class="chat-msg">
+                  <strong>Soporte TI:</strong>
+                  Las validaciones fueron realizadas y se aplicó la solución correspondiente.
+                  ¿Puede confirmar si el sistema ahora funciona correctamente?
+                </div>
+
+                <div class="chat-msg">
+                  <strong>Ricardo Salazar:</strong>
+                  Sí, ahora el sistema funciona correctamente.
+                </div>
+
+                <div class="chat-msg">
+                  <strong>Soporte TI:</strong>
+                  Perfecto. Antes de cerrar el ticket, ¿hay algo más en lo que podamos ayudarle?
+                </div>
+
+                <div class="chat-msg">
+                  <strong>Ricardo Salazar:</strong>
+                  No, por ahora está todo bien.
+                </div>
+
+                <div class="chat-msg">
+                  <strong>Soporte TI:</strong>
+                  Excelente. Con esto, el ticket TS-SW-0912 queda resuelto y cerrado.
+                  Muchas gracias por contactarse con TechSolutions S.A.S.
+                  Que tenga un excelente día.
+                </div>
+
+                <div class="chat-msg">
+                  <strong>Ricardo Salazar:</strong>
+                  Gracias. Buen día.
+                </div>
+              </div>
+
+
+              <div class="channel llamada" hidden>
+                <!-- LLAMADA TELEFÓNICA: CASO 5 -->
+                <div class="call-log">
+
+                  <p>
+                    <time datetime="2025-12-10T16:08">16:08</time>
+                    <strong>Soporte:</strong><br>
+                    Soporte TI de TechSolutions, buenas tardes. Habla Juan Cruz. ¿Con quién tengo el gusto?
+                  </p>
+
+                  <p>
+                    <time datetime="2025-12-10T16:08">16:08</time>
+                    <strong>Usuario:</strong><br>
+                    Ricardo Salazar.<br>
+                    Mira, estoy bastante molesto porque este problema me tiene atrasado y nadie me ha dado una solución
+                    clara.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-12-10T16:09">16:09</time>
+                    <strong>Soporte:</strong><br>
+                    Entiendo, Ricardo.<br>
+                    Gracias por decírmelo directamente. Antes de seguir, quiero escucharte bien para entender qué está
+                    pasando.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-12-10T16:10">16:10</time>
+                    <strong>Usuario:</strong><br>
+                    Este software lleva días fallando, pierdo tiempo, me presionan por los plazos y siento que nadie se
+                    hace cargo.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-12-10T16:11">16:11</time>
+                    <strong>Soporte:</strong><br>
+                    Comprendo la molestia, y es totalmente válida si esto está afectando tu trabajo.<br>
+                    Déjame confirmar algo para asegurarme de que te entendí bien: el problema es con el software y te
+                    está generando retrasos constantes, ¿correcto?
+                  </p>
+
+                  <p>
+                    <time datetime="2025-12-10T16:11">16:11</time>
+                    <strong>Usuario:</strong><br>
+                    Sí, exactamente.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-12-10T16:12">16:12</time>
+                    <strong>Soporte:</strong><br>
+                    Gracias.<br>
+                    Cuéntame por favor, ¿qué problema específico estás teniendo con el software en este momento?
+                  </p>
+
+                  <p>
+                    <time datetime="2025-12-10T16:12">16:12</time>
+                    <strong>Usuario:</strong><br>
+                    Se queda pegado, a veces no guarda, tengo que cerrarlo y volver a abrir.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-12-10T16:13">16:13</time>
+                    <strong>Soporte:</strong><br>
+                    Entiendo.<br>
+                    ¿Desde cuándo te ocurre esto y con qué frecuencia?
+                  </p>
+
+                  <p>
+                    <time datetime="2025-12-10T16:13">16:13</time>
+                    <strong>Usuario:</strong><br>
+                    Desde hace varios días, prácticamente todos los días.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-12-10T16:14">16:14</time>
+                    <strong>Soporte:</strong><br>
+                    Bien, gracias por la paciencia.<br>
+                    Antes de avanzar, quiero que sepas que voy a hacerme cargo de este caso y explicarte claramente qué
+                    vamos a hacer para solucionarlo.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-12-10T16:15">16:15</time>
+                    <em>(Se explica brevemente el plan de acción, sin tecnicismos)</em>
+                  </p>
+
+                  <p>
+                    <time datetime="2025-12-10T16:20">16:20</time>
+                    <strong>Soporte:</strong><br>
+                    Ya realicé el ajuste necesario para corregir el problema que me comentabas.<br>
+                    Antes de cerrar, necesito confirmar contigo que el problema esté realmente solucionado.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-12-10T16:21">16:21</time>
+                    <strong>Soporte:</strong><br>
+                    Ricardo, ¿el software está funcionando correctamente ahora?
+                  </p>
+
+                  <p>
+                    <time datetime="2025-12-10T16:21">16:21</time>
+                    <strong>Usuario:</strong><br>
+                    Sí, ahora responde bien.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-12-10T16:22">16:22</time>
+                    <strong>Soporte:</strong><br>
+                    Perfecto.<br>
+                    ¿Puedes continuar con tu trabajo sin los bloqueos que estabas teniendo?
+                  </p>
+
+                  <p>
+                    <time datetime="2025-12-10T16:22">16:22</time>
+                    <strong>Usuario:</strong><br>
+                    Sí, por ahora está todo bien.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-12-10T16:23">16:23</time>
+                    <strong>Soporte:</strong><br>
+                    Me alegra escucharlo.<br>
+                    ¿Te sientes conforme con la solución y con la atención que recibiste?
+                  </p>
+
+                  <p>
+                    <time datetime="2025-12-10T16:23">16:23</time>
+                    <strong>Usuario:</strong><br>
+                    Sí, gracias. La verdad estaba muy molesto, pero ahora está resuelto.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-12-10T16:24">16:24</time>
+                    <strong>Soporte:</strong><br>
+                    Lo entiendo, y agradezco que lo hayas dicho.<br>
+                    Entonces dejamos el ticket cerrado. Si el problema vuelve a aparecer, me contactas directamente y lo
+                    revisamos de inmediato.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-12-10T16:24">16:24</time>
+                    <strong>Usuario:</strong><br>
+                    De acuerdo, gracias.
+                  </p>
+
+                  <p>
+                    <time datetime="2025-12-10T16:25">16:25</time>
+                    <strong>Soporte:</strong><br>
+                    Gracias a ti por avisar, Ricardo. Que tengas buena tarde.
+                  </p>
+
+                </div>
+
               </div>
             </div>
           </section>

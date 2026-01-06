@@ -135,6 +135,13 @@ document.addEventListener('DOMContentLoaded', () => {
     return `<time class="log-time" datetime="${escapeHtml(datetime)}">${timeLabel}</time>`;
   };
 
+  const renderLogText = (text) => {
+    if (Array.isArray(text)) {
+      return text.map((line) => escapeHtml(line)).join('<br>');
+    }
+    return escapeHtml(text || '');
+  };
+
   const renderChat = (ticket) => {
     const chat = ticket.canales.chat;
     if (!chat) return '';
@@ -145,21 +152,17 @@ document.addEventListener('DOMContentLoaded', () => {
         ${chat.titulo ? `<h5>${escapeHtml(chat.titulo)}</h5>` : ''}
         ${log.map((entry) => {
           const timeEl = renderLogTime(ticket, entry);
-          return `<div class="chat-msg">${timeEl}<strong>${escapeHtml(entry.who)}:</strong> ${escapeHtml(entry.text)}</div>`;
+          const body = renderLogText(entry.text);
+          return `<div class="chat-msg">${timeEl}<strong>${escapeHtml(entry.who)}:</strong> ${body}</div>`;
         }).join('')}
       </div>
     `;
   };
 
   const renderCallEntry = (ticket, entry) => {
-    const datetime = escapeHtml(buildDatetime(ticket, entry));
-    const timeLabel = escapeHtml(entry.t || '');
-    if (entry.em) {
-      return `<p class="call-line"><time datetime="${datetime}">${timeLabel}</time><em>${escapeHtml(entry.text || '')}</em></p>`;
-    }
-    const lines = entry.lineas || (entry.text ? [entry.text] : []);
-    const body = lines.map((line) => escapeHtml(line)).join('<br>');
-    return `<p class="call-line"><time datetime="${datetime}">${timeLabel}</time><strong>${escapeHtml(entry.who || '')}:</strong><br>${body}</p>`;
+    const timeEl = renderLogTime(ticket, entry);
+    const body = renderLogText(entry.text);
+    return `<p class="call-line">${timeEl}<strong>${escapeHtml(entry.who || '')}:</strong><br>${body}</p>`;
   };
 
   const renderLlamada = (ticket) => {

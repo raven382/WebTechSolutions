@@ -231,13 +231,10 @@ input {
 
 .log-time {
   color: var(--muted);
-  font-size: 0.85em;
-  margin-right: 8px
-}
-
-.call-line time {
-  color: var(--muted);
-  margin-right: 8px
+  font-size: 0.82em;
+  opacity: 0.7;
+  margin-right: 8px;
+  white-space: nowrap
 }
 
 .modal {

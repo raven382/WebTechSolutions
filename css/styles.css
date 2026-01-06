@@ -229,6 +229,12 @@ input {
   background: #f3f4f6
 }
 
+.log-time {
+  color: var(--muted);
+  font-size: 0.85em;
+  margin-right: 8px
+}
+
 .call-line time {
   color: var(--muted);
   margin-right: 8px

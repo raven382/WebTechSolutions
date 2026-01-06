@@ -119,37 +119,36 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
   };
 
-  const renderChat = (ticket) => {
-  const chat = ticket.canales.chat;
-  if (!chat) return '';
-  const log = chat.log || [];
-  const defaultView = ticket.canales.default || 'correo';
-
-  return `
-    <div class="channel chat"${defaultView === 'chat' ? '' : ' hidden'}>
-      ${chat.titulo ? `<h5>${escapeHtml(chat.titulo)}</h5>` : ''}
-      ${log.map((entry) => {
-        const datetime = escapeHtml(buildDatetime(ticket, entry));
-        const timeLabel = escapeHtml(entry.t || '');
-        const who = escapeHtml(entry.who || '');
-        const text = escapeHtml(entry.text || '');
-        return `
-          <div class="chat-msg">
-            <time class="chat-time" datetime="${datetime}">${timeLabel}</time>
-            <strong>${who}:</strong>
-            <span class="chat-text"> ${text}</span>
-          </div>
-        `;
-      }).join('')}
-    </div>
-  `;
-};
-
   const buildDatetime = (ticket, entry) => {
     if (entry.datetime) return entry.datetime;
     if (!ticket.fechaISO || !entry.t) return '';
     const date = ticket.fechaISO.split('T')[0];
-    return `${date}T${entry.t}`;
+    const time = entry.t.length === 5 ? `${entry.t}:00` : entry.t;
+    return `${date}T${time}`;
+  };
+
+  const renderLogTime = (ticket, entry) => {
+    if (!entry.t) return '';
+    const timeLabel = escapeHtml(entry.t);
+    const datetime = buildDatetime(ticket, entry);
+    if (!datetime) return `<time class="log-time">${timeLabel}</time>`;
+    return `<time class="log-time" datetime="${escapeHtml(datetime)}">${timeLabel}</time>`;
+  };
+
+  const renderChat = (ticket) => {
+    const chat = ticket.canales.chat;
+    if (!chat) return '';
+    const log = chat.log || [];
+    const defaultView = ticket.canales.default || 'correo';
+    return `
+      <div class="channel chat"${defaultView === 'chat' ? '' : ' hidden'}>
+        ${chat.titulo ? `<h5>${escapeHtml(chat.titulo)}</h5>` : ''}
+        ${log.map((entry) => {
+          const timeEl = renderLogTime(ticket, entry);
+          return `<div class="chat-msg">${timeEl}<strong>${escapeHtml(entry.who)}:</strong> ${escapeHtml(entry.text)}</div>`;
+        }).join('')}
+      </div>
+    `;
   };
 
   const renderCallEntry = (ticket, entry) => {

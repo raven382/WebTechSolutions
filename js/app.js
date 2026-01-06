@@ -120,17 +120,30 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const renderChat = (ticket) => {
-    const chat = ticket.canales.chat;
-    if (!chat) return '';
-    const log = chat.log || [];
-    const defaultView = ticket.canales.default || 'correo';
-    return `
-      <div class="channel chat"${defaultView === 'chat' ? '' : ' hidden'}>
-        ${chat.titulo ? `<h5>${escapeHtml(chat.titulo)}</h5>` : ''}
-        ${log.map((entry) => `<div class="chat-msg"><strong>${escapeHtml(entry.who)}:</strong> ${escapeHtml(entry.text)}</div>`).join('')}
-      </div>
-    `;
-  };
+  const chat = ticket.canales.chat;
+  if (!chat) return '';
+  const log = chat.log || [];
+  const defaultView = ticket.canales.default || 'correo';
+
+  return `
+    <div class="channel chat"${defaultView === 'chat' ? '' : ' hidden'}>
+      ${chat.titulo ? `<h5>${escapeHtml(chat.titulo)}</h5>` : ''}
+      ${log.map((entry) => {
+        const datetime = escapeHtml(buildDatetime(ticket, entry));
+        const timeLabel = escapeHtml(entry.t || '');
+        const who = escapeHtml(entry.who || '');
+        const text = escapeHtml(entry.text || '');
+        return `
+          <div class="chat-msg">
+            <time class="chat-time" datetime="${datetime}">${timeLabel}</time>
+            <strong>${who}:</strong>
+            <span class="chat-text"> ${text}</span>
+          </div>
+        `;
+      }).join('')}
+    </div>
+  `;
+};
 
   const buildDatetime = (ticket, entry) => {
     if (entry.datetime) return entry.datetime;

@@ -482,7 +482,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  fetch('./data/tickets.json')
+  // Cache-buster to avoid HTTP 304 when tickets.json changes.
+  fetch(`./data/tickets.json?v=${Date.now()}`)
     .then((response) => response.json())
     .then((data) => {
       if (!Array.isArray(data)) throw new Error('data.json debe contener un arreglo');

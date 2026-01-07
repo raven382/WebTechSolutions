@@ -72,65 +72,80 @@
         ]
       },
       {
-        "type": "paragraph",
-        "segments": [
-          {
-            "strong": true,
-            "text": "Medidas adoptadas:"
-          }
-        ]
-      },
+  "type": "paragraph",
+  "segments": [
+    {
+      "strong": true,
+      "text": "Medidas adoptadas:"
+    }
+  ]
+},
+{
+  "type": "list",
+  "items": [
+    "Se realiza contención inicial por urgencia del caso.",
+    {
+      "segments": [
+        {
+          "text": "Se consulta al usuario:"
+        }
+      ],
+      "subitems": [
+        "¿El equipo funcionaba normalmente antes del incidente?",
+        "¿Está conectado directamente a la corriente o a una regleta?",
+        "¿Hubo algún corte de energía reciente?",
+        "¿El equipo mostró algún mensaje o comportamiento extraño antes de apagarse?",
+        "¿Se realizó algún cambio o movimiento del equipo?"
+      ]
+    },
+    {
+      "segments": [
+        {
+          "text": "Se indica verificación básica:"
+        }
+      ],
+      "subitems": [
+        "Revisión del cable de poder.",
+        "Comprobación del interruptor trasero de la fuente.",
+        "Prueba en otra toma eléctrica cercana."
+      ]
+    },
+    "Se observa que el equipo no presenta ningún indicio de encendido tras las verificaciones."
+  ]
+},
       {
-        "type": "list",
-        "items": [
-          "Se realiza contención inicial por urgencia del caso.",
-          {
-            "segments": [
-              {
-                "text": "Se consulta al usuario:"
-              }
-            ],
-            "subitems": [
-              "¿El equipo funcionaba normalmente antes del incidente?",
-              "¿Está conectado directamente a la corriente o a una regleta?",
-              "¿Hubo algún corte de energía reciente?"
-            ]
-          }
-        ]
-      },
-      {
-        "type": "paragraph",
-        "segments": [
-          {
-            "strong": true,
-            "text": "Se indica verificación básica:"
-          }
-        ]
-      },
-      {
-        "type": "list",
-        "items": [
-          "Revisión del cable de poder.",
-          "Comprobación del interruptor trasero de la fuente.",
-          "Prueba en otra toma eléctrica cercana."
-        ]
-      },
-      {
-        "type": "paragraph",
-        "text": "Se observa que el equipo no presenta ningún indicio de encendido tras las verificaciones."
-      },
-      {
-        "type": "paragraph",
-        "segments": [
-          {
-            "strong": true,
-            "text": "Resolución:"
-          },
-          {
-            "text": " Se determina probable falla de hardware (fuente de poder). Se decide escalar el caso a soporte técnico especializado para revisión física del equipo. Se informa al usuario del escalamiento y de los próximos pasos. Ticket queda documentado a la espera de resolución final."
-          }
-        ]
-      }
+  "type": "paragraph",
+  "segments": [
+    {
+      "strong": true,
+      "text": "Resolución:"
+    }
+  ]
+},
+{
+  "type": "list",
+  "items": [
+    "Se confirma que el equipo no presenta encendido en ninguna toma eléctrica (sin luces, sin sonido, sin POST).",
+    "Se solicita cooperación para revisión física básica y método de descarte (cable, toma, interruptor PSU).",
+    "Se determina probable falla de fuente de poder (PSU) por ausencia total de energía.",
+    "Se informa tiempo estimado de intervención en sitio y se mantiene al usuario informado.",
+    "Se asigna técnico para atención en sitio (Piso 2, Oficina 204) y reemplazo del componente.",
+    "Se registra intervención: se reemplaza la PSU por una operativa y se verifica conexión segura.",
+    "Se enciende el equipo y se valida inicio correcto del sistema operativo.",
+    {
+      "segments": [
+        { "text": "Se retoma el contacto y se consulta al usuario:" }
+      ],
+      "subitems": [
+        "¿El computador enciende correctamente?",
+        "¿Puede iniciar sesión y acceder a sus herramientas de trabajo y correo?"
+      ]
+    },
+    "El usuario confirma que el equipo funciona correctamente y puede continuar con su reunión.",
+    "Ticket cerrado."
+  ]
+}
+
     ],
     "resumen": "El usuario reporta que su computador de escritorio no enciende en absoluto. No hay luces, ventiladores ni señales de POST. El puesto de trabajo está bloqueado y el usuario tiene una reunión importante.",
     "registro": [
@@ -754,7 +769,7 @@
         "segments": [
           {
             "strong": true,
-            "text": "Medidas adoptadas: (preguntas abiertas)"
+            "text": "Medidas adoptadas:"
           }
         ]
       },
@@ -821,25 +836,37 @@
         ]
       },
       {
-        "type": "paragraph",
-        "segments": [
-          {
-            "strong": true,
-            "text": "Resolución: (preguntas cerradas)"
-          }
-        ]
-      },
-      {
-        "type": "list",
-        "items": [
-          "Se confirma que la impresora no responde a la IP configurada.",
-          "Se identifica IP incorrecta del dispositivo.",
-          "Se reconfigura la impresora con la IP correcta.",
-          "Se prueba impresión desde equipo del área.",
-          "Servicio de impresión restablecido.",
-          "Ticket cerrado."
-        ]
-      }
+  "type": "paragraph",
+  "segments": [
+    {
+      "strong": true,
+      "text": "Resolución:"
+    }
+  ]
+},
+{
+  "type": "list",
+  "items": [
+    "Se accede de forma remota a uno de los equipos del Área de Contabilidad para revisar la configuración de la impresora HR-FLOOR2.",
+    "Se elimina la impresora configurada con la IP incorrecta desde el sistema operativo del equipo.",
+    "Se renueva la configuración de red del equipo mediante actualización dinámica de direcciones IP (DHCP) para descartar conflictos de red.",
+    "Se vuelve a agregar la impresora de red utilizando su dirección IP actual válida en la red corporativa.",
+    "Se reinicia el servicio de impresión (spooler) para limpiar trabajos retenidos en la cola.",
+    "Se realiza prueba de impresión desde un equipo del área con un documento de prueba.",
+    {
+      "segments": [
+        { "text": "Se consulta a la usuaria:" }
+      ],
+      "subitems": [
+        "¿La impresora imprime correctamente el documento de prueba?",
+        "¿Los trabajos de impresión se procesan sin quedar retenidos?"
+      ]
+    },
+    "La usuaria confirma que la impresión funciona con normalidad y que el proceso de cierre financiero puede continuar.",
+    "Ticket cerrado."
+  ]
+}
+
     ],
     "resumen": "La impresora de red HR-FLOOR2 (IP 10.1.2.35) no procesa trabajos de impresión. El área de Contabilidad requiere impresión para cierre financiero; impacto operativo alto.",
     "registro": [
@@ -1415,7 +1442,7 @@
           "Afecta acceso a sistemas corporativos y servicios en la nube.",
           "Impacto alto en productividad.",
           "Incidente de red.",
-          "Usuario con conocimientos técnicos (“le sabe / podría ser admin”)."
+          "Usuario con conocimientos técnicos."
         ]
       },
       {
@@ -1423,7 +1450,7 @@
         "segments": [
           {
             "strong": true,
-            "text": "Medidas adoptadas: (preguntas abiertas)"
+            "text": "Medidas adoptadas:"
           }
         ]
       },
@@ -1482,25 +1509,51 @@
         ]
       },
       {
-        "type": "paragraph",
-        "segments": [
-          {
-            "strong": true,
-            "text": "Resolución: (preguntas cerradas)"
-          }
-        ]
-      },
-      {
-        "type": "list",
-        "items": [
-          "Se confirma lentitud general.",
-          "Se identifica conflicto / saturación / mala conexión física.",
-          "Se corrige conexión / se reinicia equipo de red / se normaliza enlace.",
-          "Se valida navegación y acceso a sistemas.",
-          "Servicio restablecido.",
-          "Ticket cerrado."
-        ]
-      }
+  "type": "paragraph",
+  "segments": [
+    {
+      "strong": true,
+      "text": "Resolución:"
+    }
+  ]
+},
+{
+  "type": "list",
+  "items": [
+    "A partir de las pruebas realizadas, se identifica que la lentitud e intermitencia estaban relacionadas con una configuración incorrecta de la conexión de red del puesto, posterior a un movimiento reciente del escritorio.",
+    {
+      "segments": [
+        { "text": "Se accede de forma remota al equipo del usuario y se procede a:" }
+      ],
+      "subitems": [
+        "Se realiza el restablecimiento de la configuración de red del equipo, forzando la renovación de la dirección IP asignada por DHCP.",
+        "Se verifican los parámetros de enlace y DNS."
+      ]
+    },
+    {
+      "segments": [
+        { "text": "Se valida nuevamente la conectividad:" }
+      ],
+      "subitems": [
+        "La navegación responde de forma estable.",
+        "Se puede acceder a sistemas corporativos y servicios en la nube sin interrupciones."
+      ]
+    },
+    {
+      "segments": [
+        {
+          "text": "Se consulta al usuario:"
+        }
+      ],
+      "subitems": [
+        "¿La conexión funciona con normalidad en este momento?",
+        "¿Puede acceder a los sistemas corporativos sin lentitud ni cortes?"
+      ]
+    },
+    "El usuario confirma que la conectividad quedó restablecida y estable.",
+    "Ticket cerrado."
+  ]
+}
     ],
     "resumen": "Usuario reporta latencia elevada o pérdida de conectividad. Se recopila información de IP, gateway y DNS para diagnóstico.",
     "registro": [
@@ -2081,24 +2134,37 @@
         ]
       },
       {
-        "type": "paragraph",
-        "segments": [
-          {
-            "strong": true,
-            "text": "Resolución:"
-          }
-        ]
-      },
-      {
-        "type": "list",
-        "items": [
-          "Se identifica driver defectuoso desde Administrador de dispositivos.",
-          "Se desinstala / actualiza controlador problemático.",
-          "Se ejecutan herramientas de diagnóstico.",
-          "Equipo se estabiliza y deja de presentar BSOD.",
-          "Ticket cerrado."
-        ]
-      }
+  "type": "paragraph",
+  "segments": [
+    {
+      "strong": true,
+      "text": "Resolución:"
+    }
+  ]
+},
+{
+  "type": "list",
+  "items": [
+    "Se ejecutan diagnósticos del sistema para descartar fallas adicionales (Windows Memory Diagnostic y verificación de disco), sin detección de errores.",
+    "Posteriormente, se identifica un controlador de video Intel UHD Graphics con funcionamiento incorrecto, asociado a una actualización reciente del sistema operativo.",
+    "Se procede a la desinstalación y actualización del driver de video Intel UHD Graphics, restableciendo una versión compatible y estable.",
+    "El equipo se mantiene operativo sin presentar nuevos pantallazos azules.",
+    {
+      "segments": [
+        {
+          "text": "Se consulta a la usuaria:"
+        }
+      ],
+      "subitems": [
+        "¿El equipo ha vuelto a presentar el pantallazo azul?",
+        "¿Puede utilizar el computador con normalidad durante su jornada?"
+      ]
+    },
+    "La usuaria confirma funcionamiento normal.",
+    "Ticket cerrado."
+  ]
+}
+
     ],
     "resumen": "Usuario reporta BSOD recurrente. Se recopila historial de eventos y se ejecutan pruebas de memoria y disco.",
     "registro": [
@@ -2662,24 +2728,37 @@
         ]
       },
       {
-        "type": "paragraph",
-        "segments": [
-          {
-            "strong": true,
-            "text": "Resolución:"
-          }
-        ]
-      },
-      {
-        "type": "list",
-        "items": [
-          "Se gestiona la comunicación.",
-          "Se baja el nivel de conflicto.",
-          "Se resuelve el problema reportado.",
-          "Usuario queda informado y conforme.",
-          "Ticket cerrado."
-        ]
-      }
+  "type": "paragraph",
+  "segments": [
+    {
+      "strong": true,
+      "text": "Resolución:"
+    }
+  ]
+},
+{
+  "type": "list",
+  "items": [
+    "Se gestiona la comunicación con el usuario, manteniendo un trato calmado y empático.",
+    "Se confirma con el usuario la comprensión del problema reportado.",
+    "Se aplica la solución correspondiente al incidente de software informado.",
+    {
+      "segments": [
+        {
+          "text": "Se valida con el usuario:"
+        }
+      ],
+      "subitems": [
+        "¿El software está funcionando correctamente ahora?",
+        "¿Puede continuar trabajando con normalidad?"
+      ]
+    },
+    "El usuario confirma que el sistema funciona correctamente.",
+    "Se informa el cierre del ticket y se deja abierto el canal de contacto ante una posible recurrencia.",
+    "Ticket cerrado."
+  ]
+}
+
     ],
     "resumen": "Usuario expresa frustración por impacto en su trabajo. Se prioriza atención técnica y gestión de comunicación.",
     "registro": [],

@@ -40,14 +40,21 @@
     ],
     "resolucion": {
       "pasos": [
-        "Se determina probable falla de hardware (fuente de poder).",
-        "Se decide escalar el caso a soporte técnico especializado para revisión física del equipo.",
-        "Se informa al usuario del escalamiento y de los próximos pasos.",
-        "Ticket queda documentado a la espera de resolución final."
+        "Se confirma que el equipo no presenta encendido en ninguna toma eléctrica (sin luces, sin sonido, sin POST).",
+        "Se solicita cooperación para revisión física básica y método de descarte (cable, toma, interruptor PSU).",
+        "Se determina probable falla de fuente de poder (PSU) por ausencia total de energía.",
+        "Se informa tiempo estimado de intervención en sitio y se mantiene al usuario informado.",
+        "Se asigna técnico para atención en sitio (Piso 2, Oficina 204) y reemplazo del componente.",
+        "Se registra intervención: se reemplaza la PSU por una operativa y se verifica conexión segura.",
+        "Se enciende el equipo y se valida inicio correcto del sistema operativo.",
+        "Se retoma el contacto y se consulta al usuario: ¿El computador enciende correctamente?",
+        "Se retoma el contacto y se consulta al usuario: ¿Puede iniciar sesión y acceder a sus herramientas de trabajo y correo?",
+        "El usuario confirma que el equipo funciona correctamente y puede continuar con su reunión.",
+        "Ticket cerrado."
       ],
       "confirmacion": [
-        "¿El sistema inició normalmente? ¿Puedes entrar a tu sesión?",
-        "¿Puedes acceder a tus herramientas de trabajo y al correo sin problema?",
+        "¿El computador enciende correctamente?",
+        "¿Puede iniciar sesión y acceder a sus herramientas de trabajo y correo?",
         "Usuario confirma que el equipo está operativo."
       ]
     },
@@ -665,16 +672,20 @@
     ],
     "resolucion": {
       "pasos": [
-        "Se confirma que la impresora no responde a la IP configurada.",
-        "Se identifica IP incorrecta del dispositivo.",
-        "Se reconfigura la impresora con la IP correcta.",
-        "Se prueba impresión desde equipo del área.",
-        "Servicio de impresión restablecido.",
+        "Se accede de forma remota a uno de los equipos del Área de Contabilidad para revisar la configuración de la impresora HR-FLOOR2.",
+        "Se elimina la impresora configurada con la IP incorrecta desde el sistema operativo del equipo.",
+        "Se renueva la configuración de red del equipo mediante actualización dinámica de direcciones IP (DHCP) para descartar conflictos de red.",
+        "Se vuelve a agregar la impresora de red utilizando su dirección IP actual válida en la red corporativa.",
+        "Se reinicia el servicio de impresión (spooler) para limpiar trabajos retenidos en la cola.",
+        "Se realiza prueba de impresión desde un equipo del área con un documento de prueba.",
+        "Se consulta a la usuaria: ¿La impresora imprime correctamente el documento de prueba?",
+        "Se consulta a la usuaria: ¿Los trabajos de impresión se procesan sin quedar retenidos?",
+        "La usuaria confirma que la impresión funciona con normalidad y que el proceso de cierre financiero puede continuar.",
         "Ticket cerrado."
       ],
       "confirmacion": [
-        "¿Puede confirmar si el documento se imprimió correctamente?",
-        "¿El documento se imprime completo y sin errores?",
+        "¿La impresora imprime correctamente el documento de prueba?",
+        "¿Los trabajos de impresión se procesan sin quedar retenidos?",
         "Usuaria confirma que la impresión es correcta."
       ]
     },
@@ -1370,16 +1381,19 @@
     ],
     "resolucion": {
       "pasos": [
-        "Se confirma lentitud general.",
-        "Se identifica conflicto / saturación / mala conexión física.",
-        "Se corrige conexión / se reinicia equipo de red / se normaliza enlace.",
-        "Se valida navegación y acceso a sistemas.",
-        "Servicio restablecido.",
+        "A partir de las pruebas realizadas, se identifica que la lentitud e intermitencia estaban relacionadas con una configuración incorrecta de la conexión de red del puesto, posterior a un movimiento reciente del escritorio.",
+        "Se accede de forma remota al equipo del usuario y se procede a: Se realiza el restablecimiento de la configuración de red del equipo, forzando la renovación de la dirección IP asignada por DHCP.",
+        "Se accede de forma remota al equipo del usuario y se procede a: Verificando los parámetros de puerta de enlace y DNS.",
+        "Se valida la conectividad con el usuario: La navegación responde de forma estable.",
+        "Se valida la conectividad con el usuario: Se puede acceder a sistemas corporativos y servicios en la nube sin interrupciones.",
+        "Se consulta al usuario: ¿La conexión funciona con normalidad en este momento?",
+        "Se consulta al usuario: ¿Puede acceder a los sistemas corporativos sin lentitud ni cortes?",
+        "El usuario confirma que la conectividad quedó restablecida y estable.",
         "Ticket cerrado."
       ],
       "confirmacion": [
-        "¿Puede confirmar si el acceso a sistemas y navegación es normal?",
-        "Usuario confirma que ahora funciona correctamente."
+        "¿La conexión funciona con normalidad en este momento?",
+        "¿Puede acceder a los sistemas corporativos sin lentitud ni cortes?"
       ]
     },
     "notasDetalle": [
@@ -1966,15 +1980,18 @@
     ],
     "resolucion": {
       "pasos": [
-        "Se identifica driver defectuoso desde Administrador de dispositivos.",
-        "Se desinstala / actualiza controlador problemático.",
-        "Se ejecutan herramientas de diagnóstico.",
-        "Equipo se estabiliza y deja de presentar BSOD.",
+        "Se ejecutan diagnósticos del sistema para descartar fallas adicionales (Windows Memory Diagnostic y verificación de disco), sin detección de errores.",
+        "Posteriormente, se identifica un controlador de video Intel UHD Graphics con funcionamiento incorrecto, asociado a una actualización reciente del sistema operativo.",
+        "Se procede a la desinstalación y actualización del driver de video Intel UHD Graphics, restableciendo una versión compatible y estable.",
+        "El equipo se mantiene operativo sin presentar nuevos pantallazos azules.",
+        "Se consulta a la usuaria: ¿El equipo ha vuelto a presentar el pantallazo azul?",
+        "Se consulta a la usuaria: ¿Puede utilizar el computador con normalidad durante su jornada?",
+        "La usuaria confirma funcionamiento normal.",
         "Ticket cerrado."
       ],
       "confirmacion": [
-        "¿Desde que hicimos el ajuste volvió a aparecer el pantallazo azul?",
-        "¿Puedes usar el computador con normalidad ahora, sin reinicios inesperados?",
+        "¿El equipo ha vuelto a presentar el pantallazo azul?",
+        "¿Puede utilizar el computador con normalidad durante su jornada?",
         "Usuaria confirma que el equipo está estable."
       ]
     },
@@ -2557,15 +2574,18 @@
     ],
     "resolucion": {
       "pasos": [
-        "Se gestiona la comunicación.",
-        "Se baja el nivel de conflicto.",
-        "Se resuelve el problema reportado.",
-        "Usuario queda informado y conforme.",
+        "Se gestiona la comunicación con el usuario, manteniendo un trato calmado y empático.",
+        "Se confirma con el usuario la comprensión del problema reportado.",
+        "Se aplica la solución correspondiente al incidente de software informado.",
+        "Se valida con el usuario: ¿El software está funcionando correctamente ahora?",
+        "Se valida con el usuario: ¿Puede continuar trabajando con normalidad?",
+        "El usuario confirma que el sistema funciona correctamente.",
+        "Se informa de cierre del ticket y se deja abierto el canal de contacto ante una posible recurrencia.",
         "Ticket cerrado."
       ],
       "confirmacion": [
         "¿El software está funcionando correctamente ahora?",
-        "¿Puedes continuar con tu trabajo sin los bloqueos que estabas teniendo?",
+        "¿Puede continuar trabajando con normalidad?",
         "¿Te sientes conforme con la solución y con la atención que recibiste?"
       ]
     },

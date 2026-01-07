@@ -5,10 +5,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const filterPrioridad = document.getElementById('filterPrioridad');
   const filterTipo = document.getElementById('filterTipo');
   const searchInput = document.getElementById('searchInput');
+  const layout = document.querySelector('.layout');
+  const rightPane = document.getElementById('rightPane');
+  const ticketSheet = document.getElementById('ticketSheet');
+  const ticketTabs = document.getElementById('ticketTabs');
+  const tabsPlaceholder = document.getElementById('tabsPlaceholder');
+  const backToList = document.getElementById('backToList');
   const modal = document.getElementById('modal');
   const modalBody = document.getElementById('modalBody');
   const closeModal = document.getElementById('closeModal');
-  let ticketCards = [];
+  let ticketsData = [];
+  let selectedTicketId = null;
 
   const escapeHtml = (value) => {
     if (value === null || value === undefined) return '';
@@ -285,63 +292,82 @@ document.addEventListener('DOMContentLoaded', () => {
     return `<section id="${escapeHtml(panelId)}" class="tabpanel" role="tabpanel"${hiddenAttr}${emptyAttr}>${content}</section>`;
   };
 
-  const renderTicket = (ticket) => {
-    const tabList = ticket.tabs || [];
-    const tabs = tabList.map((tab) => {
-      const activeClass = tab.key === 'resumen' ? ' active' : '';
-      return `<button role="tab" aria-controls="panel-${escapeHtml(ticket.id)}-${escapeHtml(tab.key)}" class="tab${activeClass}" data-action="switch-tab" data-ticket="${escapeHtml(ticket.id)}" data-tab="${escapeHtml(tab.key)}">${escapeHtml(tab.label)}</button>`;
-    }).join('');
-    const panels = tabList.map((tab) => renderPanel(ticket, tab)).join('');
+  const renderTicketCard = (ticket) => {
     const dataTipo = ticket.tipoFiltro || ticket.tipo;
     return `
-      <article class="ticket-card" id="ticket-${escapeHtml(ticket.id)}" data-ticket="${escapeHtml(ticket.id)}" data-estado="${escapeHtml(ticket.estado)}" data-prioridad="${escapeHtml(ticket.prioridad)}" data-tipo="${escapeHtml(dataTipo)}" data-title="${escapeHtml(ticket.titulo)}" data-cliente="${escapeHtml(ticket.cliente && ticket.cliente.nombre ? ticket.cliente.nombre : '')}">
+      <article class="ticket-card" data-ticket="${escapeHtml(ticket.id)}" data-estado="${escapeHtml(ticket.estado)}" data-prioridad="${escapeHtml(ticket.prioridad)}" data-tipo="${escapeHtml(dataTipo)}" data-title="${escapeHtml(ticket.titulo)}" data-cliente="${escapeHtml(ticket.cliente && ticket.cliente.nombre ? ticket.cliente.nombre : '')}">
         <header class="ticket-header">
           <div>
             <h3>${escapeHtml(ticket.id)} — ${escapeHtml(ticket.titulo)}</h3>
             <p class="meta">${escapeHtml(ticket.meta || '')}</p>
           </div>
           <div class="ticket-actions">
-            <button class="btn small" data-action="toggle-detail" data-ticket="${escapeHtml(ticket.id)}">Abrir detalle</button>
+            <button class="btn small" type="button" data-action="select-ticket" data-ticket="${escapeHtml(ticket.id)}">Ver detalle</button>
+          </div>
+        </header>
+      </article>
+    `;
+  };
+
+  const renderTicketSheet = (ticket) => {
+    return `
+      <article class="ticket-card ticket-sheet-card" data-ticket="${escapeHtml(ticket.id)}">
+        <header class="ticket-header">
+          <div>
+            <h3>${escapeHtml(ticket.id)} - ${escapeHtml(ticket.titulo)}</h3>
+            <p class="meta">${escapeHtml(ticket.meta || '')}</p>
           </div>
         </header>
 
-        <div id="detail-${escapeHtml(ticket.id)}" class="ticket-detail" hidden>
-          <section class="ticket-preview" aria-label="Previsualización del ticket">
-            <table class="preview-table" role="table" aria-describedby="nota-${escapeHtml(ticket.id)}">
-              <thead>
-                <tr>
-                  <th colspan="4">Ticket: <span class="ticket-code">${escapeHtml(ticket.id)}</span></th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>Fecha:</strong> <span class="ticket-fecha">${escapeHtml(ticket.fechaDisplay || '')}</span></td>
-                  <td><strong>Hora:</strong> <span class="ticket-hora">${escapeHtml(ticket.horaDisplay || '')}</span></td>
-                  <td><strong>Estado:</strong> <span class="ticket-estado">${escapeHtml(ticket.estadoDisplay || '')}</span></td>
-                  <td><strong>Nivel de prioridad:</strong> <span class="ticket-prioridad">${escapeHtml(ticket.prioridad || '')}</span></td>
-                </tr>
-                <tr>
-                  <td><strong>Nombre del cliente:</strong> <span class="ticket-nombre">${escapeHtml(ticket.cliente && ticket.cliente.nombre ? ticket.cliente.nombre : '')}</span></td>
-                  <td colspan="2"><strong>Teléfono del cliente:</strong> <span class="ticket-telefono">${escapeHtml(ticket.cliente && ticket.cliente.telefono ? ticket.cliente.telefono : '')}</span></td>
-                  <td><strong>Correo electrónico:</strong> <span class="ticket-correo">${escapeHtml(ticket.cliente && ticket.cliente.correo ? ticket.cliente.correo : '')}</span></td>
-                </tr>
-                <tr>
-                  <td><strong>Tipo de emisión:</strong> <span class="ticket-tipo">${escapeHtml(ticket.tipo || '')}</span></td>
-                </tr>
-                <tr>
-                  <td colspan="4" id="nota-${escapeHtml(ticket.id)}"><strong>Notas:</strong>
-                    <div class="ticket-notas">
-                      ${renderBlocks(ticket.notasDetalle || [])}
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td colspan="4"><strong>Especialista de Soporte en TI:</strong> ${escapeHtml(ticket.especialistas || '')}</td>
-                </tr>
-              </tbody>
-            </table>
-          </section>
+        <section class="ticket-preview" aria-label="Previsualizaci¢n del ticket">
+          <table class="preview-table" role="table" aria-describedby="nota-${escapeHtml(ticket.id)}">
+            <thead>
+              <tr>
+                <th colspan="4">Ticket: <span class="ticket-code">${escapeHtml(ticket.id)}</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Fecha:</strong> <span class="ticket-fecha">${escapeHtml(ticket.fechaDisplay || '')}</span></td>
+                <td><strong>Hora:</strong> <span class="ticket-hora">${escapeHtml(ticket.horaDisplay || '')}</span></td>
+                <td><strong>Estado:</strong> <span class="ticket-estado">${escapeHtml(ticket.estadoDisplay || '')}</span></td>
+                <td><strong>Nivel de prioridad:</strong> <span class="ticket-prioridad">${escapeHtml(ticket.prioridad || '')}</span></td>
+              </tr>
+              <tr>
+                <td><strong>Nombre del cliente:</strong> <span class="ticket-nombre">${escapeHtml(ticket.cliente && ticket.cliente.nombre ? ticket.cliente.nombre : '')}</span></td>
+                <td colspan="2"><strong>Tel‚fono del cliente:</strong> <span class="ticket-telefono">${escapeHtml(ticket.cliente && ticket.cliente.telefono ? ticket.cliente.telefono : '')}</span></td>
+                <td><strong>Correo electr¢nico:</strong> <span class="ticket-correo">${escapeHtml(ticket.cliente && ticket.cliente.correo ? ticket.cliente.correo : '')}</span></td>
+              </tr>
+              <tr>
+                <td><strong>Tipo de emisi¢n:</strong> <span class="ticket-tipo">${escapeHtml(ticket.tipo || '')}</span></td>
+              </tr>
+              <tr>
+                <td colspan="4" id="nota-${escapeHtml(ticket.id)}"><strong>Notas:</strong>
+                  <div class="ticket-notas">
+                    ${renderBlocks(ticket.notasDetalle || [])}
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="4"><strong>Especialista de Soporte en TI:</strong> ${escapeHtml(ticket.especialistas || '')}</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </article>
+    `;
+  };
 
+  const renderTicketTabs = (ticket) => {
+    const tabList = ticket.tabs || [];
+    const tabs = tabList.map((tab) => {
+      const activeClass = tab.key === 'resumen' ? ' active' : '';
+      return `<button role="tab" aria-controls="panel-${escapeHtml(ticket.id)}-${escapeHtml(tab.key)}" class="tab${activeClass}" data-action="switch-tab" data-ticket="${escapeHtml(ticket.id)}" data-tab="${escapeHtml(tab.key)}">${escapeHtml(tab.label)}</button>`;
+    }).join('');
+    const panels = tabList.map((tab) => renderPanel(ticket, tab)).join('');
+    return `
+      <article class="ticket-card ticket-tabs-card" data-ticket="${escapeHtml(ticket.id)}">
+        <div id="detail-${escapeHtml(ticket.id)}" class="ticket-detail">
           <nav class="tabs" role="tablist" aria-label="Secciones del ticket">
             ${tabs}
           </nav>
@@ -352,30 +378,74 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
   };
 
-  const renderTickets = (data) => {
-    ticketsList.innerHTML = data.map((ticket) => renderTicket(ticket)).join('');
-    ticketCards = Array.from(ticketsList.querySelectorAll('.ticket-card'));
-    applyFilters();
-  };
-
-  const applyFilters = () => {
+  const getFilteredTickets = () => {
     const estado = filterEstado ? filterEstado.value : '';
     const prioridad = filterPrioridad ? filterPrioridad.value : '';
     const tipo = filterTipo ? filterTipo.value : '';
     const query = searchInput ? searchInput.value.trim() : '';
-    ticketCards.forEach((card) => {
-      let visible = true;
-      if (estado && card.dataset.estado !== estado) visible = false;
-      if (prioridad && card.dataset.prioridad !== prioridad) visible = false;
-      if (tipo && card.dataset.tipo !== tipo) visible = false;
+    return ticketsData.filter((ticket) => {
+      if (estado && ticket.estado !== estado) return false;
+      if (prioridad && ticket.prioridad !== prioridad) return false;
+      if (tipo && (ticket.tipoFiltro || ticket.tipo) !== tipo) return false;
       if (query) {
-        const ticketCode = card.dataset.ticket || '';
-        const title = card.dataset.title || '';
-        const cliente = card.dataset.cliente || '';
-        if (!(query === ticketCode || title.includes(query) || cliente.includes(query))) visible = false;
+        const ticketCode = ticket.id || '';
+        const title = ticket.titulo || '';
+        const cliente = ticket.cliente && ticket.cliente.nombre ? ticket.cliente.nombre : '';
+        if (!(query === ticketCode || title.includes(query) || cliente.includes(query))) return false;
       }
-      card.style.display = visible ? '' : 'none';
+      return true;
     });
+  };
+
+  const renderTickets = (filteredTickets) => {
+    const listTickets = selectedTicketId
+      ? filteredTickets.filter((ticket) => ticket.id === selectedTicketId)
+      : filteredTickets;
+    ticketsList.innerHTML = listTickets.map((ticket) => renderTicketCard(ticket)).join('');
+    backToList.hidden = !selectedTicketId;
+  };
+
+  const setLayoutState = (hasDetail) => {
+    if (!layout) return;
+    layout.classList.toggle('has-detail', hasDetail);
+  };
+
+  const renderSelection = () => {
+    if (!selectedTicketId) {
+      setLayoutState(false);
+      ticketSheet.innerHTML = '';
+      ticketTabs.innerHTML = '';
+      tabsPlaceholder.hidden = false;
+      rightPane.hidden = true;
+      rightPane.setAttribute('aria-hidden', 'true');
+      return;
+    }
+    const ticket = ticketsData.find((item) => item.id === selectedTicketId);
+    if (!ticket) {
+      selectedTicketId = null;
+      setLayoutState(false);
+      ticketSheet.innerHTML = '';
+      ticketTabs.innerHTML = '';
+      tabsPlaceholder.hidden = false;
+      rightPane.hidden = true;
+      rightPane.setAttribute('aria-hidden', 'true');
+      return;
+    }
+    setLayoutState(true);
+    ticketSheet.innerHTML = renderTicketSheet(ticket);
+    ticketTabs.innerHTML = renderTicketTabs(ticket);
+    tabsPlaceholder.hidden = true;
+    rightPane.hidden = false;
+    rightPane.setAttribute('aria-hidden', 'false');
+  };
+
+  const updateView = () => {
+    const filteredTickets = getFilteredTickets();
+    if (selectedTicketId && !filteredTickets.some((ticket) => ticket.id === selectedTicketId)) {
+      selectedTicketId = null;
+    }
+    renderTickets(filteredTickets);
+    renderSelection();
   };
 
   const activateTab = (detail, ticketId, tabKey, tabButton) => {
@@ -390,23 +460,35 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  ticketsList.addEventListener('click', (event) => {
+  layout.addEventListener('click', (event) => {
     const actionEl = event.target.closest('[data-action]');
-    if (!actionEl || !ticketsList.contains(actionEl)) return;
+    const isInList = ticketsList.contains(event.target);
+
+    if (!actionEl && isInList) {
+      const card = event.target.closest('.ticket-card');
+      const ticketId = card ? card.dataset.ticket : '';
+      if (ticketId) {
+        selectedTicketId = ticketId;
+        updateView();
+      }
+      return;
+    }
+
+    if (!actionEl || !layout.contains(actionEl)) return;
     const action = actionEl.dataset.action;
     const ticketId = actionEl.dataset.ticket;
 
-    if (action === 'toggle-detail') {
-      const detail = document.getElementById(`detail-${ticketId}`);
-      if (!detail) return;
-      const hidden = detail.hasAttribute('hidden');
-      if (hidden) {
-        detail.removeAttribute('hidden');
-        actionEl.textContent = 'Cerrar detalle';
-      } else {
-        detail.setAttribute('hidden', '');
-        actionEl.textContent = 'Abrir detalle';
+    if (action === 'select-ticket') {
+      if (ticketId) {
+        selectedTicketId = ticketId;
+        updateView();
       }
+      return;
+    }
+
+    if (action === 'back-to-list') {
+      selectedTicketId = null;
+      updateView();
       return;
     }
 
@@ -419,7 +501,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (action === 'switch-channel') {
       const view = actionEl.dataset.view;
-      const buttons = ticketsList.querySelectorAll(`.ticket-fuente[data-ticket="${CSS.escape(ticketId)}"] .view-btn`);
+      const buttons = ticketTabs.querySelectorAll(`.ticket-fuente[data-ticket="${CSS.escape(ticketId)}"] .view-btn`);
       buttons.forEach((btn) => {
         btn.setAttribute('aria-pressed', 'false');
         btn.classList.remove('active');
@@ -427,7 +509,7 @@ document.addEventListener('DOMContentLoaded', () => {
       actionEl.setAttribute('aria-pressed', 'true');
       actionEl.classList.add('active');
 
-      const container = document.getElementById(`view-${ticketId}`);
+      const container = ticketTabs.querySelector(`#view-${CSS.escape(ticketId)}`);
       if (!container) return;
       container.querySelectorAll('.channel').forEach((channel) => { channel.hidden = true; });
       const target = container.querySelector(`.channel.${CSS.escape(view)}`);
@@ -458,7 +540,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  ticketsList.addEventListener('keydown', (event) => {
+  layout.addEventListener('keydown', (event) => {
     const actionEl = event.target.closest('[data-action="switch-channel"]');
     if (!actionEl) return;
     if (event.key === 'Enter' || event.key === ' ') {
@@ -467,10 +549,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  if (filterEstado) filterEstado.addEventListener('change', applyFilters);
-  if (filterPrioridad) filterPrioridad.addEventListener('change', applyFilters);
-  if (filterTipo) filterTipo.addEventListener('change', applyFilters);
-  if (searchInput) searchInput.addEventListener('input', applyFilters);
+  if (filterEstado) filterEstado.addEventListener('change', updateView);
+  if (filterPrioridad) filterPrioridad.addEventListener('change', updateView);
+  if (filterTipo) filterTipo.addEventListener('change', updateView);
+  if (searchInput) searchInput.addEventListener('input', updateView);
 
   closeModal.addEventListener('click', () => modal.setAttribute('aria-hidden', 'true'));
   modal.addEventListener('click', (event) => {
@@ -486,10 +568,14 @@ document.addEventListener('DOMContentLoaded', () => {
   fetch(`./data/tickets.json?v=${Date.now()}`)
     .then((response) => response.json())
     .then((data) => {
-      if (!Array.isArray(data)) throw new Error('data.json debe contener un arreglo');
-      renderTickets(data);
+      if (!Array.isArray(data)) throw new Error('tickets.json debe contener un arreglo');
+      ticketsData = data;
+      updateView();
     })
     .catch((error) => {
-      console.error('Error al cargar data.json:', error);
+      console.error('Error al cargar tickets.json:', error);
     });
 });
+
+
+

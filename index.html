@@ -21,57 +21,57 @@
     </div>
   </header>
 
-  <main class="container">
-    <div class="layout">
+  <main class="app">
+    <section id="filtersBar" class="panel-filtros filters-bar" aria-label="Filtros de tickets">
+      <h2 class="filters-title">Filtros</h2>
+
+      <div class="filter-field">
+        <label for="filterEstado">Estado</label>
+        <select id="filterEstado" aria-controls="ticketsList">
+          <option value="">Todos</option>
+          <option value="Nuevo">Nuevo</option>
+          <option value="Apertura">Apertura</option>
+          <option value="Resuelto">Resuelto</option>
+          <option value="Escalada">Escalada</option>
+          <option value="Cierre">Cierre</option>
+        </select>
+      </div>
+
+      <div class="filter-field">
+        <label for="filterPrioridad">Prioridad</label>
+        <select id="filterPrioridad" aria-controls="ticketsList">
+          <option value="">Todas</option>
+          <option value="Baja">Baja</option>
+          <option value="Media">Media</option>
+          <option value="Alta">Alta</option>
+        </select>
+      </div>
+
+      <div class="filter-field">
+        <label for="filterTipo">Tipo</label>
+        <select id="filterTipo" aria-controls="ticketsList">
+          <option value="">Todos</option>
+          <option value="Hardware">Hardware</option>
+          <option value="Perif‚ricos">Perif‚ricos</option>
+          <option value="Redes">Redes</option>
+          <option value="Software">Software</option>
+          <option value="Otros">Otros</option>
+        </select>
+      </div>
+
+      <div class="filter-field search">
+        <label for="searchInput">Buscar (exacta)</label>
+        <input id="searchInput" type="search" placeholder="TS-HW-0238 o Juan P‚rez"
+          aria-label="Buscar ticket exacto por c¢digo o nombre">
+      </div>
+
+      <div class="legend">
+        <p><strong>Nota:</strong> Use filtros combinados para refinar la lista.</p>
+      </div>
+    </section>
+
+    <div class="content-grid">
       <section id="leftPane" class="pane pane-left" aria-label="Listado y ficha del ticket">
-        <section id="filtersBar" class="panel-filtros filters-bar" aria-label="Filtros de tickets">
-          <h2 class="filters-title">Filtros</h2>
-
-          <div class="filter-field">
-            <label for="filterEstado">Estado</label>
-            <select id="filterEstado" aria-controls="ticketsList">
-              <option value="">Todos</option>
-              <option value="Nuevo">Nuevo</option>
-              <option value="Apertura">Apertura</option>
-              <option value="Resuelto">Resuelto</option>
-              <option value="Escalada">Escalada</option>
-              <option value="Cierre">Cierre</option>
-            </select>
-          </div>
-
-          <div class="filter-field">
-            <label for="filterPrioridad">Prioridad</label>
-            <select id="filterPrioridad" aria-controls="ticketsList">
-              <option value="">Todas</option>
-              <option value="Baja">Baja</option>
-              <option value="Media">Media</option>
-              <option value="Alta">Alta</option>
-            </select>
-          </div>
-
-          <div class="filter-field">
-            <label for="filterTipo">Tipo</label>
-            <select id="filterTipo" aria-controls="ticketsList">
-              <option value="">Todos</option>
-              <option value="Hardware">Hardware</option>
-              <option value="Perif‚ricos">Perif‚ricos</option>
-              <option value="Redes">Redes</option>
-              <option value="Software">Software</option>
-              <option value="Otros">Otros</option>
-            </select>
-          </div>
-
-          <div class="filter-field search">
-            <label for="searchInput">Buscar (exacta)</label>
-            <input id="searchInput" type="search" placeholder="TS-HW-0238 o Juan P‚rez"
-              aria-label="Buscar ticket exacto por c¢digo o nombre">
-          </div>
-
-          <div class="legend">
-            <p><strong>Nota:</strong> Use filtros combinados para refinar la lista.</p>
-          </div>
-        </section>
-
         <button id="backToList" class="btn small back-to-list" type="button" data-action="back-to-list" hidden>Volver a lista</button>
         <section id="ticketsList" class="tickets" aria-live="polite"></section>
         <section id="ticketSheet" class="ticket-sheet" aria-live="polite"></section>

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Proyecto Final - Centro de Soporte Técnico</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body class="page-scroll">
+  <header class="site-header">
+    <div class="container header-content">
+      <div class="header-text">
+        <h1>Proyecto Final - Centro de Soporte Técnico</h1>
+        <p class="subtitle">TechSolutions S.A.S. - Equipo: Raven Ovalle • Matías Ureta • Juan Cruz</p>
+      </div>
+      <div class="header-actions">
+        <nav class="header-nav" aria-label="Navegacion principal">
+          <a href="../index.html">Inicio</a>
+          <a href="./tickets.html" class="active">Tickets</a>
+          <a href="./equipo.html">Equipo</a>
+        </nav>
+        <a class="header-logo-link" href="https://chile.generation.org/" aria-label="Generation Chile" target="_blank" rel="noopener noreferrer">
+          <img class="header-logo" src="../assets/img/generation-logo.png" alt="Generation">
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="app">
+    <section id="filtersBar" class="panel-filtros filters-bar" aria-label="Filtros de tickets">
+      <h2 class="filters-title">Filtros</h2>
+
+      <div class="filter-field">
+        <label for="filterEstado">Estado</label>
+        <select id="filterEstado" aria-controls="ticketsList">
+          <option value="">Todos</option>
+          <option value="Nuevo">Nuevo</option>
+          <option value="Apertura">Apertura</option>
+          <option value="Resuelto">Resuelto</option>
+          <option value="Escalada">Escalada</option>
+          <option value="Cierre">Cierre</option>
+        </select>
+      </div>
+
+      <div class="filter-field">
+        <label for="filterPrioridad">Prioridad</label>
+        <select id="filterPrioridad" aria-controls="ticketsList">
+          <option value="">Todas</option>
+          <option value="Baja">Baja</option>
+          <option value="Media">Media</option>
+          <option value="Alta">Alta</option>
+        </select>
+      </div>
+
+      <div class="filter-field">
+        <label for="filterTipo">Tipo</label>
+        <select id="filterTipo" aria-controls="ticketsList">
+          <option value="">Todos</option>
+          <option value="Hardware">Hardware</option>
+          <option value="Perif'ricos">Perif'ricos</option>
+          <option value="Redes">Redes</option>
+          <option value="Software">Software</option>
+          <option value="Otros">Otros</option>
+        </select>
+      </div>
+
+      <div class="filter-field search">
+        <label for="searchInput">Buscar (exacta)</label>
+        <input id="searchInput" type="search" placeholder="TS-HW-0238 o Juan P'rez"
+          aria-label="Buscar ticket exacto por c½digo o nombre">
+      </div>
+
+      <div class="legend">
+        <p><strong>Nota:</strong> Use filtros combinados para refinar la lista.</p>
+      </div>
+    </section>
+
+    <div class="content-grid">
+      <section id="leftPane" class="pane pane-left" aria-label="Listado y ficha del ticket">
+        <button id="backToList" class="btn small back-to-list" type="button" data-action="back-to-list" hidden>Volver a lista</button>
+        <section id="ticketsList" class="tickets" aria-live="polite"></section>
+        <section id="ticketSheet" class="ticket-sheet" aria-live="polite"></section>
+      </section>
+
+      <aside id="rightPane" class="pane pane-right" aria-label="Navegador del ticket" hidden>
+        <div id="tabsPlaceholder" class="detail-placeholder">Selecciona un ticket para ver el detalle.</div>
+        <section id="ticketTabs" aria-live="polite"></section>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Modal de evidencias / visor -->
+  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-content" role="document">
+      <button id="closeModal" class="modal-close" aria-label="Cerrar">ž</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Proyecto Final - Centro de Soporte Técnico • TechSolutions S.A.S.</p>
+    </div>
+  </footer>
+
+  <script src="../js/app.js"></script>
+</body>
+
+</html>

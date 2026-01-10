@@ -12,94 +12,184 @@
   <header class="site-header">
     <div class="container header-content">
       <div class="header-text">
-        <h1>Proyecto Final — Centro de Soporte Técnico</h1>
-        <p class="subtitle">TechSolutions S.A.S. — Equipo: Raven Ovalle · Matías Ureta · Juan Cruz</p>
+        <h1>Proyecto Final - Centro de Soporte Técnico</h1>
+        <p class="subtitle">TechSolutions S.A.S. - Equipo: Raven Ovalle • Matías Ureta • Juan Cruz</p>
       </div>
-      <a class="header-logo-link" href="https://chile.generation.org/" aria-label="Generation Chile" target="_blank" rel="noopener noreferrer">
-        <img class="header-logo" src="assets/img/generation-logo.png" alt="Generation">
-      </a>
+      <div class="header-actions">
+        <nav class="header-nav" aria-label="Navegacion principal">
+          <a href="./index.html" class="active">Inicio</a>
+          <a href="./html/tickets.html">Tickets</a>
+          <a href="./html/equipo.html">Equipo</a>
+        </nav>
+        <a class="header-logo-link" href="https://chile.generation.org/" aria-label="Generation Chile" target="_blank" rel="noopener noreferrer">
+          <img class="header-logo" src="assets/img/generation-logo.png" alt="Generation">
+        </a>
+      </div>
     </div>
   </header>
 
-  <main class="app">
-    <section id="filtersBar" class="panel-filtros filters-bar" aria-label="Filtros de tickets">
-      <h2 class="filters-title">Filtros</h2>
-
-      <div class="filter-field">
-        <label for="filterEstado">Estado</label>
-        <select id="filterEstado" aria-controls="ticketsList">
-          <option value="">Todos</option>
-          <option value="Nuevo">Nuevo</option>
-          <option value="Apertura">Apertura</option>
-          <option value="Resuelto">Resuelto</option>
-          <option value="Escalada">Escalada</option>
-          <option value="Cierre">Cierre</option>
-        </select>
-      </div>
-
-      <div class="filter-field">
-        <label for="filterPrioridad">Prioridad</label>
-        <select id="filterPrioridad" aria-controls="ticketsList">
-          <option value="">Todas</option>
-          <option value="Baja">Baja</option>
-          <option value="Media">Media</option>
-          <option value="Alta">Alta</option>
-        </select>
-      </div>
-
-      <div class="filter-field">
-        <label for="filterTipo">Tipo</label>
-        <select id="filterTipo" aria-controls="ticketsList">
-          <option value="">Todos</option>
-          <option value="Hardware">Hardware</option>
-          <option value="Perif‚ricos">Perif‚ricos</option>
-          <option value="Redes">Redes</option>
-          <option value="Software">Software</option>
-          <option value="Otros">Otros</option>
-        </select>
-      </div>
-
-      <div class="filter-field search">
-        <label for="searchInput">Buscar (exacta)</label>
-        <input id="searchInput" type="search" placeholder="TS-HW-0238 o Juan P‚rez"
-          aria-label="Buscar ticket exacto por c¢digo o nombre">
-      </div>
-
-      <div class="legend">
-        <p><strong>Nota:</strong> Use filtros combinados para refinar la lista.</p>
+    <main class="app">
+            <section class="panel-filtros home-panel" aria-label="Inicio">
+      <h2>Presentación</h2>
+      <div class="home-slides">
+        <div class="home-slide">
+          <article class="ticket-card concept-card" data-card-id="card-1">
+            <div class="concept-sticky">
+              <div class="emoji-circle" aria-hidden="true">🎫</div>
+              <h3 class="concept-title">Gestión de tickets</h3>
+            </div>
+            <div class="concept-carousel" role="region" aria-label="Carrusel Gestion de tickets">
+              <div class="carousel-track">
+                <p class="carousel-slide" data-slide-index="0"><span class="slide-title">🎯 Objetivo</span><span class="slide-text"></span>Ordenar incidentes con un flujo único de atención y trazabilidad.</span></p>
+                <p class="carousel-slide" data-slide-index="1" hidden><span class="slide-title">🧷 Qué incluye</span><span class="slide-text"></span><span class="slide-text">ID, fecha/hora, prioridad, estado, tipo y canal de ingreso.</span></p>
+                <p class="carousel-slide" data-slide-index="2" hidden><span class="slide-title">🧭 Cómo ayuda</span><span class="slide-text"></span><span class="slide-text">Permite seguimiento, evita pérdida de casos y da contexto rápido.</p>
+                <p class="carousel-slide" data-slide-index="3" hidden><span class="slide-title">👤 Cliente</span><span class="slide-text"></span><span class="slide-text">Datos mínimos para contacto y contexto del área/rol.</span></p>
+                <p class="carousel-slide" data-slide-index="4" hidden><span class="slide-title">🔁 Resultado</span><span class="slide-text"></span><span class="slide-text">Historial completo desde apertura hasta cierre.</span></p>
+              </div>
+              <div class="carousel-controls">
+                <button class="btn small carousel-btn" type="button" data-action="prev" aria-label="Anterior">←</button>
+                <span class="carousel-indicator" data-indicator>1 / 5</span>
+                <button class="btn small carousel-btn" type="button" data-action="next" aria-label="Siguiente">→</button>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="home-slide">
+          <article class="ticket-card concept-card" data-card-id="card-2">
+            <div class="concept-sticky">
+              <div class="emoji-circle" aria-hidden="true">🧠</div>
+              <h3 class="concept-title">Diagnóstico por descarte</h3>
+            </div>
+            <div class="concept-carousel" role="region" aria-label="Carrusel Diagnostico por descarte">
+              <div class="carousel-track">
+                <p class="carousel-slide" data-slide-index="0"><span class="slide-title">🎯 Objetivo</span><span class="slide-text">Encontrar la causa sin asumir: validar paso a paso con evidencia.</span></p>
+                <p class="carousel-slide" data-slide-index="1" hidden><span class="slide-title">🔍 Primero lo simple</span><span class="slide-text">Revisar energía, conexión, configuración y errores visibles antes de escalar complejidad.</span></p>
+                <p class="carousel-slide" data-slide-index="2" hidden><span class="slide-title">🧪 Pruebas típicas</span><span class="slide-text">Ping, cola de impresión, drivers, servicios, reinicios controlados y verificación básica.</span></p>
+                <p class="carousel-slide" data-slide-index="3" hidden><span class="slide-title">🧠 Decisión</span><span class="slide-text">Con resultados claros se confirma o descarta la hipótesis.</span></p>
+                <p class="carousel-slide" data-slide-index="4" hidden><span class="slide-title">✅ Resultado</span><span class="slide-text">Solución justificable y replicable por otro técnico.</span></p>
+              </div>
+              <div class="carousel-controls">
+                <button class="btn small carousel-btn" type="button" data-action="prev" aria-label="Anterior">←</button>
+                <span class="carousel-indicator" data-indicator>1 / 5</span>
+                <button class="btn small carousel-btn" type="button" data-action="next" aria-label="Siguiente">→</button>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="home-slide">
+          <article class="ticket-card concept-card" data-card-id="card-3">
+            <div class="concept-sticky">
+              <div class="emoji-circle" aria-hidden="true">🗣️</div>
+              <h3 class="concept-title">Comunicación con usuarios</h3>
+            </div>
+            <div class="concept-carousel" role="region" aria-label="Carrusel Comunicacion con usuarios">
+              <div class="carousel-track">
+                <p class="carousel-slide" data-slide-index="0"><span class="slide-title">🎯 Objetivo</span><span class="slide-text">Mantener calma, confianza y foco en resolver el incidente.</span></p>
+                <p class="carousel-slide" data-slide-index="1" hidden><span class="slide-title">👂 Escucha activa</span><span class="slide-text">Dejar hablar, parafrasear y confirmar que entendimos el problema.</span></p>
+                <p class="carousel-slide" data-slide-index="2" hidden><span class="slide-title">❓ Preguntas correctas</span><span class="slide-text">Abiertas para entender contexto; cerradas para confirmar acciones y resultados.</span></p>
+                <p class="carousel-slide" data-slide-index="3" hidden><span class="slide-title">🧯 Manejo de conflicto</span><span class="slide-text">Validar emoción sin discutir: "entiendo el impacto, lo resolvemos paso a paso".</span></p>
+                <p class="carousel-slide" data-slide-index="4" hidden><span class="slide-title">✅ Resultado</span><span class="slide-text">Usuario informado, colaborando y con expectativas alineadas.</span></p>
+              </div>
+              <div class="carousel-controls">
+                <button class="btn small carousel-btn" type="button" data-action="prev" aria-label="Anterior">←</button>
+                <span class="carousel-indicator" data-indicator>1 / 5</span>
+                <button class="btn small carousel-btn" type="button" data-action="next" aria-label="Siguiente">→</button>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="home-slide">
+          <article class="ticket-card concept-card" data-card-id="card-4">
+            <div class="concept-sticky">
+              <div class="emoji-circle" aria-hidden="true">💬</div>
+              <h3 class="concept-title">Soporte multicanal</h3>
+            </div>
+            <div class="concept-carousel" role="region" aria-label="Carrusel Soporte multicanal">
+              <div class="carousel-track">
+                <p class="carousel-slide" data-slide-index="0"><span class="slide-title">🎯 Objetivo</span><span class="slide-text">Atender por el canal disponible sin perder coherencia del caso.</span></p>
+                <p class="carousel-slide" data-slide-index="1" hidden><span class="slide-title">📞 Llamada</span><span class="slide-text">Guía paso a paso con tiempos simulados y confirmaciones directas.</span></p>
+                <p class="carousel-slide" data-slide-index="2" hidden><span class="slide-title">✉️ Correo</span><span class="slide-text">Apertura + respuesta + cierre con resumen claro y confirmación del usuario.</span></p>
+                <p class="carousel-slide" data-slide-index="3" hidden><span class="slide-title">💻 Chat</span><span class="slide-text">Mensajes breves con hora y continuidad del registro.</span></p>
+                <p class="carousel-slide" data-slide-index="4" hidden><span class="slide-title">🔁 Resultado</span><span class="slide-text">Misma solución, distinto formato, misma trazabilidad.</span></p>
+              </div>
+              <div class="carousel-controls">
+                <button class="btn small carousel-btn" type="button" data-action="prev" aria-label="Anterior">←</button>
+                <span class="carousel-indicator" data-indicator>1 / 5</span>
+                <button class="btn small carousel-btn" type="button" data-action="next" aria-label="Siguiente">→</button>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="home-slide">
+          <article class="ticket-card concept-card" data-card-id="card-5">
+            <div class="concept-sticky">
+              <div class="emoji-circle" aria-hidden="true">🧾</div>
+              <h3 class="concept-title">Documentación y evidencias</h3>
+            </div>
+            <div class="concept-carousel" role="region" aria-label="Carrusel Documentacion y evidencias">
+              <div class="carousel-track">
+                <p class="carousel-slide" data-slide-index="0"><span class="slide-title">🎯 Objetivo</span><span class="slide-text">Que otro técnico entienda el caso en segundos.</span></p>
+                <p class="carousel-slide" data-slide-index="1" hidden><span class="slide-title">📝 Qué se registra</span><span class="slide-text">Síntomas, pruebas realizadas, hallazgos y acciones aplicadas.</span></p>
+                <p class="carousel-slide" data-slide-index="2" hidden><span class="slide-title">📸 Evidencia</span><span class="slide-text">Resultados observables: responde/no responde, imprime/no imprime, estable/inestable.</span></p>
+                <p class="carousel-slide" data-slide-index="3" hidden><span class="slide-title">📋 Estructura clara</span><span class="slide-text">Listas y sublistas para separar notas, medidas y resolución.</span></p>
+                <p class="carousel-slide" data-slide-index="4" hidden><span class="slide-title">✅ Resultado</span><span class="slide-text">Historial útil para auditoría y aprendizaje.</span></p>
+              </div>
+              <div class="carousel-controls">
+                <button class="btn small carousel-btn" type="button" data-action="prev" aria-label="Anterior">←</button>
+                <span class="carousel-indicator" data-indicator>1 / 5</span>
+                <button class="btn small carousel-btn" type="button" data-action="next" aria-label="Siguiente">→</button>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="home-slide">
+          <article class="ticket-card concept-card" data-card-id="card-6">
+            <div class="concept-sticky">
+              <div class="emoji-circle" aria-hidden="true">✅</div>
+              <h3 class="concept-title">Validación y cierre</h3>
+            </div>
+            <div class="concept-carousel" role="region" aria-label="Carrusel Validacion y cierre">
+              <div class="carousel-track">
+                <p class="carousel-slide" data-slide-index="0"><span class="slide-title">🎯 Objetivo</span><span class="slide-text">Cerrar solo cuando el usuario confirma normalidad.</span></p>
+                <p class="carousel-slide" data-slide-index="1" hidden><span class="slide-title">📝 Validación</span><span class="slide-text">Confirmar: "¿funciona ahora?" y "¿puedes trabajar sin bloqueos?"</span></p>
+                <p class="carousel-slide" data-slide-index="2" hidden><span class="slide-title">✅ Cierre correcto</span><span class="slide-text">Resumen de causa + acción aplicada + confirmación final.</span></p>
+                <p class="carousel-slide" data-slide-index="3" hidden><span class="slide-title">🛡️ Prevención breve</span><span class="slide-text">Recomendación corta si aplica, sin tecnicismos innecesarios.</span></p>
+                <p class="carousel-slide" data-slide-index="4" hidden><span class="slide-title">🧾 Resultado</span><span class="slide-text">Ticket cerrado con evidencia de éxito.</span></p>
+              </div>
+              <div class="carousel-controls">
+                <button class="btn small carousel-btn" type="button" data-action="prev" aria-label="Anterior">←</button>
+                <span class="carousel-indicator" data-indicator>1 / 5</span>
+                <button class="btn small carousel-btn" type="button" data-action="next" aria-label="Siguiente">→</button>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="home-slide home-slide-cta">
+          <article class="ticket-card concept-card concept-cta">
+            <div class="emoji-circle" aria-hidden="true">🎫</div>
+            <h3 class="concept-title">Continuar</h3>
+            <p>Explora los tickets resueltos y sus canales de atención.</p>
+            <a class="btn primary" href="html/tickets.html">Ir a Tickets</a>
+          </article>
+        </div>
       </div>
     </section>
-
-    <div class="content-grid">
-      <section id="leftPane" class="pane pane-left" aria-label="Listado y ficha del ticket">
-        <button id="backToList" class="btn small back-to-list" type="button" data-action="back-to-list" hidden>Volver a lista</button>
-        <section id="ticketsList" class="tickets" aria-live="polite"></section>
-        <section id="ticketSheet" class="ticket-sheet" aria-live="polite"></section>
-      </section>
-
-      <aside id="rightPane" class="pane pane-right" aria-label="Navegador del ticket" hidden>
-        <div id="tabsPlaceholder" class="detail-placeholder">Selecciona un ticket para ver el detalle.</div>
-        <section id="ticketTabs" aria-live="polite"></section>
-      </aside>
-    </div>
   </main>
-
-  <!-- Modal de evidencias / visor -->
-  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
-    <div class="modal-content" role="document">
-      <button id="closeModal" class="modal-close" aria-label="Cerrar">×</button>
-      <div id="modalBody"></div>
-    </div>
-  </div>
 
   <footer class="site-footer">
     <div class="container">
-      <p>Proyecto Final — Centro de Soporte Técnico · TechSolutions S.A.S.</p>
+      <p>Proyecto Final - Centro de Soporte Técnico • TechSolutions S.A.S.</p>
     </div>
   </footer>
 
-  <script src="js/app.js"></script>
+  <script src="js/inicio.js"></script>
 </body>
 
 </html>
+
+
+
+
+
+
 

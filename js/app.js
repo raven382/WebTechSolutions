@@ -1,6 +1,7 @@
 // app.js - renderizado dinamico y eventos delegados para tickets
 document.addEventListener('DOMContentLoaded', () => {
   const ticketsList = document.getElementById('ticketsList');
+  if (!ticketsList) return;
   const filterEstado = document.getElementById('filterEstado');
   const filterPrioridad = document.getElementById('filterPrioridad');
   const filterTipo = document.getElementById('filterTipo');
@@ -14,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const modal = document.getElementById('modal');
   const modalBody = document.getElementById('modalBody');
   const closeModal = document.getElementById('closeModal');
+  if (!layout || !rightPane || !ticketSheet || !ticketTabs || !tabsPlaceholder || !backToList || !modal || !modalBody || !closeModal) return;
   let ticketsData = [];
   let selectedTicketId = null;
 
@@ -565,7 +567,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Cache-buster to avoid HTTP 304 when tickets.json changes.
-  fetch(`./data/tickets.json?v=${Date.now()}`)
+  fetch(`../data/tickets.json?v=${Date.now()}`)
     .then((response) => response.json())
     .then((data) => {
       if (!Array.isArray(data)) throw new Error('tickets.json debe contener un arreglo');

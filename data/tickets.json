@@ -1646,7 +1646,7 @@
         }
       ],
       "correo": {
-        "titulo": "Correo (respuesta)",
+        "titulo": "Correo (simulación) — TS-NET-0631",
         "hilos": [
           {
             "de": "andres.morales@techsolutions.com",
@@ -1719,7 +1719,7 @@
         ]
       },
       "chat": {
-        "titulo": "Chat (simulado) — TS-NET-0631",
+        "titulo": "Chat (simulación) — TS-NET-0631",
         "log": [
           {
             "t": "08:57",
@@ -1799,6 +1799,7 @@
         ]
       },
       "llamada": {
+        "titulo": "Llamada (simulación) — TS-NET-0631",
         "log": [
           {
             "t": "08:57",

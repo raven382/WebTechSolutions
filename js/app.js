@@ -113,6 +113,61 @@ document.addEventListener('DOMContentLoaded', () => {
     }).join('');
   };
 
+  const getNotesSectionKey = (titleText) => {
+    const normalized = String(titleText || '').trim().toLowerCase();
+    if (normalized.includes('descripci')) return 'descripcion';
+    if (normalized.includes('medidas')) return 'medidas';
+    if (normalized.includes('resoluci')) return 'resolucion';
+    return '';
+  };
+
+  const renderNotesDetails = (blocks) => {
+    if (!blocks || !blocks.length) return '';
+    const sections = [
+      { key: 'descripcion', defaultTitle: 'Descripción del problema', open: true, titleHtml: '', blocks: [] },
+      { key: 'medidas', defaultTitle: 'Medidas adoptadas', open: false, titleHtml: '', blocks: [] },
+      { key: 'resolucion', defaultTitle: 'Resolución', open: false, titleHtml: '', blocks: [] }
+    ];
+    const sectionByKey = sections.reduce((acc, section) => {
+      acc[section.key] = section;
+      return acc;
+    }, {});
+    let currentKey = 'descripcion';
+
+    blocks.forEach((block) => {
+      let titleText = '';
+      if (block && block.type === 'paragraph' && Array.isArray(block.segments) && block.segments.length === 1) {
+        const seg = block.segments[0];
+        if (seg && seg.strong && seg.text) {
+          titleText = seg.text;
+        }
+      }
+      if (titleText) {
+        const sectionKey = getNotesSectionKey(titleText);
+        if (sectionKey && sectionByKey[sectionKey]) {
+          sectionByKey[sectionKey].titleHtml = renderSegments(block.segments);
+          currentKey = sectionKey;
+          return;
+        }
+      }
+      sectionByKey[currentKey].blocks.push(block);
+    });
+
+    return sections.map((section) => {
+      if (!section.blocks.length) return '';
+      const titleHtml = section.titleHtml || escapeHtml(section.defaultTitle);
+      const openAttr = section.open ? ' open' : '';
+      return `
+        <details class="notes-spoiler"${openAttr}>
+          <summary class="notes-summary">${titleHtml}</summary>
+          <div class="notes-body">
+            ${renderBlocks(section.blocks)}
+          </div>
+        </details>
+      `;
+    }).join('');
+  };
+
   const renderEmailBody = (paragraphs) => {
     if (!paragraphs || !paragraphs.length) return '';
     return paragraphs.map((p) => {
@@ -188,6 +243,34 @@ document.addEventListener('DOMContentLoaded', () => {
     return escapeHtml(text || '');
   };
 
+  const getSpeakerClass = (whoRaw = '') => {
+    const who = String(whoRaw).trim().toLowerCase();
+    if (who.includes('sistema')) return 'is-sistema';
+    if (who.includes('soporte') || who.includes('agente') || who.includes('técnico') || who.includes('tecnico')) return 'is-soporte';
+    if (who.includes('usuario') || who.includes('cliente')) return 'is-usuario';
+    return 'is-usuario';
+  };
+
+  const renderConversationEntry = (ticket, entry) => {
+    const roleClass = getSpeakerClass(entry.who);
+    const time = renderLogTime(ticket, entry);
+    const whoSafe = escapeHtml(entry.who ?? '');
+    const bodyHtml = renderLogText(entry.text);
+    const timeHtml = time ? `<span class="conv-time">${time}</span>` : '';
+    const bodyBlock = bodyHtml.includes('<p') ? bodyHtml : `<p class="conv-body">${bodyHtml}</p>`;
+    return `
+      <div class="conv-msg ${roleClass}">
+        <div class="conv-bubble">
+          <div class="conv-meta">
+            ${timeHtml}
+            <span class="conv-who">${whoSafe}</span>
+          </div>
+          ${bodyBlock}
+        </div>
+      </div>
+    `;
+  };
+
   const renderChat = (ticket) => {
     const chat = ticket.canales.chat;
     if (!chat) return '';
@@ -196,19 +279,11 @@ document.addEventListener('DOMContentLoaded', () => {
     return `
       <div class="channel chat"${defaultView === 'chat' ? '' : ' hidden'}>
         ${chat.titulo ? `<h5>${escapeHtml(chat.titulo)}</h5>` : ''}
-        ${log.map((entry) => {
-          const timeEl = renderLogTime(ticket, entry);
-          const body = renderLogText(entry.text);
-          return `<div class="chat-msg">${timeEl}<strong>${escapeHtml(entry.who)}:</strong> ${body}</div>`;
-        }).join('')}
+        <div class="chat-log">
+          ${log.map((entry) => renderConversationEntry(ticket, entry)).join('')}
+        </div>
       </div>
     `;
-  };
-
-  const renderCallEntry = (ticket, entry) => {
-    const timeEl = renderLogTime(ticket, entry);
-    const body = renderLogText(entry.text);
-    return `<p class="call-line">${timeEl}<strong>${escapeHtml(entry.who || '')}:</strong><br>${body}</p>`;
   };
 
   const renderLlamada = (ticket) => {
@@ -220,7 +295,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="channel llamada"${defaultView === 'llamada' ? '' : ' hidden'}>
         ${llamada.titulo ? `<h5>${escapeHtml(llamada.titulo)}</h5>` : ''}
         <div class="call-log">
-          ${log.map((entry) => renderCallEntry(ticket, entry)).join('')}
+          ${log.map((entry) => renderConversationEntry(ticket, entry)).join('')}
         </div>
       </div>
     `;
@@ -349,49 +424,56 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const renderTicketSheet = (ticket) => {
+    const notasHtml = renderNotesDetails(ticket.notasDetalle || []);
+    const notasContent = notasHtml || renderBlocks(ticket.notasDetalle || []);
     return `
       <article class="ticket-card ticket-sheet-card" data-ticket="${escapeHtml(ticket.id)}">
-        <header class="ticket-header">
-          <div>
-            <h3>${escapeHtml(ticket.id)} - ${escapeHtml(ticket.titulo)}</h3>
-            <p class="meta">${escapeHtml(ticket.meta || '')}</p>
+        <section class="ticket-preview" aria-label="Previsualizaci½n del ticket">
+          <div class="ticket-detail-label">Detalle</div>
+          <div class="ticket-meta-grid" role="list">
+            <div class="meta-item" role="listitem">
+              <span class="meta-label">Fecha:</span>
+              <span class="meta-value ticket-fecha">${escapeHtml(ticket.fechaDisplay || '')}</span>
+            </div>
+            <div class="meta-item" role="listitem">
+              <span class="meta-label">Hora:</span>
+              <span class="meta-value ticket-hora">${escapeHtml(ticket.horaDisplay || '')}</span>
+            </div>
+            <div class="meta-item" role="listitem">
+              <span class="meta-label">Estado:</span>
+              <span class="meta-value ticket-estado">${escapeHtml(ticket.estadoDisplay || '')}</span>
+            </div>
+            <div class="meta-item" role="listitem">
+              <span class="meta-label">Nivel de prioridad:</span>
+              <span class="meta-value ticket-prioridad">${escapeHtml(ticket.prioridad || '')}</span>
+            </div>
+            <div class="meta-item" role="listitem">
+              <span class="meta-label">Nombre del cliente:</span>
+              <span class="meta-value ticket-nombre">${escapeHtml(ticket.cliente && ticket.cliente.nombre ? ticket.cliente.nombre : '')}</span>
+            </div>
+            <div class="meta-item" role="listitem">
+              <span class="meta-label">Tel'fono del cliente:</span>
+              <span class="meta-value ticket-telefono">${escapeHtml(ticket.cliente && ticket.cliente.telefono ? ticket.cliente.telefono : '')}</span>
+            </div>
+            <div class="meta-item" role="listitem">
+              <span class="meta-label">Correo electr½nico:</span>
+              <span class="meta-value ticket-correo">${escapeHtml(ticket.cliente && ticket.cliente.correo ? ticket.cliente.correo : '')}</span>
+            </div>
+            <div class="meta-item" role="listitem">
+              <span class="meta-label">Tipo de emisi½n:</span>
+              <span class="meta-value ticket-tipo">${escapeHtml(ticket.tipo || '')}</span>
+            </div>
           </div>
-        </header>
-
-        <section class="ticket-preview" aria-label="Previsualizaci¢n del ticket">
-          <table class="preview-table" role="table" aria-describedby="nota-${escapeHtml(ticket.id)}">
-            <thead>
-              <tr>
-                <th colspan="4">Ticket: <span class="ticket-code">${escapeHtml(ticket.id)}</span></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Fecha:</strong> <span class="ticket-fecha">${escapeHtml(ticket.fechaDisplay || '')}</span></td>
-                <td><strong>Hora:</strong> <span class="ticket-hora">${escapeHtml(ticket.horaDisplay || '')}</span></td>
-                <td><strong>Estado:</strong> <span class="ticket-estado">${escapeHtml(ticket.estadoDisplay || '')}</span></td>
-                <td><strong>Nivel de prioridad:</strong> <span class="ticket-prioridad">${escapeHtml(ticket.prioridad || '')}</span></td>
-              </tr>
-              <tr>
-                <td><strong>Nombre del cliente:</strong> <span class="ticket-nombre">${escapeHtml(ticket.cliente && ticket.cliente.nombre ? ticket.cliente.nombre : '')}</span></td>
-                <td colspan="2"><strong>Tel‚fono del cliente:</strong> <span class="ticket-telefono">${escapeHtml(ticket.cliente && ticket.cliente.telefono ? ticket.cliente.telefono : '')}</span></td>
-                <td><strong>Correo electr¢nico:</strong> <span class="ticket-correo">${escapeHtml(ticket.cliente && ticket.cliente.correo ? ticket.cliente.correo : '')}</span></td>
-              </tr>
-              <tr>
-                <td><strong>Tipo de emisi¢n:</strong> <span class="ticket-tipo">${escapeHtml(ticket.tipo || '')}</span></td>
-              </tr>
-              <tr>
-                <td colspan="4" id="nota-${escapeHtml(ticket.id)}"><strong>Notas:</strong>
-                  <div class="ticket-notas">
-                    ${renderBlocks(ticket.notasDetalle || [])}
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td colspan="4"><strong>Especialista de Soporte en TI:</strong> ${escapeHtml(ticket.especialistas || '')}</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="ticket-notes" id="nota-${escapeHtml(ticket.id)}">
+            <div class="notes-title">Notas:</div>
+            <div class="ticket-notas">
+              ${notasContent}
+            </div>
+          </div>
+          <div class="ticket-especialistas">
+            <span class="meta-label">Especialista de Soporte en TI:</span>
+            <span class="meta-value">${escapeHtml(ticket.especialistas || '')}</span>
+          </div>
         </section>
       </article>
     `;

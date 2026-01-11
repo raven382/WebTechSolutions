@@ -55,6 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!layout || !rightPane || !ticketSheet || !ticketTabs || !tabsPlaceholder || !backToList || !modal || !modalBody || !closeModal) return;
   let ticketsData = [];
   let selectedTicketId = null;
+  let lastSelectedTicketId = null;
+  let lockedLinkId = null;
 
   const escapeHtml = (value) => {
     if (value === null || value === undefined) return '';
@@ -82,9 +84,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const renderListItem = (item) => {
     if (typeof item === 'string') return `<li>${escapeHtml(item)}</li>`;
     if (!item) return '<li></li>';
+    const linkAttr = item.link ? ` data-link="${escapeHtml(item.link)}" tabindex="0"` : '';
     const content = item.segments ? renderSegments(item.segments) : escapeHtml(item.text || '');
     const subitems = item.subitems ? renderList(item.subitems, false) : '';
-    return `<li>${content}${subitems}</li>`;
+    return `<li${linkAttr}>${content}${subitems}</li>`;
   };
 
   const renderList = (items, ordered) => {
@@ -101,7 +104,8 @@ document.addEventListener('DOMContentLoaded', () => {
         return `<p><strong>${escapeHtml(block.text || '')}</strong></p>`;
       }
       if (block.type === 'paragraph') {
-        return `<p>${block.segments ? renderSegments(block.segments) : escapeHtml(block.text || '')}</p>`;
+        const linkAttr = block.link ? ` data-link="${escapeHtml(block.link)}" tabindex="0"` : '';
+        return `<p${linkAttr}>${block.segments ? renderSegments(block.segments) : escapeHtml(block.text || '')}</p>`;
       }
       if (block.type === 'list') {
         return renderList(block.items || [], false);
@@ -258,8 +262,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const bodyHtml = renderLogText(entry.text);
     const timeHtml = time ? `<span class="conv-time">${time}</span>` : '';
     const bodyBlock = bodyHtml.includes('<p') ? bodyHtml : `<p class="conv-body">${bodyHtml}</p>`;
+    const linkAttr = entry.link ? ` data-link="${escapeHtml(entry.link)}" tabindex="0"` : '';
     return `
-      <div class="conv-msg ${roleClass}">
+      <div class="conv-msg ${roleClass}"${linkAttr}>
         <div class="conv-bubble">
           <div class="conv-meta">
             ${timeHtml}
@@ -271,6 +276,32 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
   };
 
+  const renderConversationLog = (ticket, log) => {
+    if (!log || !log.length) return '';
+    let html = '';
+    let i = 0;
+    while (i < log.length) {
+      const entry = log[i];
+      if (entry && entry.block) {
+        const blockId = entry.block;
+        const blockItems = [];
+        let blockLink = '';
+        while (i < log.length && log[i] && log[i].block === blockId) {
+          const blockEntry = log[i];
+          if (!blockLink && blockEntry.link) blockLink = blockEntry.link;
+          blockItems.push(renderConversationEntry(ticket, blockEntry));
+          i += 1;
+        }
+        const linkAttr = blockLink ? ` data-link="${escapeHtml(blockLink)}" tabindex="0"` : '';
+        html += `<div class="conv-block" data-block="${escapeHtml(blockId)}"${linkAttr}>${blockItems.join('')}</div>`;
+        continue;
+      }
+      html += renderConversationEntry(ticket, entry);
+      i += 1;
+    }
+    return html;
+  };
+
   const renderChat = (ticket) => {
     const chat = ticket.canales.chat;
     if (!chat) return '';
@@ -280,7 +311,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="channel chat"${defaultView === 'chat' ? '' : ' hidden'}>
         ${chat.titulo ? `<h5>${escapeHtml(chat.titulo)}</h5>` : ''}
         <div class="chat-log">
-          ${log.map((entry) => renderConversationEntry(ticket, entry)).join('')}
+          ${renderConversationLog(ticket, log)}
         </div>
       </div>
     `;
@@ -295,7 +326,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="channel llamada"${defaultView === 'llamada' ? '' : ' hidden'}>
         ${llamada.titulo ? `<h5>${escapeHtml(llamada.titulo)}</h5>` : ''}
         <div class="call-log">
-          ${log.map((entry) => renderConversationEntry(ticket, entry)).join('')}
+          ${renderConversationLog(ticket, log)}
         </div>
       </div>
     `;
@@ -429,6 +460,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return `
       <article class="ticket-card ticket-sheet-card" data-ticket="${escapeHtml(ticket.id)}">
         <section class="ticket-preview" aria-label="Previsualizaci½n del ticket">
+          <div class="focus-indicator" hidden>Modo foco</div>
           <div class="ticket-detail-label">Detalle</div>
           <div class="ticket-meta-grid" role="list">
             <div class="meta-item" role="listitem">
@@ -489,6 +521,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return `
       <article class="ticket-card ticket-tabs-card" data-ticket="${escapeHtml(ticket.id)}">
         <div id="detail-${escapeHtml(ticket.id)}" class="ticket-detail">
+          <div class="focus-indicator" hidden>Modo foco</div>
           <nav class="tabs" role="tablist" aria-label="Secciones del ticket">
             ${tabs}
           </nav>
@@ -497,6 +530,98 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       </article>
     `;
+  };
+
+  const setFocusIndicator = (active) => {
+    [ticketSheet, ticketTabs].forEach((container) => {
+      if (!container) return;
+      container.querySelectorAll('.focus-indicator').forEach((el) => {
+        el.hidden = !active;
+      });
+    });
+  };
+
+  const clearHover = () => {
+    [ticketSheet, ticketTabs].forEach((container) => {
+      if (!container) return;
+      container.querySelectorAll('[data-link].is-related').forEach((el) => {
+        el.classList.remove('is-related');
+      });
+      container.querySelectorAll('.conv-block.block-related').forEach((el) => {
+        el.classList.remove('block-related');
+      });
+    });
+  };
+
+  const clearAll = () => {
+    [ticketSheet, ticketTabs].forEach((container) => {
+      if (!container) return;
+      container.querySelectorAll('[data-link].is-related, [data-link].is-dim').forEach((el) => {
+        el.classList.remove('is-related', 'is-dim');
+      });
+      container.querySelectorAll('.conv-block.block-related, .conv-block.block-active').forEach((el) => {
+        el.classList.remove('block-related', 'block-active');
+      });
+    });
+    setFocusIndicator(false);
+  };
+
+  const applyHover = (linkId, originEl) => {
+    if (!linkId) return;
+    clearHover();
+    [ticketSheet, ticketTabs].forEach((container) => {
+      if (!container) return;
+      container.querySelectorAll(`[data-link="${CSS.escape(linkId)}"]:not(.conv-block)`).forEach((el) => {
+        el.classList.add('is-related');
+      });
+      container.querySelectorAll(`.conv-block[data-link="${CSS.escape(linkId)}"]`).forEach((block) => {
+        block.classList.add('block-related');
+      });
+    });
+    const blockEl = getBlockTarget(originEl);
+    if (blockEl) blockEl.classList.add('block-related');
+  };
+
+  const applyLock = (linkId) => {
+    if (!linkId) return;
+    clearAll();
+    [ticketSheet, ticketTabs].forEach((container) => {
+      if (!container) return;
+      container.querySelectorAll('[data-link]:not(.conv-block)').forEach((el) => {
+        if (el.dataset.link === linkId) {
+          el.classList.add('is-related');
+        } else {
+          el.classList.add('is-dim');
+        }
+      });
+      container.querySelectorAll('.conv-block').forEach((block) => {
+        if (block.dataset.link === linkId) {
+          block.classList.add('block-active');
+        }
+      });
+    });
+    setFocusIndicator(true);
+  };
+
+  const resetLinkState = () => {
+    lockedLinkId = null;
+    clearAll();
+  };
+
+  const getLinkTarget = (target) => {
+    if (!target) return null;
+    const linkEl = target.closest('[data-link]');
+    if (!linkEl) return null;
+    if (ticketSheet.contains(linkEl) || ticketTabs.contains(linkEl)) return linkEl;
+    return null;
+  };
+
+  const getBlockTarget = (target) => {
+    if (!target) return null;
+    const blockEl = target.closest('.conv-block');
+    if (!blockEl) return null;
+    if (ticketSheet.contains(blockEl) || ticketTabs.contains(blockEl)) return blockEl;
+    return null;
   };
 
   const getFilteredTickets = () => {
@@ -565,11 +690,16 @@ document.addEventListener('DOMContentLoaded', () => {
     if (selectedTicketId && !filteredTickets.some((ticket) => ticket.id === selectedTicketId)) {
       selectedTicketId = null;
     }
+    if (selectedTicketId !== lastSelectedTicketId) {
+      resetLinkState();
+      lastSelectedTicketId = selectedTicketId;
+    }
     renderTickets(filteredTickets);
     renderSelection();
   };
 
   const activateTab = (detail, ticketId, tabKey, tabButton) => {
+    resetLinkState();
     const tabs = detail.querySelectorAll('.tab');
     const panels = detail.querySelectorAll('.tabpanel');
     tabs.forEach((tab) => tab.classList.remove('active'));
@@ -621,6 +751,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (action === 'switch-channel') {
+      resetLinkState();
       const view = actionEl.dataset.view;
       const buttons = ticketTabs.querySelectorAll(`.ticket-fuente[data-ticket="${CSS.escape(ticketId)}"] .view-btn`);
       buttons.forEach((btn) => {
@@ -661,6 +792,36 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  layout.addEventListener('mouseover', (event) => {
+    if (lockedLinkId) return;
+    const linkEl = getLinkTarget(event.target);
+    if (!linkEl) return;
+    const linkId = linkEl.dataset.link;
+    if (!linkId) return;
+    applyHover(linkId, event.target);
+  });
+
+  layout.addEventListener('mouseout', (event) => {
+    if (lockedLinkId) return;
+    const linkEl = getLinkTarget(event.target);
+    if (!linkEl) return;
+    if (event.relatedTarget && linkEl.contains(event.relatedTarget)) return;
+    clearHover();
+  });
+
+  layout.addEventListener('click', (event) => {
+    const linkEl = getLinkTarget(event.target);
+    if (!linkEl) return;
+    const linkId = linkEl.dataset.link;
+    if (!linkId) return;
+    if (lockedLinkId === linkId) {
+      resetLinkState();
+      return;
+    }
+    lockedLinkId = linkId;
+    applyLock(linkId);
+  });
+
   layout.addEventListener('keydown', (event) => {
     const actionEl = event.target.closest('[data-action="switch-channel"]');
     if (!actionEl) return;
@@ -682,6 +843,9 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') {
       modal.setAttribute('aria-hidden', 'true');
+    }
+    if (event.key === 'Escape' && lockedLinkId) {
+      resetLinkState();
     }
   });
 

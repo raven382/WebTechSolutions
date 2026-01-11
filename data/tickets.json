@@ -62,90 +62,178 @@
       {
         "type": "list",
         "items": [
-          "Usuario: Juan Pérez, Director de Desarrollo de Software.",
-          "Usuario reporta que el PC no enciende en absoluto.",
-          "No hay luces, ruidos ni señales de energía.",
-          "Equipo de escritorio corporativo ubicado en Piso 2, Oficina 204.",
-          "Bloqueo total del puesto de trabajo.",
-          "Impacto alto por rol crítico y reunión importante.",
-          "Usuario con conocimientos técnicos."
+          {
+            "text": "Usuario: Juan Pérez, Director de Desarrollo de Software.",
+            "link": "ts-hw-0238-desc"
+          },
+          {
+            "text": "Usuario reporta que el PC no enciende en absoluto.",
+            "link": "ts-hw-0238-desc"
+          },
+          {
+            "text": "No hay luces, ruidos ni señales de energía.",
+            "link": "ts-hw-0238-desc"
+          },
+          {
+            "text": "Equipo de escritorio corporativo ubicado en Piso 2, Oficina 204.",
+            "link": "ts-hw-0238-desc"
+          },
+          {
+            "text": "Bloqueo total del puesto de trabajo.",
+            "link": "ts-hw-0238-desc"
+          },
+          {
+            "text": "Impacto alto por rol crítico y reunión importante.",
+            "link": "ts-hw-0238-desc"
+          },
+          {
+            "text": "Usuario con conocimientos técnicos.",
+            "link": "ts-hw-0238-desc"
+          }
         ]
       },
       {
-  "type": "paragraph",
-  "segments": [
-    {
-      "strong": true,
-      "text": "Medidas adoptadas:"
-    }
-  ]
-},
-{
-  "type": "list",
-  "items": [
-    "Se realiza contención inicial por urgencia del caso.",
-    {
-      "segments": [
-        {
-          "text": "Se consulta al usuario:"
-        }
-      ],
-      "subitems": [
-        "¿El equipo funcionaba normalmente antes del incidente?",
-        "¿Está conectado directamente a la corriente o a una regleta?",
-        "¿Hubo algún corte de energía reciente?",
-        "¿El equipo mostró algún mensaje o comportamiento extraño antes de apagarse?",
-        "¿Se realizó algún cambio o movimiento del equipo?"
-      ]
-    },
-    {
-      "segments": [
-        {
-          "text": "Se indica verificación básica:"
-        }
-      ],
-      "subitems": [
-        "Revisión del cable de poder.",
-        "Comprobación del interruptor trasero de la fuente.",
-        "Prueba en otra toma eléctrica cercana."
-      ]
-    },
-    "Se observa que el equipo no presenta ningún indicio de encendido tras las verificaciones."
-  ]
-},
+        "type": "paragraph",
+        "segments": [
+          {
+            "strong": true,
+            "text": "Medidas adoptadas:"
+          }
+        ]
+      },
       {
-  "type": "paragraph",
-  "segments": [
-    {
-      "strong": true,
-      "text": "Resolución:"
-    }
-  ]
-},
-{
-  "type": "list",
-  "items": [
-    "Se confirma que el equipo no presenta encendido en ninguna toma eléctrica (sin luces, sin sonido, sin POST).",
-    "Se solicita cooperación para revisión física básica y método de descarte (cable, toma, interruptor PSU).",
-    "Se determina probable falla de fuente de poder (PSU) por ausencia total de energía.",
-    "Se informa tiempo estimado de intervención en sitio y se mantiene al usuario informado.",
-    "Se asigna técnico para atención en sitio (Piso 2, Oficina 204) y reemplazo del componente.",
-    "Se registra intervención: se reemplaza la PSU por una operativa y se verifica conexión segura.",
-    "Se enciende el equipo y se valida inicio correcto del sistema operativo.",
-    {
-      "segments": [
-        { "text": "Se retoma el contacto y se consulta al usuario:" }
-      ],
-      "subitems": [
-        "¿El computador enciende correctamente?",
-        "¿Puede iniciar sesión y acceder a sus herramientas de trabajo y correo?"
-      ]
-    },
-    "El usuario confirma que el equipo funciona correctamente y puede continuar con su reunión.",
-    "Ticket cerrado."
-  ]
-}
-
+        "type": "list",
+        "items": [
+          {
+            "text": "Se realiza contención inicial por urgencia del caso.",
+            "link": "ts-hw-0238-med"
+          },
+          {
+            "segments": [
+              {
+                "text": "Se consulta al usuario:"
+              }
+            ],
+            "subitems": [
+              {
+                "text": "¿El equipo funcionaba normalmente antes del incidente?",
+                "link": "ts-hw-0238-med"
+              },
+              {
+                "text": "¿Está conectado directamente a la corriente o a una regleta?",
+                "link": "ts-hw-0238-med"
+              },
+              {
+                "text": "¿Hubo algún corte de energía reciente?",
+                "link": "ts-hw-0238-med"
+              },
+              {
+                "text": "¿El equipo mostró algún mensaje o comportamiento extraño antes de apagarse?",
+                "link": "ts-hw-0238-med"
+              },
+              {
+                "text": "¿Se realizó algún cambio o movimiento del equipo?",
+                "link": "ts-hw-0238-med"
+              }
+            ],
+            "link": "ts-hw-0238-med"
+          },
+          {
+            "segments": [
+              {
+                "text": "Se indica verificación básica:"
+              }
+            ],
+            "subitems": [
+              {
+                "text": "Revisión del cable de poder.",
+                "link": "ts-hw-0238-med"
+              },
+              {
+                "text": "Comprobación del interruptor trasero de la fuente.",
+                "link": "ts-hw-0238-med"
+              },
+              {
+                "text": "Prueba en otra toma eléctrica cercana.",
+                "link": "ts-hw-0238-med"
+              }
+            ],
+            "link": "ts-hw-0238-med"
+          },
+          {
+            "text": "Se observa que el equipo no presenta ningún indicio de encendido tras las verificaciones.",
+            "link": "ts-hw-0238-med"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "segments": [
+          {
+            "strong": true,
+            "text": "Resolución:"
+          }
+        ]
+      },
+      {
+        "type": "list",
+        "items": [
+          {
+            "text": "Se confirma que el equipo no presenta encendido en ninguna toma eléctrica (sin luces, sin sonido, sin POST).",
+            "link": "ts-hw-0238-res"
+          },
+          {
+            "text": "Se solicita cooperación para revisión física básica y método de descarte (cable, toma, interruptor PSU).",
+            "link": "ts-hw-0238-res"
+          },
+          {
+            "text": "Se determina probable falla de fuente de poder (PSU) por ausencia total de energía.",
+            "link": "ts-hw-0238-res"
+          },
+          {
+            "text": "Se informa tiempo estimado de intervención en sitio y se mantiene al usuario informado.",
+            "link": "ts-hw-0238-res"
+          },
+          {
+            "text": "Se asigna técnico para atención en sitio (Piso 2, Oficina 204) y reemplazo del componente.",
+            "link": "ts-hw-0238-res"
+          },
+          {
+            "text": "Se registra intervención: se reemplaza la PSU por una operativa y se verifica conexión segura.",
+            "link": "ts-hw-0238-res"
+          },
+          {
+            "text": "Se enciende el equipo y se valida inicio correcto del sistema operativo.",
+            "link": "ts-hw-0238-res"
+          },
+          {
+            "segments": [
+              {
+                "text": "Se retoma el contacto y se consulta al usuario:"
+              }
+            ],
+            "subitems": [
+              {
+                "text": "¿El computador enciende correctamente?",
+                "link": "ts-hw-0238-res"
+              },
+              {
+                "text": "¿Puede iniciar sesión y acceder a sus herramientas de trabajo y correo?",
+                "link": "ts-hw-0238-res"
+              }
+            ],
+            "link": "ts-hw-0238-res"
+          },
+          {
+            "text": "El usuario confirma que el equipo funciona correctamente y puede continuar con su reunión.",
+            "link": "ts-hw-0238-res"
+          },
+          {
+            "text": "Ticket cerrado.",
+            "link": "ts-hw-0238-res"
+          }
+        ]
+      }
     ],
     "resumen": "El usuario reporta que su computador de escritorio no enciende en absoluto. No hay luces, ventiladores ni señales de POST. El puesto de trabajo está bloqueado y el usuario tiene una reunión importante.",
     "registro": [
@@ -338,67 +426,80 @@
           {
             "t": "09:12",
             "who": "Soporte TI",
-            "text": "Buenos días, Sr. Juan Pérez. Le saluda el Equipo de Soporte TI de TechSolutions S.A.S. Hemos recibido su ticket TS-HW-0238 indicando que su equipo no enciende. Lamentamos el inconveniente."
+            "text": "Buenos días, Sr. Juan Pérez. Le saluda el Equipo de Soporte TI de TechSolutions S.A.S. Hemos recibido su ticket TS-HW-0238 indicando que su equipo no enciende. Lamentamos el inconveniente.",
+            "link": "ts-hw-0238-desc"
           },
           {
             "t": "09:13",
             "who": "Juan Pérez",
-            "text": "Buenos días. Sí, el equipo no responde, no hay luces ni sonido."
+            "text": "Buenos días. Sí, el equipo no responde, no hay luces ni sonido.",
+            "link": "ts-hw-0238-desc"
           },
           {
             "t": "09:14",
             "who": "Soporte TI",
-            "text": "Gracias por la confirmación. Para descartar causas básicas, ¿el equipo fue probado en otra toma eléctrica y el interruptor de la fuente está activado?"
+            "text": "Gracias por la confirmación. Para descartar causas básicas, ¿el equipo fue probado en otra toma eléctrica y el interruptor de la fuente está activado?",
+            "link": "ts-hw-0238-desc"
           },
           {
             "t": "09:15",
             "who": "Juan Pérez",
-            "text": "Sí, ya probé en otra toma y revisé el interruptor."
+            "text": "Sí, ya probé en otra toma y revisé el interruptor.",
+            "link": "ts-hw-0238-desc"
           },
           {
             "t": "09:16",
             "who": "Soporte TI",
-            "text": "Perfecto. Dado que no presenta señales de encendido y considerando que esta es una atención remota, el diagnóstico apunta a una posible falla en la fuente de poder (PSU)."
+            "text": "Perfecto. Dado que no presenta señales de encendido y considerando que esta es una atención remota, el diagnóstico apunta a una posible falla en la fuente de poder (PSU).",
+            "link": "ts-hw-0238-desc"
           },
           {
             "t": "09:17",
             "who": "Soporte TI",
-            "text": "Procederemos a generar la solicitud de reemplazo del componente y a coordinar la intervención presencial para el cambio de la fuente."
+            "text": "Procederemos a generar la solicitud de reemplazo del componente y a coordinar la intervención presencial para el cambio de la fuente.",
+            "link": "ts-hw-0238-med"
           },
           {
             "t": "09:45",
             "who": "Soporte TI",
-            "text": "El reemplazo de la fuente de poder ya fue realizado por el equipo en terreno. ¿Puede confirmar si el equipo enciende correctamente?"
+            "text": "El reemplazo de la fuente de poder ya fue realizado por el equipo en terreno. ¿Puede confirmar si el equipo enciende correctamente?",
+            "link": "ts-hw-0238-med"
           },
           {
             "t": "09:46",
             "who": "Juan Pérez",
-            "text": "Sí, el equipo encendió y el sistema inició sin problemas."
+            "text": "Sí, el equipo encendió y el sistema inició sin problemas.",
+            "link": "ts-hw-0238-med"
           },
           {
             "t": "09:47",
             "who": "Soporte TI",
-            "text": "Excelente. ¿Puede acceder a sus aplicaciones y herramientas de trabajo con normalidad?"
+            "text": "Excelente. ¿Puede acceder a sus aplicaciones y herramientas de trabajo con normalidad?",
+            "link": "ts-hw-0238-med"
           },
           {
             "t": "09:47",
             "who": "Juan Pérez",
-            "text": "Todo funcionando correctamente."
+            "text": "Todo funcionando correctamente.",
+            "link": "ts-hw-0238-res"
           },
           {
             "t": "09:48",
             "who": "Soporte TI",
-            "text": "Perfecto. ¿Hay algo más en lo que podamos ayudarle?"
+            "text": "Perfecto. ¿Hay algo más en lo que podamos ayudarle?",
+            "link": "ts-hw-0238-res"
           },
           {
             "t": "09:49",
             "who": "Juan Pérez",
-            "text": "No, muchas gracias."
+            "text": "No, muchas gracias.",
+            "link": "ts-hw-0238-res"
           },
           {
             "t": "09:50",
             "who": "Soporte TI",
-            "text": "Quedamos a su disposición. Ticket TS-HW-0238 cerrado. Que tenga un excelente día."
+            "text": "Quedamos a su disposición. Ticket TS-HW-0238 cerrado. Que tenga un excelente día.",
+            "link": "ts-hw-0238-res"
           }
         ]
       },
@@ -410,14 +511,16 @@
             "who": "Soporte",
             "text": [
               "Buenos días, Soporte TI de TechSolutions, habla Juan Cruz. ¿Con quién hablo?"
-            ]
+            ],
+            "link": "ts-hw-0238-desc"
           },
           {
             "t": "09:15",
             "who": "Usuario",
             "text": [
               "Juan Pérez. Mira, tengo un problema grave: mi computador no enciende y tengo una reunión importante en minutos."
-            ]
+            ],
+            "link": "ts-hw-0238-desc"
           },
           {
             "t": "09:16",
@@ -426,28 +529,32 @@
               "Entiendo, Juan, gracias por avisar.",
               "Quedémonos tranquilos un segundo y lo revisamos paso a paso.",
               "Para ubicarte bien, ¿estás en el piso 2, oficina 204?"
-            ]
+            ],
+            "link": "ts-hw-0238-desc"
           },
           {
             "t": "09:16",
             "who": "Usuario",
             "text": [
               "Sí, acá mismo."
-            ]
+            ],
+            "link": "ts-hw-0238-desc"
           },
           {
             "t": "09:17",
             "who": "Soporte",
             "text": [
               "Perfecto. Cuéntame exactamente qué pasa cuando presionas el botón de encendido."
-            ]
+            ],
+            "link": "ts-hw-0238-desc"
           },
           {
             "t": "09:17",
             "who": "Usuario",
             "text": [
               "Nada. No prende luces, no suena, no hace absolutamente nada."
-            ]
+            ],
+            "link": "ts-hw-0238-desc"
           },
           {
             "t": "09:18",
@@ -455,14 +562,16 @@
             "text": [
               "De acuerdo, eso es importante.",
               "¿Ayer el equipo funcionó con normalidad cuando lo apagaste?"
-            ]
+            ],
+            "link": "ts-hw-0238-desc"
           },
           {
             "t": "09:18",
             "who": "Usuario",
             "text": [
               "Sí, cero problemas."
-            ]
+            ],
+            "link": "ts-hw-0238-desc"
           },
           {
             "t": "09:19",
@@ -470,28 +579,32 @@
             "text": [
               "Bien.",
               "¿Está conectado directo a la toma eléctrica o a una regleta?"
-            ]
+            ],
+            "link": "ts-hw-0238-desc"
           },
           {
             "t": "09:19",
             "who": "Usuario",
             "text": [
               "A una regleta."
-            ]
+            ],
+            "link": "ts-hw-0238-med"
           },
           {
             "t": "09:20",
             "who": "Soporte",
             "text": [
               "Perfecto. ¿Podrías probar conectarlo directo a la toma, solo para descartar eso?"
-            ]
+            ],
+            "link": "ts-hw-0238-med"
           },
           {
             "t": "09:20",
             "who": "Usuario",
             "text": [
               "Ya lo probé recién… sigue igual."
-            ]
+            ],
+            "link": "ts-hw-0238-med"
           },
           {
             "t": "09:21",
@@ -499,14 +612,16 @@
             "text": [
               "Gracias por confirmarlo.",
               "¿El interruptor trasero de la fuente está en posición de encendido?"
-            ]
+            ],
+            "link": "ts-hw-0238-med"
           },
           {
             "t": "09:21",
             "who": "Usuario",
             "text": [
               "Sí, está en ON."
-            ]
+            ],
+            "link": "ts-hw-0238-med"
           },
           {
             "t": "09:22",
@@ -514,14 +629,16 @@
             "text": [
               "Bien, con eso ya descartamos lo más simple.",
               "Por lo que me describes, el equipo no está recibiendo energía."
-            ]
+            ],
+            "link": "ts-hw-0238-med"
           },
           {
             "t": "09:22",
             "who": "Usuario",
             "text": [
               "¿Eso significa que murió?"
-            ]
+            ],
+            "link": "ts-hw-0238-med"
           },
           {
             "t": "09:23",
@@ -530,12 +647,14 @@
               "No necesariamente.",
               "Voy a revisar el equipo ahora mismo y aplicar la corrección necesaria para dejarlo operativo.",
               "Dame un momento y no te muevas de ahí."
-            ]
+            ],
+            "link": "ts-hw-0238-med"
           },
           {
             "t": "09:30",
             "who": "Sistema",
-            "text": "(Intervención técnica fuera de llamada)"
+            "text": "(Intervención técnica fuera de llamada)",
+            "link": "ts-hw-0238-med"
           },
           {
             "t": "09:32",
@@ -543,7 +662,8 @@
             "text": [
               "Juan, ya realicé el reemplazo del componente que estaba fallando.",
               "¿Podrías presionar el botón de encendido ahora, por favor?"
-            ]
+            ],
+            "link": "ts-hw-0238-res"
           },
           {
             "t": "09:32",
@@ -551,7 +671,8 @@
             "text": [
               "Un segundo…",
               "Sí, ahí encendió."
-            ]
+            ],
+            "link": "ts-hw-0238-res"
           },
           {
             "t": "09:33",
@@ -559,14 +680,16 @@
             "text": [
               "Perfecto.",
               "¿El sistema inició normalmente? ¿Puedes entrar a tu sesión?"
-            ]
+            ],
+            "link": "ts-hw-0238-res"
           },
           {
             "t": "09:33",
             "who": "Usuario",
             "text": [
               "Sí, ya estoy dentro."
-            ]
+            ],
+            "link": "ts-hw-0238-res"
           },
           {
             "t": "09:34",
@@ -574,14 +697,16 @@
             "text": [
               "Excelente.",
               "¿Puedes acceder a tus herramientas de trabajo y al correo sin problema?"
-            ]
+            ],
+            "link": "ts-hw-0238-res"
           },
           {
             "t": "09:34",
             "who": "Usuario",
             "text": [
               "Sí, todo funcionando."
-            ]
+            ],
+            "link": "ts-hw-0238-res"
           },
           {
             "t": "09:35",
@@ -590,21 +715,24 @@
               "Perfecto entonces.",
               "Confirmamos que el equipo quedó operativo y cierro el ticket.",
               "Si notas cualquier cosa extraña durante el día, me avisas de inmediato."
-            ]
+            ],
+            "link": "ts-hw-0238-res"
           },
           {
             "t": "09:35",
             "who": "Usuario",
             "text": [
               "Gracias, de verdad. Me salvaste la reunión."
-            ]
+            ],
+            "link": "ts-hw-0238-res"
           },
           {
             "t": "09:36",
             "who": "Soporte",
             "text": [
               "Para eso estamos. Éxito en la reunión, Juan."
-            ]
+            ],
+            "link": "ts-hw-0238-res"
           }
         ]
       }
@@ -708,7 +836,10 @@
       {
         "type": "list",
         "items": [
-          "Usuaria: María Fernanda Gómez, Área de Contabilidad.",
+          {
+            "text": "Usuaria: María Fernanda Gómez, Área de Contabilidad.",
+            "link": "ts-prn-0524-desc"
+          },
           {
             "segments": [
               {
@@ -721,12 +852,25 @@
               {
                 "text": " durante cierre financiero."
               }
-            ]
+            ],
+            "link": "ts-prn-0524-desc"
           },
-          "Impresora afectada: HR-FLOOR2.",
-          "Dirección IP configurada: 10.1.2.35.",
-          "Los trabajos de impresión quedan retenidos o no responden.",
-          "Incidente afecta proceso crítico del negocio.",
+          {
+            "text": "Impresora afectada: HR-FLOOR2.",
+            "link": "ts-prn-0524-desc"
+          },
+          {
+            "text": "Dirección IP configurada: 10.1.2.35.",
+            "link": "ts-prn-0524-desc"
+          },
+          {
+            "text": "Los trabajos de impresión quedan retenidos o no responden.",
+            "link": "ts-prn-0524-desc"
+          },
+          {
+            "text": "Incidente afecta proceso crítico del negocio.",
+            "link": "ts-prn-0524-desc"
+          },
           {
             "segments": [
               {
@@ -739,7 +883,8 @@
               {
                 "text": "."
               }
-            ]
+            ],
+            "link": "ts-prn-0524-desc"
           },
           {
             "segments": [
@@ -760,7 +905,8 @@
               {
                 "text": "."
               }
-            ]
+            ],
+            "link": "ts-prn-0524-desc"
           }
         ]
       },
@@ -776,7 +922,10 @@
       {
         "type": "list",
         "items": [
-          "Se brinda contención inicial debido a la urgencia del cierre financiero.",
+          {
+            "text": "Se brinda contención inicial debido a la urgencia del cierre financiero.",
+            "link": "ts-prn-0524-med"
+          },
           {
             "segments": [
               {
@@ -784,11 +933,24 @@
               }
             ],
             "subitems": [
-              "¿Desde cuándo se presenta el problema de impresión?",
-              "¿Todos los equipos del área presentan el mismo inconveniente?",
-              "¿La impresora muestra algún mensaje de error en el panel?",
-              "¿Se realizaron cambios recientes en la red o en la impresora?"
-            ]
+              {
+                "text": "¿Desde cuándo se presenta el problema de impresión?",
+                "link": "ts-prn-0524-med"
+              },
+              {
+                "text": "¿Todos los equipos del área presentan el mismo inconveniente?",
+                "link": "ts-prn-0524-med"
+              },
+              {
+                "text": "¿La impresora muestra algún mensaje de error en el panel?",
+                "link": "ts-prn-0524-med"
+              },
+              {
+                "text": "¿Se realizaron cambios recientes en la red o en la impresora?",
+                "link": "ts-prn-0524-med"
+              }
+            ],
+            "link": "ts-prn-0524-med"
           },
           {
             "segments": [
@@ -797,9 +959,16 @@
               }
             ],
             "subitems": [
-              "Verificar que la impresora esté encendida y conectada a la red.",
-              "Revisar estado de papel y posibles atascos."
-            ]
+              {
+                "text": "Verificar que la impresora esté encendida y conectada a la red.",
+                "link": "ts-prn-0524-med"
+              },
+              {
+                "text": "Revisar estado de papel y posibles atascos.",
+                "link": "ts-prn-0524-med"
+              }
+            ],
+            "link": "ts-prn-0524-med"
           },
           {
             "segments": [
@@ -808,8 +977,12 @@
               }
             ],
             "subitems": [
-              "Prueba de comunicación a la IP 10.1.2.35 sin respuesta."
-            ]
+              {
+                "text": "Prueba de comunicación a la IP 10.1.2.35 sin respuesta.",
+                "link": "ts-prn-0524-med"
+              }
+            ],
+            "link": "ts-prn-0524-med"
           },
           {
             "segments": [
@@ -818,8 +991,12 @@
               }
             ],
             "subitems": [
-              "Otras impresoras responden correctamente."
-            ]
+              {
+                "text": "Otras impresoras responden correctamente.",
+                "link": "ts-prn-0524-med"
+              }
+            ],
+            "link": "ts-prn-0524-med"
           },
           {
             "segments": [
@@ -828,45 +1005,87 @@
               }
             ],
             "subitems": [
-              "La impresora podría estar en otra red.",
-              "La IP configurada no corresponde al dispositivo actual.",
-              "El equipo fue movido o reconfigurado previamente."
-            ]
+              {
+                "text": "La impresora podría estar en otra red.",
+                "link": "ts-prn-0524-med"
+              },
+              {
+                "text": "La IP configurada no corresponde al dispositivo actual.",
+                "link": "ts-prn-0524-med"
+              },
+              {
+                "text": "El equipo fue movido o reconfigurado previamente.",
+                "link": "ts-prn-0524-med"
+              }
+            ],
+            "link": "ts-prn-0524-med"
           }
         ]
       },
       {
-  "type": "paragraph",
-  "segments": [
-    {
-      "strong": true,
-      "text": "Resolución:"
-    }
-  ]
-},
-{
-  "type": "list",
-  "items": [
-    "Se accede de forma remota a uno de los equipos del Área de Contabilidad para revisar la configuración de la impresora HR-FLOOR2.",
-    "Se elimina la impresora configurada con la IP incorrecta desde el sistema operativo del equipo.",
-    "Se renueva la configuración de red del equipo mediante actualización dinámica de direcciones IP (DHCP) para descartar conflictos de red.",
-    "Se vuelve a agregar la impresora de red utilizando su dirección IP actual válida en la red corporativa.",
-    "Se reinicia el servicio de impresión (spooler) para limpiar trabajos retenidos en la cola.",
-    "Se realiza prueba de impresión desde un equipo del área con un documento de prueba.",
-    {
-      "segments": [
-        { "text": "Se consulta a la usuaria:" }
-      ],
-      "subitems": [
-        "¿La impresora imprime correctamente el documento de prueba?",
-        "¿Los trabajos de impresión se procesan sin quedar retenidos?"
-      ]
-    },
-    "La usuaria confirma que la impresión funciona con normalidad y que el proceso de cierre financiero puede continuar.",
-    "Ticket cerrado."
-  ]
-}
-
+        "type": "paragraph",
+        "segments": [
+          {
+            "strong": true,
+            "text": "Resolución:"
+          }
+        ]
+      },
+      {
+        "type": "list",
+        "items": [
+          {
+            "text": "Se accede de forma remota a uno de los equipos del Área de Contabilidad para revisar la configuración de la impresora HR-FLOOR2.",
+            "link": "ts-prn-0524-res"
+          },
+          {
+            "text": "Se elimina la impresora configurada con la IP incorrecta desde el sistema operativo del equipo.",
+            "link": "ts-prn-0524-res"
+          },
+          {
+            "text": "Se renueva la configuración de red del equipo mediante actualización dinámica de direcciones IP (DHCP) para descartar conflictos de red.",
+            "link": "ts-prn-0524-res"
+          },
+          {
+            "text": "Se vuelve a agregar la impresora de red utilizando su dirección IP actual válida en la red corporativa.",
+            "link": "ts-prn-0524-res"
+          },
+          {
+            "text": "Se reinicia el servicio de impresión (spooler) para limpiar trabajos retenidos en la cola.",
+            "link": "ts-prn-0524-res"
+          },
+          {
+            "text": "Se realiza prueba de impresión desde un equipo del área con un documento de prueba.",
+            "link": "ts-prn-0524-res"
+          },
+          {
+            "segments": [
+              {
+                "text": "Se consulta a la usuaria:"
+              }
+            ],
+            "subitems": [
+              {
+                "text": "¿La impresora imprime correctamente el documento de prueba?",
+                "link": "ts-prn-0524-res"
+              },
+              {
+                "text": "¿Los trabajos de impresión se procesan sin quedar retenidos?",
+                "link": "ts-prn-0524-res"
+              }
+            ],
+            "link": "ts-prn-0524-res"
+          },
+          {
+            "text": "La usuaria confirma que la impresión funciona con normalidad y que el proceso de cierre financiero puede continuar.",
+            "link": "ts-prn-0524-res"
+          },
+          {
+            "text": "Ticket cerrado.",
+            "link": "ts-prn-0524-res"
+          }
+        ]
+      }
     ],
     "resumen": "La impresora de red HR-FLOOR2 (IP 10.1.2.35) no procesa trabajos de impresión. El área de Contabilidad requiere impresión para cierre financiero; impacto operativo alto.",
     "registro": [
@@ -1080,77 +1299,92 @@
           {
             "t": "10:31",
             "who": "Soporte TI",
-            "text": "Buenos días, Sra. María Fernanda Gómez. Le saluda el Equipo de Soporte TI de TechSolutions S.A.S. Hemos recibido su ticket TS-PRN-0524 por problemas de impresión. Entendemos el estado critico por el cierre financiero."
+            "text": "Buenos días, Sra. María Fernanda Gómez. Le saluda el Equipo de Soporte TI de TechSolutions S.A.S. Hemos recibido su ticket TS-PRN-0524 por problemas de impresión. Entendemos el estado critico por el cierre financiero.",
+            "link": "ts-prn-0524-desc"
           },
           {
             "t": "10:32",
             "who": "María Fernanda Gómez",
-            "text": "Sí, no estamos logrando imprimir los documentos."
+            "text": "Sí, no estamos logrando imprimir los documentos.",
+            "link": "ts-prn-0524-desc"
           },
           {
             "t": "10:33",
             "who": "Soporte TI",
-            "text": "Gracias. Accederemos de forma remota a uno de los equipos del Área de Contabilidad para revisar la configuración de la impresora HR-FLOOR2."
+            "text": "Gracias. Accederemos de forma remota a uno de los equipos del Área de Contabilidad para revisar la configuración de la impresora HR-FLOOR2.",
+            "link": "ts-prn-0524-desc"
           },
           {
             "t": "10:36",
             "who": "Soporte TI",
-            "text": "Detectamos que la impresora está configurada con una dirección IP incorrecta. Procederemos a eliminarla del sistema."
+            "text": "Detectamos que la impresora está configurada con una dirección IP incorrecta. Procederemos a eliminarla del sistema.",
+            "link": "ts-prn-0524-desc"
           },
           {
             "t": "10:38",
             "who": "Soporte TI",
-            "text": "Renovamos la configuración de red del equipo mediante DHCP para descartar conflictos de red y asegurarnos de que obtenga parámetros correctos."
+            "text": "Renovamos la configuración de red del equipo mediante DHCP para descartar conflictos de red y asegurarnos de que obtenga parámetros correctos.",
+            "link": "ts-prn-0524-desc"
           },
           {
             "t": "10:40",
             "who": "Soporte TI",
-            "text": "Agregamos nuevamente la impresora HR-FLOOR2 utilizando su dirección IP válida y reiniciamos el servicio de impresión (spooler) para limpiar trabajos retenidos."
+            "text": "Agregamos nuevamente la impresora HR-FLOOR2 utilizando su dirección IP válida y reiniciamos el servicio de impresión (spooler) para limpiar trabajos retenidos.",
+            "link": "ts-prn-0524-med"
           },
           {
             "t": "10:44",
             "who": "Soporte TI",
-            "text": "Realizaremos una prueba de impresión con un documento de prueba. ¿Puede confirmar si la impresora imprime correctamente?"
+            "text": "Realizaremos una prueba de impresión con un documento de prueba. ¿Puede confirmar si la impresora imprime correctamente?",
+            "link": "ts-prn-0524-med"
           },
           {
             "t": "10:45",
             "who": "María Fernanda Gómez",
-            "text": "Sí, ya imprimió el documento."
+            "text": "Sí, ya imprimió el documento.",
+            "link": "ts-prn-0524-med"
           },
           {
             "t": "10:46",
             "who": "Soporte TI",
-            "text": "Perfecto. ¿Los trabajos se procesan sin quedar retenidos en la cola de impresión?"
+            "text": "Perfecto. ¿Los trabajos se procesan sin quedar retenidos en la cola de impresión?",
+            "link": "ts-prn-0524-med"
           },
           {
             "t": "10:46",
             "who": "María Fernanda Gómez",
-            "text": "Sí, ahora funciona normal."
+            "text": "Sí, ahora funciona normal.",
+            "link": "ts-prn-0524-med"
           },
           {
             "t": "10:47",
             "who": "Soporte TI",
-            "text": "Excelente. ¿Puede continuar con el proceso de cierre financiero sin inconvenientes?"
+            "text": "Excelente. ¿Puede continuar con el proceso de cierre financiero sin inconvenientes?",
+            "link": "ts-prn-0524-res"
           },
           {
             "t": "10:48",
             "who": "María Fernanda Gómez",
-            "text": "Sí, ya podemos continuar."
+            "text": "Sí, ya podemos continuar.",
+            "link": "ts-prn-0524-res"
           },
           {
             "t": "10:48",
             "who": "Soporte TI",
-            "text": "Perfecto. ¿Necesita apoyo adicional en algo más?"
+            "text": "Perfecto. ¿Necesita apoyo adicional en algo más?",
+            "link": "ts-prn-0524-res"
           },
           {
             "t": "10:49",
             "who": "María Fernanda Gómez",
-            "text": "No, gracias."
+            "text": "No, gracias.",
+            "link": "ts-prn-0524-res"
           },
           {
             "t": "10:50",
             "who": "Soporte TI",
-            "text": "Ticket TS-PRN-0524 cerrado. Que tenga un buen día."
+            "text": "Ticket TS-PRN-0524 cerrado. Que tenga un buen día.",
+            "link": "ts-prn-0524-res"
           }
         ]
       },
@@ -1162,14 +1396,16 @@
             "who": "Soporte",
             "text": [
               "Soporte TI de TechSolutions, buenos días. Habla Juan Cruz. ¿Con quién tengo el gusto?"
-            ]
+            ],
+            "link": "ts-prn-0524-desc"
           },
           {
             "t": "10:42",
             "who": "Usuaria",
             "text": [
               "Hola, Juan. Soy María Fernanda Gómez, de Contabilidad. Tenemos un problema grave: no podemos imprimir y estamos en pleno cierre."
-            ]
+            ],
+            "link": "ts-prn-0524-desc"
           },
           {
             "t": "10:43",
@@ -1178,14 +1414,16 @@
               "Entiendo perfectamente, María Fernanda. El cierre no puede detenerse.",
               "Vamos a revisarlo de inmediato.",
               "Para confirmar, ¿el problema es con la impresora HR-FLOOR2?"
-            ]
+            ],
+            "link": "ts-prn-0524-desc"
           },
           {
             "t": "10:43",
             "who": "Usuaria",
             "text": [
               "Sí, esa misma. Mandamos a imprimir y los documentos quedan pegados."
-            ]
+            ],
+            "link": "ts-prn-0524-desc"
           },
           {
             "t": "10:44",
@@ -1193,14 +1431,16 @@
             "text": [
               "De acuerdo.",
               "¿Desde cuándo se presenta el problema? ¿Fue hoy o viene de antes?"
-            ]
+            ],
+            "link": "ts-prn-0524-desc"
           },
           {
             "t": "10:44",
             "who": "Usuaria",
             "text": [
               "Desde esta mañana. Ayer funcionaba bien."
-            ]
+            ],
+            "link": "ts-prn-0524-desc"
           },
           {
             "t": "10:45",
@@ -1208,14 +1448,16 @@
             "text": [
               "Bien.",
               "¿Les ocurre a todos en el área o solo a algunos equipos?"
-            ]
+            ],
+            "link": "ts-prn-0524-desc"
           },
           {
             "t": "10:45",
             "who": "Usuaria",
             "text": [
               "A todos. Nadie puede imprimir."
-            ]
+            ],
+            "link": "ts-prn-0524-desc"
           },
           {
             "t": "10:46",
@@ -1223,14 +1465,16 @@
             "text": [
               "Gracias, eso ayuda bastante.",
               "¿La impresora muestra algún mensaje de error, falta de papel o atascos?"
-            ]
+            ],
+            "link": "ts-prn-0524-med"
           },
           {
             "t": "10:46",
             "who": "Usuaria",
             "text": [
               "No, está encendida normal. No marca errores."
-            ]
+            ],
+            "link": "ts-prn-0524-med"
           },
           {
             "t": "10:47",
@@ -1238,12 +1482,14 @@
             "text": [
               "Perfecto. Entonces descartamos lo más simple.",
               "Estoy validando la conexión de la impresora ahora mismo."
-            ]
+            ],
+            "link": "ts-prn-0524-med"
           },
           {
             "t": "10:48",
             "who": "Sistema",
-            "text": "(Breve pausa mientras se revisa la conexión)"
+            "text": "(Breve pausa mientras se revisa la conexión)",
+            "link": "ts-prn-0524-med"
           },
           {
             "t": "10:49",
@@ -1251,14 +1497,16 @@
             "text": [
               "María Fernanda, la impresora no está respondiendo en la red con la IP que tenemos configurada.",
               "¿Recuerdas si fue movida de lugar o desconectada recientemente?"
-            ]
+            ],
+            "link": "ts-prn-0524-med"
           },
           {
             "t": "10:49",
             "who": "Usuaria",
             "text": [
               "Sí… ayer movieron los muebles y la impresora la corrieron un poco."
-            ]
+            ],
+            "link": "ts-prn-0524-med"
           },
           {
             "t": "10:50",
@@ -1267,12 +1515,14 @@
               "Eso calza con lo que estoy viendo.",
               "Probablemente quedó conectada a otro punto de red.",
               "Voy a corregir la configuración para que puedan imprimir nuevamente."
-            ]
+            ],
+            "link": "ts-prn-0524-med"
           },
           {
             "t": "10:55",
             "who": "Sistema",
-            "text": "(Intervención técnica fuera de llamada)"
+            "text": "(Intervención técnica fuera de llamada)",
+            "link": "ts-prn-0524-med"
           },
           {
             "t": "10:57",
@@ -1280,7 +1530,8 @@
             "text": [
               "Listo, ya actualicé la configuración.",
               "¿Podrías intentar imprimir un documento de prueba ahora, por favor?"
-            ]
+            ],
+            "link": "ts-prn-0524-res"
           },
           {
             "t": "10:57",
@@ -1288,7 +1539,8 @@
             "text": [
               "Dame un segundo…",
               "Sí, ya salió la hoja."
-            ]
+            ],
+            "link": "ts-prn-0524-res"
           },
           {
             "t": "10:58",
@@ -1296,14 +1548,16 @@
             "text": [
               "Excelente.",
               "¿El documento se imprime completo y sin errores?"
-            ]
+            ],
+            "link": "ts-prn-0524-res"
           },
           {
             "t": "10:58",
             "who": "Usuaria",
             "text": [
               "Sí, está saliendo todo normal ahora."
-            ]
+            ],
+            "link": "ts-prn-0524-res"
           },
           {
             "t": "10:59",
@@ -1312,21 +1566,24 @@
               "Perfecto entonces.",
               "Confirmamos que el servicio de impresión quedó restablecido y cierro el ticket.",
               "Si vuelve a pasar durante el día, nos llamas de inmediato."
-            ]
+            ],
+            "link": "ts-prn-0524-res"
           },
           {
             "t": "10:59",
             "who": "Usuaria",
             "text": [
               "Muchas gracias, de verdad. Estábamos complicados."
-            ]
+            ],
+            "link": "ts-prn-0524-res"
           },
           {
             "t": "11:00",
             "who": "Soporte",
             "text": [
               "Lo entiendo. Éxito con el cierre, María Fernanda."
-            ]
+            ],
+            "link": "ts-prn-0524-res"
           }
         ]
       }
@@ -1436,13 +1693,34 @@
       {
         "type": "list",
         "items": [
-          "Usuario: Andrés Morales.",
-          "Reporta conexión lenta o sin acceso a internet.",
-          "Problema intermitente, sin patrón claro.",
-          "Afecta acceso a sistemas corporativos y servicios en la nube.",
-          "Impacto alto en productividad.",
-          "Incidente de red.",
-          "Usuario con conocimientos técnicos."
+          {
+            "text": "Usuario: Andrés Morales.",
+            "link": "ts-net-0631-desc"
+          },
+          {
+            "text": "Reporta conexión lenta o sin acceso a internet.",
+            "link": "ts-net-0631-desc"
+          },
+          {
+            "text": "Problema intermitente, sin patrón claro.",
+            "link": "ts-net-0631-desc"
+          },
+          {
+            "text": "Afecta acceso a sistemas corporativos y servicios en la nube.",
+            "link": "ts-net-0631-desc"
+          },
+          {
+            "text": "Impacto alto en productividad.",
+            "link": "ts-net-0631-desc"
+          },
+          {
+            "text": "Incidente de red.",
+            "link": "ts-net-0631-desc"
+          },
+          {
+            "text": "Usuario con conocimientos técnicos.",
+            "link": "ts-net-0631-desc"
+          }
         ]
       },
       {
@@ -1457,7 +1735,10 @@
       {
         "type": "list",
         "items": [
-          "Se realiza contención inicial por impacto en operación.",
+          {
+            "text": "Se realiza contención inicial por impacto en operación.",
+            "link": "ts-net-0631-med"
+          },
           {
             "segments": [
               {
@@ -1465,12 +1746,28 @@
               }
             ],
             "subitems": [
-              "¿Desde cuándo presenta el problema de conectividad?",
-              "¿La lentitud es constante o intermitente?",
-              "¿El problema ocurre en un solo equipo o en varios?",
-              "¿Está conectado por cable o por Wi-Fi?",
-              "¿Se realizaron cambios recientes (movimiento de puesto, cable, equipo)?"
-            ]
+              {
+                "text": "¿Desde cuándo presenta el problema de conectividad?",
+                "link": "ts-net-0631-med"
+              },
+              {
+                "text": "¿La lentitud es constante o intermitente?",
+                "link": "ts-net-0631-med"
+              },
+              {
+                "text": "¿El problema ocurre en un solo equipo o en varios?",
+                "link": "ts-net-0631-med"
+              },
+              {
+                "text": "¿Está conectado por cable o por Wi-Fi?",
+                "link": "ts-net-0631-med"
+              },
+              {
+                "text": "¿Se realizaron cambios recientes (movimiento de puesto, cable, equipo)?",
+                "link": "ts-net-0631-med"
+              }
+            ],
+            "link": "ts-net-0631-med"
           },
           {
             "segments": [
@@ -1479,9 +1776,16 @@
               }
             ],
             "subitems": [
-              "Revisión del estado del cable de red / señal Wi-Fi.",
-              "Confirmación de conexión física al punto de red."
-            ]
+              {
+                "text": "Revisión del estado del cable de red / señal Wi-Fi.",
+                "link": "ts-net-0631-med"
+              },
+              {
+                "text": "Confirmación de conexión física al punto de red.",
+                "link": "ts-net-0631-med"
+              }
+            ],
+            "link": "ts-net-0631-med"
           },
           {
             "segments": [
@@ -1490,10 +1794,20 @@
               }
             ],
             "subitems": [
-              "Verificación de dirección IP asignada.",
-              "Prueba de conexión a la puerta de enlace.",
-              "Prueba de acceso a recursos internos y externos."
-            ]
+              {
+                "text": "Verificación de dirección IP asignada.",
+                "link": "ts-net-0631-med"
+              },
+              {
+                "text": "Prueba de conexión a la puerta de enlace.",
+                "link": "ts-net-0631-med"
+              },
+              {
+                "text": "Prueba de acceso a recursos internos y externos.",
+                "link": "ts-net-0631-med"
+              }
+            ],
+            "link": "ts-net-0631-med"
           },
           {
             "segments": [
@@ -1502,58 +1816,99 @@
               }
             ],
             "subitems": [
-              "Latencia elevada / respuesta inconsistente."
-            ]
+              {
+                "text": "Latencia elevada / respuesta inconsistente.",
+                "link": "ts-net-0631-med"
+              }
+            ],
+            "link": "ts-net-0631-med"
           },
-          "Se descarta inicialmente un problema exclusivo del equipo del usuario."
+          {
+            "text": "Se descarta inicialmente un problema exclusivo del equipo del usuario.",
+            "link": "ts-net-0631-med"
+          }
         ]
       },
       {
-  "type": "paragraph",
-  "segments": [
-    {
-      "strong": true,
-      "text": "Resolución:"
-    }
-  ]
-},
-{
-  "type": "list",
-  "items": [
-    "A partir de las pruebas realizadas, se identifica que la lentitud e intermitencia estaban relacionadas con una configuración incorrecta de la conexión de red del puesto, posterior a un movimiento reciente del escritorio.",
-    {
-      "segments": [
-        { "text": "Se accede de forma remota al equipo del usuario y se procede a:" }
-      ],
-      "subitems": [
-        "Se realiza el restablecimiento de la configuración de red del equipo, forzando la renovación de la dirección IP asignada por DHCP.",
-        "Se verifican los parámetros de enlace y DNS."
-      ]
-    },
-    {
-      "segments": [
-        { "text": "Se valida nuevamente la conectividad:" }
-      ],
-      "subitems": [
-        "La navegación responde de forma estable.",
-        "Se puede acceder a sistemas corporativos y servicios en la nube sin interrupciones."
-      ]
-    },
-    {
-      "segments": [
-        {
-          "text": "Se consulta al usuario:"
-        }
-      ],
-      "subitems": [
-        "¿La conexión funciona con normalidad en este momento?",
-        "¿Puede acceder a los sistemas corporativos sin lentitud ni cortes?"
-      ]
-    },
-    "El usuario confirma que la conectividad quedó restablecida y estable.",
-    "Ticket cerrado."
-  ]
-}
+        "type": "paragraph",
+        "segments": [
+          {
+            "strong": true,
+            "text": "Resolución:"
+          }
+        ]
+      },
+      {
+        "type": "list",
+        "items": [
+          {
+            "text": "A partir de las pruebas realizadas, se identifica que la lentitud e intermitencia estaban relacionadas con una configuración incorrecta de la conexión de red del puesto, posterior a un movimiento reciente del escritorio.",
+            "link": "ts-net-0631-res"
+          },
+          {
+            "segments": [
+              {
+                "text": "Se accede de forma remota al equipo del usuario y se procede a:"
+              }
+            ],
+            "subitems": [
+              {
+                "text": "Se realiza el restablecimiento de la configuración de red del equipo, forzando la renovación de la dirección IP asignada por DHCP.",
+                "link": "ts-net-0631-res"
+              },
+              {
+                "text": "Se verifican los parámetros de enlace y DNS.",
+                "link": "ts-net-0631-res"
+              }
+            ],
+            "link": "ts-net-0631-res"
+          },
+          {
+            "segments": [
+              {
+                "text": "Se valida nuevamente la conectividad:"
+              }
+            ],
+            "subitems": [
+              {
+                "text": "La navegación responde de forma estable.",
+                "link": "ts-net-0631-res"
+              },
+              {
+                "text": "Se puede acceder a sistemas corporativos y servicios en la nube sin interrupciones.",
+                "link": "ts-net-0631-res"
+              }
+            ],
+            "link": "ts-net-0631-res"
+          },
+          {
+            "segments": [
+              {
+                "text": "Se consulta al usuario:"
+              }
+            ],
+            "subitems": [
+              {
+                "text": "¿La conexión funciona con normalidad en este momento?",
+                "link": "ts-net-0631-res"
+              },
+              {
+                "text": "¿Puede acceder a los sistemas corporativos sin lentitud ni cortes?",
+                "link": "ts-net-0631-res"
+              }
+            ],
+            "link": "ts-net-0631-res"
+          },
+          {
+            "text": "El usuario confirma que la conectividad quedó restablecida y estable.",
+            "link": "ts-net-0631-res"
+          },
+          {
+            "text": "Ticket cerrado.",
+            "link": "ts-net-0631-res"
+          }
+        ]
+      }
     ],
     "resumen": "Usuario reporta latencia elevada o pérdida de conectividad. Se recopila información de IP, gateway y DNS para diagnóstico.",
     "registro": [
@@ -1724,77 +2079,96 @@
           {
             "t": "08:57",
             "who": "Soporte TI",
-            "text": "Buenos días, Sr. Andrés Morales. Le saluda el Equipo de Soporte TI de TechSolutions S.A.S. Hemos recibido su ticket TS-NET-0631 por problemas de conectividad."
+            "text": "Buenos días, Sr. Andrés Morales. Le saluda el Equipo de Soporte TI de TechSolutions S.A.S. Hemos recibido su ticket TS-NET-0631 por problemas de conectividad.",
+            "link": "ts-net-0631-desc",
+            "block": "blk-ident-01"
           },
           {
             "t": "08:58",
             "who": "Andrés Morales",
-            "text": "Sí, la red está lenta y a veces se cae."
+            "text": "Sí, la red está lenta y a veces se cae.",
+            "link": "ts-net-0631-desc",
+            "block": "blk-ident-01"
           },
           {
             "t": "08:59",
             "who": "Soporte TI",
-            "text": "Gracias. Para descartar una falla física, ¿está conectado por cable o Wi-Fi?"
+            "text": "Gracias. Para descartar una falla física, ¿está conectado por cable o Wi-Fi?",
+            "link": "ts-net-0631-desc",
+            "block": "blk-incidente-01"
           },
           {
             "t": "09:00",
             "who": "Andrés Morales",
-            "text": "Por cable."
+            "text": "Por cable.",
+            "link": "ts-net-0631-desc",
+            "block": "blk-incidente-01"
           },
           {
             "t": "09:01",
             "who": "Soporte TI",
-            "text": "¿El problema ocurre solo en su equipo o también en otros puestos cercanos?"
+            "text": "¿El problema ocurre solo en su equipo o también en otros puestos cercanos?",
+            "link": "ts-net-0631-desc"
           },
           {
             "t": "09:02",
             "who": "Andrés Morales",
-            "text": "A varios equipos."
+            "text": "A varios equipos.",
+            "link": "ts-net-0631-med"
           },
           {
             "t": "09:03",
             "who": "Soporte TI",
-            "text": "Perfecto. Esto nos permite descartar una falla exclusiva del equipo. Accederemos de forma remota para revisar la configuración de red."
+            "text": "Perfecto. Esto nos permite descartar una falla exclusiva del equipo. Accederemos de forma remota para revisar la configuración de red.",
+            "link": "ts-net-0631-med"
           },
           {
             "t": "09:06",
             "who": "Soporte TI",
-            "text": "Detectamos una configuración incorrecta posterior a un movimiento reciente del puesto. Procedemos a restablecer la configuración de red y renovar la IP por DHCP, verificando puerta de enlace y DNS."
+            "text": "Detectamos una configuración incorrecta posterior a un movimiento reciente del puesto. Procedemos a restablecer la configuración de red y renovar la IP por DHCP, verificando puerta de enlace y DNS.",
+            "link": "ts-net-0631-med"
           },
           {
             "t": "09:10",
             "who": "Soporte TI",
-            "text": "Las pruebas muestran conectividad estable. ¿La navegación responde correctamente ahora?"
+            "text": "Las pruebas muestran conectividad estable. ¿La navegación responde correctamente ahora?",
+            "link": "ts-net-0631-med"
           },
           {
             "t": "09:11",
             "who": "Andrés Morales",
-            "text": "Sí, ahora está normal."
+            "text": "Sí, ahora está normal.",
+            "link": "ts-net-0631-med"
           },
           {
             "t": "09:12",
             "who": "Soporte TI",
-            "text": "¿Puede acceder a sistemas corporativos y servicios en la nube sin cortes?"
+            "text": "¿Puede acceder a sistemas corporativos y servicios en la nube sin cortes?",
+            "link": "ts-net-0631-res"
           },
           {
             "t": "09:12",
             "who": "Andrés Morales",
-            "text": "Todo funcionando bien."
+            "text": "Todo funcionando bien.",
+            "link": "ts-net-0631-res"
           },
           {
             "t": "09:13",
             "who": "Soporte TI",
-            "text": "Excelente. ¿Necesita apoyo adicional?"
+            "text": "Excelente. ¿Necesita apoyo adicional?",
+            "link": "ts-net-0631-res"
           },
           {
             "t": "09:14",
             "who": "Andrés Morales",
-            "text": "No, gracias."
+            "text": "No, gracias.",
+            "link": "ts-net-0631-res"
           },
           {
             "t": "09:14",
             "who": "Soporte TI",
-            "text": "Ticket TS-NET-0631 cerrado. Que tenga excelente jornada."
+            "text": "Ticket TS-NET-0631 cerrado. Que tenga excelente jornada.",
+            "link": "ts-net-0631-res"
           }
         ]
       },
@@ -1812,146 +2186,391 @@
             "t": "08:57",
             "who": "Usuario",
             "text": [
-              "Hola, Juan. Soy Andrés Morales. Tengo problemas con la red, está muy lenta y a ratos se cae."
+              "Hola, Juan. Soy Andrés Morales."
+            ]
+          },
+          {
+            "t": "08:57",
+            "who": "Soporte",
+            "text": [
+              "Gracias, don Andrés. Para registrar correctamente el incidente, ¿me confirmas tu cargo y un número de contacto por si la llamada se corta?"
+            ]
+          },
+          {
+            "t": "08:58",
+            "who": "Usuario",
+            "text": [
+              "Soy analista de operaciones. El número es el mismo desde el que estoy llamando."
             ]
           },
           {
             "t": "08:58",
             "who": "Soporte",
             "text": [
-              "Gracias por avisar, Andrés.",
-              "Cuéntame un poco más para entender bien: ¿la lentitud es constante o va y viene?"
+              "Perfecto. ¿Ese número corresponde a tu móvil corporativo o a un teléfono fijo de oficina?"
             ]
           },
           {
             "t": "08:58",
             "who": "Usuario",
             "text": [
-              "Va y viene. A veces carga, a veces no, y se cae de repente."
+              "Es mi móvil corporativo."
+            ]
+          },
+          {
+            "t": "08:58",
+            "who": "Soporte",
+            "text": [
+              "Excelente, gracias.",
+              "Antes de continuar, voy a confirmar también tu correo corporativo para enviarte las actualizaciones del ticket.",
+              "¿Tu correo es andres.morales@techsolutions.com",
+              ", correcto?"
+            ]
+          },
+          {
+            "t": "08:59",
+            "who": "Usuario",
+            "text": [
+              "Sí, ese es."
             ]
           },
           {
             "t": "08:59",
             "who": "Soporte",
             "text": [
-              "De acuerdo.",
-              "¿Esto te pasa solo a ti o has notado si a otros también les ocurre?"
+              "Perfecto, don Andrés. Cuéntame, ¿qué está ocurriendo con la red?"
             ]
           },
           {
             "t": "08:59",
             "who": "Usuario",
             "text": [
-              "He escuchado a un par más, pero a mí me está pegando fuerte ahora."
+              "La conexión está muy lenta y a ratos se cae. Hay momentos en que no tengo internet."
             ]
           },
           {
-            "t": "09:00",
+            "t": "08:59",
             "who": "Soporte",
             "text": [
-              "Perfecto, eso ya nos da una pista.",
-              "¿Estás conectado por cable o por Wi-Fi en este momento?"
+              "De acuerdo. Para confirmar que entendí bien: la conexión es intermitente y te impide acceder con normalidad a los sistemas corporativos y al correo, ¿correcto?"
             ]
           },
           {
             "t": "09:00",
             "who": "Usuario",
             "text": [
-              "Por cable."
+              "Sí, exactamente."
             ]
           },
           {
-            "t": "09:01",
+            "t": "09:00",
             "who": "Soporte",
             "text": [
-              "Bien.",
-              "¿Tu puesto se movió recientemente o cambiaste de punto de red o cable?"
+              "¿Desde cuándo notaste este problema? ¿Comenzó hoy en la mañana o ya venía desde antes?"
+            ]
+          },
+          {
+            "t": "09:00",
+            "who": "Usuario",
+            "text": [
+              "Empezó hoy en la mañana, apenas llegué a la oficina."
+            ]
+          },
+          {
+            "t": "09:00",
+            "who": "Soporte",
+            "text": [
+              "Cuando la conexión se cae, ¿vuelve sola después de un rato o tienes que hacer algo para que vuelva?"
             ]
           },
           {
             "t": "09:01",
             "who": "Usuario",
             "text": [
-              "Sí, de hecho ayer moví el escritorio un poco."
+              "A veces vuelve sola, otras no."
+            ]
+          },
+          {
+            "t": "09:01",
+            "who": "Soporte",
+            "text": [
+              "Entiendo. ¿Este problema te está afectando ahora mismo en tu trabajo?",
+              "¿Estás completamente bloqueado o puedes avanzar de forma limitada?"
+            ]
+          },
+          {
+            "t": "09:01",
+            "who": "Usuario",
+            "text": [
+              "Estoy prácticamente bloqueado. No puedo entrar bien a los sistemas."
+            ]
+          },
+          {
+            "t": "09:01",
+            "who": "Soporte",
+            "text": [
+              "De acuerdo, don Andrés. Dado que esto ocurre en horario de operación y afecta el acceso a sistemas críticos, voy a manejar el caso como un incidente de red con prioridad alta."
             ]
           },
           {
             "t": "09:02",
             "who": "Soporte",
             "text": [
-              "Ok, eso es relevante.",
-              "Estoy revisando la conexión desde acá y veo respuestas irregulares en la red."
+              "Para acotar el problema rápidamente: ¿estás conectado por cable o por Wi-Fi?"
+            ]
+          },
+          {
+            "t": "09:02",
+            "who": "Usuario",
+            "text": [
+              "Por cable."
+            ]
+          },
+          {
+            "t": "09:02",
+            "who": "Soporte",
+            "text": [
+              "¿Has notado si el problema afecta solo a tu equipo o también a otros usuarios cercanos?"
+            ]
+          },
+          {
+            "t": "09:02",
+            "who": "Usuario",
+            "text": [
+              "He escuchado que a otros también les pasa, pero en mi puesto es más fuerte."
             ]
           },
           {
             "t": "09:03",
-            "who": "Sistema",
-            "text": "(Pausa breve mientras se revisa la conexión)"
+            "who": "Soporte",
+            "text": [
+              "¿Estás trabajando siempre desde el mismo equipo y el mismo punto de red?"
+            ]
+          },
+          {
+            "t": "09:03",
+            "who": "Usuario",
+            "text": [
+              "Sí, siempre desde el mismo."
+            ]
+          },
+          {
+            "t": "09:03",
+            "who": "Soporte",
+            "text": [
+              "¿Hubo algún cambio reciente en tu puesto, como mover el escritorio, el cableado o el computador?"
+            ]
+          },
+          {
+            "t": "09:03",
+            "who": "Usuario",
+            "text": [
+              "Sí, ayer moví un poco el escritorio."
+            ]
           },
           {
             "t": "09:04",
             "who": "Soporte",
             "text": [
-              "Lo que estoy viendo es un conflicto en la conexión, probablemente por el punto de red.",
-              "Voy a corregir eso y normalizar el enlace. Dame un momento."
+              "Perfecto, es un dato relevante.",
+              "¿Además de eso hubo algún corte eléctrico o desconexión fuera de lo normal?"
+            ]
+          },
+          {
+            "t": "09:04",
+            "who": "Usuario",
+            "text": [
+              "No, nada más."
+            ]
+          },
+          {
+            "t": "09:04",
+            "who": "Soporte",
+            "text": [
+              "Bien, don Andrés. Voy a revisar ahora mismo tu punto de red desde el sistema.",
+              "Esto no debería demorar más de un minuto."
+            ]
+          },
+          {
+            "t": "09:05",
+            "who": "Sistema",
+            "text": [
+              "Revisión de conectividad del punto de red.",
+              "Verificación de enlace, latencia y estado del puerto asociado en el switch."
+            ]
+          },
+          {
+            "t": "09:05",
+            "who": "Soporte",
+            "text": [
+              "Estoy viendo respuestas irregulares y latencia elevada en tu conexión.",
+              "Voy a aplicar una corrección lógica para intentar estabilizar el enlace.",
+              "Durante unos 30 segundos podrías quedar sin conexión, es normal."
+            ]
+          },
+          {
+            "t": "09:06",
+            "who": "Sistema",
+            "text": [
+              "Reinicio lógico del puerto de red asociado al punto del usuario.",
+              "Renegociación de enlace y monitoreo posterior."
+            ]
+          },
+          {
+            "t": "09:06",
+            "who": "Soporte",
+            "text": [
+              "Listo. ¿Podrías probar ahora acceder al correo o a algún sistema interno?"
+            ]
+          },
+          {
+            "t": "09:06",
+            "who": "Usuario",
+            "text": [
+              "Mejoró un poco, pero sigue inestable."
+            ]
+          },
+          {
+            "t": "09:07",
+            "who": "Soporte",
+            "text": [
+              "De acuerdo. Con lo que vemos hasta ahora, el problema no parece ser solo lógico.",
+              "Dado que el fallo es intermitente y hubo un cambio reciente en el puesto, es necesario descartar una falla física en el punto de red."
+            ]
+          },
+          {
+            "t": "09:07",
+            "who": "Soporte",
+            "text": [
+              "Para eso vamos a realizar una revisión directa del cableado y del punto.",
+              "El técnico pertenece a nuestro mismo equipo interno y puede subir durante la mañana."
+            ]
+          },
+          {
+            "t": "09:07",
+            "who": "Soporte",
+            "text": [
+              "Durante esa revisión la conexión puede cortarse por algunos minutos, es completamente normal."
             ]
           },
           {
             "t": "09:08",
+            "who": "Soporte",
+            "text": [
+              "Para coordinar correctamente, ¿en qué piso y sector estás ubicado, don Andrés?"
+            ]
+          },
+          {
+            "t": "09:08",
+            "who": "Usuario",
+            "text": [
+              "Tercer piso, área de Operaciones."
+            ]
+          },
+          {
+            "t": "09:08",
+            "who": "Soporte",
+            "text": [
+              "Perfecto. Vamos a realizar la revisión durante la mañana y, una vez finalizada, desde soporte te vamos a contactar nuevamente para confirmar que el servicio haya quedado estable antes de cerrar el ticket."
+            ]
+          },
+          {
+            "t": "09:09",
+            "who": "Soporte",
+            "text": [
+              "Te llegará un correo con el resumen del incidente y las actualizaciones del caso.",
+              "Si la conexión se cae por completo o el impacto aumenta antes de la revisión, responde ese correo o vuelve a llamarnos de inmediato."
+            ]
+          },
+          {
+            "t": "09:09",
+            "who": "Usuario",
+            "text": [
+              "Perfecto, muchas gracias."
+            ]
+          },
+          {
+            "t": "09:09",
+            "who": "Soporte",
+            "text": [
+              "Gracias a ti, don Andrés. Quedamos atentos y nos volvemos a comunicar más tarde."
+            ]
+          },
+          {
+            "t": "10:42",
             "who": "Sistema",
-            "text": "(Intervención técnica fuera de llamada)"
-          },
-          {
-            "t": "09:10",
-            "who": "Soporte",
             "text": [
-              "Listo, ya ajusté la conexión y reinicié el equipo de red asociado a tu punto.",
-              "¿Podrías probar ahora, por favor?"
+              "Visita de técnico en terreno.",
+              "Revisión física del punto de red del usuario en tercer piso, área de Operaciones.",
+              "Se detecta conector RJ45 con falso contacto producto de tensión en el cableado.",
+              "Se reajusta conexión, se reemplaza tramo de cable dañado y se asegura el punto de red.",
+              "Se verifica conectividad estable posterior a la intervención."
             ]
           },
           {
-            "t": "09:10",
+            "t": "12:35",
+            "who": "Soporte",
+            "text": [
+              "Hola, don Andrés. Te habla Juan Cruz de Soporte TI.",
+              "Te llamo para confirmar la atención realizada más temprano por el problema de red."
+            ]
+          },
+          {
+            "t": "12:35",
             "who": "Usuario",
             "text": [
-              "Sí… ahora está cargando mucho más rápido."
+              "Hola, Juan. Sí, dime."
             ]
           },
           {
-            "t": "09:11",
+            "t": "12:35",
             "who": "Soporte",
             "text": [
-              "Perfecto.",
-              "¿Puedes acceder a los sistemas corporativos y a la nube sin problemas?"
+              "El técnico nos informó que ya se revisó el punto de red y se ajustó el cableado del puesto.",
+              "Antes de cerrar el ticket, necesito validar contigo que el servicio haya quedado funcionando correctamente."
             ]
           },
           {
-            "t": "09:11",
+            "t": "12:36",
             "who": "Usuario",
             "text": [
-              "Sí, ahora todo responde normal."
+              "Sí, ahora está funcionando bien. No se ha vuelto a caer."
             ]
           },
           {
-            "t": "09:12",
+            "t": "12:36",
             "who": "Soporte",
             "text": [
-              "Excelente.",
-              "Entonces confirmamos que la conectividad quedó restablecida y cierro el ticket.",
-              "Si vuelve a ponerse inestable, me avisas de inmediato."
+              "Perfecto. ¿Pudiste acceder sin problemas al correo corporativo y a los sistemas internos?"
             ]
           },
           {
-            "t": "09:12",
+            "t": "12:36",
             "who": "Usuario",
             "text": [
-              "Perfecto, gracias."
+              "Sí, todo está funcionando normal."
             ]
           },
           {
-            "t": "09:13",
+            "t": "12:36",
             "who": "Soporte",
             "text": [
-              "De nada, Andrés. Que tengas buen día."
+              "Excelente, don Andrés. Entonces voy a cerrar el ticket como resuelto.",
+              "Si el problema vuelve a presentarse, puedes responder el correo del ticket y lo reabrimos de inmediato."
+            ]
+          },
+          {
+            "t": "12:37",
+            "who": "Usuario",
+            "text": [
+              "De acuerdo, muchas gracias."
+            ]
+          },
+          {
+            "t": "12:37",
+            "who": "Soporte",
+            "text": [
+              "Gracias a ti, don Andrés. Que tengas buen día. "
             ]
           }
         ]
@@ -2062,14 +2681,38 @@
       {
         "type": "list",
         "items": [
-          "Usuaria: Camila Ríos.",
-          "Reporta pantallazos azules recurrentes (BSOD).",
-          "El equipo se reinicia de forma inesperada.",
-          "Interrumpe el trabajo y puede generar pérdida de información.",
-          "Problema ocurre durante uso normal del equipo.",
-          "Incidente de software, con posible relación a drivers o sistema.",
-          "Se mencionan posibles cambios recientes (actualizaciones / instalaciones).",
-          "Impacto alto por recurrencia del error."
+          {
+            "text": "Usuaria: Camila Ríos.",
+            "link": "ts-sw-0789-desc"
+          },
+          {
+            "text": "Reporta pantallazos azules recurrentes (BSOD).",
+            "link": "ts-sw-0789-desc"
+          },
+          {
+            "text": "El equipo se reinicia de forma inesperada.",
+            "link": "ts-sw-0789-desc"
+          },
+          {
+            "text": "Interrumpe el trabajo y puede generar pérdida de información.",
+            "link": "ts-sw-0789-desc"
+          },
+          {
+            "text": "Problema ocurre durante uso normal del equipo.",
+            "link": "ts-sw-0789-desc"
+          },
+          {
+            "text": "Incidente de software, con posible relación a drivers o sistema.",
+            "link": "ts-sw-0789-desc"
+          },
+          {
+            "text": "Se mencionan posibles cambios recientes (actualizaciones / instalaciones).",
+            "link": "ts-sw-0789-desc"
+          },
+          {
+            "text": "Impacto alto por recurrencia del error.",
+            "link": "ts-sw-0789-desc"
+          }
         ]
       },
       {
@@ -2084,7 +2727,10 @@
       {
         "type": "list",
         "items": [
-          "Se realiza contención inicial y se explica a la usuaria el proceso de revisión.",
+          {
+            "text": "Se realiza contención inicial y se explica a la usuaria el proceso de revisión.",
+            "link": "ts-sw-0789-med"
+          },
           {
             "segments": [
               {
@@ -2092,12 +2738,28 @@
               }
             ],
             "subitems": [
-              "¿Con qué frecuencia aparece el pantallazo azul?",
-              "¿Desde cuándo comenzó el problema?",
-              "¿Se instaló algún programa, driver o actualización recientemente?",
-              "¿El error ocurre al usar alguna aplicación en particular?",
-              "¿Se ha conectado algún dispositivo nuevo al equipo?"
-            ]
+              {
+                "text": "¿Con qué frecuencia aparece el pantallazo azul?",
+                "link": "ts-sw-0789-med"
+              },
+              {
+                "text": "¿Desde cuándo comenzó el problema?",
+                "link": "ts-sw-0789-med"
+              },
+              {
+                "text": "¿Se instaló algún programa, driver o actualización recientemente?",
+                "link": "ts-sw-0789-med"
+              },
+              {
+                "text": "¿El error ocurre al usar alguna aplicación en particular?",
+                "link": "ts-sw-0789-med"
+              },
+              {
+                "text": "¿Se ha conectado algún dispositivo nuevo al equipo?",
+                "link": "ts-sw-0789-med"
+              }
+            ],
+            "link": "ts-sw-0789-med"
           },
           {
             "segments": [
@@ -2106,8 +2768,12 @@
               }
             ],
             "subitems": [
-              "Código o mensaje mostrado en el BSOD (si es visible)."
-            ]
+              {
+                "text": "Código o mensaje mostrado en el BSOD (si es visible).",
+                "link": "ts-sw-0789-med"
+              }
+            ],
+            "link": "ts-sw-0789-med"
           },
           {
             "segments": [
@@ -2116,9 +2782,16 @@
               }
             ],
             "subitems": [
-              "Revisión de Administrador de dispositivos para detectar controladores con error.",
-              "Verificación del estado general del sistema."
-            ]
+              {
+                "text": "Revisión de Administrador de dispositivos para detectar controladores con error.",
+                "link": "ts-sw-0789-med"
+              },
+              {
+                "text": "Verificación del estado general del sistema.",
+                "link": "ts-sw-0789-med"
+              }
+            ],
+            "link": "ts-sw-0789-med"
           },
           {
             "segments": [
@@ -2127,45 +2800,79 @@
               }
             ],
             "subitems": [
-              "Errores de disco.",
-              "Problemas de memoria."
-            ]
+              {
+                "text": "Errores de disco.",
+                "link": "ts-sw-0789-med"
+              },
+              {
+                "text": "Problemas de memoria.",
+                "link": "ts-sw-0789-med"
+              }
+            ],
+            "link": "ts-sw-0789-med"
           },
-          "Se deja constancia de que es necesario revisar la grabación / registro del error para mayor claridad del diagnóstico."
+          {
+            "text": "Se deja constancia de que es necesario revisar la grabación / registro del error para mayor claridad del diagnóstico.",
+            "link": "ts-sw-0789-med"
+          }
         ]
       },
       {
-  "type": "paragraph",
-  "segments": [
-    {
-      "strong": true,
-      "text": "Resolución:"
-    }
-  ]
-},
-{
-  "type": "list",
-  "items": [
-    "Se ejecutan diagnósticos del sistema para descartar fallas adicionales (Windows Memory Diagnostic y verificación de disco), sin detección de errores.",
-    "Posteriormente, se identifica un controlador de video Intel UHD Graphics con funcionamiento incorrecto, asociado a una actualización reciente del sistema operativo.",
-    "Se procede a la desinstalación y actualización del driver de video Intel UHD Graphics, restableciendo una versión compatible y estable.",
-    "El equipo se mantiene operativo sin presentar nuevos pantallazos azules.",
-    {
-      "segments": [
-        {
-          "text": "Se consulta a la usuaria:"
-        }
-      ],
-      "subitems": [
-        "¿El equipo ha vuelto a presentar el pantallazo azul?",
-        "¿Puede utilizar el computador con normalidad durante su jornada?"
-      ]
-    },
-    "La usuaria confirma funcionamiento normal.",
-    "Ticket cerrado."
-  ]
-}
-
+        "type": "paragraph",
+        "segments": [
+          {
+            "strong": true,
+            "text": "Resolución:"
+          }
+        ]
+      },
+      {
+        "type": "list",
+        "items": [
+          {
+            "text": "Se ejecutan diagnósticos del sistema para descartar fallas adicionales (Windows Memory Diagnostic y verificación de disco), sin detección de errores.",
+            "link": "ts-sw-0789-res"
+          },
+          {
+            "text": "Posteriormente, se identifica un controlador de video Intel UHD Graphics con funcionamiento incorrecto, asociado a una actualización reciente del sistema operativo.",
+            "link": "ts-sw-0789-res"
+          },
+          {
+            "text": "Se procede a la desinstalación y actualización del driver de video Intel UHD Graphics, restableciendo una versión compatible y estable.",
+            "link": "ts-sw-0789-res"
+          },
+          {
+            "text": "El equipo se mantiene operativo sin presentar nuevos pantallazos azules.",
+            "link": "ts-sw-0789-res"
+          },
+          {
+            "segments": [
+              {
+                "text": "Se consulta a la usuaria:"
+              }
+            ],
+            "subitems": [
+              {
+                "text": "¿El equipo ha vuelto a presentar el pantallazo azul?",
+                "link": "ts-sw-0789-res"
+              },
+              {
+                "text": "¿Puede utilizar el computador con normalidad durante su jornada?",
+                "link": "ts-sw-0789-res"
+              }
+            ],
+            "link": "ts-sw-0789-res"
+          },
+          {
+            "text": "La usuaria confirma funcionamiento normal.",
+            "link": "ts-sw-0789-res"
+          },
+          {
+            "text": "Ticket cerrado.",
+            "link": "ts-sw-0789-res"
+          }
+        ]
+      }
     ],
     "resumen": "Usuario reporta BSOD recurrente. Se recopila historial de eventos y se ejecutan pruebas de memoria y disco.",
     "registro": [
@@ -2335,62 +3042,74 @@
           {
             "t": "11:26",
             "who": "Soporte TI",
-            "text": "Buenos días, Sra. Camila Ríos. Le saluda el Equipo de Soporte TI de TechSolutions S.A.S. Hemos recibido su ticket TS-SW-0789 por pantallazos azules recurrentes."
+            "text": "Buenos días, Sra. Camila Ríos. Le saluda el Equipo de Soporte TI de TechSolutions S.A.S. Hemos recibido su ticket TS-SW-0789 por pantallazos azules recurrentes.",
+            "link": "ts-sw-0789-desc"
           },
           {
             "t": "11:27",
             "who": "Camila Ríos",
-            "text": "Sí, el equipo se reinicia sin aviso."
+            "text": "Sí, el equipo se reinicia sin aviso.",
+            "link": "ts-sw-0789-desc"
           },
           {
             "t": "11:28",
             "who": "Soporte TI",
-            "text": "Gracias. Ejecutaremos diagnósticos para descartar fallas de memoria y disco antes de revisar los controladores."
+            "text": "Gracias. Ejecutaremos diagnósticos para descartar fallas de memoria y disco antes de revisar los controladores.",
+            "link": "ts-sw-0789-desc"
           },
           {
             "t": "11:40",
             "who": "Soporte TI",
-            "text": "Los diagnósticos no presentan errores. Identificamos un problema en el driver de video Intel UHD Graphics posterior a una actualización reciente."
+            "text": "Los diagnósticos no presentan errores. Identificamos un problema en el driver de video Intel UHD Graphics posterior a una actualización reciente.",
+            "link": "ts-sw-0789-desc"
           },
           {
             "t": "11:41",
             "who": "Soporte TI",
-            "text": "Procederemos a desinstalar el controlador actual y reinstalar una versión compatible y estable."
+            "text": "Procederemos a desinstalar el controlador actual y reinstalar una versión compatible y estable.",
+            "link": "ts-sw-0789-med"
           },
           {
             "t": "11:53",
             "who": "Soporte TI",
-            "text": "¿El equipo ha vuelto a presentar el pantallazo azul?"
+            "text": "¿El equipo ha vuelto a presentar el pantallazo azul?",
+            "link": "ts-sw-0789-med"
           },
           {
             "t": "11:54",
             "who": "Camila Ríos",
-            "text": "No, ya no."
+            "text": "No, ya no.",
+            "link": "ts-sw-0789-med"
           },
           {
             "t": "11:55",
             "who": "Soporte TI",
-            "text": "¿Puede utilizar el computador con normalidad durante su jornada?"
+            "text": "¿Puede utilizar el computador con normalidad durante su jornada?",
+            "link": "ts-sw-0789-med"
           },
           {
             "t": "11:55",
             "who": "Camila Ríos",
-            "text": "Sí, ahora funciona bien."
+            "text": "Sí, ahora funciona bien.",
+            "link": "ts-sw-0789-res"
           },
           {
             "t": "11:56",
             "who": "Soporte TI",
-            "text": "Perfecto. ¿Necesita ayuda adicional?"
+            "text": "Perfecto. ¿Necesita ayuda adicional?",
+            "link": "ts-sw-0789-res"
           },
           {
             "t": "11:57",
             "who": "Camila Ríos",
-            "text": "No, gracias."
+            "text": "No, gracias.",
+            "link": "ts-sw-0789-res"
           },
           {
             "t": "11:57",
             "who": "Soporte TI",
-            "text": "Ticket TS-SW-0789 cerrado. Que tenga un excelente día."
+            "text": "Ticket TS-SW-0789 cerrado. Que tenga un excelente día.",
+            "link": "ts-sw-0789-res"
           }
         ]
       },
@@ -2401,14 +3120,16 @@
             "who": "Soporte",
             "text": [
               "Soporte TI de TechSolutions, buenos días. Habla Juan Cruz. ¿Con quién hablo?"
-            ]
+            ],
+            "link": "ts-sw-0789-desc"
           },
           {
             "t": "11:26",
             "who": "Usuaria",
             "text": [
               "Hola, Juan. Soy Camila Ríos. Mi computador está dando pantallazos azules y se reinicia solo."
-            ]
+            ],
+            "link": "ts-sw-0789-desc"
           },
           {
             "t": "11:27",
@@ -2416,21 +3137,24 @@
             "text": [
               "Gracias por avisar, Camila.",
               "Entiendo que eso preocupa, sobre todo cuando pasa de forma repetida. Vamos a revisarlo con calma para encontrar la causa."
-            ]
+            ],
+            "link": "ts-sw-0789-desc"
           },
           {
             "t": "11:28",
             "who": "Soporte",
             "text": [
               "Para entender bien el escenario, ¿con qué frecuencia te aparece el pantallazo azul?"
-            ]
+            ],
+            "link": "ts-sw-0789-desc"
           },
           {
             "t": "11:28",
             "who": "Usuaria",
             "text": [
               "Ya van varios hoy. Aparece de repente y se reinicia."
-            ]
+            ],
+            "link": "ts-sw-0789-desc"
           },
           {
             "t": "11:29",
@@ -2438,14 +3162,16 @@
             "text": [
               "Entiendo.",
               "¿Recuerdas desde cuándo empezó a ocurrir esto? ¿Fue hoy o viene de antes?"
-            ]
+            ],
+            "link": "ts-sw-0789-desc"
           },
           {
             "t": "11:29",
             "who": "Usuaria",
             "text": [
               "Desde ayer en la tarde, más o menos."
-            ]
+            ],
+            "link": "ts-sw-0789-desc"
           },
           {
             "t": "11:30",
@@ -2453,14 +3179,16 @@
             "text": [
               "Bien.",
               "¿Has instalado algún programa, actualización o driver recientemente?"
-            ]
+            ],
+            "link": "ts-sw-0789-desc"
           },
           {
             "t": "11:30",
             "who": "Usuaria",
             "text": [
               "Sí, ayer se actualizó el sistema, creo."
-            ]
+            ],
+            "link": "ts-sw-0789-med"
           },
           {
             "t": "11:31",
@@ -2468,14 +3196,16 @@
             "text": [
               "Eso es un buen dato.",
               "¿El error aparece cuando usas alguna aplicación en particular o es aleatorio?"
-            ]
+            ],
+            "link": "ts-sw-0789-med"
           },
           {
             "t": "11:31",
             "who": "Usuaria",
             "text": [
               "No, es aleatorio. A veces solo con el correo abierto."
-            ]
+            ],
+            "link": "ts-sw-0789-med"
           },
           {
             "t": "11:32",
@@ -2483,12 +3213,14 @@
             "text": [
               "Perfecto, gracias por el detalle.",
               "Voy a revisar el sistema y los controladores del equipo para identificar qué está provocando el problema."
-            ]
+            ],
+            "link": "ts-sw-0789-med"
           },
           {
             "t": "11:38",
             "who": "Sistema",
-            "text": "(Intervención técnica fuera de llamada)"
+            "text": "(Intervención técnica fuera de llamada)",
+            "link": "ts-sw-0789-med"
           },
           {
             "t": "11:41",
@@ -2496,14 +3228,16 @@
             "text": [
               "Camila, ya encontré un controlador que estaba generando conflicto con el sistema.",
               "Lo acabo de corregir y ejecuté diagnósticos para descartar problemas de disco y memoria."
-            ]
+            ],
+            "link": "ts-sw-0789-med"
           },
           {
             "t": "11:41",
             "who": "Usuaria",
             "text": [
               "¿Eso debería solucionarlo?"
-            ]
+            ],
+            "link": "ts-sw-0789-med"
           },
           {
             "t": "11:42",
@@ -2511,21 +3245,24 @@
             "text": [
               "Sí, con lo que vimos, el origen estaba ahí.",
               "Antes de cerrar, quiero confirmar contigo que el equipo esté estable."
-            ]
+            ],
+            "link": "ts-sw-0789-med"
           },
           {
             "t": "11:43",
             "who": "Soporte",
             "text": [
               "¿Desde que hicimos el ajuste volvió a aparecer el pantallazo azul?"
-            ]
+            ],
+            "link": "ts-sw-0789-res"
           },
           {
             "t": "11:43",
             "who": "Usuaria",
             "text": [
               "No, ya no."
-            ]
+            ],
+            "link": "ts-sw-0789-res"
           },
           {
             "t": "11:44",
@@ -2533,14 +3270,16 @@
             "text": [
               "Perfecto.",
               "¿Puedes usar el computador con normalidad ahora, sin reinicios inesperados?"
-            ]
+            ],
+            "link": "ts-sw-0789-res"
           },
           {
             "t": "11:44",
             "who": "Usuaria",
             "text": [
               "Sí, está funcionando bien."
-            ]
+            ],
+            "link": "ts-sw-0789-res"
           },
           {
             "t": "11:45",
@@ -2549,21 +3288,24 @@
               "Excelente.",
               "Entonces confirmamos que el equipo quedó estable y cierro el ticket.",
               "Si el error vuelve a aparecer, avísanos de inmediato y lo revisamos nuevamente."
-            ]
+            ],
+            "link": "ts-sw-0789-res"
           },
           {
             "t": "11:45",
             "who": "Usuaria",
             "text": [
               "Gracias, me quedo mucho más tranquila."
-            ]
+            ],
+            "link": "ts-sw-0789-res"
           },
           {
             "t": "11:46",
             "who": "Soporte",
             "text": [
               "Para eso estamos, Camila. Que tengas buen día."
-            ]
+            ],
+            "link": "ts-sw-0789-res"
           }
         ]
       }
@@ -2669,13 +3411,34 @@
       {
         "type": "list",
         "items": [
-          "Usuario: Ricardo Salazar.",
-          "Reporta problema de software que afecta su trabajo.",
-          "Usuario se comunica con alto nivel de molestia y frustración.",
-          "Manifiesta sensación de falta de solución o demora en la atención.",
-          "Impacto alto en sus labores y presión laboral.",
-          "El foco inicial del caso es la gestión de la comunicación, además del aspecto técnico.",
-          "Se identifica la necesidad de aplicar escucha activa y manejo de conflicto."
+          {
+            "text": "Usuario: Ricardo Salazar.",
+            "link": "ts-sw-0912-desc"
+          },
+          {
+            "text": "Reporta problema de software que afecta su trabajo.",
+            "link": "ts-sw-0912-desc"
+          },
+          {
+            "text": "Usuario se comunica con alto nivel de molestia y frustración.",
+            "link": "ts-sw-0912-desc"
+          },
+          {
+            "text": "Manifiesta sensación de falta de solución o demora en la atención.",
+            "link": "ts-sw-0912-desc"
+          },
+          {
+            "text": "Impacto alto en sus labores y presión laboral.",
+            "link": "ts-sw-0912-desc"
+          },
+          {
+            "text": "El foco inicial del caso es la gestión de la comunicación, además del aspecto técnico.",
+            "link": "ts-sw-0912-desc"
+          },
+          {
+            "text": "Se identifica la necesidad de aplicar escucha activa y manejo de conflicto.",
+            "link": "ts-sw-0912-desc"
+          }
         ]
       },
       {
@@ -2690,8 +3453,14 @@
       {
         "type": "list",
         "items": [
-          "Se realiza contención inicial, manteniendo un tono calmado y profesional.",
-          "Se permite que el usuario exprese su molestia sin interrupciones.",
+          {
+            "text": "Se realiza contención inicial, manteniendo un tono calmado y profesional.",
+            "link": "ts-sw-0912-med"
+          },
+          {
+            "text": "Se permite que el usuario exprese su molestia sin interrupciones.",
+            "link": "ts-sw-0912-med"
+          },
           {
             "segments": [
               {
@@ -2699,11 +3468,24 @@
               }
             ],
             "subitems": [
-              "¿Podrías indicarme qué problema específico estás presentando con el software?",
-              "¿Desde cuándo ocurre esta situación?",
-              "¿Cómo está afectando tu trabajo actualmente?",
-              "¿Has recibido soporte previo por este mismo problema?"
-            ]
+              {
+                "text": "¿Podrías indicarme qué problema específico estás presentando con el software?",
+                "link": "ts-sw-0912-med"
+              },
+              {
+                "text": "¿Desde cuándo ocurre esta situación?",
+                "link": "ts-sw-0912-med"
+              },
+              {
+                "text": "¿Cómo está afectando tu trabajo actualmente?",
+                "link": "ts-sw-0912-med"
+              },
+              {
+                "text": "¿Has recibido soporte previo por este mismo problema?",
+                "link": "ts-sw-0912-med"
+              }
+            ],
+            "link": "ts-sw-0912-med"
           },
           {
             "segments": [
@@ -2712,8 +3494,12 @@
               }
             ],
             "subitems": [
-              "Se reconoce la molestia y el impacto en su trabajo."
-            ]
+              {
+                "text": "Se reconoce la molestia y el impacto en su trabajo.",
+                "link": "ts-sw-0912-med"
+              }
+            ],
+            "link": "ts-sw-0912-med"
           },
           {
             "segments": [
@@ -2722,44 +3508,75 @@
               }
             ],
             "subitems": [
-              "Se repite lo entendido sobre el fallo y su impacto."
-            ]
+              {
+                "text": "Se repite lo entendido sobre el fallo y su impacto.",
+                "link": "ts-sw-0912-med"
+              }
+            ],
+            "link": "ts-sw-0912-med"
           },
-          "Se explica de forma breve el plan de acción que se seguirá para atender el caso y los pasos iniciales de diagnóstico."
+          {
+            "text": "Se explica de forma breve el plan de acción que se seguirá para atender el caso y los pasos iniciales de diagnóstico.",
+            "link": "ts-sw-0912-med"
+          }
         ]
       },
       {
-  "type": "paragraph",
-  "segments": [
-    {
-      "strong": true,
-      "text": "Resolución:"
-    }
-  ]
-},
-{
-  "type": "list",
-  "items": [
-    "Se gestiona la comunicación con el usuario, manteniendo un trato calmado y empático.",
-    "Se confirma con el usuario la comprensión del problema reportado.",
-    "Se aplica la solución correspondiente al incidente de software informado.",
-    {
-      "segments": [
-        {
-          "text": "Se valida con el usuario:"
-        }
-      ],
-      "subitems": [
-        "¿El software está funcionando correctamente ahora?",
-        "¿Puede continuar trabajando con normalidad?"
-      ]
-    },
-    "El usuario confirma que el sistema funciona correctamente.",
-    "Se informa el cierre del ticket y se deja abierto el canal de contacto ante una posible recurrencia.",
-    "Ticket cerrado."
-  ]
-}
-
+        "type": "paragraph",
+        "segments": [
+          {
+            "strong": true,
+            "text": "Resolución:"
+          }
+        ]
+      },
+      {
+        "type": "list",
+        "items": [
+          {
+            "text": "Se gestiona la comunicación con el usuario, manteniendo un trato calmado y empático.",
+            "link": "ts-sw-0912-res"
+          },
+          {
+            "text": "Se confirma con el usuario la comprensión del problema reportado.",
+            "link": "ts-sw-0912-res"
+          },
+          {
+            "text": "Se aplica la solución correspondiente al incidente de software informado.",
+            "link": "ts-sw-0912-res"
+          },
+          {
+            "segments": [
+              {
+                "text": "Se valida con el usuario:"
+              }
+            ],
+            "subitems": [
+              {
+                "text": "¿El software está funcionando correctamente ahora?",
+                "link": "ts-sw-0912-res"
+              },
+              {
+                "text": "¿Puede continuar trabajando con normalidad?",
+                "link": "ts-sw-0912-res"
+              }
+            ],
+            "link": "ts-sw-0912-res"
+          },
+          {
+            "text": "El usuario confirma que el sistema funciona correctamente.",
+            "link": "ts-sw-0912-res"
+          },
+          {
+            "text": "Se informa el cierre del ticket y se deja abierto el canal de contacto ante una posible recurrencia.",
+            "link": "ts-sw-0912-res"
+          },
+          {
+            "text": "Ticket cerrado.",
+            "link": "ts-sw-0912-res"
+          }
+        ]
+      }
     ],
     "resumen": "Usuario expresa frustración por impacto en su trabajo. Se prioriza atención técnica y gestión de comunicación.",
     "registro": [],
@@ -2965,57 +3782,68 @@
           {
             "t": "16:05",
             "who": "Soporte TI",
-            "text": "Buenas tardes, Sr. Ricardo Salazar. Le saluda el Equipo de Soporte TI de TechSolutions S.A.S. Hemos recibido su ticket TS-SW-0912. Lamentamos sinceramente los inconvenientes y el impacto en su trabajo."
+            "text": "Buenas tardes, Sr. Ricardo Salazar. Le saluda el Equipo de Soporte TI de TechSolutions S.A.S. Hemos recibido su ticket TS-SW-0912. Lamentamos sinceramente los inconvenientes y el impacto en su trabajo.",
+            "link": "ts-sw-0912-desc"
           },
           {
             "t": "16:06",
             "who": "Ricardo Salazar",
-            "text": "Esto me ha retrasado bastante."
+            "text": "Esto me ha retrasado bastante.",
+            "link": "ts-sw-0912-desc"
           },
           {
             "t": "16:07",
             "who": "Soporte TI",
-            "text": "Entendemos completamente su molestia. Nuestro objetivo es ayudarle a normalizar la situación lo antes posible. Permítanos revisar el problema."
+            "text": "Entendemos completamente su molestia. Nuestro objetivo es ayudarle a normalizar la situación lo antes posible. Permítanos revisar el problema.",
+            "link": "ts-sw-0912-desc"
           },
           {
             "t": "16:10",
             "who": "Soporte TI",
-            "text": "Detectamos un conflicto de software que estaba provocando bloqueos. Aplicaremos la corrección correspondiente."
+            "text": "Detectamos un conflicto de software que estaba provocando bloqueos. Aplicaremos la corrección correspondiente.",
+            "link": "ts-sw-0912-desc"
           },
           {
             "t": "16:22",
             "who": "Soporte TI",
-            "text": "La corrección fue aplicada. ¿El sistema está funcionando correctamente ahora?"
+            "text": "La corrección fue aplicada. ¿El sistema está funcionando correctamente ahora?",
+            "link": "ts-sw-0912-med"
           },
           {
             "t": "16:23",
             "who": "Ricardo Salazar",
-            "text": "Sí, ahora está bien."
+            "text": "Sí, ahora está bien.",
+            "link": "ts-sw-0912-med"
           },
           {
             "t": "16:24",
             "who": "Soporte TI",
-            "text": "¿Puede continuar con sus tareas sin inconvenientes?"
+            "text": "¿Puede continuar con sus tareas sin inconvenientes?",
+            "link": "ts-sw-0912-med"
           },
           {
             "t": "16:24",
             "who": "Ricardo Salazar",
-            "text": "Sí."
+            "text": "Sí.",
+            "link": "ts-sw-0912-med"
           },
           {
             "t": "16:25",
             "who": "Soporte TI",
-            "text": "Perfecto. ¿Hay algo más en lo que podamos ayudarle?"
+            "text": "Perfecto. ¿Hay algo más en lo que podamos ayudarle?",
+            "link": "ts-sw-0912-res"
           },
           {
             "t": "16:26",
             "who": "Ricardo Salazar",
-            "text": "No."
+            "text": "No.",
+            "link": "ts-sw-0912-res"
           },
           {
             "t": "16:26",
             "who": "Soporte TI",
-            "text": "Agradecemos su paciencia. Ticket TS-SW-0912 cerrado. Que tenga buena tarde."
+            "text": "Agradecemos su paciencia. Ticket TS-SW-0912 cerrado. Que tenga buena tarde.",
+            "link": "ts-sw-0912-res"
           }
         ]
       },
@@ -3026,7 +3854,8 @@
             "who": "Soporte",
             "text": [
               "Soporte TI de TechSolutions, buenas tardes. Habla Juan Cruz. ¿Con quién tengo el gusto?"
-            ]
+            ],
+            "link": "ts-sw-0912-desc"
           },
           {
             "t": "16:08",
@@ -3034,7 +3863,8 @@
             "text": [
               "Ricardo Salazar.",
               "Mira, estoy bastante molesto porque este problema me tiene atrasado y nadie me ha dado una solución clara."
-            ]
+            ],
+            "link": "ts-sw-0912-desc"
           },
           {
             "t": "16:09",
@@ -3042,14 +3872,16 @@
             "text": [
               "Entiendo, Ricardo.",
               "Gracias por decírmelo directamente. Antes de seguir, quiero escucharte bien para entender qué está pasando."
-            ]
+            ],
+            "link": "ts-sw-0912-desc"
           },
           {
             "t": "16:10",
             "who": "Usuario",
             "text": [
               "Este software lleva días fallando, pierdo tiempo, me presionan por los plazos y siento que nadie se hace cargo."
-            ]
+            ],
+            "link": "ts-sw-0912-desc"
           },
           {
             "t": "16:11",
@@ -3057,14 +3889,16 @@
             "text": [
               "Comprendo la molestia, y es totalmente válida si esto está afectando tu trabajo.",
               "Déjame confirmar algo para asegurarme de que te entendí bien: el problema es con el software y te está generando retrasos constantes, ¿correcto?"
-            ]
+            ],
+            "link": "ts-sw-0912-desc"
           },
           {
             "t": "16:11",
             "who": "Usuario",
             "text": [
               "Sí, exactamente."
-            ]
+            ],
+            "link": "ts-sw-0912-desc"
           },
           {
             "t": "16:12",
@@ -3072,14 +3906,16 @@
             "text": [
               "Gracias.",
               "Cuéntame por favor, ¿qué problema específico estás teniendo con el software en este momento?"
-            ]
+            ],
+            "link": "ts-sw-0912-desc"
           },
           {
             "t": "16:12",
             "who": "Usuario",
             "text": [
               "Se queda pegado, a veces no guarda, tengo que cerrarlo y volver a abrir."
-            ]
+            ],
+            "link": "ts-sw-0912-desc"
           },
           {
             "t": "16:13",
@@ -3087,14 +3923,16 @@
             "text": [
               "Entiendo.",
               "¿Desde cuándo te ocurre esto y con qué frecuencia?"
-            ]
+            ],
+            "link": "ts-sw-0912-med"
           },
           {
             "t": "16:13",
             "who": "Usuario",
             "text": [
               "Desde hace varios días, prácticamente todos los días."
-            ]
+            ],
+            "link": "ts-sw-0912-med"
           },
           {
             "t": "16:14",
@@ -3102,12 +3940,14 @@
             "text": [
               "Bien, gracias por la paciencia.",
               "Antes de avanzar, quiero que sepas que voy a hacerme cargo de este caso y explicarte claramente qué vamos a hacer para solucionarlo."
-            ]
+            ],
+            "link": "ts-sw-0912-med"
           },
           {
             "t": "16:15",
             "who": "Sistema",
-            "text": "(Se explica brevemente el plan de acción, sin tecnicismos)"
+            "text": "(Se explica brevemente el plan de acción, sin tecnicismos)",
+            "link": "ts-sw-0912-med"
           },
           {
             "t": "16:20",
@@ -3115,21 +3955,24 @@
             "text": [
               "Ya realicé el ajuste necesario para corregir el problema que me comentabas.",
               "Antes de cerrar, necesito confirmar contigo que el problema esté realmente solucionado."
-            ]
+            ],
+            "link": "ts-sw-0912-med"
           },
           {
             "t": "16:21",
             "who": "Soporte",
             "text": [
               "Ricardo, ¿el software está funcionando correctamente ahora?"
-            ]
+            ],
+            "link": "ts-sw-0912-med"
           },
           {
             "t": "16:21",
             "who": "Usuario",
             "text": [
               "Sí, ahora responde bien."
-            ]
+            ],
+            "link": "ts-sw-0912-med"
           },
           {
             "t": "16:22",
@@ -3137,14 +3980,16 @@
             "text": [
               "Perfecto.",
               "¿Puedes continuar con tu trabajo sin los bloqueos que estabas teniendo?"
-            ]
+            ],
+            "link": "ts-sw-0912-res"
           },
           {
             "t": "16:22",
             "who": "Usuario",
             "text": [
               "Sí, por ahora está todo bien."
-            ]
+            ],
+            "link": "ts-sw-0912-res"
           },
           {
             "t": "16:23",
@@ -3152,14 +3997,16 @@
             "text": [
               "Me alegra escucharlo.",
               "¿Te sientes conforme con la solución y con la atención que recibiste?"
-            ]
+            ],
+            "link": "ts-sw-0912-res"
           },
           {
             "t": "16:23",
             "who": "Usuario",
             "text": [
               "Sí, gracias. La verdad estaba muy molesto, pero ahora está resuelto."
-            ]
+            ],
+            "link": "ts-sw-0912-res"
           },
           {
             "t": "16:24",
@@ -3167,21 +4014,24 @@
             "text": [
               "Lo entiendo, y agradezco que lo hayas dicho.",
               "Entonces dejamos el ticket cerrado. Si el problema vuelve a aparecer, me contactas directamente y lo revisamos de inmediato."
-            ]
+            ],
+            "link": "ts-sw-0912-res"
           },
           {
             "t": "16:24",
             "who": "Usuario",
             "text": [
               "De acuerdo, gracias."
-            ]
+            ],
+            "link": "ts-sw-0912-res"
           },
           {
             "t": "16:25",
             "who": "Soporte",
             "text": [
               "Gracias a ti por avisar, Ricardo. Que tengas buena tarde."
-            ]
+            ],
+            "link": "ts-sw-0912-res"
           }
         ]
       }

@@ -733,6 +733,22 @@ input {
   margin-bottom: 6px;
 }
 
+.focus-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  color: #0b3d91;
+  background: rgba(11, 61, 145, 0.08);
+  border: 1px solid rgba(11, 61, 145, 0.2);
+  border-radius: 999px;
+  padding: 4px 8px;
+  margin-bottom: 6px;
+}
+
 .ticket-meta-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -828,4 +844,69 @@ input {
   .ticket-meta-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* =========================
+   Linking (conversación + notas)
+   ========================= */
+[data-link] {
+  cursor: pointer;
+}
+
+[data-link].is-related {
+  outline: 2px solid rgba(11, 61, 145, 0.35);
+  box-shadow: 0 0 0 3px rgba(11, 61, 145, 0.12);
+  background: rgba(11, 61, 145, 0.06);
+  position: relative;
+  z-index: 2;
+}
+
+.conv-msg.is-related .conv-bubble {
+  outline: 2px solid rgba(11, 61, 145, 0.35);
+  box-shadow: 0 0 0 3px rgba(11, 61, 145, 0.12);
+  background: rgba(11, 61, 145, 0.08);
+}
+
+.conv-msg.is-related {
+  outline: none;
+  box-shadow: none;
+  background: transparent;
+  position: relative;
+  z-index: 2;
+}
+
+.conv-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 16px;
+  margin: 6px 0;
+  background: rgba(15, 23, 42, 0.02);
+}
+
+.conv-block.block-related {
+  outline: 2px solid rgba(0, 150, 255, 0.25);
+  background: rgba(0, 150, 255, 0.06);
+}
+
+.conv-block.block-active {
+  outline: 2px solid rgba(0, 150, 255, 0.4);
+  background: rgba(0, 150, 255, 0.1);
+}
+
+.conv-block.is-related {
+  outline: none;
+  box-shadow: none;
+  background: rgba(15, 23, 42, 0.02);
+}
+
+[data-link].is-dim {
+  opacity: 0.45;
+  filter: saturate(0.65);
+}
+
+[data-link]:focus-visible {
+  outline: 2px solid rgba(11, 61, 145, 0.45);
+  outline-offset: 2px;
 }

@@ -509,6 +509,12 @@ input {
 }
 
 /* detalle en 16px */
+.ticket-detail-block.is-docked {
+  background: var(--card);
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(2, 6, 23, 0.06)
+}
+
 .tabs {
   display: flex;
   flex-wrap: wrap;
@@ -703,6 +709,42 @@ input {
   gap: 10px;
 }
 
+@media (min-width:900px) {
+  .roleplay-dock {
+    background: var(--card);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .roleplay-dock.is-docked {
+    position: fixed;
+    top: 16px;
+    max-height: calc(100dvh - 32px);
+    z-index: 20;
+  }
+
+  .roleplay-dock {
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100dvh - 32px);
+    overflow: hidden;
+  }
+
+  .roleplay-title {
+    flex: 0 0 auto;
+  }
+
+  .roleplay-dock .channel-body {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    padding-right: 8px;
+    padding-bottom: 24px;
+    scroll-padding-bottom: 24px;
+    overscroll-behavior: contain;
+  }
+}
+
 /* Cada mensaje (contenedor) */
 .conv-msg {
   display: flex;
@@ -787,16 +829,15 @@ input {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: none;
+  letter-spacing: 0.02em;
+  font-weight: 600;
   color: #0b3d91;
-  background: rgba(11, 61, 145, 0.08);
-  border: 1px solid rgba(11, 61, 145, 0.2);
-  border-radius: 999px;
-  padding: 4px 8px;
-  margin-bottom: 6px;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin-bottom: 4px;
 }
 
 .ticket-meta-grid {
@@ -904,9 +945,23 @@ input {
 }
 
 [data-link].is-related {
-  outline: 2px solid rgba(11, 61, 145, 0.35);
-  box-shadow: 0 0 0 3px rgba(11, 61, 145, 0.12);
-  background: rgba(11, 61, 145, 0.06);
+  outline: none;
+  box-shadow: none;
+  background: rgba(11, 61, 145, 0.04);
+  border-left: 4px solid var(--accent);
+  border-radius: 6px;
+  padding-left: 10px;
+  position: relative;
+  z-index: 2;
+}
+
+[data-link].is-hover {
+  outline: none;
+  box-shadow: none;
+  background: rgba(255, 215, 0, 0.18);
+  border-left: 4px solid rgba(255, 215, 0, 0.75);
+  border-radius: 6px;
+  padding-left: 10px;
   position: relative;
   z-index: 2;
 }
@@ -921,6 +976,9 @@ input {
   outline: none;
   box-shadow: none;
   background: transparent;
+  border-left: 0;
+  border-radius: 0;
+  padding-left: 0;
   position: relative;
   z-index: 2;
 }
@@ -941,14 +999,25 @@ input {
 }
 
 .conv-block.block-active {
-  outline: 2px solid rgba(0, 150, 255, 0.4);
-  background: rgba(0, 150, 255, 0.1);
+  outline: 2px solid rgba(11, 61, 145, 0.35);
+  background: rgba(11, 61, 145, 0.03);
 }
 
 .conv-block.is-related {
   outline: none;
   box-shadow: none;
   background: rgba(15, 23, 42, 0.02);
+}
+
+.notes-spoiler.block-active {
+  outline: 2px solid rgba(11, 61, 145, 0.35);
+  border-radius: 10px;
+  background: rgba(11, 61, 145, 0.03);
+}
+
+.conv-block.block-dim,
+.notes-spoiler.block-dim {
+  opacity: 0.6;
 }
 
 /* =========================
@@ -1138,7 +1207,7 @@ input {
 }
 
 [data-link].is-dim {
-  opacity: 0.45;
+  opacity: 0.65;
   filter: saturate(0.65);
 }
 

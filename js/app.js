@@ -279,7 +279,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const renderNotesDetails = (ticket, blocks) => {
     if (!blocks || !blocks.length) return '';
     const sections = [
-      { key: 'descripcion', defaultTitle: 'Descripción del problema', open: true, titleHtml: '', blocks: [] },
+      { key: 'descripcion', defaultTitle: 'Descripción del problema', open: false, titleHtml: '', blocks: [] },
       { key: 'medidas', defaultTitle: 'Medidas adoptadas', open: false, titleHtml: '', blocks: [] },
       { key: 'resolucion', defaultTitle: 'Resolución', open: false, titleHtml: '', blocks: [] }
     ];
@@ -379,7 +379,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="channel correo"${defaultView === 'correo' ? '' : ' hidden'}>
         ${fuenteHtml}
         <div class="roleplay-dock">
-          ${correo.titulo ? `<h5 class="roleplay-title">${escapeHtml(correo.titulo)}</h5>` : ''}
+          ${correo.titulo ? `<div class="roleplay-titlebar"><h5 class="roleplay-title">${escapeHtml(correo.titulo)}</h5><span class="focus-pill">MODO FOCO</span></div>` : ''}
           <div class="channel-body">
             ${hilos.map((email, index) => `${renderEmail(email)}${index < hilos.length - 1 ? '<hr>' : ''}`).join('')}
           </div>
@@ -545,7 +545,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="channel chat"${defaultView === 'chat' ? '' : ' hidden'}>
         ${fuenteHtml}
         <div class="roleplay-dock">
-          ${chat.titulo ? `<h5 class="roleplay-title">${escapeHtml(chat.titulo)}</h5>` : ''}
+          ${chat.titulo ? `<div class="roleplay-titlebar"><h5 class="roleplay-title">${escapeHtml(chat.titulo)}</h5><span class="focus-pill">MODO FOCO</span></div>` : ''}
           <div class="channel-body">
             <div class="chat-log">
               ${renderConversationLog(ticket, log)}
@@ -565,7 +565,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="channel llamada"${defaultView === 'llamada' ? '' : ' hidden'}>
         ${fuenteHtml}
         <div class="roleplay-dock">
-          ${llamada.titulo ? `<h5 class="roleplay-title">${escapeHtml(llamada.titulo)}</h5>` : ''}
+          ${llamada.titulo ? `<div class="roleplay-titlebar"><h5 class="roleplay-title">${escapeHtml(llamada.titulo)}</h5><span class="focus-pill">MODO FOCO</span></div>` : ''}
           <div class="channel-body">
             <div class="call-log">
               ${renderConversationLog(ticket, log, { groupByMacro: true })}
@@ -714,9 +714,8 @@ document.addEventListener('DOMContentLoaded', () => {
       <article class="ticket-card ticket-sheet-card" data-ticket="${escapeHtml(ticket.id)}">
         <section class="ticket-preview" aria-label="Previsualizaci½n del ticket">
           <div class="ticket-detail-block">
-            <div class="focus-indicator" hidden>Foco activo · ESC para salir</div>
-          <div class="ticket-detail-label">Detalle</div>
-          <div class="ticket-meta-grid" role="list">
+            <div class="ticket-detail-label">Detalle</div>
+            <div class="ticket-meta-grid" role="list">
             <div class="meta-item" role="listitem">
               <span class="meta-label">Fecha:</span>
               <span class="meta-value ticket-fecha">${escapeHtml(ticket.fechaDisplay || '')}</span>
@@ -776,7 +775,6 @@ document.addEventListener('DOMContentLoaded', () => {
     return `
       <article class="ticket-card ticket-tabs-card" data-ticket="${escapeHtml(ticket.id)}">
         <div id="detail-${escapeHtml(ticket.id)}" class="ticket-detail">
-          <div class="focus-indicator" hidden>Foco activo · ESC para salir</div>
           <nav class="tabs" role="tablist" aria-label="Secciones del ticket">
             ${tabs}
           </nav>
@@ -788,11 +786,9 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const setFocusIndicator = (active) => {
-    [ticketSheet, ticketTabs].forEach((container) => {
-      if (!container) return;
-      container.querySelectorAll('.focus-indicator').forEach((el) => {
-        el.hidden = !active;
-      });
+    if (!ticketTabs) return;
+    ticketTabs.querySelectorAll('.focus-pill').forEach((el) => {
+      el.classList.toggle('is-active', active);
     });
   };
 
@@ -1288,7 +1284,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const left = rect.left + detailDock.offsetLeft;
       const width = detailDock.width || rect.width;
       detailDock.panel.style.position = 'fixed';
-      detailDock.panel.style.top = '16px';
+      detailDock.panel.style.top = '0px';
       detailDock.panel.style.left = `${left}px`;
       detailDock.panel.style.width = `${width}px`;
       detailDock.panel.style.zIndex = '15';

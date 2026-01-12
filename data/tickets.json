@@ -1640,44 +1640,69 @@
     },
     "especialistas": "Raven Ovalle, Matías Ureta, Juan Cruz",
     "notas": [
-      "Usuario: Andrés Morales.",
-      "Reporta conexión lenta o sin acceso a internet.",
-      "Problema intermitente, sin patrón claro.",
-      "Afecta acceso a sistemas corporativos y servicios en la nube.",
-      "Impacto alto en productividad.",
+      "Identificación del cliente: Andrés Morales.",
+      "Cargo del cliente: Analista de Operaciones.",
+      "Canal de ingreso: Llamada (simulación).",
+      "Contacto confirmado:",
+      "Teléfono: 311 904 6721.",
+      "Tipo: Móvil corporativo.",
+      "Correo corporativo confirmado: andres.morales@techsolutions.com.",
+      "Reporte inicial del usuario:",
+      "Conexión lenta y caídas intermitentes.",
+      "Momentos sin acceso a internet.",
+      "Comportamiento del problema:",
+      "Intermitente, sin patrón claro.",
+      "Impacto declarado por el usuario:",
+      "Bloqueo casi total del trabajo.",
+      "Dificultad para acceder a sistemas corporativos y correo.",
+      "Clasificación inicial del incidente:",
       "Incidente de red.",
-      "Usuario con conocimientos técnicos (“le sabe / podría ser admin”)."
+      "Prioridad alta por impacto en operación.",
+      "Perfil del usuario:",
+      "Usuario con conocimientos técnicos."
     ],
     "medidas": [
-      "Se realiza contención inicial por impacto en operación.",
-      "Se formulan preguntas abiertas al usuario: ¿Desde cuándo presenta el problema de conectividad?",
-      "Se formulan preguntas abiertas al usuario: ¿La lentitud es constante o intermitente?",
-      "Se formulan preguntas abiertas al usuario: ¿El problema ocurre en un solo equipo o en varios?",
-      "Se formulan preguntas abiertas al usuario: ¿Está conectado por cable o por Wi-Fi?",
-      "Se formulan preguntas abiertas al usuario: ¿Se realizaron cambios recientes (movimiento de puesto, cable, equipo)?",
-      "Se solicitan verificaciones básicas: Revisión del estado del cable de red / señal Wi-Fi.",
-      "Se solicitan verificaciones básicas: Confirmación de conexión física al punto de red.",
-      "Se realizan pruebas simples de conectividad: Verificación de dirección IP asignada.",
-      "Se realizan pruebas simples de conectividad: Prueba de conexión a la puerta de enlace.",
-      "Se realizan pruebas simples de conectividad: Prueba de acceso a recursos internos y externos.",
-      "Se observa comportamiento irregular de la red: Latencia elevada / respuesta inconsistente.",
-      "Se descarta inicialmente un problema exclusivo del equipo del usuario."
+      "Se realiza contención inicial del incidente debido a impacto alto en horario operativo.",
+      "Se levanta información mediante preguntas abiertas:",
+      "Inicio del problema (mismo día, al llegar a la oficina).",
+      "Frecuencia del fallo (intermitente).",
+      "Alcance (principalmente su puesto, otros usuarios con menor impacto).",
+      "Se valida el entorno del usuario:",
+      "Conexión por cable.",
+      "Mismo equipo y punto de red habitual.",
+      "Cambio reciente en el puesto (movimiento de escritorio).",
+      "Se realizan pruebas de conectividad lógica:",
+      "Revisión del punto de red desde sistema.",
+      "Detección de latencia elevada y respuestas irregulares.",
+      "Se aplica acción correctiva lógica inicial:",
+      "Reinicio lógico del puerto de red.",
+      "Renegociación de enlace.",
+      "Resultado de la acción lógica:",
+      "Mejora parcial.",
+      "Persistencia de inestabilidad.",
+      "Conclusión de diagnóstico:",
+      "Se descarta problema exclusivo del equipo.",
+      "Se sospecha falla física en el punto de red.",
+      "Se decide escalamiento:",
+      "Coordinación de visita de técnico en terreno para revisión física."
     ],
     "resolucion": {
       "pasos": [
-        "A partir de las pruebas realizadas, se identifica que la lentitud e intermitencia estaban relacionadas con una configuración incorrecta de la conexión de red del puesto, posterior a un movimiento reciente del escritorio.",
-        "Se accede de forma remota al equipo del usuario y se procede a: Se realiza el restablecimiento de la configuración de red del equipo, forzando la renovación de la dirección IP asignada por DHCP.",
-        "Se accede de forma remota al equipo del usuario y se procede a: Verificando los parámetros de puerta de enlace y DNS.",
-        "Se valida la conectividad con el usuario: La navegación responde de forma estable.",
-        "Se valida la conectividad con el usuario: Se puede acceder a sistemas corporativos y servicios en la nube sin interrupciones.",
-        "Se consulta al usuario: ¿La conexión funciona con normalidad en este momento?",
-        "Se consulta al usuario: ¿Puede acceder a los sistemas corporativos sin lentitud ni cortes?",
-        "El usuario confirma que la conectividad quedó restablecida y estable.",
-        "Ticket cerrado."
+        "Se realiza intervención en terreno:",
+        "Revisión física del punto de red en tercer piso, área de Operaciones.",
+        "Detección de conector RJ45 con falso contacto por tensión en el cableado.",
+        "Reemplazo de tramo de cable y aseguramiento del punto.",
+        "Se valida conectividad posterior a la intervención:",
+        "Conectividad estable.",
+        "Latencia normal.",
+        "Se realiza llamada de confirmación con el usuario:",
+        "Usuario confirma acceso normal a correo y sistemas corporativos.",
+        "No se presentan nuevas caídas.",
+        "Ticket cerrado como resuelto."
       ],
       "confirmacion": [
-        "¿La conexión funciona con normalidad en este momento?",
-        "¿Puede acceder a los sistemas corporativos sin lentitud ni cortes?"
+        "Usuario confirma acceso normal a correo y sistemas corporativos.",
+        "No se presentan nuevas caídas."
       ]
     },
     "notasDetalle": [
@@ -1694,31 +1719,119 @@
         "type": "list",
         "items": [
           {
-            "text": "Usuario: Andrés Morales.",
+            "text": "Identificación del cliente: Andrés Morales.",
             "link": "ts-net-0631-desc"
           },
           {
-            "text": "Reporta conexión lenta o sin acceso a internet.",
+            "text": "Cargo del cliente: Analista de Operaciones.",
             "link": "ts-net-0631-desc"
           },
           {
-            "text": "Problema intermitente, sin patrón claro.",
+            "text": "Canal de ingreso: Llamada (simulación).",
             "link": "ts-net-0631-desc"
           },
           {
-            "text": "Afecta acceso a sistemas corporativos y servicios en la nube.",
+            "segments": [
+              {
+                "text": "Contacto confirmado:"
+              }
+            ],
+            "subitems": [
+              {
+                "text": "Teléfono: 311 904 6721.",
+                "link": "ts-net-0631-desc"
+              },
+              {
+                "text": "Tipo: Móvil corporativo.",
+                "link": "ts-net-0631-desc"
+              }
+            ],
             "link": "ts-net-0631-desc"
           },
           {
-            "text": "Impacto alto en productividad.",
+            "text": "Correo corporativo confirmado: andres.morales@techsolutions.com.",
             "link": "ts-net-0631-desc"
           },
           {
-            "text": "Incidente de red.",
+            "segments": [
+              {
+                "text": "Reporte inicial del usuario:"
+              }
+            ],
+            "subitems": [
+              {
+                "text": "Conexión lenta y caídas intermitentes.",
+                "link": "ts-net-0631-desc"
+              },
+              {
+                "text": "Momentos sin acceso a internet.",
+                "link": "ts-net-0631-desc"
+              }
+            ],
             "link": "ts-net-0631-desc"
           },
           {
-            "text": "Usuario con conocimientos técnicos.",
+            "segments": [
+              {
+                "text": "Comportamiento del problema:"
+              }
+            ],
+            "subitems": [
+              {
+                "text": "Intermitente, sin patrón claro.",
+                "link": "ts-net-0631-desc"
+              }
+            ],
+            "link": "ts-net-0631-desc"
+          },
+          {
+            "segments": [
+              {
+                "text": "Impacto declarado por el usuario:"
+              }
+            ],
+            "subitems": [
+              {
+                "text": "Bloqueo casi total del trabajo.",
+                "link": "ts-net-0631-desc"
+              },
+              {
+                "text": "Dificultad para acceder a sistemas corporativos y correo.",
+                "link": "ts-net-0631-desc"
+              }
+            ],
+            "link": "ts-net-0631-desc"
+          },
+          {
+            "segments": [
+              {
+                "text": "Clasificación inicial del incidente:"
+              }
+            ],
+            "subitems": [
+              {
+                "text": "Incidente de red.",
+                "link": "ts-net-0631-desc"
+              },
+              {
+                "text": "Prioridad alta por impacto en operación.",
+                "link": "ts-net-0631-desc"
+              }
+            ],
+            "link": "ts-net-0631-desc"
+          },
+          {
+            "segments": [
+              {
+                "text": "Perfil del usuario:"
+              }
+            ],
+            "subitems": [
+              {
+                "text": "Usuario con conocimientos técnicos.",
+                "link": "ts-net-0631-desc"
+              }
+            ],
             "link": "ts-net-0631-desc"
           }
         ]
@@ -1736,34 +1849,26 @@
         "type": "list",
         "items": [
           {
-            "text": "Se realiza contención inicial por impacto en operación.",
+            "text": "Se realiza contención inicial del incidente debido a impacto alto en horario operativo.",
             "link": "ts-net-0631-med"
           },
           {
             "segments": [
               {
-                "text": "Se formulan preguntas abiertas al usuario:"
+                "text": "Se levanta información mediante preguntas abiertas:"
               }
             ],
             "subitems": [
               {
-                "text": "¿Desde cuándo presenta el problema de conectividad?",
+                "text": "Inicio del problema (mismo día, al llegar a la oficina).",
                 "link": "ts-net-0631-med"
               },
               {
-                "text": "¿La lentitud es constante o intermitente?",
+                "text": "Frecuencia del fallo (intermitente).",
                 "link": "ts-net-0631-med"
               },
               {
-                "text": "¿El problema ocurre en un solo equipo o en varios?",
-                "link": "ts-net-0631-med"
-              },
-              {
-                "text": "¿Está conectado por cable o por Wi-Fi?",
-                "link": "ts-net-0631-med"
-              },
-              {
-                "text": "¿Se realizaron cambios recientes (movimiento de puesto, cable, equipo)?",
+                "text": "Alcance (principalmente su puesto, otros usuarios con menor impacto).",
                 "link": "ts-net-0631-med"
               }
             ],
@@ -1772,16 +1877,20 @@
           {
             "segments": [
               {
-                "text": "Se solicitan verificaciones básicas:"
+                "text": "Se valida el entorno del usuario:"
               }
             ],
             "subitems": [
               {
-                "text": "Revisión del estado del cable de red / señal Wi-Fi.",
+                "text": "Conexión por cable.",
                 "link": "ts-net-0631-med"
               },
               {
-                "text": "Confirmación de conexión física al punto de red.",
+                "text": "Mismo equipo y punto de red habitual.",
+                "link": "ts-net-0631-med"
+              },
+              {
+                "text": "Cambio reciente en el puesto (movimiento de escritorio).",
                 "link": "ts-net-0631-med"
               }
             ],
@@ -1790,20 +1899,16 @@
           {
             "segments": [
               {
-                "text": "Se realizan pruebas simples de conectividad:"
+                "text": "Se realizan pruebas de conectividad lógica:"
               }
             ],
             "subitems": [
               {
-                "text": "Verificación de dirección IP asignada.",
+                "text": "Revisión del punto de red desde sistema.",
                 "link": "ts-net-0631-med"
               },
               {
-                "text": "Prueba de conexión a la puerta de enlace.",
-                "link": "ts-net-0631-med"
-              },
-              {
-                "text": "Prueba de acceso a recursos internos y externos.",
+                "text": "Detección de latencia elevada y respuestas irregulares.",
                 "link": "ts-net-0631-med"
               }
             ],
@@ -1812,19 +1917,69 @@
           {
             "segments": [
               {
-                "text": "Se observa comportamiento irregular de la red:"
+                "text": "Se aplica acción correctiva lógica inicial:"
               }
             ],
             "subitems": [
               {
-                "text": "Latencia elevada / respuesta inconsistente.",
+                "text": "Reinicio lógico del puerto de red.",
+                "link": "ts-net-0631-med"
+              },
+              {
+                "text": "Renegociación de enlace.",
                 "link": "ts-net-0631-med"
               }
             ],
             "link": "ts-net-0631-med"
           },
           {
-            "text": "Se descarta inicialmente un problema exclusivo del equipo del usuario.",
+            "segments": [
+              {
+                "text": "Resultado de la acción lógica:"
+              }
+            ],
+            "subitems": [
+              {
+                "text": "Mejora parcial.",
+                "link": "ts-net-0631-med"
+              },
+              {
+                "text": "Persistencia de inestabilidad.",
+                "link": "ts-net-0631-med"
+              }
+            ],
+            "link": "ts-net-0631-med"
+          },
+          {
+            "segments": [
+              {
+                "text": "Conclusión de diagnóstico:"
+              }
+            ],
+            "subitems": [
+              {
+                "text": "Se descarta problema exclusivo del equipo.",
+                "link": "ts-net-0631-med"
+              },
+              {
+                "text": "Se sospecha falla física en el punto de red.",
+                "link": "ts-net-0631-med"
+              }
+            ],
+            "link": "ts-net-0631-med"
+          },
+          {
+            "segments": [
+              {
+                "text": "Se decide escalamiento:"
+              }
+            ],
+            "subitems": [
+              {
+                "text": "Coordinación de visita de técnico en terreno para revisión física.",
+                "link": "ts-net-0631-med"
+              }
+            ],
             "link": "ts-net-0631-med"
           }
         ]
@@ -1842,40 +1997,22 @@
         "type": "list",
         "items": [
           {
-            "text": "A partir de las pruebas realizadas, se identifica que la lentitud e intermitencia estaban relacionadas con una configuración incorrecta de la conexión de red del puesto, posterior a un movimiento reciente del escritorio.",
-            "link": "ts-net-0631-res"
-          },
-          {
             "segments": [
               {
-                "text": "Se accede de forma remota al equipo del usuario y se procede a:"
+                "text": "Se realiza intervención en terreno:"
               }
             ],
             "subitems": [
               {
-                "text": "Se realiza el restablecimiento de la configuración de red del equipo, forzando la renovación de la dirección IP asignada por DHCP.",
+                "text": "Revisión física del punto de red en tercer piso, área de Operaciones.",
                 "link": "ts-net-0631-res"
               },
               {
-                "text": "Se verifican los parámetros de enlace y DNS.",
-                "link": "ts-net-0631-res"
-              }
-            ],
-            "link": "ts-net-0631-res"
-          },
-          {
-            "segments": [
-              {
-                "text": "Se valida nuevamente la conectividad:"
-              }
-            ],
-            "subitems": [
-              {
-                "text": "La navegación responde de forma estable.",
+                "text": "Detección de conector RJ45 con falso contacto por tensión en el cableado.",
                 "link": "ts-net-0631-res"
               },
               {
-                "text": "Se puede acceder a sistemas corporativos y servicios en la nube sin interrupciones.",
+                "text": "Reemplazo de tramo de cable y aseguramiento del punto.",
                 "link": "ts-net-0631-res"
               }
             ],
@@ -1884,27 +2021,41 @@
           {
             "segments": [
               {
-                "text": "Se consulta al usuario:"
+                "text": "Se valida conectividad posterior a la intervención:"
               }
             ],
             "subitems": [
               {
-                "text": "¿La conexión funciona con normalidad en este momento?",
+                "text": "Conectividad estable.",
                 "link": "ts-net-0631-res"
               },
               {
-                "text": "¿Puede acceder a los sistemas corporativos sin lentitud ni cortes?",
+                "text": "Latencia normal.",
                 "link": "ts-net-0631-res"
               }
             ],
             "link": "ts-net-0631-res"
           },
           {
-            "text": "El usuario confirma que la conectividad quedó restablecida y estable.",
+            "segments": [
+              {
+                "text": "Se realiza llamada de confirmación con el usuario:"
+              }
+            ],
+            "subitems": [
+              {
+                "text": "Usuario confirma acceso normal a correo y sistemas corporativos.",
+                "link": "ts-net-0631-res"
+              },
+              {
+                "text": "No se presentan nuevas caídas.",
+                "link": "ts-net-0631-res"
+              }
+            ],
             "link": "ts-net-0631-res"
           },
           {
-            "text": "Ticket cerrado.",
+            "text": "Ticket cerrado como resuelto.",
             "link": "ts-net-0631-res"
           }
         ]

@@ -93,6 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let lastSelectedTicketId = null;
   let lockedMacroId = null;
   let hoveredMicroId = null;
+  let selectedFineId = null;
   let canalDock = {
     panel: null,
     sentinel: null,
@@ -135,10 +136,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const renderListItem = (item, linkResolver, meta) => {
     if (typeof item === 'string') return `<li>${escapeHtml(item)}</li>`;
     if (!item) return '<li></li>';
+    const fineLinkId = item.linkId || null;
     const resolvedLink = linkResolver ? linkResolver(meta) : null;
-    const linkAttr = resolvedLink
-      ? ` data-link="${escapeHtml(resolvedLink)}" tabindex="0"`
-      : (!linkResolver && item.link ? ` data-link="${escapeHtml(item.link)}" tabindex="0"` : '');
+    const linkAttr = fineLinkId
+      ? ` data-link="${escapeHtml(fineLinkId)}" tabindex="0"`
+      : (resolvedLink
+        ? ` data-link="${escapeHtml(resolvedLink)}" tabindex="0"`
+        : (!linkResolver && item.link ? ` data-link="${escapeHtml(item.link)}" tabindex="0"` : ''));
     const content = item.segments ? renderSegments(item.segments) : escapeHtml(item.text || '');
     const subitems = item.subitems
       ? renderList(item.subitems, false, linkResolver, {
@@ -173,7 +177,10 @@ document.addEventListener('DOMContentLoaded', () => {
         return `<p><strong>${escapeHtml(block.text || '')}</strong></p>`;
       }
       if (block.type === 'paragraph') {
-        const linkAttr = !linkResolver && block.link ? ` data-link="${escapeHtml(block.link)}" tabindex="0"` : '';
+        const fineLinkId = block.linkId || null;
+        const linkAttr = fineLinkId
+          ? ` data-link="${escapeHtml(fineLinkId)}" tabindex="0"`
+          : (!linkResolver && block.link ? ` data-link="${escapeHtml(block.link)}" tabindex="0"` : '');
         return `<p${linkAttr}>${block.segments ? renderSegments(block.segments) : escapeHtml(block.text || '')}</p>`;
       }
       if (block.type === 'list') {
@@ -242,7 +249,9 @@ document.addEventListener('DOMContentLoaded', () => {
             1: 'diagnostico.decision'
           },
           7: {
-            0: 'diagnostico.decision'
+            0: 'diagnostico.decision',
+            1: 'diagnostico.decision',
+            2: 'diagnostico.decision'
           }
         }
       },
@@ -426,7 +435,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const getMacroLinkTag = (entryIndex) => {
     if (entryIndex <= 18) return 'macro.descripcion';
-    if (entryIndex <= 43) return 'macro.medidas';
+    if (entryIndex <= 44) return 'macro.medidas';
     return 'macro.resolucion';
   };
 
@@ -434,7 +443,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!isLinkingTicket(ticketId)) return null;
     const map = {
       35: { 0: 'diagnostico.descarto', 1: 'diagnostico.decision' },
-      44: {
+      45: {
         1: 'ubicacion.sitio',
         2: 'resolucion.causa',
         3: 'resolucion.accion',
@@ -462,9 +471,12 @@ document.addEventListener('DOMContentLoaded', () => {
       31: 'diagnostico.observacion',
       36: 'diagnostico.decision',
       39: 'ubicacion.sitio',
-      48: 'resolucion.confirmacion',
-      50: 'resolucion.validacion',
-      51: 'resolucion.cierre'
+      40: 'diagnostico.decision',
+      41: 'diagnostico.decision',
+      42: 'diagnostico.decision',
+      49: 'resolucion.confirmacion',
+      51: 'resolucion.validacion',
+      52: 'resolucion.cierre'
     };
     return map[entryIndex] || null;
   };
@@ -480,7 +492,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const macroTag = isLinkingTicket(ticket.id) ? getMacroLinkTag(entryIndex) : null;
     const linkAttr = macroTag ? ` data-link="${escapeHtml(macroTag)}" tabindex="0"` : '';
     const bubbleTag = getConversationBubbleLinkTag(ticket.id, entryIndex);
-    const bubbleAttr = bubbleTag ? ` data-link="${escapeHtml(bubbleTag)}" tabindex="0"` : '';
+    const fineLinkId = entry.linkId || null;
+    const bubbleLink = fineLinkId || bubbleTag;
+    const bubbleAttr = bubbleLink ? ` data-link="${escapeHtml(bubbleLink)}" tabindex="0"` : '';
     return `
       <div class="conv-msg ${roleClass}"${linkAttr}>
         <div class="conv-bubble"${bubbleAttr}>
@@ -827,6 +841,39 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
+  const clearSelected = () => {
+    selectedFineId = null;
+    [ticketSheet, ticketTabs].forEach((container) => {
+      if (!container) return;
+      container.querySelectorAll('[data-link].is-selected').forEach((el) => {
+        el.classList.remove('is-selected');
+      });
+    });
+  };
+
+  const applyFineSelect = (linkId) => {
+    if (!linkId) return;
+    clearSelected();
+    selectedFineId = linkId;
+    [ticketSheet, ticketTabs].forEach((container) => {
+      if (!container) return;
+      container.querySelectorAll(`[data-link="${CSS.escape(linkId)}"]`).forEach((el) => {
+        el.classList.add('is-selected');
+      });
+    });
+  };
+
+  const scrollRoleplayToLink = (linkId) => {
+    if (!linkId || !ticketTabs) return;
+    const activeChannel = ticketTabs.querySelector('.channel:not([hidden])');
+    if (!activeChannel) return;
+    const body = activeChannel.querySelector('.channel-body');
+    if (!body) return;
+    const target = body.querySelector(`[data-link="${CSS.escape(linkId)}"]`);
+    if (!target) return;
+    target.scrollIntoView({ block: 'start', behavior: 'smooth' });
+  };
+
   const applyLock = (macroId) => {
     if (!macroId) return;
     clearLock();
@@ -854,6 +901,7 @@ document.addEventListener('DOMContentLoaded', () => {
     lockedMacroId = null;
     clearHover();
     clearLock();
+    clearSelected();
   };
 
   const getMacroFromTarget = (target) => {
@@ -1083,6 +1131,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!linkEl) return;
     const linkId = linkEl.dataset.link;
     if (!linkId) return;
+    const isNotesLink = ticketSheet.contains(linkEl) && linkEl.closest('.ticket-notes');
     const macroId = linkId.startsWith('macro.') ? linkId : getMacroFromTarget(linkEl);
     if (!macroId) return;
     if (lockedMacroId === macroId) {
@@ -1091,6 +1140,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     lockedMacroId = macroId;
     applyLock(macroId);
+    if (!linkId.startsWith('macro.') && isNotesLink) {
+      applyFineSelect(linkId);
+      scrollRoleplayToLink(linkId);
+    }
   });
 
   document.addEventListener('click', (event) => {

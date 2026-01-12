@@ -510,9 +510,42 @@ input {
 
 /* detalle en 16px */
 .ticket-detail-block.is-docked {
-  background: var(--card);
-  border-radius: 8px;
-  box-shadow: 0 1px 4px rgba(2, 6, 23, 0.06)
+  position: relative;
+  background: var(--card, #fff);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  isolation: isolate;
+  padding-top: 16px;
+  z-index: 15;
+}
+
+.ticket-detail-block.is-docked::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: inherit;
+  z-index: -1;
+}
+
+.ticket-detail-block.is-docked::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 40px;
+  background: var(--card, #fff);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.ticket-detail-block.is-docked .focus-indicator,
+.ticket-detail-block.is-docked .ticket-detail-label,
+.ticket-detail-block.is-docked .ticket-meta-grid {
+  position: relative;
+  z-index: 3;
 }
 
 .tabs {
@@ -825,19 +858,33 @@ input {
   margin-bottom: 6px;
 }
 
-.focus-indicator {
+.roleplay-titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.focus-pill {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-size: 0.75rem;
-  text-transform: none;
-  letter-spacing: 0.02em;
+  justify-content: center;
+  font-size: 0.72rem;
   font-weight: 600;
-  color: #0b3d91;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid currentColor;
   background: transparent;
-  border: 0;
-  padding: 0;
-  margin-bottom: 4px;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.focus-pill.is-active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
 }
 
 .ticket-meta-grid {

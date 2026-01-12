@@ -83,6 +83,18 @@ body.page-scroll .app {
   min-width: 0
 }
 
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px
+}
+
+.header-brand-logo {
+  height: 48px;
+  width: auto;
+  flex-shrink: 0
+}
+
 .site-header .header-actions {
   display: flex;
   align-items: center;
@@ -110,6 +122,18 @@ body.page-scroll .app {
   background: rgba(255, 255, 255, 0.22)
 }
 
+.header-nav .nav-branding {
+  display: none
+}
+
+.nav-menu-logo {
+  width: 60%;
+  max-width: 180px;
+  height: auto;
+  margin: 0 auto 16px;
+  display: block
+}
+
 .team-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -118,11 +142,15 @@ body.page-scroll .app {
 }
 
 .team-avatar {
-  width: 72px;
-  height: 72px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   background: #e6e9ef;
-  margin-bottom: 10px
+  margin-bottom: 10px;
+  object-fit: cover;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+  image-rendering: auto
 }
 
 .team-role {
@@ -637,6 +665,28 @@ input {
   }
 }
 
+@media (max-width:768px) {
+  .content-grid.has-detail {
+    grid-template-columns: 1fr;
+  }
+
+  .pane-left,
+  .pane-right,
+  .ticket-card,
+  .ticket-detail,
+  .ticket-sheet {
+    min-width: 0;
+  }
+
+  .ticket-card,
+  .ticket-detail,
+  .ticket-notas,
+  .ticket-preview,
+  .detail-placeholder {
+    overflow-wrap: anywhere;
+  }
+}
+
 @media (max-width:640px) {
   .site-header .header-logo {
     display: none
@@ -899,6 +949,192 @@ input {
   outline: none;
   box-shadow: none;
   background: rgba(15, 23, 42, 0.02);
+}
+
+/* =========================
+   Equipo
+   ========================= */
+.team-card {
+  align-items: center;
+  text-align: center;
+}
+
+.team-header {
+  text-align: center;
+}
+
+.team-grid + .team-header {
+  margin-top: 50px;
+}
+
+.team-links {
+  justify-content: center;
+}
+
+.team-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  transition: transform .12s ease, opacity .12s ease;
+}
+
+.team-links a:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.team-icon {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.team-avatar-instructor {
+  object-position: center 20%;
+}
+
+/* =========================
+   Navegacion movil
+   ========================= */
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: 0;
+  padding: 6px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.nav-toggle:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.45);
+  outline-offset: 2px;
+}
+
+.nav-toggle-bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  margin: 4px 0;
+}
+
+.nav-overlay {
+  display: none;
+}
+
+@media (max-width:768px) {
+  .nav-toggle {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .header-brand {
+    gap: 10px
+  }
+
+  .header-brand-logo {
+    height: 36px
+  }
+
+  .header-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: min(78vw, 320px);
+    background: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 72px 18px 20px;
+    gap: 10px;
+    transform: translateX(100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform .18s ease, opacity .18s ease;
+    box-shadow: 0 12px 30px rgba(2, 6, 23, 0.18);
+    z-index: 120;
+  }
+
+  .header-nav a {
+    color: #111827;
+    width: 100%;
+  }
+
+  .header-nav .nav-branding {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(2, 6, 23, 0.4);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .18s ease;
+    z-index: 110;
+  }
+
+  body.nav-open {
+    overflow: hidden;
+  }
+
+  body.nav-open .header-nav {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  body.nav-open .nav-overlay {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .home-slides {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    overscroll-behavior-y: contain;
+  }
+
+  .home-slide {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+
+  .carousel-track {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .carousel-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .carousel-slide {
+    flex: 0 0 88%;
+    max-width: 88%;
+    scroll-snap-align: start;
+  }
+
+  .carousel-slide[hidden] {
+    display: block;
+  }
+
+  .carousel-controls .carousel-btn {
+    display: none;
+  }
 }
 
 [data-link].is-dim {

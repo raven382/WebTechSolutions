@@ -5,32 +5,46 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Proyecto Final - Centro de Soporte Técnico</title>
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
   <header class="site-header">
     <div class="container header-content">
-      <div class="header-text">
-        <h1>Proyecto Final - Centro de Soporte Técnico</h1>
-        <p class="subtitle">TechSolutions S.A.S. - Equipo: Raven Ovalle • Matías Ureta • Juan Cruz</p>
+      <div class="header-brand">
+        <img class="header-brand-logo" src="assets/img/logo-techsolution.png" alt="TechSolution S.A.S.">
+        <div class="header-text">
+          <h1>TechSolution S.A.S.</h1>
+          <p class="subtitle">Proyecto Final - Centro de Soporte Técnico</p>
+        </div>
       </div>
       <div class="header-actions">
-        <nav class="header-nav" aria-label="Navegacion principal">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+        <nav class="header-nav" id="site-nav" aria-label="Navegacion principal">
+          <div class="nav-branding">
+            <a class="nav-menu-logo-link" href="https://chile.generation.org/" aria-label="Generation Chile" target="_blank" rel="noopener noreferrer">
+              <img class="nav-menu-logo" src="assets/img/logo-generation.png" alt="Generation Chile">
+            </a>
+          </div>
           <a href="./index.html" class="active">Inicio</a>
           <a href="./html/tickets.html">Tickets</a>
           <a href="./html/equipo.html">Equipo</a>
         </nav>
         <a class="header-logo-link" href="https://chile.generation.org/" aria-label="Generation Chile" target="_blank" rel="noopener noreferrer">
-          <img class="header-logo" src="assets/img/generation-logo.png" alt="Generation">
+          <img class="header-logo" src="assets/img/logo-generation.png" alt="Generation">
         </a>
       </div>
     </div>
   </header>
+  <div class="nav-overlay" aria-hidden="true"></div>
 
     <main class="app">
             <section class="panel-filtros home-panel" aria-label="Inicio">
-      <h2>Presentación</h2>
       <div class="home-slides">
         <div class="home-slide">
           <article class="ticket-card concept-card" data-card-id="card-1">

@@ -1,5 +1,37 @@
 // app.js - renderizado dinamico y eventos delegados para tickets
 document.addEventListener('DOMContentLoaded', () => {
+  const initMobileNav = () => {
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('site-nav');
+    const overlay = document.querySelector('.nav-overlay');
+    if (!toggle || !nav || !overlay) return;
+
+    const setOpen = (isOpen) => {
+      document.body.classList.toggle('nav-open', isOpen);
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      nav.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+      overlay.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+    };
+
+    toggle.addEventListener('click', () => {
+      const isOpen = document.body.classList.contains('nav-open');
+      setOpen(!isOpen);
+    });
+
+    overlay.addEventListener('click', () => setOpen(false));
+
+    nav.addEventListener('click', (event) => {
+      if (event.target.closest('a')) setOpen(false);
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') setOpen(false);
+    });
+
+    setOpen(false);
+  };
+
+  initMobileNav();
   const initInicio = () => {
     const cards = document.querySelectorAll('[data-card-id]');
     if (!cards.length) return;

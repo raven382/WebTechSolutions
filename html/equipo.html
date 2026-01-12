@@ -5,63 +5,131 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Proyecto Final - Centro de Soporte Técnico</title>
+  <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="../css/styles.css">
 </head>
 
 <body class="page-scroll">
   <header class="site-header">
     <div class="container header-content">
-      <div class="header-text">
-        <h1>Proyecto Final - Centro de Soporte Técnico</h1>
-        <p class="subtitle">TechSolutions S.A.S. - Equipo: Raven Ovalle • Matías Ureta • Juan Cruz</p>
+      <div class="header-brand">
+        <img class="header-brand-logo" src="../assets/img/logo-techsolution.png" alt="TechSolution S.A.S.">
+        <div class="header-text">
+          <h1>TechSolution S.A.S.</h1>
+          <p class="subtitle">Proyecto Final - Centro de Soporte Técnico</p>
+        </div>
       </div>
       <div class="header-actions">
-        <nav class="header-nav" aria-label="Navegacion principal">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir menú">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+        <nav class="header-nav" id="site-nav" aria-label="Navegacion principal">
+          <div class="nav-branding">
+            <a class="nav-menu-logo-link" href="https://chile.generation.org/" aria-label="Generation Chile" target="_blank" rel="noopener noreferrer">
+              <img class="nav-menu-logo" src="../assets/img/logo-generation.png" alt="Generation Chile">
+            </a>
+          </div>
           <a href="../index.html">Inicio</a>
           <a href="./tickets.html">Tickets</a>
           <a href="./equipo.html" class="active">Equipo</a>
         </nav>
         <a class="header-logo-link" href="https://chile.generation.org/" aria-label="Generation Chile" target="_blank" rel="noopener noreferrer">
-          <img class="header-logo" src="../assets/img/generation-logo.png" alt="Generation">
+          <img class="header-logo" src="../assets/img/logo-generation.png" alt="Generation">
         </a>
       </div>
     </div>
   </header>
+  <div class="nav-overlay" aria-hidden="true"></div>
 
   <main class="app">
     <section class="panel-filtros" aria-label="Equipo">
-      <h2>Equipo</h2>
-      <p>Perfiles del equipo de soporte (placeholders).</p>
+      <div class="team-header">
+        <h2>Nuestro Equipo</h2>
+        <p>Perfiles del equipo de soporte  - Equipo N°5 de la 1ra cohorte de Support IT en Generation Chile.</p>
+      </div>
 
       <div class="team-grid">
         <article class="ticket-card team-card">
-          <div class="team-avatar" aria-hidden="true"></div>
-          <h3>Nombre 1</h3>
-          <p class="team-role">Soporte TI | Rol</p>
+          <img class="team-avatar" src="../assets/img/team-juan.png" alt="Juan - Especialista en Soporte TI" style="object-fit: cover;">
+          <h3>Juan Cruz Muñoz</h3>
+          <p class="team-role">Desarrollador FullStack | Music & Technology</p>
+          <p class="team-role">Especialista en Soporte TI</p>
           <div class="team-links">
-            <a href="#" aria-label="LinkedIn">LinkedIn</a>
-            <a href="#" aria-label="GitHub">GitHub</a>
+            <a href="https://www.linkedin.com/in/juan-cruz-muñoz" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+              <svg class="team-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5ZM0.5 23.5H4.5V7.5H0.5V23.5ZM8 7.5H11.8V9.7H11.85C12.38 8.7 13.7 7.7 15.8 7.7C20 7.7 20.5 10.4 20.5 14.1V23.5H16.5V15.1C16.5 13.1 16.5 10.5 13.7 10.5C10.8 10.5 10.4 12.7 10.4 14.9V23.5H6.4V7.5H8Z"/>
+              </svg>
+            </a>
+            <a href="https://github.com/JuanGrunge" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+              <svg class="team-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M12 0.6C5.7 0.6 0.6 5.8 0.6 12.2C0.6 17.4 3.9 21.9 8.6 23.5C9.2 23.6 9.4 23.2 9.4 22.9C9.4 22.6 9.4 21.8 9.4 20.8C6.1 21.6 5.3 19.3 5.3 19.3C4.8 18.1 4 17.8 4 17.8C2.9 17.1 4.1 17.1 4.1 17.1C5.3 17.2 5.9 18.4 5.9 18.4C7 20.3 8.8 19.8 9.5 19.5C9.6 18.7 9.9 18.1 10.2 17.7C7.5 17.4 4.7 16.3 4.7 11.5C4.7 10.1 5.2 9 6.1 8.2C6 7.9 5.6 6.7 6.2 5.1C6.2 5.1 7.3 4.8 9.4 6.2C10.4 5.9 11.5 5.8 12.6 5.8C13.7 5.8 14.8 5.9 15.8 6.2C17.9 4.8 19 5.1 19 5.1C19.6 6.7 19.2 7.9 19.1 8.2C20 9 20.5 10.1 20.5 11.5C20.5 16.3 17.7 17.4 15 17.7C15.4 18.2 15.8 19.2 15.8 20.7C15.8 22.8 15.8 22.6 15.8 22.9C15.8 23.2 16 23.6 16.6 23.5C21.3 21.9 24.6 17.4 24.6 12.2C24.6 5.8 19.3 0.6 12 0.6Z"/>
+              </svg>
+            </a>
           </div>
         </article>
 
         <article class="ticket-card team-card">
-          <div class="team-avatar" aria-hidden="true"></div>
-          <h3>Nombre 2</h3>
-          <p class="team-role">Soporte TI | Rol</p>
+          <img class="team-avatar" src="../assets/img/team-raven.jpg" alt="Raven - Especialista en Soporte TI" style="object-fit: cover;">
+          <h3>Raven Ovalle Miño</h3>
+          <p class="team-role">Ilustrador Digital | Desarrollador Front-End</p>
+          <p class="team-role">Especialista en Soporte TI</p>
           <div class="team-links">
-            <a href="#" aria-label="LinkedIn">LinkedIn</a>
-            <a href="#" aria-label="GitHub">GitHub</a>
+            <a href="https://www.linkedin.com/in/ravenovalle/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+              <svg class="team-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5ZM0.5 23.5H4.5V7.5H0.5V23.5ZM8 7.5H11.8V9.7H11.85C12.38 8.7 13.7 7.7 15.8 7.7C20 7.7 20.5 10.4 20.5 14.1V23.5H16.5V15.1C16.5 13.1 16.5 10.5 13.7 10.5C10.8 10.5 10.4 12.7 10.4 14.9V23.5H6.4V7.5H8Z"/>
+              </svg>
+            </a>
+            <a href="https://github.com/raven382" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+              <svg class="team-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M12 0.6C5.7 0.6 0.6 5.8 0.6 12.2C0.6 17.4 3.9 21.9 8.6 23.5C9.2 23.6 9.4 23.2 9.4 22.9C9.4 22.6 9.4 21.8 9.4 20.8C6.1 21.6 5.3 19.3 5.3 19.3C4.8 18.1 4 17.8 4 17.8C2.9 17.1 4.1 17.1 4.1 17.1C5.3 17.2 5.9 18.4 5.9 18.4C7 20.3 8.8 19.8 9.5 19.5C9.6 18.7 9.9 18.1 10.2 17.7C7.5 17.4 4.7 16.3 4.7 11.5C4.7 10.1 5.2 9 6.1 8.2C6 7.9 5.6 6.7 6.2 5.1C6.2 5.1 7.3 4.8 9.4 6.2C10.4 5.9 11.5 5.8 12.6 5.8C13.7 5.8 14.8 5.9 15.8 6.2C17.9 4.8 19 5.1 19 5.1C19.6 6.7 19.2 7.9 19.1 8.2C20 9 20.5 10.1 20.5 11.5C20.5 16.3 17.7 17.4 15 17.7C15.4 18.2 15.8 19.2 15.8 20.7C15.8 22.8 15.8 22.6 15.8 22.9C15.8 23.2 16 23.6 16.6 23.5C21.3 21.9 24.6 17.4 24.6 12.2C24.6 5.8 19.3 0.6 12 0.6Z"/>
+              </svg>
+            </a>
           </div>
         </article>
 
         <article class="ticket-card team-card">
-          <div class="team-avatar" aria-hidden="true"></div>
-          <h3>Nombre 3</h3>
-          <p class="team-role">Soporte TI | Rol</p>
+          <img class="team-avatar" src="../assets/img/team-matias.jpg" alt="Matias - Especialista en Soporte TI" style="object-fit: cover;">
+          <h3>Matías Ureta Zúñiga</h3>
+          <p class="team-role">Analista Programador | Gestión de Recaudación</p>
+          <p class="team-role">Especialista en Soporte TI</p>
           <div class="team-links">
-            <a href="#" aria-label="LinkedIn">LinkedIn</a>
-            <a href="#" aria-label="GitHub">GitHub</a>
+            <a href="https://www.linkedin.com/in/mat%C3%ADas-ureta-z%C3%BA%C3%B1iga-912278347/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+              <svg class="team-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5ZM0.5 23.5H4.5V7.5H0.5V23.5ZM8 7.5H11.8V9.7H11.85C12.38 8.7 13.7 7.7 15.8 7.7C20 7.7 20.5 10.4 20.5 14.1V23.5H16.5V15.1C16.5 13.1 16.5 10.5 13.7 10.5C10.8 10.5 10.4 12.7 10.4 14.9V23.5H6.4V7.5H8Z"/>
+              </svg>
+            </a>
+            <a href="https://github.com/MURETA1" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+              <svg class="team-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M12 0.6C5.7 0.6 0.6 5.8 0.6 12.2C0.6 17.4 3.9 21.9 8.6 23.5C9.2 23.6 9.4 23.2 9.4 22.9C9.4 22.6 9.4 21.8 9.4 20.8C6.1 21.6 5.3 19.3 5.3 19.3C4.8 18.1 4 17.8 4 17.8C2.9 17.1 4.1 17.1 4.1 17.1C5.3 17.2 5.9 18.4 5.9 18.4C7 20.3 8.8 19.8 9.5 19.5C9.6 18.7 9.9 18.1 10.2 17.7C7.5 17.4 4.7 16.3 4.7 11.5C4.7 10.1 5.2 9 6.1 8.2C6 7.9 5.6 6.7 6.2 5.1C6.2 5.1 7.3 4.8 9.4 6.2C10.4 5.9 11.5 5.8 12.6 5.8C13.7 5.8 14.8 5.9 15.8 6.2C17.9 4.8 19 5.1 19 5.1C19.6 6.7 19.2 7.9 19.1 8.2C20 9 20.5 10.1 20.5 11.5C20.5 16.3 17.7 17.4 15 17.7C15.4 18.2 15.8 19.2 15.8 20.7C15.8 22.8 15.8 22.6 15.8 22.9C15.8 23.2 16 23.6 16.6 23.5C21.3 21.9 24.6 17.4 24.6 12.2C24.6 5.8 19.3 0.6 12 0.6Z"/>
+              </svg>
+            </a>
           </div>
+        </article>
+      </div>
+
+      <div class="team-header">
+        <h2>Conoce a nuestros instructores</h2>
+      </div>
+
+      <div class="team-grid">
+        <article class="ticket-card team-card">
+          <img class="team-avatar team-avatar-instructor" src="../assets/img/instructor-andres.jpg" alt="Andrés Daza - Instructor Técnico" style="object-fit: cover;">
+          <h3>Andrés Daza</h3>
+          <p class="team-role">Instructor Técnico</p>
+        </article>
+
+        <article class="ticket-card team-card">
+          <img class="team-avatar team-avatar-instructor" src="../assets/img/instructor-kathy.jpg" alt="Kathy Sagredo - Instructora Socio Laboral" style="object-fit: cover;">
+          <h3>Kathy Sagredo</h3>
+          <p class="team-role">Instructora Socio Laboral</p>
+        </article>
+
+        <article class="ticket-card team-card">
+          <img class="team-avatar team-avatar-instructor" src="../assets/img/instructor-may.jpg" alt="Mayerling Torres - Mentora de Empleabilidad" style="object-fit: cover;">
+          <h3>Mayerling Torres</h3>
+          <p class="team-role">Mentora de Empleabilidad</p>
         </article>
       </div>
 

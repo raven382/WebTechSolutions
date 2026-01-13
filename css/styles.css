@@ -509,6 +509,11 @@ input {
   font-size: 16px
 }
 
+.ticket-detail-block {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
 /* detalle en 16px */
 .ticket-detail-block.is-docked {
   position: relative;
@@ -656,6 +661,35 @@ input {
   margin-top: 18px
 }
 
+@media (min-width:901px) {
+  body.tickets-page {
+    --footer-fixed-h: 64px;
+  }
+
+  body.tickets-page .site-footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: var(--footer-fixed-h);
+    margin-top: 0;
+    background: rgba(255, 255, 255, 0.96);
+    border-top: 1px solid rgba(17, 24, 39, 0.12);
+    z-index: 40;
+  }
+
+  body.tickets-page .site-footer .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  body.tickets-page .app {
+    padding-bottom: calc(var(--footer-fixed-h) + 18px);
+  }
+}
+
 /* Selector de fuente (canal) dentro de la tabla */
 .ticket-fuente {
   display: flex;
@@ -776,6 +810,12 @@ input {
     padding-bottom: 24px;
     scroll-padding-bottom: 24px;
     overscroll-behavior: contain;
+  }
+}
+
+@media (min-width:901px) {
+  body.tickets-page.roleplay-docked .ticket-notes {
+    margin-top: calc(var(--detail-offset, 0px) + 12px);
   }
 }
 

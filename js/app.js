@@ -97,7 +97,12 @@ document.addEventListener('DOMContentLoaded', () => {
   let canalDock = {
     panel: null,
     sentinel: null,
-    onScroll: null
+    onScroll: null,
+    startY: 0,
+    left: 0,
+    width: 0,
+    raf: null,
+    isDocked: false
   };
   let dockResizeBound = false;
   let detailDock = {
@@ -208,68 +213,75 @@ document.addEventListener('DOMContentLoaded', () => {
         items: {
           1: 'cliente.nombre',
           2: 'cliente.cargo',
-          4: 'contacto.correo'
+          4: 'ubicacion.sitio'
         },
         subitems: {
           3: {
-            0: 'contacto.telefono'
+            1: 'contacto.telefono',
+            2: 'contacto.correo'
           },
           5: {
             0: 'incidente.sintoma',
             1: 'incidente.sintoma'
           },
           6: {
-            0: 'incidente.intermitencia'
+            0: 'incidente.intermitencia',
+            1: 'incidente.intermitencia'
           },
           7: {
             0: 'incidente.impacto',
             1: 'incidente.impacto'
           },
           8: {
-            1: 'incidente.prioridad'
+            0: 'incidente.inicio',
+            1: 'incidente.conexion',
+            3: 'incidente.alcance'
           }
         }
       },
       medidas: {
+        items: {
+          1: 'incidente.prioridad',
+          8: 'diagnostico.descarto',
+          9: 'diagnostico.decision'
+        },
         subitems: {
-          1: {
+          2: {
             0: 'incidente.inicio',
             1: 'incidente.intermitencia',
             2: 'incidente.alcance'
           },
-          2: {
+          3: {
             0: 'incidente.conexion'
           },
-          3: {
+          4: {
             0: 'diagnostico.prueba',
-            1: 'diagnostico.observacion'
+            1: 'diagnostico.prueba'
           },
-          6: {
-            0: 'diagnostico.descarto',
-            1: 'diagnostico.decision'
-          },
-          7: {
-            0: 'diagnostico.decision',
-            1: 'diagnostico.decision',
-            2: 'diagnostico.decision'
+          5: {
+            0: 'diagnostico.observacion'
           }
         }
       },
       resolucion: {
         items: {
-          3: 'resolucion.cierre'
+          2: 'resolucion.causa',
+          5: 'resolucion.validacion',
+          9: 'resolucion.confirmacion',
+          10: 'resolucion.cierre'
         },
         subitems: {
-          0: {
-            0: 'ubicacion.sitio',
-            1: 'resolucion.causa',
-            2: 'resolucion.accion'
+          3: {
+            0: 'resolucion.accion',
+            1: 'resolucion.accion'
           },
-          1: {
+          4: {
             0: 'resolucion.validacion',
-            1: 'resolucion.validacion'
+            1: 'resolucion.validacion',
+            2: 'resolucion.validacion',
+            3: 'resolucion.validacion'
           },
-          2: {
+          6: {
             0: 'resolucion.confirmacion',
             1: 'resolucion.confirmacion'
           }
@@ -435,7 +447,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const getMacroLinkTag = (entryIndex) => {
-    if (entryIndex <= 18) return 'macro.descripcion';
+    if (entryIndex <= 21) return 'macro.descripcion';
     if (entryIndex <= 44) return 'macro.medidas';
     return 'macro.resolucion';
   };
@@ -465,24 +477,21 @@ document.addEventListener('DOMContentLoaded', () => {
       1: 'cliente.nombre',
       3: 'cliente.cargo',
       5: 'contacto.telefono',
-      6: 'contacto.correo',
+      7: 'contacto.correo',
       9: 'incidente.sintoma',
-      10: 'incidente.intermitencia',
       13: 'incidente.inicio',
+      15: 'incidente.intermitencia',
       17: 'incidente.impacto',
-      18: 'incidente.prioridad',
-      20: 'incidente.conexion',
-      22: 'incidente.alcance',
-      30: 'diagnostico.prueba',
-      31: 'diagnostico.observacion',
-      36: 'diagnostico.decision',
-      39: 'ubicacion.sitio',
+      19: 'incidente.conexion',
+      21: 'incidente.alcance',
+      22: 'incidente.prioridad',
+      31: 'diagnostico.prueba',
+      32: 'diagnostico.observacion',
+      38: 'diagnostico.descarto',
       40: 'diagnostico.decision',
-      41: 'diagnostico.decision',
-      42: 'diagnostico.decision',
-      49: 'resolucion.confirmacion',
-      51: 'resolucion.validacion',
-      52: 'resolucion.cierre'
+      41: 'ubicacion.sitio',
+      56: 'resolucion.confirmacion',
+      59: 'resolucion.cierre'
     };
     return map[entryIndex] || null;
   };
@@ -873,19 +882,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  const scrollRoleplayToLink = (linkId) => {
+  const scrollRoleplayToLink = (linkId, options = {}) => {
     if (!linkId || !ticketTabs) return;
+    if (options.allowScroll === false) return;
     const activeChannel = ticketTabs.querySelector('.channel:not([hidden])');
     if (!activeChannel) return;
     const body = activeChannel.querySelector('.channel-body');
     if (!body) return;
-    const target = activeChannel.querySelector(`[data-link="${CSS.escape(linkId)}"]`);
+    const target = body.querySelector(`[data-link="${CSS.escape(linkId)}"]`);
     if (!target) return;
-    if (body.contains(target)) {
-      target.scrollIntoView({ block: 'start', behavior: 'smooth' });
-    } else {
-      body.scrollTop = 0;
-    }
+    const bodyRect = body.getBoundingClientRect();
+    const targetRect = target.getBoundingClientRect();
+    const delta = targetRect.top - bodyRect.top;
+    const top = body.scrollTop + delta - 8;
+    body.scrollTo({ top, behavior: 'smooth' });
   };
 
   const applyLock = (macroId) => {
@@ -1146,15 +1156,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const linkId = linkEl.dataset.link;
     if (!linkId) return;
     const isNotesLink = ticketSheet.contains(linkEl) && linkEl.closest('.ticket-notes');
+    const isRoleplayLink = ticketTabs.contains(linkEl) && linkEl.closest('.channel');
     const macroId = linkId.startsWith('macro.') ? linkId : getMacroFromTarget(linkEl);
     if (!macroId) return;
     if (!linkId.startsWith('macro.') && isNotesLink) {
       if (selectedFineId !== linkId) {
         applyFineSelect(linkId);
       }
-      lockedMacroId = macroId;
-      applyLock(macroId);
-      scrollRoleplayToLink(linkId);
+      scrollRoleplayToLink(linkId, { allowScroll: true });
       return;
     }
     if (lockedMacroId === macroId) {
@@ -1162,6 +1171,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     lockedMacroId = macroId;
     applyLock(macroId);
+    if (isRoleplayLink) {
+      scrollRoleplayToLink(linkId, { allowScroll: true });
+    }
   });
 
   document.addEventListener('click', (event) => {
@@ -1207,6 +1219,10 @@ document.addEventListener('DOMContentLoaded', () => {
       window.removeEventListener('scroll', canalDock.onScroll);
       canalDock.onScroll = null;
     }
+    if (canalDock.raf) {
+      cancelAnimationFrame(canalDock.raf);
+      canalDock.raf = null;
+    }
     if (canalDock.panel) {
       canalDock.panel.classList.remove('is-docked');
       canalDock.panel.style.left = '';
@@ -1228,18 +1244,51 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     canalDock.panel = null;
     canalDock.sentinel = null;
+    canalDock.startY = 0;
+    canalDock.left = 0;
+    canalDock.width = 0;
+    canalDock.isDocked = false;
+    document.body.classList.remove('roleplay-docked');
+    document.body.style.removeProperty('--detail-offset');
+  };
+
+  const updateDetailOffset = (isDocked) => {
+    if (!isDocked) {
+      document.body.classList.remove('roleplay-docked');
+      document.body.style.removeProperty('--detail-offset');
+      return;
+    }
+    document.body.classList.add('roleplay-docked');
+    const detail = document.querySelector('.ticket-detail-block');
+    const height = detail ? detail.offsetHeight : 0;
+    document.body.style.setProperty('--detail-offset', `${height}px`);
   };
 
   const syncCanalDock = () => {
     if (!canalDock.panel || !canalDock.sentinel) return;
-    const rect = canalDock.sentinel.getBoundingClientRect();
-    const shouldDock = rect.top <= 16;
-    canalDock.panel.classList.toggle('is-docked', shouldDock);
-    if (shouldDock) {
-      const rightRect = rightPane.getBoundingClientRect();
-      canalDock.panel.style.left = `${rightRect.left}px`;
-      canalDock.panel.style.width = `${rightRect.width}px`;
-      const available = window.innerHeight - 32;
+    const wasDocked = canalDock.isDocked;
+    const enterDock = window.scrollY + 16 >= canalDock.startY;
+    const exitDock = window.scrollY + 40 < canalDock.startY;
+    if (!canalDock.isDocked && enterDock) canalDock.isDocked = true;
+    if (canalDock.isDocked && exitDock) canalDock.isDocked = false;
+    canalDock.panel.classList.toggle('is-docked', canalDock.isDocked);
+    if (canalDock.isDocked !== wasDocked) {
+      updateDetailOffset(canalDock.isDocked);
+    } else if (canalDock.isDocked) {
+      updateDetailOffset(true);
+    }
+    if (canalDock.isDocked) {
+      canalDock.panel.style.left = `${canalDock.left}px`;
+      canalDock.panel.style.width = `${canalDock.width}px`;
+      const footer = document.querySelector('footer');
+      const footerRect = footer ? footer.getBoundingClientRect() : null;
+      const topOffset = 16;
+      const footerH = Number.parseFloat(getComputedStyle(document.body).getPropertyValue('--footer-fixed-h')) || 0;
+      const bottomLimit = footerRect
+        ? footerRect.top - 16
+        : (window.innerHeight - (footerH || 0) - 16);
+      const available = Math.max(0, bottomLimit - topOffset);
+      canalDock.panel.style.top = `${topOffset}px`;
       canalDock.panel.style.maxHeight = `${available}px`;
       const head = canalDock.panel.querySelector('.roleplay-title');
       const body = canalDock.panel.querySelector('.channel-body');
@@ -1250,23 +1299,11 @@ document.addEventListener('DOMContentLoaded', () => {
         body.style.paddingBottom = '24px';
         body.style.scrollPaddingBottom = '24px';
       }
-      const footer = document.querySelector('footer');
-      if (footer) {
-        const dockRect = canalDock.panel.getBoundingClientRect();
-        const footerRect = footer.getBoundingClientRect();
-        if (dockRect.bottom > footerRect.top - 16) {
-          const overlap = dockRect.bottom - (footerRect.top - 16);
-          canalDock.panel.style.transform = `translateY(-${overlap}px)`;
-        } else {
-          canalDock.panel.style.transform = '';
-        }
-      } else {
-        canalDock.panel.style.transform = '';
-      }
-      canalDock.sentinel.style.height = `${canalDock.panel.offsetHeight}px`;
+      canalDock.panel.style.transform = '';
     } else {
       canalDock.panel.style.left = '';
       canalDock.panel.style.width = '';
+      canalDock.panel.style.top = '';
       canalDock.panel.style.maxHeight = '';
       canalDock.panel.style.transform = '';
       const head = canalDock.panel.querySelector('.roleplay-title');
@@ -1278,7 +1315,6 @@ document.addEventListener('DOMContentLoaded', () => {
         body.style.paddingBottom = '';
         body.style.scrollPaddingBottom = '';
       }
-      canalDock.sentinel.style.height = '0px';
     }
   };
 
@@ -1313,10 +1349,25 @@ document.addEventListener('DOMContentLoaded', () => {
       canalDock.sentinel.className = 'canal-dock-sentinel';
       canalDock.sentinel.style.height = '0px';
       roleplayDock.parentNode.insertBefore(canalDock.sentinel, roleplayDock);
-      canalDock.onScroll = () => syncCanalDock();
+      canalDock.onScroll = () => {
+        if (canalDock.raf) return;
+        canalDock.raf = requestAnimationFrame(() => {
+          canalDock.raf = null;
+          syncCanalDock();
+        });
+      };
       window.addEventListener('scroll', canalDock.onScroll, { passive: true });
     }
+    const rightRect = rightPane.getBoundingClientRect();
+    canalDock.left = rightRect.left;
+    canalDock.width = rightRect.width;
+    canalDock.startY = roleplayDock.getBoundingClientRect().top + window.scrollY;
     syncCanalDock();
+    if (roleplayDock.classList.contains('is-docked')) {
+      canalDock.sentinel.style.height = `${roleplayDock.offsetHeight}px`;
+    } else {
+      canalDock.sentinel.style.height = '0px';
+    }
     if (!dockResizeBound) {
       dockResizeBound = true;
       window.addEventListener('resize', () => enableCanalDock(), { passive: true });

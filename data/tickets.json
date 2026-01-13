@@ -1625,6 +1625,7 @@
     "estado": "Cierre",
     "prioridad": "Alta",
     "tipo": "Redes",
+    "tipoLinkId": "net_tipo_emision",
     "fechaISO": "2025-11-12T08:57:00",
     "meta": "Andrés Morales · 12 nov 2025 · 08:57",
     "fechaDisplay": "12 de noviembre de 2025",
@@ -1719,15 +1720,17 @@
         "type": "list",
         "items": [
           {
+            "text": "Canal de ingreso: Llamada (simulación).",
+            "linkId": "net_canal_llamada",
+            "link": "ts-net-0631-desc"
+          },
+          {
             "text": "Identificación del cliente: Andrés Morales.",
             "link": "ts-net-0631-desc"
           },
           {
             "text": "Cargo del cliente: Analista de Operaciones.",
-            "link": "ts-net-0631-desc"
-          },
-          {
-            "text": "Canal de ingreso: Llamada (simulación).",
+            "linkId": "net_cliente_cargo",
             "link": "ts-net-0631-desc"
           },
           {
@@ -1738,14 +1741,17 @@
             ],
             "subitems": [
               {
-                "text": "Teléfono: 311 904 6721.",
+                "text": "Tipo: Móvil corporativo.",
+                "linkId": "net_contacto_movil",
                 "link": "ts-net-0631-desc"
               },
               {
-                "text": "Tipo: Móvil corporativo.",
+                "text": "Teléfono: 311 904 6721.",
+                "linkId": "net_contacto_movil",
                 "link": "ts-net-0631-desc"
               }
             ],
+            "linkId": "net_contacto_movil",
             "link": "ts-net-0631-desc"
           },
           {
@@ -1811,6 +1817,7 @@
             "subitems": [
               {
                 "text": "Incidente de red.",
+                "linkId": "net_tipo_emision",
                 "link": "ts-net-0631-desc"
               },
               {
@@ -1850,6 +1857,7 @@
         "items": [
           {
             "text": "Se realiza contención inicial del incidente debido a impacto alto en horario operativo.",
+            "linkId": "net_contencion_inicial",
             "link": "ts-net-0631-med"
           },
           {
@@ -1963,6 +1971,7 @@
               },
               {
                 "text": "Se sospecha falla física en el punto de red.",
+                "linkId": "net_diag_sospecha_fisica",
                 "link": "ts-net-0631-med"
               }
             ],
@@ -1977,6 +1986,17 @@
             "subitems": [
               {
                 "text": "Coordinación de visita de técnico en terreno para revisión física.",
+                "linkId": "net_coord_visita_10_12",
+                "link": "ts-net-0631-med"
+              },
+              {
+                "text": "Se coordina visita a terreno: se confirma disponibilidad del usuario en su puesto entre 10:00 y 12:00.",
+                "linkId": "net_coord_disponibilidad_10_12",
+                "link": "ts-net-0631-med"
+              },
+              {
+                "text": "Se informa al usuario que, si existe un imprevisto, debe avisar con al menos 2 horas de antelación para reprogramar.",
+                "linkId": "net_coord_aviso_2h",
                 "link": "ts-net-0631-med"
               }
             ],
@@ -2325,6 +2345,7 @@
       },
       "llamada": {
         "titulo": "Llamada (simulación) — TS-NET-0631",
+        "titleLinkId": "net_canal_llamada",
         "log": [
           {
             "t": "08:57",
@@ -2350,6 +2371,7 @@
           {
             "t": "08:58",
             "who": "Usuario",
+            "linkId": "net_cliente_cargo",
             "text": [
               "Soy analista de operaciones. El número es el mismo desde el que estoy llamando."
             ]
@@ -2357,6 +2379,7 @@
           {
             "t": "08:58",
             "who": "Soporte",
+            "linkId": "net_contacto_movil",
             "text": [
               "Perfecto. ¿Ese número corresponde a tu móvil corporativo o a un teléfono fijo de oficina?"
             ]
@@ -2459,8 +2482,10 @@
           {
             "t": "09:01",
             "who": "Soporte",
+            "macroLink": "macro.medidas",
+            "linkId": "net_contencion_inicial",
             "text": [
-              "De acuerdo, don Andrés. Dado que esto ocurre en horario de operación y afecta el acceso a sistemas críticos, voy a manejar el caso como un incidente de red con prioridad alta."
+              "De acuerdo, don Andrés. Lamento el inconveniente. Dado que esto ocurre en horario de operación y afecta el acceso a sistemas críticos, voy a manejar el caso como un incidente de red con prioridad alta y vamos a trabajarlo para restablecer el servicio a la brevedad."
             ]
           },
           {
@@ -2584,6 +2609,7 @@
           {
             "t": "09:07",
             "who": "Soporte",
+            "linkId": "net_diag_sospecha_fisica",
             "text": [
               "De acuerdo. Con lo que vemos hasta ahora, el problema no parece ser solo lógico.",
               "Dado que el fallo es intermitente y hubo un cambio reciente en el puesto, es necesario descartar una falla física en el punto de red."
@@ -2621,16 +2647,25 @@
           {
             "t": "09:08",
             "who": "Soporte",
+            "linkId": "net_coord_visita_10_12",
             "text": [
-              "Perfecto. Vamos a realizar la revisión durante la mañana y, una vez finalizada, desde soporte te vamos a contactar nuevamente para confirmar que el servicio haya quedado estable antes de cerrar el ticket."
+              "Para efectos de coordinación de la visita, ¿Podría confirmarnos si se encontrará disponible en su puesto de trabajo durante la jornada de la mañana, idealmente dentro del rango horario comprendido entre las 10:00 y las 12:00 horas?"
+            ]
+          },
+          {
+            "t": "09:08",
+            "who": "Usuario",
+            "linkId": "net_coord_disponibilidad_10_12",
+            "text": [
+              "Sí, estaré en mi puesto durante ese horario."
             ]
           },
           {
             "t": "09:09",
             "who": "Soporte",
+            "linkId": "net_coord_aviso_2h",
             "text": [
-              "Te llegará un correo con el resumen del incidente y las actualizaciones del caso.",
-              "Si la conexión se cae por completo o el impacto aumenta antes de la revisión, responde ese correo o vuelve a llamarnos de inmediato."
+              "De acuerdo. Si por algún motivo no le fuera posible ese horario o surgiera algún imprevisto, le agradeceríamos nos avise con al menos dos horas de antelación, para evaluar otro bloque y coordinar la visita."
             ]
           },
           {

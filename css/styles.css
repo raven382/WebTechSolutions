@@ -1161,7 +1161,11 @@ input {
 }
 
 .team-grid + .team-header {
-  margin-top: 50px;
+  margin-top: 25px;
+}
+
+.team-grid + .team-qr-card {
+  margin-top: 10px;
 }
 
 .team-links {

@@ -1,26 +1,5 @@
 # Proyecto Final - Centro de Soporte Técnico
 
-## Archivos incluidos
-│   .gitattributes
-│   index.html
-│   README.md
-├───assets
-│   └───img
-│           generation-logo.png
-│           qr-link.png
-├───css
-│       styles.css
-├───data
-│       tickets.json
-├───html
-│       equipo.html
-│       tickets.html
-└───js
-        app.js
-
-## Cómo abrir
-1. Extrae los archivos en una carpeta.
-2. Abre `index.html` con Chrome, Edge o Firefox.
 
 ## Guion de presentación (paso a paso)
 

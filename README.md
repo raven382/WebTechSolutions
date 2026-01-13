@@ -4,9 +4,11 @@
 ## Guion de presentación (paso a paso)
 
 ### 1) Inicio
-- Saludo y presentación del proyecto.
-- Contexto general del Centro de Soporte Técnico.
-- Mencionar que el sitio tiene tres secciones: Inicio, Tickets y Equipo.
+- Saludo y presentación del equipo de Soporte TI de TechSolutions S.A.S.
+- Contexto del proyecto: Proyecto Final Integrador del curso Especialista Soporte TI.
+- Explicar el propósito general: trasladar los aprendizajes del curso a un escenario real de operación de soporte TI.
+- Presentar el Centro de Soporte Técnico como una simulación de entorno real, donde la gestión por tickets es transversal.
+- Mencionar brevemente el enfoque del proyecto: orden, trazabilidad, comunicación y trabajo colaborativo.
 
 ### 2) Tickets
 - Explicar el caso y abrir la vista de Tickets.

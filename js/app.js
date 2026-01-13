@@ -496,7 +496,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const roleClass = getSpeakerClass(entry.who);
     const time = renderLogTime(ticket, entry);
     const whoSafe = escapeHtml(entry.who ?? '');
-    const lineLinks = getConversationLineLinks(ticket.id, entryIndex);
+    const lineLinks = (entry && entry.lineLinks) ? entry.lineLinks : getConversationLineLinks(ticket.id, entryIndex);
     const bodyHtml = renderLogText(entry.text, lineLinks);
     const timeHtml = time ? `<span class="conv-time">${time}</span>` : '';
     const bodyBlock = bodyHtml.includes('<p') ? bodyHtml : `<p class="conv-body">${bodyHtml}</p>`;

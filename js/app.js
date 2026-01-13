@@ -1419,3 +1419,168 @@ document.addEventListener('DOMContentLoaded', () => {
       console.error('Error al cargar tickets.json:', error);
     });
 });
+
+
+(function () {
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function clampIndex(i, total) {
+    return (i + total) % total;
+  }
+
+  function initCarousel(card) {
+    const carousel = card.querySelector("[data-carousel]");
+    if (!carousel) return;
+
+    const track = carousel.querySelector(".carousel-track");
+    const slides = Array.from(track.querySelectorAll(".carousel-slide"));
+    const btnPrev = carousel.querySelector('[data-action="prev"]');
+    const btnNext = carousel.querySelector('[data-action="next"]');
+    const indicator = carousel.querySelector("[data-indicator]");
+    const dotsWrap = carousel.querySelector("[data-dots]");
+    const progressBar = carousel.querySelector("[data-progress]");
+
+    if (!slides.length) return;
+
+    // Estado inicial: busca cuál está visible
+    let index = slides.findIndex(s => !s.hasAttribute("hidden"));
+    if (index < 0) index = 0;
+
+    // Asegura accesibilidad
+    carousel.tabIndex = 0;
+    carousel.setAttribute("aria-roledescription", "Carrusel");
+
+    // Dots dinámicos
+    if (dotsWrap) {
+      dotsWrap.innerHTML = "";
+      slides.forEach((_, i) => {
+        const b = document.createElement("button");
+        b.type = "button";
+        b.className = "carousel-dot" + (i === index ? " is-active" : "");
+        b.setAttribute("aria-label", `Ir a diapositiva ${i + 1}`);
+        b.dataset.to = String(i);
+        dotsWrap.appendChild(b);
+      });
+    }
+
+    const dots = dotsWrap ? Array.from(dotsWrap.querySelectorAll(".carousel-dot")) : [];
+
+    function updateMeta() {
+      if (indicator) indicator.textContent = `${index + 1} / ${slides.length}`;
+      if (dots.length) {
+        dots.forEach((d, i) => d.classList.toggle("is-active", i === index));
+      }
+      if (progressBar) {
+        const pct = ((index + 1) / slides.length) * 100;
+        progressBar.style.width = `${pct}%`;
+      }
+    }
+
+    function show(nextIndex, direction) {
+      nextIndex = clampIndex(nextIndex, slides.length);
+      if (nextIndex === index) return;
+
+      const current = slides[index];
+      const next = slides[nextIndex];
+
+      // Salida animada (sin romper hidden)
+      if (!prefersReducedMotion) {
+        current.classList.add("is-leaving");
+      }
+
+      // Mostrar siguiente inmediatamente para animación de entrada
+      next.removeAttribute("hidden");
+
+      // Si hay animación, esperamos el fin de salida para ocultar
+      if (!prefersReducedMotion) {
+        const onEnd = () => {
+          current.classList.remove("is-leaving");
+          current.setAttribute("hidden", "");
+          current.removeEventListener("animationend", onEnd);
+        };
+        current.addEventListener("animationend", onEnd);
+      } else {
+        current.setAttribute("hidden", "");
+      }
+
+      index = nextIndex;
+      updateMeta();
+    }
+
+    function next() { show(index + 1, "next"); }
+    function prev() { show(index - 1, "prev"); }
+
+    // Click handlers
+    if (btnNext) btnNext.addEventListener("click", next);
+    if (btnPrev) btnPrev.addEventListener("click", prev);
+
+    if (dotsWrap) {
+      dotsWrap.addEventListener("click", (e) => {
+        const dot = e.target.closest(".carousel-dot");
+        if (!dot) return;
+        const to = Number(dot.dataset.to);
+        show(to);
+      });
+    }
+
+    // Teclado: flechas + Home/End
+    carousel.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight") { e.preventDefault(); next(); }
+      if (e.key === "ArrowLeft") { e.preventDefault(); prev(); }
+      if (e.key === "Home") { e.preventDefault(); show(0); }
+      if (e.key === "End") { e.preventDefault(); show(slides.length - 1); }
+    });
+
+    // Swipe (touch + mouse drag suave)
+    let startX = null;
+    let dragging = false;
+
+    function onStart(clientX) {
+      startX = clientX;
+      dragging = true;
+    }
+
+    function onMove(clientX) {
+      if (!dragging || startX === null) return;
+      // Solo detectar, sin transformar el track (mantiene tu estructura y evita glitches)
+    }
+
+    function onEnd(clientX) {
+      if (!dragging || startX === null) return;
+      const dx = clientX - startX;
+      dragging = false;
+      startX = null;
+
+      // Umbral
+      if (Math.abs(dx) < 40) return;
+      if (dx < 0) next();
+      else prev();
+    }
+
+    const viewport = carousel.querySelector(".carousel-viewport") || carousel;
+
+    // Touch
+    viewport.addEventListener("touchstart", (e) => onStart(e.touches[0].clientX), { passive: true });
+    viewport.addEventListener("touchmove", (e) => onMove(e.touches[0].clientX), { passive: true });
+    viewport.addEventListener("touchend", (e) => onEnd((e.changedTouches[0] || {}).clientX ?? 0), { passive: true });
+
+    // Mouse (drag)
+    viewport.addEventListener("mousedown", (e) => { onStart(e.clientX); });
+    window.addEventListener("mousemove", (e) => onMove(e.clientX));
+    window.addEventListener("mouseup", (e) => onEnd(e.clientX));
+
+    // Inicial
+    // Normaliza: deja solo el slide actual visible
+    slides.forEach((s, i) => {
+      if (i !== index) s.setAttribute("hidden", "");
+      else s.removeAttribute("hidden");
+    });
+    updateMeta();
+  }
+
+  // Init all concept cards
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".concept-card").forEach(initCarousel);
+  });
+})();
+

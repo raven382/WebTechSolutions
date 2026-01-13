@@ -1641,91 +1641,57 @@
     },
     "especialistas": "Raven Ovalle, Matías Ureta, Juan Cruz",
     "notas": [
-      "Canal de ingreso: Llamada (simulación).",
-      "Usuario: Andrés Morales.",
+      "Canal de ingreso: llamada (simulación).",
+      "Identificación del usuario: Andrés Morales.",
       "Cargo: Analista de Operaciones.",
-      "Contacto confirmado:",
-      "Tipo: Móvil corporativo.",
-      "Teléfono: 311 904 6721.",
-      "Correo: andres.morales@techsolutions.com",
-      "Ubicación: Tercer piso, área de Operaciones.",
-      "Reporte inicial del usuario:",
-      "Conexión de red lenta y con caídas intermitentes.",
-      "Pérdida recurrente de acceso a planillas alojadas en servidores y al correo corporativo.",
-      "Comportamiento del problema:",
-      "Intermitente, sin patrón claro.",
-      "En algunos momentos la conexión se restablece sola, en otros no.",
-      "Impacto declarado:",
-      "Bloqueo operativo en la práctica.",
-      "Imposibilidad de guardar cambios y trabajar con normalidad.",
-      "Contexto relevante levantado:",
+      "Contacto confirmado: móvil corporativo.",
+      "Correo validado para notificaciones.",
+      "Ubicación: tercer piso, área de Operaciones.",
+      "Usuario reporta lentitud e intermitencia de red.",
+      "Pérdida de acceso a planillas y correo corporativo.",
+      "Impacto declarado: bloqueo operativo y pérdida de trabajo.",
       "Problema presente desde la mañana del mismo día.",
       "Conexión por cable.",
       "Mismo equipo y punto de red habitual.",
       "Otros usuarios del área presentan problemas similares.",
-      "El día anterior se realizó una reorganización de escritorios en el área."
+      "Reorganización reciente de escritorios en el área.",
+      "Incidente clasificado como incidente de red – prioridad alta."
     ],
     "medidas": [
-      "Se entrega contención inicial al usuario debido a impacto en horario operativo.",
-      "Se clasifica el incidente como incidente de red – prioridad alta, por afectación a más de un usuario.",
-      "Se realizan preguntas abiertas para acotar:",
-      "inicio del problema,",
-      "frecuencia,",
-      "alcance.",
-      "Se validan condiciones del entorno del usuario:",
-      "conexión cableada,",
-      "mismo equipo y punto de red,",
-      "ausencia de cortes eléctricos.",
-      "Se ejecutan pruebas de conectividad lógica desde sistema:",
-      "IP válida asignada.",
-      "Ping al gateway con latencia variable y pérdida de paquetes.",
-      "Se revisa el puerto asociado en el switch:",
-      "Se detecta flapping (estado activo/inactivo recurrente).",
-      "Se aplica acción lógica inicial de estabilización:",
-      "renegociación del enlace.",
-      "Resultado:",
-      "mejora temporal,",
-      "persistencia de la inestabilidad.",
+      "Se entrega contención inicial al usuario por impacto operativo.",
+      "Se informa clasificación del incidente y curso de acción.",
+      "Se mantiene comunicación con el usuario durante la revisión.",
+      "Obtención de parámetros de red del equipo.",
+      "Prueba de conectividad al gateway con latencia variable y pérdida de paquetes.",
+      "Revisión del puerto en switch.",
+      "Detección de flapping (activo/inactivo).",
+      "Aplicación de acción lógica inicial: renegociación de enlace.",
+      "Resultado: mejora temporal, persistencia de la inestabilidad.",
       "Se descarta problema exclusivo del equipo del usuario.",
-      "Se decide escalar a revisión de infraestructura de red del área afectada.",
-      "Se informa al usuario y se mantiene comunicación durante la revisión."
+      "Se decide escalar a revisión de infraestructura del área.",
+      "Se coordina intervención técnica en terreno."
     ],
-    "resolucion": {
-      "pasos": [
-        "Sistema inicia intervención en el switch que da servicio al tercer piso, área de Operaciones.",
-        "Se verifica correspondencia entre puertos físicos y segmentación lógica.",
-        "Se identifica que, tras la reorganización del área, el puerto quedó asociado a un perfil incorrecto, generando flapping e inestabilidad.",
-        "Se corrige la configuración del puerto:",
-        "reasociación correcta al segmento del área,",
-        "reinicio controlado del enlace.",
-        "Se monitorea el comportamiento posterior:",
-        "enlace estable,",
-        "sin flapping,",
-        "latencia normal,",
-        "sin pérdida de paquetes.",
-        "Servicio normalizado.",
-        "Soporte contacta al usuario para validación:",
-        "acceso estable a planillas y correo,",
-        "no se presentan nuevas caídas.",
-        "Se informa monitoreo preventivo del área durante la jornada.",
-        "Se entrega recomendación preventiva:",
-        "coordinar con Soporte TI cualquier cambio futuro en la disposición del área.",
-        "Usuario confirma recepción del correo con resumen del ticket y encuesta.",
-        "Ticket cerrado como resuelto."
-      ],
-      "confirmacion": [
-        "acceso estable a planillas y correo,",
-        "no se presentan nuevas caídas.",
-        "Usuario confirma recepción del correo con resumen del ticket y encuesta."
-      ]
-    },
+    "resolucion": [
+      "Intervención en el switch del tercer piso, área de Operaciones.",
+      "Identificación de perfil incorrecto en el puerto tras reorganización.",
+      "Corrección de configuración del puerto.",
+      "Reasociación correcta al segmento del área.",
+      "Reinicio controlado del enlace.",
+      "Monitoreo posterior: enlace estable, sin flapping, latencia normal, sin pérdida de paquetes.",
+      "Servicio normalizado.",
+      "Validación con el usuario: acceso estable a planillas y correo, sin nuevas caídas.",
+      "Comunicación de monitoreo preventivo.",
+      "Recomendación ante cambios futuros.",
+      "Usuario confirma recepción de correo y encuesta.",
+      "Ticket cerrado como resuelto."
+    ],
     "notasDetalle": [
       {
         "type": "paragraph",
         "segments": [
           {
             "strong": true,
-            "text": "Descripción del problema:"
+            "text": "NOTAS"
           }
         ]
       },
@@ -1733,10 +1699,10 @@
         "type": "list",
         "items": [
           {
-            "text": "Canal de ingreso: Llamada (simulación)."
+            "text": "Canal de ingreso: llamada (simulación)."
           },
           {
-            "text": "Usuario: Andrés Morales.",
+            "text": "Identificación del usuario: Andrés Morales.",
             "linkId": "cliente.nombre"
           },
           {
@@ -1744,96 +1710,49 @@
             "linkId": "cliente.cargo"
           },
           {
-            "segments": [
-              {
-                "text": "Contacto confirmado:"
-              }
-            ],
-            "subitems": [
-              {
-                "text": "Tipo: Móvil corporativo."
-              },
-              {
-                "text": "Teléfono: 311 904 6721.",
-                "linkId": "contacto.telefono"
-              },
-              {
-                "text": "Correo: andres.morales@techsolutions.com",
-                "linkId": "contacto.correo"
-              }
-            ]
+            "text": "Contacto confirmado: móvil corporativo."
           },
           {
-            "text": "Ubicación: Tercer piso, área de Operaciones."
+            "text": "Correo validado para notificaciones.",
+            "linkId": "contacto.correo"
           },
           {
-            "segments": [
-              {
-                "text": "Reporte inicial del usuario:"
-              }
-            ],
-            "subitems": [
-              {
-                "text": "Conexión de red lenta y con caídas intermitentes."
-              },
-              {
-                "text": "Pérdida recurrente de acceso a planillas alojadas en servidores y al correo corporativo."
-              }
-            ]
+            "text": "Ubicación: tercer piso, área de Operaciones.",
+            "linkId": "ubicacion.sitio"
           },
           {
-            "segments": [
-              {
-                "text": "Comportamiento del problema:"
-              }
-            ],
-            "subitems": [
-              {
-                "text": "Intermitente, sin patrón claro."
-              },
-              {
-                "text": "En algunos momentos la conexión se restablece sola, en otros no."
-              }
-            ]
+            "text": "Usuario reporta lentitud e intermitencia de red.",
+            "linkId": "incidente.sintoma"
           },
           {
-            "segments": [
-              {
-                "text": "Impacto declarado:"
-              }
-            ],
-            "subitems": [
-              {
-                "text": "Bloqueo operativo en la práctica."
-              },
-              {
-                "text": "Imposibilidad de guardar cambios y trabajar con normalidad."
-              }
-            ]
+            "text": "Pérdida de acceso a planillas y correo corporativo.",
+            "linkId": "incidente.sintoma"
           },
           {
-            "segments": [
-              {
-                "text": "Contexto relevante levantado:"
-              }
-            ],
-            "subitems": [
-              {
-                "text": "Problema presente desde la mañana del mismo día."
-              },
-              {
-                "text": "Conexión por cable."
-              },
-              {
-                "text": "Mismo equipo y punto de red habitual."
-              },
-              {
-                "text": "Otros usuarios del área presentan problemas similares."
-              },
-              {
-                "text": "El día anterior se realizó una reorganización de escritorios en el área."
-              }
-            ]
+            "text": "Impacto declarado: bloqueo operativo y pérdida de trabajo.",
+            "linkId": "incidente.impacto"
+          },
+          {
+            "text": "Problema presente desde la mañana del mismo día.",
+            "linkId": "incidente.inicio"
+          },
+          {
+            "text": "Conexión por cable.",
+            "linkId": "incidente.conexion"
+          },
+          {
+            "text": "Mismo equipo y punto de red habitual."
+          },
+          {
+            "text": "Otros usuarios del área presentan problemas similares.",
+            "linkId": "incidente.alcance"
+          },
+          {
+            "text": "Reorganización reciente de escritorios en el área."
+          },
+          {
+            "text": "Incidente clasificado como incidente de red – prioridad alta.",
+            "linkId": "incidente.prioridad"
           }
         ]
       },
@@ -1850,84 +1769,40 @@
         "type": "list",
         "items": [
           {
-            "text": "Se entrega contención inicial al usuario debido a impacto en horario operativo."
+            "text": "Se entrega contención inicial al usuario por impacto operativo."
           },
           {
-            "text": "Se clasifica el incidente como incidente de red – prioridad alta, por afectación a más de un usuario.",
+            "text": "Se informa clasificación del incidente y curso de acción.",
             "linkId": "incidente.prioridad"
           },
           {
-            "segments": [
-              {
-                "text": "Se realizan preguntas abiertas para acotar:"
-              }
-            ],
-            "subitems": [
-              {
-                "text": "inicio del problema,"
-              },
-              {
-                "text": "frecuencia,"
-              },
-              {
-                "text": "alcance."
-              }
-            ]
+            "text": "Se mantiene comunicación con el usuario durante la revisión."
+          },
+          {
+            "text": "Obtención de parámetros de red del equipo.",
+            "linkId": "diagnostico.prueba"
+          },
+          {
+            "text": "Prueba de conectividad al gateway con latencia variable y pérdida de paquetes.",
+            "linkId": "diagnostico.prueba"
+          },
+          {
+            "text": "Revisión del puerto en switch.",
+            "linkId": "diagnostico.observacion"
+          },
+          {
+            "text": "Detección de flapping (activo/inactivo).",
+            "linkId": "diagnostico.observacion"
           },
           {
             "segments": [
               {
-                "text": "Se validan condiciones del entorno del usuario:"
+                "text": "Aplicación de acción lógica inicial:"
               }
             ],
             "subitems": [
               {
-                "text": "conexión cableada,"
-              },
-              {
-                "text": "mismo equipo y punto de red,"
-              },
-              {
-                "text": "ausencia de cortes eléctricos."
-              }
-            ]
-          },
-          {
-            "segments": [
-              {
-                "text": "Se ejecutan pruebas de conectividad lógica desde sistema:"
-              }
-            ],
-            "subitems": [
-              {
-                "text": "IP válida asignada."
-              },
-              {
-                "text": "Ping al gateway con latencia variable y pérdida de paquetes."
-              }
-            ]
-          },
-          {
-            "segments": [
-              {
-                "text": "Se revisa el puerto asociado en el switch:"
-              }
-            ],
-            "subitems": [
-              {
-                "text": "Se detecta flapping (estado activo/inactivo recurrente)."
-              }
-            ]
-          },
-          {
-            "segments": [
-              {
-                "text": "Se aplica acción lógica inicial de estabilización:"
-              }
-            ],
-            "subitems": [
-              {
-                "text": "renegociación del enlace."
+                "text": "renegociación de enlace."
               }
             ]
           },
@@ -1943,17 +1818,20 @@
               },
               {
                 "text": "persistencia de la inestabilidad."
-              },
-              {
-                "text": "Se descarta problema exclusivo del equipo del usuario."
-              },
-              {
-                "text": "Se decide escalar a revisión de infraestructura de red del área afectada."
-              },
-              {
-                "text": "Se informa al usuario y se mantiene comunicación durante la revisión."
               }
             ]
+          },
+          {
+            "text": "Se descarta problema exclusivo del equipo del usuario.",
+            "linkId": "diagnostico.descarto"
+          },
+          {
+            "text": "Se decide escalar a revisión de infraestructura del área.",
+            "linkId": "diagnostico.decision"
+          },
+          {
+            "text": "Se coordina intervención técnica en terreno.",
+            "linkId": "diagnostico.decision"
           }
         ]
       },
@@ -1970,33 +1848,28 @@
         "type": "list",
         "items": [
           {
-            "text": "Sistema inicia intervención en el switch que da servicio al tercer piso, área de Operaciones."
+            "text": "Intervención en el switch del tercer piso, área de Operaciones."
           },
           {
-            "text": "Se verifica correspondencia entre puertos físicos y segmentación lógica."
+            "text": "Identificación de perfil incorrecto en el puerto tras reorganización.",
+            "linkId": "resolucion.causa"
           },
           {
-            "text": "Se identifica que, tras la reorganización del área, el puerto quedó asociado a un perfil incorrecto, generando flapping e inestabilidad."
+            "text": "Corrección de configuración del puerto.",
+            "linkId": "resolucion.accion"
           },
           {
-            "segments": [
-              {
-                "text": "Se corrige la configuración del puerto:"
-              }
-            ],
-            "subitems": [
-              {
-                "text": "reasociación correcta al segmento del área,"
-              },
-              {
-                "text": "reinicio controlado del enlace."
-              }
-            ]
+            "text": "Reasociación correcta al segmento del área.",
+            "linkId": "resolucion.accion"
+          },
+          {
+            "text": "Reinicio controlado del enlace.",
+            "linkId": "resolucion.accion"
           },
           {
             "segments": [
               {
-                "text": "Se monitorea el comportamiento posterior:"
+                "text": "Monitoreo posterior:"
               }
             ],
             "subitems": [
@@ -2011,16 +1884,17 @@
               },
               {
                 "text": "sin pérdida de paquetes."
-              },
-              {
-                "text": "Servicio normalizado."
               }
-            ]
+            ],
+            "linkId": "resolucion.validacion"
+          },
+          {
+            "text": "Servicio normalizado."
           },
           {
             "segments": [
               {
-                "text": "Soporte contacta al usuario para validación:"
+                "text": "Validación con el usuario:"
               }
             ],
             "subitems": [
@@ -2028,30 +1902,24 @@
                 "text": "acceso estable a planillas y correo,"
               },
               {
-                "text": "no se presentan nuevas caídas."
-              },
-              {
-                "text": "Se informa monitoreo preventivo del área durante la jornada."
-              }
-            ]
-          },
-          {
-            "segments": [
-              {
-                "text": "Se entrega recomendación preventiva:"
+                "text": "sin nuevas caídas."
               }
             ],
-            "subitems": [
-              {
-                "text": "coordinar con Soporte TI cualquier cambio futuro en la disposición del área."
-              },
-              {
-                "text": "Usuario confirma recepción del correo con resumen del ticket y encuesta."
-              },
-              {
-                "text": "Ticket cerrado como resuelto."
-              }
-            ]
+            "linkId": "resolucion.confirmacion"
+          },
+          {
+            "text": "Comunicación de monitoreo preventivo.",
+            "linkId": "resolucion.cierre"
+          },
+          {
+            "text": "Recomendación ante cambios futuros."
+          },
+          {
+            "text": "Usuario confirma recepción de correo y encuesta."
+          },
+          {
+            "text": "Ticket cerrado como resuelto.",
+            "linkId": "resolucion.cierre"
           }
         ]
       }
@@ -3693,7 +3561,7 @@
             "link": "ts-sw-0912-desc"
           },
           {
-            "text": "Usuario se comunica con alto nivel de molestia y frustraci├│n.",
+            "text": "Usuario se comunica con alto nivel de molestia y frustración.",
             "link": "ts-sw-0912-desc"
           },
           {

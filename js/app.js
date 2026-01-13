@@ -91,7 +91,6 @@ document.addEventListener('DOMContentLoaded', () => {
   let ticketsData = [];
   let selectedTicketId = null;
   let lastSelectedTicketId = null;
-  let lockedMacroId = null;
   let hoveredMicroId = null;
   let selectedFineId = null;
   let canalDock = {
@@ -300,7 +299,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const renderNotesDetails = (ticket, blocks) => {
     if (!blocks || !blocks.length) return '';
     const sections = [
-      { key: 'descripcion', defaultTitle: 'Descripción del problema', open: false, titleHtml: '', blocks: [] },
+      { key: 'descripcion', defaultTitle: '', open: false, titleHtml: '', blocks: [] },
       { key: 'medidas', defaultTitle: 'Medidas adoptadas', open: false, titleHtml: '', blocks: [] },
       { key: 'resolucion', defaultTitle: 'Resolución', open: false, titleHtml: '', blocks: [] }
     ];
@@ -332,19 +331,16 @@ document.addEventListener('DOMContentLoaded', () => {
     return sections.map((section) => {
       if (!section.blocks.length) return '';
       const titleHtml = section.titleHtml || escapeHtml(section.defaultTitle);
-      const openAttr = section.open ? ' open' : '';
-      const macroTag = isLinkingTicket(ticket.id) ? `macro.${section.key}` : '';
-      const macroAttr = macroTag ? ` data-link="${escapeHtml(macroTag)}" tabindex="0"` : '';
       const linkResolver = isLinkingTicket(ticket.id)
         ? (meta) => resolveNotesLink(section.key, meta)
         : () => null;
       return `
-        <details class="notes-spoiler"${openAttr}${macroAttr}>
-          <summary class="notes-summary">${titleHtml}</summary>
+        <div class="notes-section" data-section="${escapeHtml(section.key)}">
+          <div class="notes-section-title">${titleHtml}</div>
           <div class="notes-body">
             ${renderBlocks(section.blocks, linkResolver, { sectionKey: section.key })}
           </div>
-        </details>
+        </div>
       `;
     }).join('');
   };
@@ -401,7 +397,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="channel correo"${defaultView === 'correo' ? '' : ' hidden'}>
         ${fuenteHtml}
         <div class="roleplay-dock">
-          ${correo.titulo ? `<div class="roleplay-titlebar"><h5 class="roleplay-title"${titleAttr}>${escapeHtml(correo.titulo)}</h5><span class="focus-pill">MODO FOCO</span></div>` : ''}
+          ${correo.titulo ? `<div class="roleplay-titlebar"><h5 class="roleplay-title"${titleAttr}>${escapeHtml(correo.titulo)}</h5></div>` : ''}
           <div class="channel-body">
             ${hilos.map((email, index) => `${renderEmail(email)}${index < hilos.length - 1 ? '<hr>' : ''}`).join('')}
           </div>
@@ -575,7 +571,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="channel chat"${defaultView === 'chat' ? '' : ' hidden'}>
         ${fuenteHtml}
         <div class="roleplay-dock">
-          ${chat.titulo ? `<div class="roleplay-titlebar"><h5 class="roleplay-title"${titleAttr}>${escapeHtml(chat.titulo)}</h5><span class="focus-pill">MODO FOCO</span></div>` : ''}
+          ${chat.titulo ? `<div class="roleplay-titlebar"><h5 class="roleplay-title"${titleAttr}>${escapeHtml(chat.titulo)}</h5></div>` : ''}
           <div class="channel-body">
             <div class="chat-log">
               ${renderConversationLog(ticket, log)}
@@ -596,7 +592,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="channel llamada"${defaultView === 'llamada' ? '' : ' hidden'}>
         ${fuenteHtml}
         <div class="roleplay-dock">
-          ${llamada.titulo ? `<div class="roleplay-titlebar"><h5 class="roleplay-title"${titleAttr}>${escapeHtml(llamada.titulo)}</h5><span class="focus-pill">MODO FOCO</span></div>` : ''}
+          ${llamada.titulo ? `<div class="roleplay-titlebar"><h5 class="roleplay-title"${titleAttr}>${escapeHtml(llamada.titulo)}</h5></div>` : ''}
           <div class="channel-body">
             <div class="call-log">
               ${renderConversationLog(ticket, log, { groupByMacro: true })}
@@ -784,7 +780,7 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
           </div>
           <div class="ticket-notes" id="nota-${escapeHtml(ticket.id)}">
-            <div class="notes-title">Notas:</div>
+            <div class="notes-title"></div>
             <div class="ticket-notas">
               ${notasContent}
             </div>
@@ -818,13 +814,6 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
   };
 
-  const setFocusIndicator = (active) => {
-    if (!ticketTabs) return;
-    ticketTabs.querySelectorAll('.focus-pill').forEach((el) => {
-      el.classList.toggle('is-active', active);
-    });
-  };
-
   const clearHover = () => {
     hoveredMicroId = null;
     [ticketSheet, ticketTabs].forEach((container) => {
@@ -833,19 +822,6 @@ document.addEventListener('DOMContentLoaded', () => {
         el.classList.remove('is-hover');
       });
     });
-  };
-
-  const clearLock = () => {
-    [ticketSheet, ticketTabs].forEach((container) => {
-      if (!container) return;
-      container.querySelectorAll('.conv-block.block-active, .conv-block.block-dim').forEach((el) => {
-        el.classList.remove('block-active', 'block-dim');
-      });
-      container.querySelectorAll('.notes-spoiler.block-active, .notes-spoiler.block-dim').forEach((el) => {
-        el.classList.remove('block-active', 'block-dim');
-      });
-    });
-    setFocusIndicator(false);
   };
 
   const applyHover = (linkId) => {
@@ -898,42 +874,9 @@ document.addEventListener('DOMContentLoaded', () => {
     body.scrollTo({ top, behavior: 'smooth' });
   };
 
-  const applyLock = (macroId) => {
-    if (!macroId) return;
-    clearLock();
-    [ticketSheet, ticketTabs].forEach((container) => {
-      if (!container) return;
-      container.querySelectorAll('.conv-block[data-link^="macro."]').forEach((block) => {
-        if (block.dataset.link === macroId) {
-          block.classList.add('block-active');
-        } else {
-          block.classList.add('block-dim');
-        }
-      });
-      container.querySelectorAll('.notes-spoiler[data-link^="macro."]').forEach((block) => {
-        if (block.dataset.link === macroId) {
-          block.classList.add('block-active');
-        } else {
-          block.classList.add('block-dim');
-        }
-      });
-    });
-    setFocusIndicator(true);
-  };
-
   const resetLinkState = () => {
-    lockedMacroId = null;
     clearHover();
-    clearLock();
     clearSelected();
-  };
-
-  const getMacroFromTarget = (target) => {
-    if (!target) return null;
-    const macroEl = target.closest('[data-link^="macro."]');
-    if (!macroEl) return null;
-    if (ticketSheet.contains(macroEl) || ticketTabs.contains(macroEl)) return macroEl.dataset.link;
-    return null;
   };
 
   const getLinkTarget = (target) => {
@@ -1134,10 +1077,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!linkEl) return;
     const linkId = linkEl.dataset.link;
     if (!linkId || linkId.startsWith('macro.')) return;
-    if (lockedMacroId) {
-      const macroId = getMacroFromTarget(event.target);
-      if (macroId && macroId !== lockedMacroId) return;
-    }
     applyHover(linkId);
   });
 
@@ -1154,30 +1093,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const linkEl = getLinkTarget(event.target);
     if (!linkEl) return;
     const linkId = linkEl.dataset.link;
-    if (!linkId) return;
+    if (!linkId || linkId.startsWith('macro.')) return;
     const isNotesLink = ticketSheet.contains(linkEl) && linkEl.closest('.ticket-notes');
-    const isRoleplayLink = ticketTabs.contains(linkEl) && linkEl.closest('.channel');
-    const macroId = linkId.startsWith('macro.') ? linkId : getMacroFromTarget(linkEl);
-    if (!macroId) return;
-    if (!linkId.startsWith('macro.') && isNotesLink) {
-      if (selectedFineId !== linkId) {
-        applyFineSelect(linkId);
-      }
-      scrollRoleplayToLink(linkId, { allowScroll: true });
-      return;
+    if (selectedFineId !== linkId) {
+      applyFineSelect(linkId);
     }
-    if (lockedMacroId === macroId) {
-      return;
-    }
-    lockedMacroId = macroId;
-    applyLock(macroId);
-    if (isRoleplayLink) {
+    if (isNotesLink) {
       scrollRoleplayToLink(linkId, { allowScroll: true });
     }
   });
 
   document.addEventListener('click', (event) => {
-    if (!lockedMacroId || !isLinkingTicket(selectedTicketId)) return;
+    if (!isLinkingTicket(selectedTicketId)) return;
+    if (!selectedFineId) return;
     if (layout.contains(event.target)) {
       const inNotes = ticketSheet.contains(event.target) && event.target.closest('.ticket-notes');
       const inRoleplay = ticketTabs.contains(event.target) && event.target.closest('.channel');
@@ -1209,7 +1137,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (event.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') {
       modal.setAttribute('aria-hidden', 'true');
     }
-    if (event.key === 'Escape' && lockedMacroId) {
+    if (event.key === 'Escape' && selectedFineId) {
       resetLinkState();
     }
   });

@@ -16,10 +16,11 @@
 - Mostrar cómo se alternan canales (correo, chat, llamada) y la evidencia.
 
 ### 3) Equipo
-- Cierre de la presentación en la sección Equipo.
-- Invitar a revisar el QR y la p gina del proyecto.
+- Cierre técnico de la presentación.
+- Presentacion de cierre mostrando el Equipo.
+- Invitar a revisar el QR y la página del proyecto.
 
 ## Recomendaciones para la presentación
 - Mantener un relato simple: Inicio -> Tickets -> Equipo.
-- En Tickets, explicar el flujo de atención completo (ingreso, diagnóstico, acción y cierre).
+- En Tickets, explicar el flujo de atencion completo y despues hacer un resumen de las Notas tomadas por el Especialista.
 - Dejar claro el valor de la trazabilidad y la comunicación con el usuario.

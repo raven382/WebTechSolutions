@@ -93,6 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let lastSelectedTicketId = null;
   let lockedMacroId = null;
   let hoveredMicroId = null;
+  let selectedFineId = null;
   let canalDock = {
     panel: null,
     sentinel: null,
@@ -135,10 +136,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const renderListItem = (item, linkResolver, meta) => {
     if (typeof item === 'string') return `<li>${escapeHtml(item)}</li>`;
     if (!item) return '<li></li>';
+    const fineLinkId = item.linkId || null;
     const resolvedLink = linkResolver ? linkResolver(meta) : null;
-    const linkAttr = resolvedLink
-      ? ` data-link="${escapeHtml(resolvedLink)}" tabindex="0"`
-      : (!linkResolver && item.link ? ` data-link="${escapeHtml(item.link)}" tabindex="0"` : '');
+    const linkAttr = fineLinkId
+      ? ` data-link="${escapeHtml(fineLinkId)}" tabindex="0"`
+      : (resolvedLink
+        ? ` data-link="${escapeHtml(resolvedLink)}" tabindex="0"`
+        : (!linkResolver && item.link ? ` data-link="${escapeHtml(item.link)}" tabindex="0"` : ''));
     const content = item.segments ? renderSegments(item.segments) : escapeHtml(item.text || '');
     const subitems = item.subitems
       ? renderList(item.subitems, false, linkResolver, {
@@ -173,7 +177,10 @@ document.addEventListener('DOMContentLoaded', () => {
         return `<p><strong>${escapeHtml(block.text || '')}</strong></p>`;
       }
       if (block.type === 'paragraph') {
-        const linkAttr = !linkResolver && block.link ? ` data-link="${escapeHtml(block.link)}" tabindex="0"` : '';
+        const fineLinkId = block.linkId || null;
+        const linkAttr = fineLinkId
+          ? ` data-link="${escapeHtml(fineLinkId)}" tabindex="0"`
+          : (!linkResolver && block.link ? ` data-link="${escapeHtml(block.link)}" tabindex="0"` : '');
         return `<p${linkAttr}>${block.segments ? renderSegments(block.segments) : escapeHtml(block.text || '')}</p>`;
       }
       if (block.type === 'list') {
@@ -199,8 +206,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const map = {
       descripcion: {
         items: {
-          0: 'cliente.nombre',
-          1: 'cliente.cargo',
+          1: 'cliente.nombre',
+          2: 'cliente.cargo',
           4: 'contacto.correo'
         },
         subitems: {
@@ -242,7 +249,9 @@ document.addEventListener('DOMContentLoaded', () => {
             1: 'diagnostico.decision'
           },
           7: {
-            0: 'diagnostico.decision'
+            0: 'diagnostico.decision',
+            1: 'diagnostico.decision',
+            2: 'diagnostico.decision'
           }
         }
       },
@@ -375,11 +384,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!correo) return '';
     const hilos = correo.hilos || [];
     const defaultView = ticket.canales.default || 'correo';
+    const titleAttr = correo.titleLinkId ? ` data-link="${escapeHtml(correo.titleLinkId)}" tabindex="0"` : '';
     return `
       <div class="channel correo"${defaultView === 'correo' ? '' : ' hidden'}>
         ${fuenteHtml}
         <div class="roleplay-dock">
-          ${correo.titulo ? `<div class="roleplay-titlebar"><h5 class="roleplay-title">${escapeHtml(correo.titulo)}</h5><span class="focus-pill">MODO FOCO</span></div>` : ''}
+          ${correo.titulo ? `<div class="roleplay-titlebar"><h5 class="roleplay-title"${titleAttr}>${escapeHtml(correo.titulo)}</h5><span class="focus-pill">MODO FOCO</span></div>` : ''}
           <div class="channel-body">
             ${hilos.map((email, index) => `${renderEmail(email)}${index < hilos.length - 1 ? '<hr>' : ''}`).join('')}
           </div>
@@ -426,15 +436,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const getMacroLinkTag = (entryIndex) => {
     if (entryIndex <= 18) return 'macro.descripcion';
-    if (entryIndex <= 43) return 'macro.medidas';
+    if (entryIndex <= 44) return 'macro.medidas';
     return 'macro.resolucion';
+  };
+
+  const getEntryMacroLink = (entry, entryIndex) => {
+    if (entry && entry.macroLink) return entry.macroLink;
+    return getMacroLinkTag(entryIndex);
   };
 
   const getConversationLineLinks = (ticketId, entryIndex) => {
     if (!isLinkingTicket(ticketId)) return null;
     const map = {
       35: { 0: 'diagnostico.descarto', 1: 'diagnostico.decision' },
-      44: {
+      45: {
         1: 'ubicacion.sitio',
         2: 'resolucion.causa',
         3: 'resolucion.accion',
@@ -462,9 +477,12 @@ document.addEventListener('DOMContentLoaded', () => {
       31: 'diagnostico.observacion',
       36: 'diagnostico.decision',
       39: 'ubicacion.sitio',
-      48: 'resolucion.confirmacion',
-      50: 'resolucion.validacion',
-      51: 'resolucion.cierre'
+      40: 'diagnostico.decision',
+      41: 'diagnostico.decision',
+      42: 'diagnostico.decision',
+      49: 'resolucion.confirmacion',
+      51: 'resolucion.validacion',
+      52: 'resolucion.cierre'
     };
     return map[entryIndex] || null;
   };
@@ -477,10 +495,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const bodyHtml = renderLogText(entry.text, lineLinks);
     const timeHtml = time ? `<span class="conv-time">${time}</span>` : '';
     const bodyBlock = bodyHtml.includes('<p') ? bodyHtml : `<p class="conv-body">${bodyHtml}</p>`;
-    const macroTag = isLinkingTicket(ticket.id) ? getMacroLinkTag(entryIndex) : null;
+    const macroTag = isLinkingTicket(ticket.id) ? getEntryMacroLink(entry, entryIndex) : null;
     const linkAttr = macroTag ? ` data-link="${escapeHtml(macroTag)}" tabindex="0"` : '';
     const bubbleTag = getConversationBubbleLinkTag(ticket.id, entryIndex);
-    const bubbleAttr = bubbleTag ? ` data-link="${escapeHtml(bubbleTag)}" tabindex="0"` : '';
+    const fineLinkId = entry.linkId || null;
+    const bubbleLink = fineLinkId || bubbleTag;
+    const bubbleAttr = bubbleLink ? ` data-link="${escapeHtml(bubbleLink)}" tabindex="0"` : '';
     return `
       <div class="conv-msg ${roleClass}"${linkAttr}>
         <div class="conv-bubble"${bubbleAttr}>
@@ -501,9 +521,9 @@ document.addEventListener('DOMContentLoaded', () => {
       let html = '';
       let i = 0;
       while (i < log.length) {
-        const macroTag = getMacroLinkTag(i);
+        const macroTag = getEntryMacroLink(log[i], i);
         const blockItems = [];
-        while (i < log.length && getMacroLinkTag(i) === macroTag) {
+        while (i < log.length && getEntryMacroLink(log[i], i) === macroTag) {
           blockItems.push(renderConversationEntry(ticket, log[i], i));
           i += 1;
         }
@@ -541,11 +561,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!chat) return '';
     const log = chat.log || [];
     const defaultView = ticket.canales.default || 'correo';
+    const titleAttr = chat.titleLinkId ? ` data-link="${escapeHtml(chat.titleLinkId)}" tabindex="0"` : '';
     return `
       <div class="channel chat"${defaultView === 'chat' ? '' : ' hidden'}>
         ${fuenteHtml}
         <div class="roleplay-dock">
-          ${chat.titulo ? `<div class="roleplay-titlebar"><h5 class="roleplay-title">${escapeHtml(chat.titulo)}</h5><span class="focus-pill">MODO FOCO</span></div>` : ''}
+          ${chat.titulo ? `<div class="roleplay-titlebar"><h5 class="roleplay-title"${titleAttr}>${escapeHtml(chat.titulo)}</h5><span class="focus-pill">MODO FOCO</span></div>` : ''}
           <div class="channel-body">
             <div class="chat-log">
               ${renderConversationLog(ticket, log)}
@@ -561,11 +582,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!llamada) return '';
     const log = llamada.log || [];
     const defaultView = ticket.canales.default || 'correo';
+    const titleAttr = llamada.titleLinkId ? ` data-link="${escapeHtml(llamada.titleLinkId)}" tabindex="0"` : '';
     return `
       <div class="channel llamada"${defaultView === 'llamada' ? '' : ' hidden'}>
         ${fuenteHtml}
         <div class="roleplay-dock">
-          ${llamada.titulo ? `<div class="roleplay-titlebar"><h5 class="roleplay-title">${escapeHtml(llamada.titulo)}</h5><span class="focus-pill">MODO FOCO</span></div>` : ''}
+          ${llamada.titulo ? `<div class="roleplay-titlebar"><h5 class="roleplay-title"${titleAttr}>${escapeHtml(llamada.titulo)}</h5><span class="focus-pill">MODO FOCO</span></div>` : ''}
           <div class="channel-body">
             <div class="call-log">
               ${renderConversationLog(ticket, log, { groupByMacro: true })}
@@ -706,10 +728,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const telefonoLink = isLinkingTicket(ticket.id) ? 'contacto.telefono' : '';
     const correoLink = isLinkingTicket(ticket.id) ? 'contacto.correo' : '';
     const prioridadLink = isLinkingTicket(ticket.id) ? 'incidente.prioridad' : '';
+    const tipoLink = ticket.tipoLinkId || '';
     const nombreAttr = nombreLink ? ` data-link="${escapeHtml(nombreLink)}" tabindex="0"` : '';
     const telefonoAttr = telefonoLink ? ` data-link="${escapeHtml(telefonoLink)}" tabindex="0"` : '';
     const correoAttr = correoLink ? ` data-link="${escapeHtml(correoLink)}" tabindex="0"` : '';
     const prioridadAttr = prioridadLink ? ` data-link="${escapeHtml(prioridadLink)}" tabindex="0"` : '';
+    const tipoAttr = tipoLink ? ` data-link="${escapeHtml(tipoLink)}" tabindex="0"` : '';
     return `
       <article class="ticket-card ticket-sheet-card" data-ticket="${escapeHtml(ticket.id)}">
         <section class="ticket-preview" aria-label="Previsualizaci½n del ticket">
@@ -746,7 +770,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
             <div class="meta-item" role="listitem">
               <span class="meta-label">Tipo de emisión:</span>
-              <span class="meta-value ticket-tipo">${escapeHtml(ticket.tipo || '')}</span>
+              <span class="meta-value ticket-tipo"${tipoAttr}>${escapeHtml(ticket.tipo || '')}</span>
             </div>
           </div>
           </div>
@@ -827,6 +851,43 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
+  const clearSelected = () => {
+    selectedFineId = null;
+    [ticketSheet, ticketTabs].forEach((container) => {
+      if (!container) return;
+      container.querySelectorAll('[data-link].is-selected').forEach((el) => {
+        el.classList.remove('is-selected');
+      });
+    });
+  };
+
+  const applyFineSelect = (linkId) => {
+    if (!linkId) return;
+    clearSelected();
+    selectedFineId = linkId;
+    [ticketSheet, ticketTabs].forEach((container) => {
+      if (!container) return;
+      container.querySelectorAll(`[data-link="${CSS.escape(linkId)}"]`).forEach((el) => {
+        el.classList.add('is-selected');
+      });
+    });
+  };
+
+  const scrollRoleplayToLink = (linkId) => {
+    if (!linkId || !ticketTabs) return;
+    const activeChannel = ticketTabs.querySelector('.channel:not([hidden])');
+    if (!activeChannel) return;
+    const body = activeChannel.querySelector('.channel-body');
+    if (!body) return;
+    const target = activeChannel.querySelector(`[data-link="${CSS.escape(linkId)}"]`);
+    if (!target) return;
+    if (body.contains(target)) {
+      target.scrollIntoView({ block: 'start', behavior: 'smooth' });
+    } else {
+      body.scrollTop = 0;
+    }
+  };
+
   const applyLock = (macroId) => {
     if (!macroId) return;
     clearLock();
@@ -854,6 +915,7 @@ document.addEventListener('DOMContentLoaded', () => {
     lockedMacroId = null;
     clearHover();
     clearLock();
+    clearSelected();
   };
 
   const getMacroFromTarget = (target) => {
@@ -1083,10 +1145,19 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!linkEl) return;
     const linkId = linkEl.dataset.link;
     if (!linkId) return;
+    const isNotesLink = ticketSheet.contains(linkEl) && linkEl.closest('.ticket-notes');
     const macroId = linkId.startsWith('macro.') ? linkId : getMacroFromTarget(linkEl);
     if (!macroId) return;
+    if (!linkId.startsWith('macro.') && isNotesLink) {
+      if (selectedFineId !== linkId) {
+        applyFineSelect(linkId);
+      }
+      lockedMacroId = macroId;
+      applyLock(macroId);
+      scrollRoleplayToLink(linkId);
+      return;
+    }
     if (lockedMacroId === macroId) {
-      resetLinkState();
       return;
     }
     lockedMacroId = macroId;
@@ -1095,7 +1166,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.addEventListener('click', (event) => {
     if (!lockedMacroId || !isLinkingTicket(selectedTicketId)) return;
-    if (layout.contains(event.target)) return;
+    if (layout.contains(event.target)) {
+      const inNotes = ticketSheet.contains(event.target) && event.target.closest('.ticket-notes');
+      const inRoleplay = ticketTabs.contains(event.target) && event.target.closest('.channel');
+      const inLinked = event.target.closest('[data-link]');
+      if (inNotes || inRoleplay || inLinked) return;
+    }
     resetLinkState();
   });
 

@@ -90,7 +90,7 @@ body.page-scroll .app {
 }
 
 .header-brand-logo {
-  height: 48px;
+  height: 90px;
   width: auto;
   flex-shrink: 0
 }
@@ -336,7 +336,8 @@ body.page-scroll .app {
   max-height: 44px;
   width: auto;
   height: auto;
-  flex-shrink: 0
+  flex-shrink: 0;
+  filter: brightness(0) invert(1)
 }
 
 .btn {
@@ -726,7 +727,7 @@ input {
   }
 }
 
-@media (max-width:640px) {
+@media (max-width:768px) {
   .site-header .header-logo {
     display: none
   }
@@ -923,6 +924,26 @@ input {
   gap: 8px;
 }
 
+.ticket-notes,
+.ticket-notes li,
+.ticket-notes p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.ticket-notes ul > li {
+  margin-bottom: 0.25rem;
+}
+
+.ticket-notes ul ul {
+  margin-top: 0.25rem;
+}
+
+.ticket-notes h4,
+.ticket-notes h5 {
+  font-size: 0.95rem;
+}
+
 .notes-title {
   font-weight: 700;
   font-size: 0.95rem;
@@ -1005,8 +1026,20 @@ input {
 [data-link].is-hover {
   outline: none;
   box-shadow: none;
-  background: rgba(255, 215, 0, 0.18);
-  border-left: 4px solid rgba(255, 215, 0, 0.75);
+  background: transparent;
+  border-left: 3px solid rgba(255, 215, 0, 0.95);
+  box-shadow: inset 0 0 0 1px rgba(255, 215, 0, 0.35);
+  border-radius: 6px;
+  padding-left: 10px;
+  position: relative;
+  z-index: 2;
+}
+
+[data-link].is-selected {
+  outline: none;
+  box-shadow: none;
+  background: rgba(255, 215, 0, 0.22);
+  border-left: 3px solid rgba(255, 215, 0, 0.95);
   border-radius: 6px;
   padding-left: 10px;
   position: relative;
@@ -1017,6 +1050,14 @@ input {
   outline: 2px solid rgba(11, 61, 145, 0.35);
   box-shadow: 0 0 0 3px rgba(11, 61, 145, 0.12);
   background: rgba(11, 61, 145, 0.08);
+}
+
+.conv-bubble.is-hover {
+  box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.35);
+}
+
+.conv-bubble.is-selected {
+  box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.65);
 }
 
 .conv-msg.is-related {
@@ -1154,7 +1195,7 @@ input {
   }
 
   .header-brand-logo {
-    height: 36px
+    height: 54px
   }
 
   .header-nav {

@@ -14,7 +14,7 @@
 - Explicar el caso y abrir la vista de Tickets.
 - Mostrar filtros (Estado, Prioridad, Tipo, Búsqueda) y cómo se usa la lista.
 - Seleccionar un ticket para ver la ficha y el panel de detalle.
-- Recorrer las pesta¤as: Resumen, Canal, Registro, Diagnóstico, Acciones, Evidencias y Tiempo.
+- Recorrer las pestañas: Resumen, Canal, Registro, Diagnóstico, Acciones, Evidencias y Tiempo.
 - Mostrar cómo se alternan canales (correo, chat, llamada) y la evidencia.
 
 ### 3) Equipo

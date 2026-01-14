@@ -199,6 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const getNotesSectionKey = (titleText) => {
     const normalized = String(titleText || '').trim().toLowerCase();
+    if (normalized.includes('notas')) return 'descripcion';
     if (normalized.includes('descripci')) return 'descripcion';
     if (normalized.includes('medidas')) return 'medidas';
     if (normalized.includes('resoluci')) return 'resolucion';
@@ -455,41 +456,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const getConversationLineLinks = (ticketId, entryIndex) => {
     if (!isLinkingTicket(ticketId)) return null;
-    const map = {
-      35: { 0: 'diagnostico.descarto', 1: 'diagnostico.decision' },
-      45: {
-        1: 'ubicacion.sitio',
-        2: 'resolucion.causa',
-        3: 'resolucion.accion',
-        4: 'resolucion.validacion'
-      }
-    };
-    return map[entryIndex] || null;
+    return null;
   };
 
   const getConversationBubbleLinkTag = (ticketId, entryIndex) => {
     if (!isLinkingTicket(ticketId)) return null;
-    const map = {
-      1: 'cliente.nombre',
-      3: 'cliente.cargo',
-      5: 'contacto.telefono',
-      7: 'contacto.correo',
-      9: 'incidente.sintoma',
-      13: 'incidente.inicio',
-      15: 'incidente.intermitencia',
-      17: 'incidente.impacto',
-      19: 'incidente.conexion',
-      21: 'incidente.alcance',
-      22: 'incidente.prioridad',
-      31: 'diagnostico.prueba',
-      32: 'diagnostico.observacion',
-      38: 'diagnostico.descarto',
-      40: 'diagnostico.decision',
-      41: 'ubicacion.sitio',
-      56: 'resolucion.confirmacion',
-      59: 'resolucion.cierre'
-    };
-    return map[entryIndex] || null;
+    return null;
   };
 
   const renderConversationEntry = (ticket, entry, entryIndex) => {
@@ -633,17 +605,36 @@ document.addEventListener('DOMContentLoaded', () => {
       const role = thumb.role ? ` role="${escapeHtml(thumb.role)}"` : '';
       const ariaHidden = thumb.ariaHidden ? ' aria-hidden="true"' : '';
       const fontSize = thumb.fontSize ? ` font-size="${thumb.fontSize}"` : '';
-      return `
-        <button class="evidence-thumb" data-action="open-evidence" data-src="${escapeHtml(item.src)}" aria-label="${escapeHtml(item.titulo || `Evidencia ${index + 1}`)}">
+      const src = item.src || '';
+      const isRealImage = src.startsWith('assets/img/')
+        || src.startsWith('../assets/img/')
+        || /\.(png|jpe?g|webp)$/i.test(src);
+      const altText = item.titulo || `Evidencia ${index + 1}`;
+      const thumbContent = isRealImage
+        ? `<img src="${escapeHtml(src)}" alt="${escapeHtml(altText)}" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:12px;" />`
+        : `
           <svg width="${thumb.width || 320}" height="${thumb.height || 180}"${viewBox}${role}${ariaHidden}>
             <rect width="100%" height="100%" fill="${escapeHtml(thumb.fill || '#fff')}"></rect>
             <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="${escapeHtml(thumb.textColor || '#333')}"${fontSize}>${escapeHtml(thumb.text || '')}</text>
           </svg>
-        </button>
+        `;
+      const captionText = item.titulo
+        || item.caption
+        || item.label
+        || `Evidencia ${index + 1}`;
+      return `
+        <div class="evidence-item">
+          <button class="evidence-thumb" data-action="open-evidence" data-src="${escapeHtml(src)}" aria-label="${escapeHtml(altText)}">
+            ${thumbContent}
+          </button>
+          <div class="evidence-caption" style="font-size:12px;margin-top:6px;opacity:0.85;line-height:1.2;text-align:left;">
+            ${escapeHtml(captionText)}
+          </div>
+        </div>
       `;
     }).join('');
     const logSample = ticket.logSample
-      ? `<div class="log-sample">${ticket.logSample.titulo ? `<h5>${escapeHtml(ticket.logSample.titulo)}</h5>` : ''}<pre><code>${escapeHtml(ticket.logSample.contenido || '')}</code></pre></div>`
+      ? `<div class="log-sample">${ticket.logSample.titulo ? `<h5>${escapeHtml(ticket.logSample.titulo)}</h5>` : ''}<pre><code>${escapeHtml(ticket.logSample.contenido || '')}</code></pre>${ticket.logSample.descripcion ? `<div class="log-desc" style="font-size:12px;margin-top:8px;opacity:0.85;">${escapeHtml(ticket.logSample.descripcion)}</div>` : ''}</div>`
       : '';
     return `<h4>Evidencias</h4><div class="gallery"${galleryAttrs}>${items}</div>${logSample}`;
   };
@@ -1059,7 +1050,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (action === 'open-evidence') {
       const src = actionEl.dataset.src || '';
       let content = '';
-      if (src.includes('photo')) {
+      const isRealImage = src.startsWith('assets/img/')
+        || src.startsWith('../assets/img/')
+        || /\.(png|jpe?g|webp)$/i.test(src);
+      if (isRealImage) {
+        const altText = actionEl.getAttribute('aria-label') || 'Evidencia';
+        content = `<img src="${escapeHtml(src)}" alt="${escapeHtml(altText)}" style="max-width:100%;height:auto;border-radius:12px;" />`;
+      } else if (src.includes('photo')) {
         content = '<svg width="800" height="450"><rect width="100%" height="100%" fill="#e6eefc"></rect><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#0b3d91" font-size="24">Foto (placeholder)</text></svg>';
       } else if (src.includes('screenshot')) {
         content = '<svg width="800" height="450"><rect width="100%" height="100%" fill="#fff"></rect><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#333" font-size="20">Captura (placeholder)</text></svg>';

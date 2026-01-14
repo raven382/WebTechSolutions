@@ -254,7 +254,7 @@
     "evidenciasAriaLabel": "Galer├¡a de evidencias TS-HW-0238",
     "evidencias": [
       {
-        "titulo": "Evidencia 1",
+        "titulo": "Evidencia 1 \u2014 Foto del cableado del switch de acceso afectado",
         "tipo": "foto",
         "src": "svg-photo-1",
         "thumb": {
@@ -270,7 +270,7 @@
         }
       },
       {
-        "titulo": "Evidencia 2",
+        "titulo": "Evidencia 2 \u2014 Captura de traceroute mostrando p\u00e9rdida de paquetes",
         "tipo": "captura",
         "src": "svg-screenshot-1",
         "thumb": {
@@ -535,9 +535,7 @@
           {
             "t": "09:16",
             "who": "Usuario",
-            "text": [
-              "S├¡, ac├í mismo."
-            ],
+            "text": ["S├¡, ac├í mismo."],
             "link": "ts-hw-0238-desc"
           },
           {
@@ -568,9 +566,7 @@
           {
             "t": "09:18",
             "who": "Usuario",
-            "text": [
-              "S├¡, cero problemas."
-            ],
+            "text": ["S├¡, cero problemas."],
             "link": "ts-hw-0238-desc"
           },
           {
@@ -585,9 +581,7 @@
           {
             "t": "09:19",
             "who": "Usuario",
-            "text": [
-              "A una regleta."
-            ],
+            "text": ["A una regleta."],
             "link": "ts-hw-0238-med"
           },
           {
@@ -601,9 +595,7 @@
           {
             "t": "09:20",
             "who": "Usuario",
-            "text": [
-              "Ya lo prob├® reci├®nÔÇª sigue igual."
-            ],
+            "text": ["Ya lo prob├® reci├®nÔÇª sigue igual."],
             "link": "ts-hw-0238-med"
           },
           {
@@ -618,9 +610,7 @@
           {
             "t": "09:21",
             "who": "Usuario",
-            "text": [
-              "S├¡, est├í en ON."
-            ],
+            "text": ["S├¡, est├í en ON."],
             "link": "ts-hw-0238-med"
           },
           {
@@ -635,9 +625,7 @@
           {
             "t": "09:22",
             "who": "Usuario",
-            "text": [
-              "┬┐Eso significa que muri├│?"
-            ],
+            "text": ["┬┐Eso significa que muri├│?"],
             "link": "ts-hw-0238-med"
           },
           {
@@ -668,10 +656,7 @@
           {
             "t": "09:32",
             "who": "Usuario",
-            "text": [
-              "Un segundoÔÇª",
-              "S├¡, ah├¡ encendi├│."
-            ],
+            "text": ["Un segundoÔÇª", "S├¡, ah├¡ encendi├│."],
             "link": "ts-hw-0238-res"
           },
           {
@@ -686,9 +671,7 @@
           {
             "t": "09:33",
             "who": "Usuario",
-            "text": [
-              "S├¡, ya estoy dentro."
-            ],
+            "text": ["S├¡, ya estoy dentro."],
             "link": "ts-hw-0238-res"
           },
           {
@@ -703,9 +686,7 @@
           {
             "t": "09:34",
             "who": "Usuario",
-            "text": [
-              "S├¡, todo funcionando."
-            ],
+            "text": ["S├¡, todo funcionando."],
             "link": "ts-hw-0238-res"
           },
           {
@@ -721,17 +702,13 @@
           {
             "t": "09:35",
             "who": "Usuario",
-            "text": [
-              "Gracias, de verdad. Me salvaste la reuni├│n."
-            ],
+            "text": ["Gracias, de verdad. Me salvaste la reuni├│n."],
             "link": "ts-hw-0238-res"
           },
           {
             "t": "09:36",
             "who": "Soporte",
-            "text": [
-              "Para eso estamos. ├ëxito en la reuni├│n, Juan."
-            ],
+            "text": ["Para eso estamos. ├ëxito en la reuni├│n, Juan."],
             "link": "ts-hw-0238-res"
           }
         ]
@@ -1437,9 +1414,7 @@
           {
             "t": "10:44",
             "who": "Usuaria",
-            "text": [
-              "Desde esta ma├▒ana. Ayer funcionaba bien."
-            ],
+            "text": ["Desde esta ma├▒ana. Ayer funcionaba bien."],
             "link": "ts-prn-0524-desc"
           },
           {
@@ -1454,9 +1429,7 @@
           {
             "t": "10:45",
             "who": "Usuaria",
-            "text": [
-              "A todos. Nadie puede imprimir."
-            ],
+            "text": ["A todos. Nadie puede imprimir."],
             "link": "ts-prn-0524-desc"
           },
           {
@@ -1471,9 +1444,7 @@
           {
             "t": "10:46",
             "who": "Usuaria",
-            "text": [
-              "No, est├í encendida normal. No marca errores."
-            ],
+            "text": ["No, est├í encendida normal. No marca errores."],
             "link": "ts-prn-0524-med"
           },
           {
@@ -1536,10 +1507,7 @@
           {
             "t": "10:57",
             "who": "Usuaria",
-            "text": [
-              "Dame un segundoÔÇª",
-              "S├¡, ya sali├│ la hoja."
-            ],
+            "text": ["Dame un segundoÔÇª", "S├¡, ya sali├│ la hoja."],
             "link": "ts-prn-0524-res"
           },
           {
@@ -1554,9 +1522,7 @@
           {
             "t": "10:58",
             "who": "Usuaria",
-            "text": [
-              "S├¡, est├í saliendo todo normal ahora."
-            ],
+            "text": ["S├¡, est├í saliendo todo normal ahora."],
             "link": "ts-prn-0524-res"
           },
           {
@@ -1572,17 +1538,13 @@
           {
             "t": "10:59",
             "who": "Usuaria",
-            "text": [
-              "Muchas gracias, de verdad. Est├íbamos complicados."
-            ],
+            "text": ["Muchas gracias, de verdad. Est├íbamos complicados."],
             "link": "ts-prn-0524-res"
           },
           {
             "t": "11:00",
             "who": "Soporte",
-            "text": [
-              "Lo entiendo. ├ëxito con el cierre, Mar├¡a Fernanda."
-            ],
+            "text": ["Lo entiendo. ├ëxito con el cierre, Mar├¡a Fernanda."],
             "link": "ts-prn-0524-res"
           }
         ]
@@ -1619,7 +1581,7 @@
       }
     ]
   },
-        {
+  {
     "id": "TS-NET-0631",
     "titulo": "Red lenta o sin internet",
     "estado": "Cierre",
@@ -1641,49 +1603,78 @@
     },
     "especialistas": "Raven Ovalle, Matías Ureta, Juan Cruz",
     "notas": [
-      "Canal de ingreso: llamada (simulación).",
-      "Identificación del usuario: Andrés Morales.",
-      "Cargo: Analista de Operaciones.",
-      "Contacto confirmado: móvil corporativo.",
-      "Correo validado para notificaciones.",
+      "Ticket/Incidente: TS-NET-0631",
+      "Canal de ingreso: Llamada (simulación).",
+      "Usuario (detectado por VoIP / directorio corporativo): Andrés Morales.",
+      "Cargo / Área: Analista de Operaciones / Operaciones.",
+      "Contacto: móvil corporativo (confirmado).",
+      "Correo para notificaciones: andres.morales@techsolutions.com (confirmado).",
       "Ubicación: tercer piso, área de Operaciones.",
-      "Usuario reporta lentitud e intermitencia de red.",
-      "Pérdida de acceso a planillas y correo corporativo.",
-      "Impacto declarado: bloqueo operativo y pérdida de trabajo.",
-      "Problema presente desde la mañana del mismo día.",
-      "Conexión por cable.",
-      "Mismo equipo y punto de red habitual.",
-      "Otros usuarios del área presentan problemas similares.",
-      "Reorganización reciente de escritorios en el área.",
-      "Incidente clasificado como incidente de red – prioridad alta."
+      "Síntomas reportados por el usuario: conexión lenta e intermitente; pérdida de acceso a planillas del servidor y al correo corporativo.",
+      "Comportamiento observado por el usuario: “a ratos se cae”, planillas quedan cargando o se desconectan; correo abre a veces y otras no carga.",
+      "Inicio del problema: desde la mañana del mismo día, al llegar a la oficina.",
+      "Restablecimiento: a veces vuelve solo, otras veces no.",
+      "Impacto: bloqueo operativo (no puede trabajar con normalidad).",
+      "Tipo de conexión: por cable (no Wi-Fi).",
+      "Alcance: otros usuarios del área reportan problemas similares (indicador de incidencia de área).",
+      "Cambio reciente relevante: reorganización de escritorios en el área el día anterior.",
+      "Clasificación: Incidente de red (LAN – conectividad intermitente).",
+      "Priorización: prioridad alta (horario operativo + impacto alto + múltiples usuarios potencialmente afectados)."
     ],
     "medidas": [
-      "Se entrega contención inicial al usuario por impacto operativo.",
-      "Se informa clasificación del incidente y curso de acción.",
-      "Se mantiene comunicación con el usuario durante la revisión.",
-      "Obtención de parámetros de red del equipo.",
-      "Prueba de conectividad al gateway con latencia variable y pérdida de paquetes.",
-      "Revisión del puerto en switch.",
-      "Detección de flapping (activo/inactivo).",
-      "Aplicación de acción lógica inicial: renegociación de enlace.",
-      "Resultado: mejora temporal, persistencia de la inestabilidad.",
-      "Se descarta problema exclusivo del equipo del usuario.",
-      "Se decide escalar a revisión de infraestructura del área.",
-      "Se coordina intervención técnica en terreno."
+      "Se confirma identidad por identificador de llamada y se informa uso de datos del directorio corporativo para el seguimiento.",
+      "Se realiza contención breve y profesional (“revisarlo con calma”), se explican acciones y posibles cortes.",
+      "Se gestiona expectativa: pruebas y acción inicial pueden provocar desconexión momentánea.",
+      "Se valida acuerdo del usuario antes de coordinar intervención adicional.",
+      "Se informa que se mantendrán avances por ticket y que no requiere acciones del usuario durante la revisión de infraestructura.",
+      "Se obtienen parámetros de red del equipo del usuario (ipconfig/ifconfig): IP, máscara, gateway, DNS, estado de NIC/MAC (interfaz activa).",
+      "Se realiza ping al gateway (prueba breve): latencia variable + pérdida de paquetes.",
+      "Se ejecuta ping prolongado / serie extendida: picos de latencia + timeouts consistentes con micro-cortes.",
+      "Se revisa el puerto asociado al usuario en switch de acceso (gestión/consola): flapping (link up/down frecuente).",
+      "Se deja indicado como evidencia esperable (si aplica): contadores CRC/input errors, speed/duplex y logs de link flaps.",
+      "Se realiza acción remota inicial para estabilización/validación:",
+      "bounce lógico del puerto (renegociación del enlace),",
+      "forzado de nueva auto-negociación.",
+      "Se observa mejora temporal tras la acción (conectividad estable en ventana corta).",
+      "El usuario confirma que el servicio vuelve a fallar (reaparición del síntoma), por lo que se concluye que la estabilidad no es sostenida.",
+      "Se determina que no es un problema exclusivo del equipo del usuario (por patrón + otros usuarios + evidencia de enlace).",
+      "Se escala internamente dentro de Soporte TI para intervención en infraestructura:",
+      "Técnico en terreno asignado: Raven Andrés Ovalle.",
+      "Responsable de registro/seguimiento y cierre: Juan Cruz.",
+      "Se registra motivo del escalamiento: persistencia del flapping e inestabilidad post-acción remota, en contexto de reorganización reciente."
     ],
     "resolucion": [
-      "Intervención en el switch del tercer piso, área de Operaciones.",
-      "Identificación de perfil incorrecto en el puerto tras reorganización.",
-      "Corrección de configuración del puerto.",
-      "Reasociación correcta al segmento del área.",
-      "Reinicio controlado del enlace.",
-      "Monitoreo posterior: enlace estable, sin flapping, latencia normal, sin pérdida de paquetes.",
-      "Servicio normalizado.",
-      "Validación con el usuario: acceso estable a planillas y correo, sin nuevas caídas.",
-      "Comunicación de monitoreo preventivo.",
-      "Recomendación ante cambios futuros.",
-      "Usuario confirma recepción de correo y encuesta.",
-      "Ticket cerrado como resuelto."
+      "Intervención en rack del tercer piso (Operaciones): validación física y de mapeo.",
+      "Validación de correspondencia:",
+      "patch panel del área ↔ puerto físico del switch de acceso ↔ segmento/VLAN asignada.",
+      "Se detecta flapping en el puerto asociado al área.",
+      "Revisión de configuración del puerto desde consola del switch:",
+      "hallazgo de perfil/VLAN incorrectos (desalineación expuesta tras reorganización física, sin requerir un “cambio previo en switch” intencional).",
+      "Corrección aplicada:",
+      "reasociación del puerto al perfil/VLAN correcto del área,",
+      "reinicio controlado del enlace para aplicar cambios.",
+      "Pruebas posteriores:",
+      "enlace estable,",
+      "sin flapping,",
+      "sin pérdida de paquetes,",
+      "latencia normal (sin comportamiento anómalo).",
+      "Raven entrega feedback técnico al responsable de ticket:",
+      "causa confirmada (desalineación perfil/VLAN vs área),",
+      "sin evidencia de falla física en patch panel/cableado,",
+      "corrección aplicada normaliza el servicio,",
+      "pruebas posteriores confirman estabilidad.",
+      "Control del ticket vuelve a L1 (Juan Cruz) para validación con usuario y cierre administrativo.",
+      "Llamada de confirmación posterior: usuario valida acceso estable a planillas y correo, sin nuevas caídas ni lentitud.",
+      "Se comunica monitoreo preventivo durante la jornada.",
+      "Se entrega recomendación preventiva:",
+      "ante cambios futuros de puestos/cableado, avisar con anticipación para validar el mapeo/segmentación y evitar recurrencia.",
+      "Sistema registra envío automático de correo de cierre con:",
+      "resumen del incidente y acciones,",
+      "confirmación de normalización,",
+      "recomendaciones preventivas,",
+      "enlace a encuesta de satisfacción.",
+      "Usuario confirma recepción del correo.",
+      "Ticket cerrado como resuelto (hora de cierre documentada) con validación explícita del usuario."
     ],
     "notasDetalle": [
       {
@@ -1691,7 +1682,7 @@
         "segments": [
           {
             "strong": true,
-            "text": "Descripción del problema:"
+            "text": "NOTAS"
           }
         ]
       },
@@ -1699,68 +1690,72 @@
         "type": "list",
         "items": [
           {
-            "text": "Canal de ingreso: llamada (simulación).",
+            "text": "Ticket/Incidente: TS-NET-0631",
+            "linkId": "desc.ticket"
+          },
+          {
+            "text": "Canal de ingreso: Llamada (simulación).",
             "linkId": "desc.canal"
           },
           {
-            "text": "Identificación del usuario: Andrés Morales.",
-            "linkId": "desc.usuario_nombre"
+            "text": "Usuario (detectado por VoIP / directorio corporativo): Andrés Morales.",
+            "linkId": "cliente.nombre"
           },
           {
-            "text": "Cargo: Analista de Operaciones.",
-            "linkId": "desc.usuario_cargo"
+            "text": "Cargo / Área: Analista de Operaciones / Operaciones.",
+            "linkId": "cliente.cargo"
           },
           {
-            "text": "Contacto confirmado: móvil corporativo.",
-            "linkId": "desc.contacto_tipo"
+            "text": "Contacto: móvil corporativo (confirmado).",
+            "linkId": "contacto.telefono"
           },
           {
-            "text": "Correo validado para notificaciones.",
-            "linkId": "desc.contacto_correo"
+            "text": "Correo para notificaciones: andres.morales@techsolutions.com (confirmado).",
+            "linkId": "contacto.correo"
           },
           {
             "text": "Ubicación: tercer piso, área de Operaciones.",
-            "linkId": "desc.ubicacion"
+            "linkId": "ubicacion.sitio"
           },
           {
-            "text": "Usuario reporta lentitud e intermitencia de red.",
-            "linkId": "desc.sintoma_lentitud"
+            "text": "Síntomas reportados por el usuario: conexión lenta e intermitente; pérdida de acceso a planillas del servidor y al correo corporativo.",
+            "linkId": "desc.sintomas"
           },
           {
-            "text": "Intermitencia con caídas ocasionales de la conexión.",
-            "linkId": "desc.sintoma_caidas"
+            "text": "Comportamiento observado por el usuario: “a ratos se cae”, planillas quedan cargando o se desconectan; correo abre a veces y otras no carga.",
+            "linkId": "desc.comportamiento"
           },
           {
-            "text": "Pérdida de acceso a planillas y correo corporativo.",
-            "linkId": "desc.sintoma_acceso"
-          },
-          {
-            "text": "Impacto declarado: bloqueo operativo y pérdida de trabajo.",
-            "linkId": "desc.impacto"
-          },
-          {
-            "text": "Problema presente desde la mañana del mismo día.",
+            "text": "Inicio del problema: desde la mañana del mismo día, al llegar a la oficina.",
             "linkId": "desc.inicio"
           },
           {
-            "text": "Conexión por cable.",
-            "linkId": "desc.conexion_cable"
+            "text": "Restablecimiento: a veces vuelve solo, otras veces no.",
+            "linkId": "desc.restablecimiento"
           },
           {
-            "text": "Mismo equipo y punto de red habitual.",
-            "linkId": "desc.mismo_puesto"
+            "text": "Impacto: bloqueo operativo (no puede trabajar con normalidad).",
+            "linkId": "desc.impacto"
           },
           {
-            "text": "Otros usuarios del área presentan problemas similares.",
-            "linkId": "desc.otros_usuarios"
+            "text": "Tipo de conexión: por cable (no Wi-Fi).",
+            "linkId": "desc.conexion"
           },
           {
-            "text": "Reorganización reciente de escritorios en el área.",
-            "linkId": "desc.reorganizacion"
+            "text": "Alcance: otros usuarios del área reportan problemas similares (indicador de incidencia de área).",
+            "linkId": "desc.alcance"
           },
           {
-            "text": "Incidente clasificado como incidente de red – prioridad alta.",
-            "linkId": "desc.prioridad"
+            "text": "Cambio reciente relevante: reorganización de escritorios en el área el día anterior.",
+            "linkId": "desc.cambio"
+          },
+          {
+            "text": "Clasificación: Incidente de red (LAN – conectividad intermitente).",
+            "linkId": "net_tipo_emision"
+          },
+          {
+            "text": "Priorización: prioridad alta (horario operativo + impacto alto + múltiples usuarios potencialmente afectados).",
+            "linkId": "incidente.prioridad"
           }
         ]
       },
@@ -1774,59 +1769,138 @@
         ]
       },
       {
+        "type": "paragraph",
+        "segments": [
+          {
+            "text": "Gestión / comunicación (durante la llamada)"
+          }
+        ]
+      },
+      {
         "type": "list",
         "items": [
           {
-            "text": "Se entrega contención inicial al usuario por impacto operativo.",
-            "linkId": "med.contencion"
+            "text": "Se confirma identidad por identificador de llamada y se informa uso de datos del directorio corporativo para el seguimiento.",
+            "linkId": "med.gestion.identidad"
           },
           {
-            "text": "Se informa clasificación del incidente y curso de acción.",
-            "linkId": "med.info_curso"
+            "text": "Se realiza contención breve y profesional (“revisarlo con calma”), se explican acciones y posibles cortes.",
+            "linkId": "med.gestion.contencion"
           },
           {
-            "text": "Se mantiene comunicación con el usuario durante la revisión.",
-            "linkId": "med.comunicacion"
+            "text": "Se gestiona expectativa: pruebas y acción inicial pueden provocar desconexión momentánea.",
+            "linkId": "med.gestion.expectativa"
           },
           {
-            "text": "Obtención de parámetros de red del equipo.",
-            "linkId": "med.params_red"
+            "text": "Se valida acuerdo del usuario antes de coordinar intervención adicional.",
+            "linkId": "med.gestion.acuerdo"
           },
           {
-            "text": "Prueba de conectividad al gateway con latencia variable y pérdida de paquetes.",
-            "linkId": "med.ping_gateway"
+            "text": "Se informa que se mantendrán avances por ticket y que no requiere acciones del usuario durante la revisión de infraestructura.",
+            "linkId": "med.gestion.avances"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "segments": [
+          {
+            "text": "Diagnóstico inicial (equipo / conectividad)"
+          }
+        ]
+      },
+      {
+        "type": "list",
+        "items": [
+          {
+            "text": "Se obtienen parámetros de red del equipo del usuario (ipconfig/ifconfig): IP, máscara, gateway, DNS, estado de NIC/MAC (interfaz activa).",
+            "linkId": "med.diag.parametros"
           },
           {
-            "text": "Revisión del puerto en switch.",
-            "linkId": "med.rev_puerto"
+            "text": "Se realiza ping al gateway (prueba breve): latencia variable + pérdida de paquetes.",
+            "linkId": "med.diag.ping_gateway"
           },
           {
-            "text": "Detección de flapping (activo/inactivo).",
-            "linkId": "med.detecta_flapping"
+            "text": "Se ejecuta ping prolongado / serie extendida: picos de latencia + timeouts consistentes con micro-cortes.",
+            "linkId": "med.diag.ping_prolongado"
           },
           {
-            "text": "Aplicación de acción lógica inicial: renegociación de enlace.",
-            "linkId": "med.accion_renegociacion"
+            "text": "Se revisa el puerto asociado al usuario en switch de acceso (gestión/consola): flapping (link up/down frecuente).",
+            "linkId": "med.diag.revision_puerto"
           },
           {
-            "text": "Resultado: mejora temporal.",
-            "linkId": "med.resultado_mejora"
+            "text": "Se deja indicado como evidencia esperable (si aplica): contadores CRC/input errors, speed/duplex y logs de link flaps.",
+            "linkId": "med.diag.evidencia_crc"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "segments": [
+          {
+            "text": "Acción de estabilización (remota)"
+          }
+        ]
+      },
+      {
+        "type": "list",
+        "items": [
+          {
+            "text": "Se realiza acción remota inicial para estabilización/validación:",
+            "linkId": "med.estab.accion",
+            "subitems": [
+              {
+                "text": "bounce lógico del puerto (renegociación del enlace),",
+                "linkId": "med.estab.bounce"
+              },
+              {
+                "text": "forzado de nueva auto-negociación.",
+                "linkId": "med.estab.autoneg"
+              }
+            ]
           },
           {
-            "text": "Resultado: persistencia de la inestabilidad.",
-            "linkId": "med.resultado_persistencia"
+            "text": "Se observa mejora temporal tras la acción (conectividad estable en ventana corta).",
+            "linkId": "med.estab.mejora"
           },
           {
-            "text": "Se descarta problema exclusivo del equipo del usuario.",
-            "linkId": "med.descarta_equipo"
+            "text": "El usuario confirma que el servicio vuelve a fallar (reaparición del síntoma), por lo que se concluye que la estabilidad no es sostenida.",
+            "linkId": "med.estab.reaparicion"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "segments": [
+          {
+            "text": "Escalamiento interno y coordinación"
+          }
+        ]
+      },
+      {
+        "type": "list",
+        "items": [
+          {
+            "text": "Se determina que no es un problema exclusivo del equipo del usuario (por patrón + otros usuarios + evidencia de enlace).",
+            "linkId": "med.escalamiento.determina"
           },
           {
-            "text": "Se decide escalar a revisión de infraestructura del área.",
-            "linkId": "med.decision_escalar"
+            "text": "Se escala internamente dentro de Soporte TI para intervención en infraestructura:",
+            "linkId": "med.escalamiento.escala",
+            "subitems": [
+              {
+                "text": "Técnico en terreno asignado: Raven Andrés Ovalle.",
+                "linkId": "med.escalamiento.tecnico"
+              },
+              {
+                "text": "Responsable de registro/seguimiento y cierre: Juan Cruz.",
+                "linkId": "med.escalamiento.responsable"
+              }
+            ]
           },
           {
-            "text": "Se coordina intervención técnica en terreno.",
-            "linkId": "med.coord_terreno"
+            "text": "Se registra motivo del escalamiento: persistencia del flapping e inestabilidad post-acción remota, en contexto de reorganización reciente.",
+            "linkId": "med.escalamiento.motivo"
           }
         ]
       },
@@ -1840,145 +1914,252 @@
         ]
       },
       {
+        "type": "paragraph",
+        "segments": [
+          {
+            "text": "Intervención en terreno (infraestructura)"
+          }
+        ]
+      },
+      {
         "type": "list",
         "items": [
           {
-            "text": "Intervención en el switch del tercer piso, área de Operaciones.",
-            "linkId": "res.intervencion"
+            "text": "Intervención en rack del tercer piso (Operaciones): validación física y de mapeo.",
+            "linkId": "res.terreno.intervencion"
           },
           {
-            "text": "Identificación de perfil incorrecto en el puerto tras reorganización.",
-            "linkId": "res.causa_perfil"
+            "text": "Validación de correspondencia:",
+            "linkId": "res.terreno.validacion",
+            "subitems": [
+              {
+                "text": "patch panel del área ↔ puerto físico del switch de acceso ↔ segmento/VLAN asignada.",
+                "linkId": "res.terreno.validacion.patch_panel"
+              },
+              {
+                "text": "Se detecta flapping en el puerto asociado al área.",
+                "linkId": "res.terreno.validacion.flapping"
+              }
+            ]
           },
           {
-            "text": "Corrección de configuración del puerto.",
-            "linkId": "res.correccion_config"
+            "text": "Revisión de configuración del puerto desde consola del switch:",
+            "linkId": "res.terreno.revision",
+            "subitems": [
+              {
+                "text": "hallazgo de perfil/VLAN incorrectos (desalineación expuesta tras reorganización física, sin requerir un “cambio previo en switch” intencional).",
+                "linkId": "res.terreno.revision.hallazgo"
+              }
+            ]
           },
           {
-            "text": "Reasociación correcta al segmento del área.",
-            "linkId": "res.reasociacion_segmento"
+            "text": "Corrección aplicada:",
+            "linkId": "res.terreno.correccion",
+            "subitems": [
+              {
+                "text": "reasociación del puerto al perfil/VLAN correcto del área,",
+                "linkId": "res.terreno.correccion.reasociacion"
+              },
+              {
+                "text": "reinicio controlado del enlace para aplicar cambios.",
+                "linkId": "res.terreno.correccion.reinicio"
+              }
+            ]
           },
           {
-            "text": "Reinicio controlado del enlace.",
-            "linkId": "res.reinicio_enlace"
+            "text": "Pruebas posteriores:",
+            "linkId": "res.terreno.pruebas",
+            "subitems": [
+              {
+                "text": "enlace estable,",
+                "linkId": "res.terreno.pruebas.enlace"
+              },
+              {
+                "text": "sin flapping,",
+                "linkId": "res.terreno.pruebas.sin_flapping"
+              },
+              {
+                "text": "sin pérdida de paquetes,",
+                "linkId": "res.terreno.pruebas.sin_perdida"
+              },
+              {
+                "text": "latencia normal (sin comportamiento anómalo).",
+                "linkId": "res.terreno.pruebas.latencia"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "segments": [
+          {
+            "text": "Retroalimentación interna (handoff)"
+          }
+        ]
+      },
+      {
+        "type": "list",
+        "items": [
+          {
+            "text": "Raven entrega feedback técnico al responsable de ticket:",
+            "linkId": "res.handoff.feedback",
+            "subitems": [
+              {
+                "text": "causa confirmada (desalineación perfil/VLAN vs área),",
+                "linkId": "res.handoff.causa"
+              },
+              {
+                "text": "sin evidencia de falla física en patch panel/cableado,",
+                "linkId": "res.handoff.sin_falla"
+              },
+              {
+                "text": "corrección aplicada normaliza el servicio,",
+                "linkId": "res.handoff.correccion"
+              },
+              {
+                "text": "pruebas posteriores confirman estabilidad.",
+                "linkId": "res.handoff.pruebas"
+              }
+            ]
           },
           {
-            "text": "Monitoreo posterior: enlace estable.",
-            "linkId": "res.monit_enlace_estable"
+            "text": "Control del ticket vuelve a L1 (Juan Cruz) para validación con usuario y cierre administrativo.",
+            "linkId": "res.handoff.control"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "segments": [
+          {
+            "text": "Validación con el usuario (cierre operativo)"
+          }
+        ]
+      },
+      {
+        "type": "list",
+        "items": [
+          {
+            "text": "Llamada de confirmación posterior: usuario valida acceso estable a planillas y correo, sin nuevas caídas ni lentitud.",
+            "linkId": "res.validacion.llamada"
           },
           {
-            "text": "Monitoreo posterior: sin flapping.",
-            "linkId": "res.monit_sin_flapping"
+            "text": "Se comunica monitoreo preventivo durante la jornada.",
+            "linkId": "res.validacion.monitoreo"
           },
           {
-            "text": "Monitoreo posterior: latencia normal.",
-            "linkId": "res.monit_latencia_normal"
+            "text": "Se entrega recomendación preventiva:",
+            "linkId": "res.validacion.recomendacion",
+            "subitems": [
+              {
+                "text": "ante cambios futuros de puestos/cableado, avisar con anticipación para validar el mapeo/segmentación y evitar recurrencia.",
+                "linkId": "res.validacion.recomendacion.ante"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "segments": [
+          {
+            "text": "Notificación y cierre administrativo"
+          }
+        ]
+      },
+      {
+        "type": "list",
+        "items": [
+          {
+            "text": "Sistema registra envío automático de correo de cierre con:",
+            "linkId": "res.cierre.envio",
+            "subitems": [
+              {
+                "text": "resumen del incidente y acciones,",
+                "linkId": "res.cierre.envio.resumen"
+              },
+              {
+                "text": "confirmación de normalización,",
+                "linkId": "res.cierre.envio.confirmacion"
+              },
+              {
+                "text": "recomendaciones preventivas,",
+                "linkId": "res.cierre.envio.recomendaciones"
+              },
+              {
+                "text": "enlace a encuesta de satisfacción.",
+                "linkId": "res.cierre.envio.encuesta"
+              }
+            ]
           },
           {
-            "text": "Monitoreo posterior: sin pérdida de paquetes.",
-            "linkId": "res.monit_sin_perdida"
+            "text": "Usuario confirma recepción del correo.",
+            "linkId": "res.cierre.usuario_confirma"
           },
           {
-            "text": "Servicio normalizado.",
-            "linkId": "res.servicio_normalizado"
-          },
-          {
-            "text": "Validación con el usuario: acceso estable a planillas y correo.",
-            "linkId": "res.validacion_acceso"
-          },
-          {
-            "text": "Validación con el usuario: sin nuevas caídas.",
-            "linkId": "res.validacion_sin_caidas"
-          },
-          {
-            "text": "Comunicación de monitoreo preventivo.",
-            "linkId": "res.monitoreo_preventivo"
-          },
-          {
-            "text": "Recomendación ante cambios futuros.",
-            "linkId": "res.recomendacion"
-          },
-          {
-            "text": "Usuario confirma recepción de correo y encuesta.",
-            "linkId": "res.confirma_correo"
-          },
-          {
-            "text": "Ticket cerrado como resuelto.",
-            "linkId": "res.cierre"
+            "text": "Ticket cerrado como resuelto (hora de cierre documentada) con validación explícita del usuario.",
+            "linkId": "res.cierre.ticket"
           }
         ]
       }
     ],
-    "resumen": "Usuario reporta latencia elevada o pérdida de conectividad. Se recopila información de IP, gateway y DNS para diagnóstico.",
+    "resumen": "El usuario Andrés Morales, Analista de Operaciones, reportó conectividad intermitente por cable, con pérdida de acceso a planillas del servidor y al correo corporativo, afectando su capacidad de trabajo y a otros usuarios del área. Las pruebas iniciales evidenciaron latencia variable, pérdida de paquetes y flapping en el puerto de red. Se determinó una desalineación entre la configuración lógica del puerto (perfil/VLAN) y el área de Operaciones, expuesta tras una reorganización física de puestos. La corrección del perfil del puerto normalizó la conectividad, validándose estabilidad sostenida y cierre exitoso del ticket.",
     "registro": [
-      "08:57 • Recepción del ticket.",
-      {
-        "segments": [
-          {
-            "text": "09:00 • Recolección de IP y pruebas básicas: "
-          },
-          {
-            "code": true,
-            "text": "ipconfig"
-          },
-          {
-            "text": ", "
-          },
-          {
-            "code": true,
-            "text": "ping"
-          },
-          {
-            "text": "."
-          }
-        ]
-      },
-      "09:10 • Se detecta latencia a 8.8.8.8; se notifica a redes."
+      "08:57 – Ingreso del incidente por llamada; usuario reporta intermitencia de red.",
+      "09:05 – Pruebas de conectividad (ping breve y prolongado) confirman latencia variable y pérdida de paquetes.",
+      "09:06 – Revisión lógica del puerto en switch detecta flapping; se realiza acción remota de estabilización.",
+      "09:09 – Persistencia del problema; se escala internamente para intervención en infraestructura.",
+      "09:26 – Intervención en terreno en rack del área de Operaciones; validación de mapeo físico–lógico.",
+      "09:36 – Corrección de perfil/VLAN del puerto y reinicio controlado del enlace.",
+      "09:40 – Pruebas posteriores confirman estabilidad del servicio.",
+      "10:05 – Validación telefónica con el usuario; servicio normalizado.",
+      "10:09 – Envío de correo de cierre y cierre administrativo del ticket."
     ],
-    "diagnostico": "Se revisan capas OSI: pruebas de enlace físico, DHCP, DNS y latencia a destinos externos.",
-    "acciones": [],
-    "tiempoTitulo": "Tiempo / Estado",
-    "tiempoTexto": "Estado: Apertura. Acciones: diagnóstico en curso.",
+    "diagnostico": "El incidente se diagnosticó como una falla en capas 1/2 (Física / Enlace de datos) con impacto en capa 3 (Red). La pérdida de paquetes y la latencia variable observadas en pruebas de conectividad indicaron micro-cortes del enlace, confirmados por eventos de flapping en el puerto del switch de acceso. La causa raíz fue una desalineación entre el mapeo físico del puesto y la configuración lógica del puerto (perfil/VLAN incorrectos), expuesta tras la reorganización de puestos, sin que existiera una intervención directa previa en el switch.",
+    "acciones": [
+      "Obtención de parámetros de red del equipo del usuario (IP, gateway, DNS, estado de interfaz).",
+      "Ejecución de pruebas de conectividad al gateway (ping breve y prolongado).",
+      "Revisión lógica remota del puerto en switch de acceso (detección de flapping).",
+      "Acción de estabilización inicial remota (renegociación del enlace / bounce lógico).",
+      "Escalamiento interno dentro de Soporte TI para intervención en infraestructura.",
+      "Validación en terreno del mapeo físico (patch panel ↔ puerto ↔ segmento).",
+      "Corrección de configuración del puerto (reasignación de perfil/VLAN correcta).",
+      "Pruebas posteriores de conectividad y monitoreo de estabilidad.",
+      "Validación final con el usuario y cierre administrativo del ticket."
+    ],
+    "tiempoTitulo": "Tiempo de atención y estado",
+    "tiempoTexto": "Tiempo total de atención estimado: 25 minutos. Estado final: Incidente resuelto y servicio normalizado.",
     "evidencias": [
       {
-        "titulo": "Evidencia 1",
+        "titulo": "Evidencia 1 • Foto del cableado del switch de acceso afectado",
         "tipo": "foto",
-        "src": "svg-photo-3",
+        "src": "../assets/img/ts-net-0631-evidencia-1.png",
         "thumb": {
           "width": 320,
           "height": 180,
           "fill": "#eef2ff",
           "textColor": "#0b3d91",
-          "text": "Foto: cableado (placeholder)"
+          "text": "Evidencia 1 • Foto del cableado del switch de acceso afectado"
         }
       },
       {
-        "titulo": "Evidencia 2",
+        "titulo": "Evidencia 2 • Captura de traceroute mostrando pérdida de paquetes",
         "tipo": "captura",
-        "src": "svg-screenshot-3",
+        "src": "../assets/img/ts-net-0631-evidencia-2.png",
         "thumb": {
           "width": 320,
           "height": 180,
           "fill": "#fff",
           "textColor": "#333",
-          "text": "Captura: traceroute (placeholder)"
-        }
-      },
-      {
-        "titulo": "Evidencia 3",
-        "tipo": "log",
-        "src": "svg-log-3",
-        "thumb": {
-          "width": 320,
-          "height": 180,
-          "fill": "#fff7f0",
-          "textColor": "#ff7a00",
-          "text": "Log: ping (placeholder)"
+          "text": "Evidencia 2 • Captura de traceroute mostrando pérdida de paquetes"
         }
       }
     ],
     "logSample": {
-      "contenido": "PS C:\\> ipconfig\nIPv4 Address. . . . . . . . . . . : 10.1.3.45\nPS C:\\> ping 8.8.8.8\nReply from 8.8.8.8: bytes=32 time=250ms TTL=117"
+      "contenido": "ping 10.20.34.1 -t\nResultado: latencia variable + pérdida de paquetes\n\nshow interface <puerto>\nEstado: link up/down (flapping)\n\nshow log | include <puerto>\nEventos: link flaps recurrentes",
+      "descripcion": "Comandos ejecutados y extracto de logs para sustentar el diagnóstico de link flapping.",
+      "titulo": "Evidencias (comandos)"
     },
     "canales": {
       "ayuda": "Use la selección en \"Fuente del ticket\" para alternar la vista entre Correo, Chat y Llamada.",
@@ -2176,625 +2357,789 @@
         "titleLinkId": "net_canal_llamada",
         "log": [
           {
-            "t": "08:57",
-            "who": "Soporte",
+            "t": "",
+            "who": "Sistema",
             "text": [
-              "Buenos días, habla Juan Cruz desde Soporte TI. ¿Con quién tengo el gusto de hablar?"
-            ],
-            "linkId": "desc.canal"
-          },
-          {
-            "t": "08:57",
-            "who": "Usuario",
-            "text": [
-              "Hola, Juan. Soy Andrés Morales."
-            ],
-            "linkId": "desc.usuario_nombre"
-          },
-          {
-            "t": "08:57",
-            "who": "Soporte",
-            "text": [
-              "Gracias, don Andrés. Para registrar correctamente el incidente, ¿me confirma su cargo y su número de contacto por si la llamada se corta?"
-            ]
-          },
-          {
-            "t": "08:58",
-            "who": "Usuario",
-            "text": [
-              "Soy analista de operaciones. El número es el mismo desde el que estoy llamando."
-            ],
-            "linkId": "desc.usuario_cargo"
-          },
-          {
-            "t": "08:58",
-            "who": "Soporte",
-            "text": [
-              "Perfecto. ¿Ese número corresponde a su móvil corporativo o a un teléfono fijo de oficina?"
-            ]
-          },
-          {
-            "t": "08:58",
-            "who": "Usuario",
-            "text": [
-              "Es mi móvil corporativo."
-            ],
-            "linkId": "desc.contacto_tipo"
-          },
-          {
-            "t": "08:58",
-            "who": "Soporte",
-            "text": [
-              "Excelente, gracias.",
-              "Antes de continuar, voy a confirmar también el correo corporativo para enviarle las actualizaciones del ticket.",
-              "¿su correo es andres.morales@techsolutions.com, correcto?"
+              "Llamada (simulación) • TS-NET-0631",
+              "",
+              "ID Ticket: TS-NET-0631",
+              "Canal de ingreso: Llamada",
+              "Fecha y hora de apertura: 08:57",
+              "Categoría: Red",
+              "Subcategoría: LAN – Conectividad intermitente",
+              "Usuario detectado por VoIP / directorio corporativo:",
+              "",
+              "Nombre: Andrés Morales",
+              "Cargo: Analista de Operaciones",
+              "Área: Operaciones",
+              "Ubicación base: Tercer piso",
+              "Contacto: Móvil corporativo",
+              "Correo: andres.morales@techsolutions.com"
             ],
             "lineLinks": [
               null,
               null,
-              "desc.contacto_correo"
-            ]
+              "desc.ticket",
+              "desc.canal",
+              null,
+              null,
+              "net_tipo_emision",
+              null,
+              null,
+              "cliente.nombre",
+              "cliente.cargo",
+              "cliente.cargo",
+              "ubicacion.sitio",
+              "contacto.telefono",
+              "contacto.correo"
+            ],
+            "linkId": "desc.ticket",
+            "macroLink": "macro.descripcion"
+          },
+          {
+            "t": "08:57",
+            "who": "Soporte",
+            "text": [
+              "Buenos días, le habla Juan Cruz desde Soporte TI.",
+              "Según el identificador de llamada, estoy hablando con Andrés Morales, Analista de Operaciones del área de Operaciones. ¿Es correcto?"
+            ],
+            "lineLinks": [null, "med.gestion.identidad"],
+            "linkId": "med.gestion.identidad",
+            "macroLink": "macro.descripcion"
+          },
+          {
+            "t": "08:57",
+            "who": "Usuario",
+            "text": ["Sí, correcto."],
+            "lineLinks": [null],
+            "macroLink": "macro.descripcion"
+          },
+          {
+            "t": "08:57",
+            "who": "Soporte",
+            "text": [
+              "Perfecto.",
+              "Voy a utilizar sus datos registrados en el directorio corporativo para el seguimiento del ticket.",
+              "Si detecta que algún dato requiere actualización, me avisa y lo revisamos."
+            ],
+            "lineLinks": [null, null, null],
+            "macroLink": "macro.descripcion"
+          },
+          {
+            "t": "08:59",
+            "who": "Soporte",
+            "text": [
+              "Cuénteme, ¿Qué inconveniente está presentando en este momento?"
+            ],
+            "lineLinks": [null],
+            "macroLink": "macro.descripcion"
           },
           {
             "t": "08:59",
             "who": "Usuario",
             "text": [
-              "Sí, ese es."
+              "La conexión está muy lenta y a ratos se cae. Pierdo acceso a las planillas del servidor y también al correo."
             ],
-            "linkId": "desc.contacto_correo"
-          },
-          {
-            "t": "08:59",
-            "who": "Soporte",
-            "text": [
-              "Perfecto, don Andrés. Cuénteme, ¿Qué problema esta presentando?"
-            ]
-          },
-          {
-            "t": "08:59",
-            "who": "Usuario",
-            "text": [
-              "La conexión está muy lenta y a ratos se cae.",
-              "Hay momentos en que pierdo la conectividad de red y eso me impide realizar mis deberes en la empresa.",
-              "Pierdo constantemente el acceso a las planillas que están en los servidores y tampoco tengo acceso a mi correo corporativo."
-            ],
-            "linkId": "desc.sintoma_lentitud",
-            "lineLinks": [
-              "desc.sintoma_lentitud",
-              "desc.sintoma_caidas",
-              "desc.sintoma_acceso"
-            ]
-          },
-          {
-            "t": "08:59",
-            "who": "Soporte",
-            "text": [
-              "De acuerdo. Para confirmar que entendí bien: la conexión es intermitente y eso le impide acceder con normalidad a los sistemas corporativos y al correo, ¿correcto?"
-            ]
-          },
-          {
-            "t": "09:00",
-            "who": "Usuario",
-            "text": [
-              "Sí, exactamente."
-            ]
+            "lineLinks": ["desc.sintomas"],
+            "linkId": "desc.sintomas",
+            "macroLink": "macro.descripcion"
           },
           {
             "t": "09:00",
             "who": "Soporte",
             "text": [
-              "¿Desde cuándo notó este problema? ¿Comenzó hoy en la mañana o ya venía desde antes?"
-            ]
+              "Ok. Para confirmar que entendí bien: presenta una conectividad intermitente, y eso le impide acceder de forma normal a los sistemas corporativos y al correo, ¿correcto?"
+            ],
+            "lineLinks": [null],
+            "macroLink": "macro.descripcion"
           },
           {
             "t": "09:00",
             "who": "Usuario",
-            "text": [
-              "Empezó hoy en la mañana, apenas llegué a la oficina."
-            ],
-            "linkId": "desc.inicio"
+            "text": ["Sí, exactamente."],
+            "lineLinks": [null],
+            "macroLink": "macro.descripcion"
           },
           {
             "t": "09:00",
             "who": "Soporte",
-            "text": [
-              "Cuando la conexión se cae, ¿vuelve sola después de un rato o tienes que hacer algo para que vuelva?"
-            ]
+            "text": ["¿Desde cuándo comenzó a notar este comportamiento?"],
+            "lineLinks": [null],
+            "macroLink": "macro.descripcion"
           },
           {
-            "t": "09:01",
+            "t": "09:00",
             "who": "Usuario",
-            "text": [
-              "A veces vuelve sola, otras no."
-            ],
-            "linkId": "desc.sintoma_caidas"
+            "text": ["Desde hoy en la mañana, apenas llegué."],
+            "lineLinks": ["desc.inicio"],
+            "linkId": "desc.inicio",
+            "macroLink": "macro.descripcion"
           },
           {
             "t": "09:01",
             "who": "Soporte",
             "text": [
-              "Entiendo. Con esta intermitencia, ¿puede avanzar algo en su trabajo o los cortes de red le impiden guardar cambios y trabajar con normalidad?"
-            ]
+              "Ya veo. Cuando la conexión se cae, ¿se restablece sola o necesita hacer algo para que vuelva?"
+            ],
+            "lineLinks": [null],
+            "macroLink": "macro.descripcion"
           },
           {
             "t": "09:01",
             "who": "Usuario",
-            "text": [
-              "Puedo avanzar por momentos, pero cuando la conexión se cae, los cambios no se guardan bien y pierdo el acceso a las planillas del servidor, así que en la práctica quedo bloqueado."
-            ],
-            "linkId": "desc.impacto"
+            "text": ["A veces vuelve sola, otras veces no."],
+            "lineLinks": ["desc.restablecimiento"],
+            "linkId": "desc.restablecimiento",
+            "macroLink": "macro.descripcion"
           },
           {
             "t": "09:01",
             "who": "Soporte",
             "text": [
-              "Comprendo, don Andrés. Lamento el inconveniente y entiendo el impacto que esto está teniendo en su trabajo. Para entender mejor el escenario, ¿Se encuentra conectado por cable o por Wi-Fi?"
+              "Entiendo. ¿Esta intermitencia le permite trabajar con normalidad o le está bloqueando el trabajo?"
             ],
-            "linkId": "med.contencion"
+            "lineLinks": [null],
+            "macroLink": "macro.descripcion"
+          },
+          {
+            "t": "09:01",
+            "who": "Usuario",
+            "text": [
+              "Puedo avanzar por momentos, pero cuando intento trabajar con las planillas del servidor se quedan cargando o se desconectan.",
+              "El correo a veces abre y otras veces no carga, así que en la práctica quedo bloqueado."
+            ],
+            "lineLinks": ["desc.impacto", "desc.comportamiento"],
+            "linkId": "desc.impacto",
+            "macroLink": "macro.descripcion"
+          },
+          {
+            "t": "09:01",
+            "who": "Soporte",
+            "text": [
+              "Comprendo, don Andrés. Vamos a revisarlo con calma para identificar bien dónde está el problema.",
+              "Para entender mejor el escenario, ¿está conectado por cable de red o por Wi-Fi?"
+            ],
+            "lineLinks": ["med.gestion.contencion", null],
+            "linkId": "med.gestion.contencion",
+            "macroLink": "macro.descripcion"
+          },
+          {
+            "t": "09:02",
+            "who": "Usuario",
+            "text": ["Por cable."],
+            "lineLinks": ["desc.conexion"],
+            "linkId": "desc.conexion",
+            "macroLink": "macro.descripcion"
+          },
+          {
+            "t": "09:02",
+            "who": "Soporte",
+            "text": [
+              "Perfecto. Para descartar si el problema es solo de su puesto o del área en general, ¿ha notado si a otros usuarios cercanos les ocurre algo similar?"
+            ],
+            "lineLinks": [null],
+            "macroLink": "macro.descripcion"
           },
           {
             "t": "09:02",
             "who": "Usuario",
             "text": [
-              "Por cable."
+              "Ahora que lo menciona, sí.",
+              "He escuchado a otros compañeros del área comentar que también han tenido problemas de conexión."
             ],
-            "linkId": "desc.conexion_cable"
-          },
-          {
-            "t": "09:02",
-            "who": "Soporte",
-            "text": [
-              "¿Ha notado si el problema afecta solo a su equipo o también a otros usuarios cercanos?"
-            ]
-          },
-          {
-            "t": "09:02",
-            "who": "Usuario",
-            "text": [
-              "He escuchado que a otros también les pasa, pero en mi puesto es más fuerte."
-            ],
-            "linkId": "desc.otros_usuarios"
+            "lineLinks": [null, "desc.alcance"],
+            "linkId": "desc.alcance",
+            "macroLink": "macro.descripcion"
           },
           {
             "t": "09:03",
             "who": "Soporte",
             "text": [
-              "De acuerdo, don Andrés. Gracias por la información.",
-              "Dado que el problema ocurre en horario de operación y existe afectación más allá de su puesto, voy a manejar el caso como un incidente de red con prioridad alta y vamos a trabajar para restablecer el servicio a la brevedad."
+              "Muy bien, agradezco la información solicitada.",
+              "Dado que el incidente ocurre en horario operativo, esta afectando su trabajo y hay otros usuarios comprometidos, voy a clasificarlo como incidente de red con prioridad alta."
             ],
-            "linkId": "desc.prioridad",
-            "lineLinks": [
-              null,
-              "desc.prioridad"
-            ]
+            "lineLinks": [null, "incidente.prioridad"],
+            "linkId": "incidente.prioridad",
+            "macroLink": "macro.descripcion"
           },
           {
             "t": "09:03",
             "who": "Soporte",
             "text": [
-              "Para continuar con la revisión, ¿está trabajando siempre desde el mismo equipo y el mismo punto de red?"
-            ]
+              "Para descartar cambios recientes, ¿usted ha modificado su puesto, cableado o equipo?"
+            ],
+            "lineLinks": [null],
+            "macroLink": "macro.descripcion"
           },
           {
             "t": "09:03",
             "who": "Usuario",
             "text": [
-              "Sí, siempre desde el mismo."
+              "No, aunque ayer reorganizaron algunos escritorios en el área."
             ],
-            "linkId": "desc.mismo_puesto"
-          },
-          {
-            "t": "09:03",
-            "who": "Soporte",
-            "text": [
-              "¿Hubo algún cambio reciente en su puesto, como mover el escritorio, el cableado o el computador?"
-            ]
-          },
-          {
-            "t": "09:03",
-            "who": "Usuario",
-            "text": [
-              "No que yo sepa. Mi puesto es el mismo... aunque ahora que lo menciona, ayer reorganizaron algunos escritorios en el área, pero no pensé que pudiera estar relacionado.."
-            ],
-            "linkId": "desc.reorganizacion"
+            "lineLinks": ["desc.cambio"],
+            "linkId": "desc.cambio",
+            "macroLink": "macro.descripcion"
           },
           {
             "t": "09:04",
             "who": "Soporte",
             "text": [
-              "Perfecto, es un dato relevante.",
-              "¿Además de eso hubo algún corte eléctrico o desconexión fuera de lo normal?"
-            ]
-          },
-          {
-            "t": "09:04",
-            "who": "Usuario",
-            "text": [
-              "No, nada más."
-            ]
-          },
-          {
-            "t": "09:04",
-            "who": "Soporte",
-            "text": [
-              "Bien, don Andrés. Voy a revisar ahora mismo su punto de red desde el sistema, para verificar el estado del enlace y la estabilidad de la conexión.",
-              "Esto no debería demorar más de un minuto. Por favor no cuelgue la llamada."
+              "Perfecto, es un antecedente relevante.",
+              "Voy a revisar ahora mismo su conectividad desde el sistema. Esto tomará un momento, así que por favor manténgase en línea."
             ],
-            "lineLinks": [
-              "med.info_curso",
-              null
-            ]
+            "lineLinks": [null, null],
+            "macroLink": "macro.descripcion"
           },
           {
             "t": "09:05",
             "who": "Sistema",
             "text": [
-              "Obtención de parámetros de red del equipo del usuario.",
-              "IP asignada: 10.20.34.57",
-              "Máscara: 255.255.255.0",
-              "Puerta de enlace: 10.20.34.1"
+              "Obtención de parámetros de red del equipo del usuario (ipconfig/ifconfig).",
+              "- IP asignada: 10.20.34.57",
+              "- Máscara: 255.255.255.0",
+              "- Puerta de enlace (GW): 10.20.34.1",
+              "- DNS corporativo: 10.20.10.10 / 10.20.10.11",
+              "- MAC/NIC detectada: OK (interfaz activa, enlace presente)",
+              "Observación: parámetros coherentes con el segmento corporativo del área."
             ],
             "lineLinks": [
-              "med.params_red",
+              "med.diag.parametros",
+              null,
+              null,
+              null,
               null,
               null,
               null
-            ]
+            ],
+            "linkId": "med.diag.parametros",
+            "macroLink": "macro.medidas"
+          },
+          {
+            "t": "",
+            "who": "Sistema",
+            "text": ["Sistema / Red – Diagnóstico inicial de conectividad"],
+            "lineLinks": [null],
+            "macroLink": "macro.medidas"
           },
           {
             "t": "09:05",
             "who": "Sistema",
             "text": [
-              "Prueba de conectividad hacia la puerta de enlace (ping 10.20.34.1).",
-              "Resultados: respuestas intermitentes, con latencia variable (5 ms – 120 ms) y pérdida de paquetes."
+              "Prueba de conectividad al gateway (ping al GW).",
+              "- Prueba breve (5–10 paquetes): respuestas intermitentes",
+              "- Latencia: variable (aprox. 5 ms – 120 ms)",
+              "- Pérdida de paquetes: presente",
+              "Conclusión: conectividad L3 intermitente sugiere inestabilidad del enlace aguas abajo del usuario."
             ],
-            "linkId": "med.ping_gateway",
-            "lineLinks": [
-              "med.ping_gateway",
-              null
-            ]
+            "lineLinks": ["med.diag.ping_gateway", null, null, null, null],
+            "linkId": "med.diag.ping_gateway",
+            "macroLink": "macro.medidas"
           },
           {
             "t": "09:06",
             "who": "Sistema",
             "text": [
-              "Consulta del estado del puerto asociado al usuario en el switch.",
-              "Se observan cambios frecuentes de estado activo/inactivo (flapping)."
+              "Prueba prolongada de conectividad (ping extendido / serie de pings).",
+              "- Se confirma patrón intermitente (picos de latencia + timeouts)",
+              "- Persistencia de pérdida durante la observación",
+              "Evidencia: comportamiento consistente con cortes de enlace o micro-cortes en capa 1/2."
             ],
-            "linkId": "med.rev_puerto",
+            "lineLinks": ["med.diag.ping_prolongado", null, null, null],
+            "linkId": "med.diag.ping_prolongado",
+            "macroLink": "macro.medidas"
+          },
+          {
+            "t": "09:06",
+            "who": "Sistema",
+            "text": [
+              "Revisión lógica del puerto asociado al usuario en switch de acceso (gestión / consola).",
+              "- Estado de interfaz: flapping (link up/down frecuente)",
+              "- Contadores/errores: se recomienda registrar CRC/input errors (si aplica)",
+              "- Parámetros de enlace: speed/duplex en negociación (a validar)",
+              "- Logs: eventos de link flaps asociados al puerto",
+              "Conclusión: hallazgo compatible con inestabilidad física o perfil/configuración incorrecta en puerto."
+            ],
             "lineLinks": [
-              "med.rev_puerto",
-              "med.detecta_flapping"
-            ]
+              "med.diag.revision_puerto",
+              null,
+              "med.diag.evidencia_crc",
+              null,
+              null,
+              null
+            ],
+            "linkId": "med.diag.revision_puerto",
+            "macroLink": "macro.medidas"
           },
           {
             "t": "09:06",
             "who": "Soporte",
             "text": [
-              "Estoy viendo que su equipo tiene conectividad, pero el enlace no es estable.",
-              "Hay respuestas intermitentes y variaciones de latencia, lo que explica los cortes que está experimentando.",
-              "Voy a realizar una acción de estabilización sobre la conexión desde el sistema.",
-              "Esto puede provocar una breve desconexión; por favor, manténgase en línea."
-            ]
+              "Estoy observando inestabilidad en el enlace de red.",
+              "Voy a realizar una acción de estabilización inicial para verificar si el comportamiento mejora.",
+              "Esto puede provocar una breve desconexión, le agradezco que espere un momento."
+            ],
+            "lineLinks": [null, null, "med.gestion.expectativa"],
+            "linkId": "med.gestion.expectativa",
+            "macroLink": "macro.medidas"
+          },
+          {
+            "t": "",
+            "who": "Sistema",
+            "text": ["Sistema / Red – Diagnóstico y acciones remotas"],
+            "lineLinks": [null],
+            "macroLink": "macro.medidas"
           },
           {
             "t": "09:07",
             "who": "Sistema",
             "text": [
-              "Aplicación de acción de estabilización sobre el puerto de red asociado al usuario.",
-              "Renegociación de enlace y monitoreo posterior."
+              "Acción de estabilización inicial realizada de forma remota sobre el puerto asociado al usuario.",
+              "- Renegociación lógica del enlace (bounce del puerto desde gestión remota)",
+              "- Forzado de nueva negociación de parámetros de enlace (auto-negotiation)"
             ],
             "lineLinks": [
-              "med.accion_renegociacion",
-              null
+              "med.estab.accion",
+              "med.estab.bounce",
+              "med.estab.autoneg"
             ],
-            "linkId": "med.accion_renegociacion"
+            "linkId": "med.estab.accion",
+            "macroLink": "macro.medidas"
+          },
+          {
+            "t": "09:07",
+            "who": "Sistema",
+            "text": [
+              "Estado posterior inmediato del puerto (verificación remota):",
+              "- Enlace activo",
+              "- Negociación exitosa",
+              "- Sin eventos de flapping en los primeros segundos"
+            ],
+            "lineLinks": [
+              null,
+              "res.terreno.pruebas.enlace",
+              null,
+              "res.terreno.pruebas.sin_flapping"
+            ],
+            "linkId": "res.terreno.pruebas.enlace",
+            "macroLink": "macro.medidas"
           },
           {
             "t": "09:08",
             "who": "Sistema",
             "text": [
               "Monitoreo de conectividad posterior a la acción aplicada.",
-              "Resultados iniciales: conectividad estable, sin pérdida de paquetes durante el período de observación."
+              "- Prueba de conectividad al gateway: respuestas estables",
+              "- Latencia inicial dentro de rangos normales",
+              "- Sin pérdida de paquetes durante el período corto de observación"
             ],
             "lineLinks": [
-              "med.resultado_mejora",
-              null
-            ],
-            "linkId": "med.resultado_mejora"
-          },
-          {
-            "t": "09:09",
-            "who": "Soporte",
-            "text": [
-              "Gracias por la espera, don Andrés. ¿Podría probar ahora acceder al correo o a algún sistema interno?"
-            ]
-          },
-          {
-            "t": "09:09",
-            "who": "Usuario",
-            "text": [
-              "Ahora puedo entrar… espere… se volvió a quedar cargando y otra vez perdí la conexión."
-            ],
-            "linkId": "med.resultado_persistencia"
-          },
-          {
-            "t": "09:09",
-            "who": "Soporte",
-            "text": [
-              "De acuerdo, don Andrés. Con lo que observamos, el problema no parece estar relacionado con su equipo en particular.",
-              "La conexión sigue siendo inestable, por lo que necesitamos revisar directamente el punto de red del área para dejarla funcionando de forma estable.",
-              "Voy a coordinar de inmediato con uno de nuestros técnicos de Soporte TI para que se acerque y realice esta revisión. Esto debería ocurrir dentro de los próximos minutos.",
-              "Durante el proceso, la conexión podría cortarse brevemente, lo cual es completamente normal.",
-              "¿Le parece bien que procedamos de esta forma?"
-            ],
-            "linkId": "med.descarta_equipo",
-            "lineLinks": [
-              "med.descarta_equipo",
-              "med.decision_escalar",
-              "med.coord_terreno",
               null,
-              null
-            ]
+              null,
+              "res.terreno.pruebas.latencia",
+              "res.terreno.pruebas.sin_perdida"
+            ],
+            "linkId": "res.terreno.pruebas.latencia",
+            "macroLink": "macro.medidas"
           },
           {
-            "t": "09:10",
-            "who": "Usuario",
+            "t": "",
+            "who": "Sistema",
             "text": [
-              "Pero si recién reiniciaron, ¿por qué sigue pasando?"
-            ]
+              "Conclusión preliminar:",
+              "La acción remota genera una mejora temporal del servicio.",
+              "Dado que el problema se reproduce posteriormente, se requiere validación adicional para confirmar estabilidad sostenida."
+            ],
+            "lineLinks": [null, "med.estab.mejora", "med.estab.reaparicion"],
+            "linkId": "med.estab.mejora",
+            "macroLink": "macro.medidas"
+          },
+          {
+            "t": "09:09",
+            "who": "Soporte",
+            "text": [
+              "De acuerdo.",
+              "Con lo que observamos hasta ahora, el problema no parece estar en su equipo, sino en la red del área."
+            ],
+            "lineLinks": [null, "med.escalamiento.determina"],
+            "linkId": "med.escalamiento.determina",
+            "macroLink": "macro.medidas"
+          },
+          {
+            "t": "09:09",
+            "who": "Soporte",
+            "text": [
+              "Entonces, para revisarlo de forma definitiva, vamos a coordinar una revisión del punto de red del sector.",
+              "Uno de nuestros técnicos de Soporte TI va a verificar el switch y el enlace que da servicio a su área."
+            ],
+            "lineLinks": [null, null],
+            "macroLink": "macro.medidas"
           },
           {
             "t": "09:10",
             "who": "Soporte",
             "text": [
-              "La acción que realizamos fue una medida inicial para estabilizar la conexión.",
-              "Al ver que el problema persiste, es necesario revisar directamente la configuración del punto de red para resolverlo de forma definitiva.",
-              "Para poder hacerlo ahora mismo, necesito ubicar el segmento de red correspondiente. ¿En qué piso y sector se encuentra su puesto, don Andrés?"
+              "Durante esa revisión la conexión podría interrumpirse por momentos.",
+              "No es necesario que realice ninguna acción adicional; le iremos informando los avances a través del ticket.",
+              "¿Le parece bien que continuemos de esta forma?"
             ],
-            "linkId": "med.decision_escalar"
+            "lineLinks": [null, "med.gestion.avances", "med.gestion.acuerdo"],
+            "linkId": "med.gestion.avances",
+            "macroLink": "macro.medidas"
           },
           {
             "t": "09:10",
             "who": "Usuario",
-            "text": [
-              "Tercer piso, área de Operaciones."
-            ],
-            "linkId": "desc.ubicacion"
+            "text": ["Sí, perfecto."],
+            "lineLinks": [null],
+            "macroLink": "macro.medidas"
           },
           {
-            "t": "09:11",
+            "t": "09:10",
             "who": "Soporte",
             "text": [
-              "Perfecto, gracias.",
-              "Con esa información vamos a revisar el switch que da servicio a ese sector.",
-              "Mientras realizamos la revisión, la conexión podría interrumpirse brevemente. Si necesita avisarnos algo o el comportamiento cambia, por favor manténgase en línea o responda al ticket."
-            ]
-          },
-          {
-            "t": "09:11",
-            "who": "Usuario",
-            "text": [
-              "Perfecto, muchas gracias."
-            ]
-          },
-          {
-            "t": "09:11",
-            "who": "Soporte",
-            "text": [
-              "Gracias a usted, don Andrés. Vamos a continuar con la revisión y le informamos cualquier novedad."
+              "Muy bien.",
+              "Entonces continuamos con la revisión y quedamos atentos ante cualquier novedad.",
+              "Gracias por la información, don Andrés."
             ],
-            "linkId": "med.comunicacion"
+            "lineLinks": [null, null, null],
+            "macroLink": "macro.medidas"
+          },
+          {
+            "t": "",
+            "who": "Sistema",
+            "text": ["Sistema / Ticket – Escalamiento"],
+            "lineLinks": [null],
+            "macroLink": "macro.medidas"
+          },
+          {
+            "t": "",
+            "who": "Sistema",
+            "text": [
+              "Incidente escalado internamente dentro del área de Soporte TI.",
+              "- Técnico asignado para intervención en terreno: Raven Andrés Ovalle",
+              "- Rol: Soporte TI (intervención en infraestructura)",
+              "- Responsable de registro y seguimiento: Juan Cruz",
+              "- Motivo del escalamiento: revisión de switch y punto de red del sector (flapping persistente)"
+            ],
+            "lineLinks": [
+              "med.escalamiento.escala",
+              "med.escalamiento.tecnico",
+              null,
+              "med.escalamiento.responsable",
+              "med.escalamiento.motivo"
+            ],
+            "linkId": "med.escalamiento.escala",
+            "macroLink": "macro.medidas"
+          },
+          {
+            "t": "",
+            "who": "Sistema",
+            "text": ["Red / Infraestructura – Intervención en terreno"],
+            "lineLinks": [null],
+            "macroLink": "macro.resolucion"
           },
           {
             "t": "09:26",
             "who": "Sistema",
             "text": [
-              "Inicio de intervención técnica a nivel de infraestructura de red.",
-              "Desplazamiento del técnico al rack del tercer piso, área de Operaciones."
+              "Intervención en terreno justificada tras persistencia del incidente luego de acciones remotas.",
+              "Se realiza validación física y de mapeo para confirmar correspondencia entre:",
+              "- Patch panel del área de Operaciones",
+              "- Puerto físico del switch de acceso",
+              "- Segmento/VLAN asignado al sector"
             ],
             "lineLinks": [
-              "res.intervencion",
-              null
+              "res.terreno.intervencion",
+              "res.terreno.validacion",
+              "res.terreno.validacion.patch_panel",
+              null,
+              "res.terreno.correccion.reasociacion"
             ],
-            "linkId": "res.intervencion"
-          },
-          {
-            "t": "09:28",
-            "who": "Sistema",
-            "text": [
-              "Identificación del switch y patch panel que dan servicio al área.",
-              "Verificación de correspondencia entre puertos físicos y puestos de trabajo del sector."
-            ]
+            "linkId": "res.terreno.intervencion",
+            "macroLink": "macro.resolucion"
           },
           {
             "t": "09:31",
             "who": "Sistema",
-            "text": [
-              "Detección de flapping en el puerto asociado al segmento del área de Operaciones.",
-              "Se observa enlace activo/inactivo de forma intermitente."
-            ]
+            "text": ["Detección de flapping en puerto asociado al área."],
+            "lineLinks": ["res.terreno.validacion.flapping"],
+            "linkId": "res.terreno.validacion.flapping",
+            "macroLink": "macro.resolucion"
           },
           {
             "t": "09:33",
             "who": "Sistema",
             "text": [
-              "Validación de configuración lógica del puerto desde consola local del switch.",
-              "Se identifica que el puerto se encuentra asociado a un perfil incorrecto tras la reorganización reciente del área."
+              "Validación de configuración del puerto desde consola del switch.",
+              "Hallazgo: perfil/VLAN incorrectos tras reorganización del área."
             ],
             "lineLinks": [
-              null,
-              "res.causa_perfil"
+              "res.terreno.revision",
+              "res.terreno.revision.hallazgo"
             ],
-            "linkId": "res.causa_perfil"
+            "linkId": "res.terreno.revision",
+            "macroLink": "macro.resolucion"
           },
           {
             "t": "09:36",
             "who": "Sistema",
             "text": [
-              "Corrección de la configuración del puerto correspondiente.",
-              "Reasociación correcta al segmento de red del área de Operaciones.",
-              "Reinicio controlado del enlace para aplicar cambios."
+              "Corrección de configuración.",
+              "Reinicio controlado del enlace."
             ],
             "lineLinks": [
-              "res.correccion_config",
-              "res.reasociacion_segmento",
-              "res.reinicio_enlace"
+              "res.terreno.correccion",
+              "res.terreno.correccion.reinicio"
             ],
-            "linkId": "res.correccion_config"
-          },
-          {
-            "t": "09:38",
-            "who": "Sistema",
-            "text": [
-              "Monitoreo del comportamiento del puerto posterior a la corrección.",
-              "El enlace se mantiene estable, sin flapping ni errores visibles."
-            ],
-            "lineLinks": [
-              "res.monit_enlace_estable",
-              "res.monit_sin_flapping"
-            ],
-            "linkId": "res.monit_enlace_estable"
+            "linkId": "res.terreno.correccion",
+            "macroLink": "macro.resolucion"
           },
           {
             "t": "09:40",
             "who": "Sistema",
             "text": [
-              "Pruebas de conectividad desde el segmento afectado.",
-              "Resultados: conectividad estable, sin pérdida de paquetes ni variaciones anómalas de latencia."
+              "Pruebas posteriores: enlace estable, sin pérdida ni latencia anómala."
             ],
-            "lineLinks": [
-              "res.monit_latencia_normal",
-              "res.monit_sin_perdida"
-            ],
-            "linkId": "res.monit_latencia_normal"
+            "lineLinks": ["res.terreno.pruebas"],
+            "linkId": "res.terreno.pruebas",
+            "macroLink": "macro.resolucion"
           },
           {
-            "t": "09:41",
+            "t": "",
+            "who": "Sistema",
+            "text": ["Sistema / Ticket – Retroalimentación técnica"],
+            "lineLinks": [null],
+            "macroLink": "macro.resolucion"
+          },
+          {
+            "t": "09:45",
             "who": "Sistema",
             "text": [
-              "Servicio normalizado."
+              "Técnico en terreno (Raven Andrés Ovalle) informa resultados de la intervención a Soporte TI."
             ],
-            "linkId": "res.servicio_normalizado"
+            "lineLinks": ["res.handoff.feedback"],
+            "linkId": "res.handoff.feedback",
+            "macroLink": "macro.resolucion"
+          },
+          {
+            "t": "",
+            "who": "Sistema",
+            "text": [
+              "Resumen técnico reportado:",
+              "- Se confirma desalineación entre perfil/VLAN del puerto y el área de Operaciones tras reorganización física.",
+              "- No se detectan fallas en cableado ni patch panel.",
+              "- Corrección aplicada a nivel de configuración del puerto normaliza el enlace.",
+              "- Pruebas posteriores confirman estabilidad sostenida del servicio."
+            ],
+            "lineLinks": [
+              null,
+              "res.handoff.causa",
+              "res.handoff.sin_falla",
+              "res.handoff.correccion",
+              "res.handoff.pruebas"
+            ],
+            "linkId": "res.handoff.causa",
+            "macroLink": "macro.resolucion"
+          },
+          {
+            "t": "",
+            "who": "Sistema",
+            "text": [
+              "Se devuelve el control del ticket a Soporte TI para validación con el usuario y cierre administrativo."
+            ],
+            "lineLinks": ["res.handoff.control"],
+            "linkId": "res.handoff.control",
+            "macroLink": "macro.resolucion"
           },
           {
             "t": "10:05",
             "who": "Soporte",
             "text": [
               "Hola, don Andrés. Le habla Juan Cruz desde Soporte TI.",
-              "Me comunico para informarle que ya finalizamos la revisión de red en el área de Operaciones y para confirmar con usted que el servicio haya quedado funcionando correctamente."
-            ]
+              "¿Le acomoda que revisemos ahora cómo quedó la conexión tras la intervención?"
+            ],
+            "lineLinks": [null, null],
+            "macroLink": "macro.resolucion"
           },
           {
-            "t": "10:06",
+            "t": "10:05",
             "who": "Usuario",
-            "text": [
-              "Hola, Juan. Perfecto, dime."
-            ]
+            "text": ["Sí, adelante."],
+            "lineLinks": [null],
+            "macroLink": "macro.resolucion"
           },
           {
-            "t": "10:06",
+            "t": "10:05",
             "who": "Soporte",
             "text": [
-              "Durante la revisión detectamos un ajuste pendiente en la red del área que estaba provocando la inestabilidad.",
-              "Ese ajuste ya fue corregido y, según las pruebas que realizamos, la conexión quedó estable.",
-              "Antes de cerrar el ticket, ¿podría confirmarme si en este momento puede acceder sin problemas a las planillas del servidor y a su correo corporativo?"
+              "Primero que todo me comunico para informarle que ya finalizamos la revisión de red del área de Operaciones.",
+              "Se corrigió una configuración asociada a la reorganización reciente y, según las pruebas realizadas, la conexión quedó estable.",
+              "Antes de cerrar el ticket, ¿podría confirmarme si ahora puede acceder sin problemas a las planillas del servidor y a su correo corporativo?"
             ],
-            "lineLinks": [
-              null,
-              null,
-              "res.validacion_acceso"
-            ],
-            "linkId": "res.validacion_acceso"
+            "lineLinks": [null, null, null],
+            "macroLink": "macro.resolucion"
           },
           {
-            "t": "10:07",
+            "t": "10:06",
             "who": "Usuario",
             "text": [
               "Sí, ahora está funcionando bien. No se ha vuelto a caer."
             ],
-            "linkId": "res.validacion_sin_caidas"
+            "lineLinks": ["res.validacion.llamada"],
+            "linkId": "res.validacion.llamada",
+            "macroLink": "macro.resolucion"
           },
           {
-            "t": "10:07",
+            "t": "10:06",
             "who": "Soporte",
             "text": [
-              "Excelente, me alegro.",
+              "Excelente.",
               "¿Ha notado alguna lentitud o desconexión desde que se realizó la corrección?"
-            ]
+            ],
+            "lineLinks": [null, null],
+            "macroLink": "macro.resolucion"
+          },
+          {
+            "t": "10:06",
+            "who": "Usuario",
+            "text": ["No, todo está funcionando normal."],
+            "lineLinks": [null],
+            "macroLink": "macro.resolucion"
           },
           {
             "t": "10:07",
-            "who": "Usuario",
+            "who": "Soporte",
             "text": [
-              "No, todo está funcionando normal."
-            ]
+              "Perfecto.",
+              "Entonces voy a proceder a cerrar el ticket como resuelto.",
+              "De todas formas, mantendremos monitoreo preventivo sobre la red del área durante el resto de la jornada."
+            ],
+            "lineLinks": [null, null, "res.validacion.monitoreo"],
+            "linkId": "res.validacion.monitoreo",
+            "macroLink": "macro.resolucion"
+          },
+          {
+            "t": "10:07",
+            "who": "Soporte",
+            "text": [
+              "Como recomendación, ante futuros cambios de puestos o cableado, es importante avisarnos con anticipación para validar la red y evitar este tipo de incidentes."
+            ],
+            "lineLinks": ["res.validacion.recomendacion"],
+            "linkId": "res.validacion.recomendacion",
+            "macroLink": "macro.resolucion"
           },
           {
             "t": "10:08",
-            "who": "Soporte",
+            "who": "Usuario",
             "text": [
-              "Muy bien, entonces voy a proceder a cerrar el ticket como resuelto.",
-              "De todas formas, vamos a mantener monitoreo sobre la red del área durante el resto de la jornada, para asegurarnos de que la estabilidad se mantenga para todos los usuarios. Si vuelve a notar cualquier comportamiento extraño en la conexión, no dude en contactarnos de inmediato para revisarlo."
+              "Entendido. Lo voy a coordinar internamente para que estos cambios se avisen antes, así evitamos que vuelva a pasar."
             ],
-            "linkId": "res.cierre",
+            "lineLinks": ["res.validacion.recomendacion.ante"],
+            "linkId": "res.validacion.recomendacion.ante",
+            "macroLink": "macro.resolucion"
+          },
+          {
+            "t": "",
+            "who": "Sistema",
+            "text": ["Sistema / Ticket – Notificación al usuario"],
+            "lineLinks": [null],
+            "macroLink": "macro.resolucion"
+          },
+          {
+            "t": "10:08",
+            "who": "Sistema",
+            "text": [
+              "Envío automático de correo de cierre al usuario.",
+              "Contenido del correo:",
+              "- Resumen del incidente y acciones realizadas",
+              "- Confirmación de normalización del servicio",
+              "- Recomendaciones preventivas",
+              "- Enlace a encuesta de satisfacción"
+            ],
             "lineLinks": [
-              "res.cierre",
-              "res.monitoreo_preventivo"
-            ]
-          },
-          {
-            "t": "10:08",
-            "who": "Soporte",
-            "text": [
-              "Como recomendación general, para evitar este tipo de situaciones en el futuro, cuando se realicen cambios en la disposición de los puestos o del cableado en el área, pueden avisarnos con anticipación para revisar la red y asegurarnos de que todo quede funcionando correctamente desde el inicio."
+              "res.cierre.envio",
+              null,
+              "res.cierre.envio.resumen",
+              "res.cierre.envio.confirmacion",
+              "res.cierre.envio.recomendaciones",
+              "res.cierre.envio.encuesta"
             ],
-            "linkId": "res.recomendacion"
+            "linkId": "res.cierre.envio",
+            "macroLink": "macro.resolucion"
+          },
+          {
+            "t": "",
+            "who": "Sistema",
+            "text": [
+              "Destino: andres.morales@techsolutions.com",
+              "Estado: enviado correctamente"
+            ],
+            "lineLinks": [null, null],
+            "macroLink": "macro.resolucion"
           },
           {
             "t": "10:08",
-            "who": "Usuario",
-            "text": [
-              "Entendido, lo voy a coordinar con el área para que avisemos antes si se hacen este tipo de cambios."
-            ]
-          },
-          {
-            "t": "10:09",
             "who": "Soporte",
             "text": [
-              "Perfecto, don Andrés. Ahora mismo le envié un correo con el resumen del ticket y una breve encuesta de satisfacción.",
+              "Perfecto.",
+              "Le acabo de enviar un correo con el resumen del ticket y una breve encuesta de satisfacción.",
               "¿Podría confirmarme si recibió correctamente ese correo?"
-            ]
-          },
-          {
-            "t": "10:09",
-            "who": "Usuario",
-            "text": [
-              "Sí, claro. Ya me llegó, está en la bandeja de entrada."
             ],
-            "linkId": "res.confirma_correo"
+            "lineLinks": [null, null, null],
+            "macroLink": "macro.resolucion"
+          },
+          {
+            "t": "10:08",
+            "who": "Usuario",
+            "text": ["Sí, ya me llegó."],
+            "lineLinks": ["res.cierre.usuario_confirma"],
+            "linkId": "res.cierre.usuario_confirma",
+            "macroLink": "macro.resolucion"
           },
           {
             "t": "10:09",
             "who": "Soporte",
             "text": [
-              "Perfecto. Quedamos atentos ante cualquier otra incidencia.",
-              "Muchas gracias por su tiempo, don Andrés, y que tenga un muy buen día."
-            ]
+              "Excelente.",
+              "Quedamos atentos ante cualquier otra incidencia.",
+              "Muchas gracias por su tiempo, don Andrés. Que tenga un muy buen día."
+            ],
+            "lineLinks": [null, null, null],
+            "macroLink": "macro.resolucion"
           },
           {
             "t": "10:09",
             "who": "Usuario",
-            "text": [
-              "Gracias a ustedes. Buen día."
-            ]
+            "text": ["Gracias a ustedes. Buen día."],
+            "lineLinks": [null],
+            "macroLink": "macro.resolucion"
           },
           {
             "t": "10:09",
             "who": "Soporte",
+            "text": ["Buen día."],
+            "lineLinks": [null],
+            "macroLink": "macro.resolucion"
+          },
+          {
+            "t": "",
+            "who": "Sistema",
+            "text": ["Sistema / Ticket"],
+            "lineLinks": [null],
+            "macroLink": "macro.resolucion"
+          },
+          {
+            "t": "",
+            "who": "Sistema",
             "text": [
-              "Buen día."
-            ]
+              "Ticket cerrado como resuelto.",
+              "Fecha y hora de cierre: 10:09",
+              "Usuario valida normalización del servicio."
+            ],
+            "lineLinks": ["res.cierre.ticket", null, null],
+            "linkId": "res.cierre.ticket",
+            "macroLink": "macro.resolucion"
           }
         ]
       }
@@ -3374,9 +3719,7 @@
           {
             "t": "11:28",
             "who": "Usuaria",
-            "text": [
-              "Ya van varios hoy. Aparece de repente y se reinicia."
-            ],
+            "text": ["Ya van varios hoy. Aparece de repente y se reinicia."],
             "link": "ts-sw-0789-desc"
           },
           {
@@ -3391,9 +3734,7 @@
           {
             "t": "11:29",
             "who": "Usuaria",
-            "text": [
-              "Desde ayer en la tarde, más o menos."
-            ],
+            "text": ["Desde ayer en la tarde, más o menos."],
             "link": "ts-sw-0789-desc"
           },
           {
@@ -3408,9 +3749,7 @@
           {
             "t": "11:30",
             "who": "Usuaria",
-            "text": [
-              "Sí, ayer se actualizó el sistema, creo."
-            ],
+            "text": ["Sí, ayer se actualizó el sistema, creo."],
             "link": "ts-sw-0789-med"
           },
           {
@@ -3425,9 +3764,7 @@
           {
             "t": "11:31",
             "who": "Usuaria",
-            "text": [
-              "No, es aleatorio. A veces solo con el correo abierto."
-            ],
+            "text": ["No, es aleatorio. A veces solo con el correo abierto."],
             "link": "ts-sw-0789-med"
           },
           {
@@ -3457,9 +3794,7 @@
           {
             "t": "11:41",
             "who": "Usuaria",
-            "text": [
-              "¿Eso debería solucionarlo?"
-            ],
+            "text": ["¿Eso debería solucionarlo?"],
             "link": "ts-sw-0789-med"
           },
           {
@@ -3482,9 +3817,7 @@
           {
             "t": "11:43",
             "who": "Usuaria",
-            "text": [
-              "No, ya no."
-            ],
+            "text": ["No, ya no."],
             "link": "ts-sw-0789-res"
           },
           {
@@ -3499,9 +3832,7 @@
           {
             "t": "11:44",
             "who": "Usuaria",
-            "text": [
-              "Sí, está funcionando bien."
-            ],
+            "text": ["Sí, está funcionando bien."],
             "link": "ts-sw-0789-res"
           },
           {
@@ -3517,17 +3848,13 @@
           {
             "t": "11:45",
             "who": "Usuaria",
-            "text": [
-              "Gracias, me quedo mucho más tranquila."
-            ],
+            "text": ["Gracias, me quedo mucho más tranquila."],
             "link": "ts-sw-0789-res"
           },
           {
             "t": "11:46",
             "who": "Soporte",
-            "text": [
-              "Para eso estamos, Camila. Que tengas buen día."
-            ],
+            "text": ["Para eso estamos, Camila. Que tengas buen día."],
             "link": "ts-sw-0789-res"
           }
         ]
@@ -4118,9 +4445,7 @@
           {
             "t": "16:11",
             "who": "Usuario",
-            "text": [
-              "S├¡, exactamente."
-            ],
+            "text": ["S├¡, exactamente."],
             "link": "ts-sw-0912-desc"
           },
           {
@@ -4192,9 +4517,7 @@
           {
             "t": "16:21",
             "who": "Usuario",
-            "text": [
-              "S├¡, ahora responde bien."
-            ],
+            "text": ["S├¡, ahora responde bien."],
             "link": "ts-sw-0912-med"
           },
           {
@@ -4209,9 +4532,7 @@
           {
             "t": "16:22",
             "who": "Usuario",
-            "text": [
-              "S├¡, por ahora est├í todo bien."
-            ],
+            "text": ["S├¡, por ahora est├í todo bien."],
             "link": "ts-sw-0912-res"
           },
           {
@@ -4243,9 +4564,7 @@
           {
             "t": "16:24",
             "who": "Usuario",
-            "text": [
-              "De acuerdo, gracias."
-            ],
+            "text": ["De acuerdo, gracias."],
             "link": "ts-sw-0912-res"
           },
           {
@@ -4295,3 +4614,4 @@
     ]
   }
 ]
+
